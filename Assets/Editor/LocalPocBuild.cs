@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using System.Linq;
+using CommonHouse.Outpost;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 
@@ -23,11 +23,11 @@ namespace CommonHouse.Editor
             if (string.IsNullOrWhiteSpace(directory)) throw new InvalidOperationException("Invalid Linux player output path.");
             if (Directory.Exists(directory)) throw new InvalidOperationException("Refusing to replace an existing build output directory: " + directory);
             Directory.CreateDirectory(directory);
-            var scenes = EditorBuildSettings.scenes.Where(scene => scene.enabled).Select(scene => scene.path).ToArray();
-            if (scenes.Length == 0) throw new InvalidOperationException("No enabled build scenes are configured.");
+            var scene = AssetDatabase.LoadAssetAtPath<SceneAsset>(OutpostLayout.ScenePath);
+            if (scene == null) throw new InvalidOperationException("The POC entry scene is missing: " + OutpostLayout.ScenePath);
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
-                scenes = scenes,
+                scenes = new[] { OutpostLayout.ScenePath },
                 locationPathName = output,
                 target = BuildTarget.StandaloneLinux64,
                 options = BuildOptions.Development,
