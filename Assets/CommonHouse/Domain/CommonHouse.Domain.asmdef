@@ -1,0 +1,6 @@
+{
+  "name": "CommonHouse.Domain",
+  "rootNamespace": "CommonHouse.Domain",
+  "references": ["CommonHouse.Content"],
+  "noEngineReferences": true
+}

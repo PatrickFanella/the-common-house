@@ -136,3 +136,6 @@ The [implementation plan](implementation-plan.md) links the Gitea task backlog.
 
 The [Case 01 content guide](development/case-content.md) describes the authored
 evidence asset, validation rules, and focused `CaseContentTests` command.
+
+The [in-memory state guide](development/case-state.md) describes event retry
+behavior, partial evidence, disclosure records, and `CaseStateTests`.
