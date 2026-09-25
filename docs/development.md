@@ -139,3 +139,6 @@ evidence asset, validation rules, and focused `CaseContentTests` command.
 
 The [in-memory state guide](development/case-state.md) describes event retry
 behavior, partial evidence, disclosure records, and `CaseStateTests`.
+
+The [consent and routing guide](development/routing-rules.md) describes explicit
+authorization, send summaries, selected material, and `RoutingRulesTests`.

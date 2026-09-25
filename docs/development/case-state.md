@@ -35,11 +35,11 @@ phase once while retaining the selected outcome and disclosures.
 The internal `CommitResolution` method validates known outcome/source/recipient
 IDs and acquired sources before committing outcome and disclosures together.
 It prevents a second outcome and copies caller-owned recipient arrays. It is a
-storage seam for issue #8, not an eligibility or consent API. Only domain code
-and the friend test assembly can call it. There is no public send operation yet.
-Issue #8 must enforce the causal contract, current consent, selected material,
-actual recipients, and confirmation before calling this seam. These tests do
-not establish a legal narrative route through any ending.
+storage seam behind the [consent and routing rules](routing-rules.md).
+Presentation uses `PresentSendSummary` and `ConfirmSend`; the latter validates
+current authorization, selected material, recipients, and confirmation before
+committing. The state-storage tests exercise atomic facts; the routing fixture
+separately exercises those eligibility checks.
 
 Run the focused check:
 
@@ -50,7 +50,7 @@ python3 scripts/run_unity_tests.py --platform editmode --filter CommonHouse.Test
 Tests cover archive-first and conversation-first acquisition, partial evidence,
 replay, event collisions, promises, attributed recipients, atomic resolution
 storage, aftermath retries, unknown IDs, rejected batches, session isolation,
-and defensive collections. Save/reload, scene UI, routing eligibility, and
-whole-route rehearsal remain separate tasks. The existing native runner uses
+and defensive collections. Save/reload, scene UI and whole-route rehearsal remain separate tasks. Routing eligibility
+has its own focused fixture. The existing native runner uses
 disposable project/save state and retains private evidence as described in the
 [development guide](../development.md).
