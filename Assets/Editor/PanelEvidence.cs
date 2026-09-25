@@ -2,6 +2,9 @@ using System;
 using System.IO;
 using System.Linq;
 using CommonHouse.Runtime;
+using CommonHouse.Domain;
+using CommonHouse.Aftermath;
+using CommonHouse.Hints;
 using CommonHouse.Interaction;
 using CommonHouse.Outpost;
 using CommonHouse.Radio;
@@ -21,7 +24,7 @@ namespace CommonHouse.Editor
         private static int frames;
         private static bool requested;
         private static int stage;
-        private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png" };
+        private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "send-private-panel.png", "aftermath-private-panel.png", "send-refusal-panel.png", "aftermath-refusal-panel.png", "send-public-panel.png", "aftermath-public-panel.png", "hint-panel.png" };
         static PanelEvidence()
         {
             EditorApplication.update += Update;
@@ -135,10 +138,43 @@ namespace CommonHouse.Editor
                         radio.Close();
                         Ask("ren", "ren-repair-account");
                     }
-                    else
+                    else if (stage == 11)
                     {
                         UnityEngine.Object.FindFirstObjectByType<DialoguePresenter>().Close();
                         Ask("ren", "ren-private-contact");
+                    }
+                    else if (stage == 12 || stage == 14 || stage == 16)
+                    {
+                        UnityEngine.Object.FindFirstObjectByType<DialoguePresenter>().Close();
+                        UnityEngine.Object.FindFirstObjectByType<AftermathHouseholdController>().Close();
+                        var session = UnityEngine.Object.FindFirstObjectByType<CaseSession>();
+                        if (stage != 12)
+                        {
+                            var state = new CaseState(session.Content);
+                            state.AcquireSource("capture-call", "T01");
+                            state.AcquireSource("capture-private-account", "C01");
+                            state.RecordRefusalAuthorization("capture-refusal");
+                            session.ReplaceState(state);
+                        }
+                        var send = UnityEngine.Object.FindFirstObjectByType<SendConfirmationController>();
+                        var route = stage == 12 ? ResponseRoute.PrivateHeadset : stage == 14 ? ResponseRoute.RefusalRelay : ResponseRoute.RoomSpeaker;
+                        if (!send.Open() || !send.Prepare(route)) throw new InvalidOperationException("Could not prepare send panel.");
+                    }
+                    else if (stage == 13 || stage == 15 || stage == 17)
+                    {
+                        var send = UnityEngine.Object.FindFirstObjectByType<SendConfirmationController>();
+                        if (stage == 17) send.TogglePublicDisclosureAcknowledgement();
+                        if (!send.Confirm()) throw new InvalidOperationException("Could not confirm displayed send.");
+                        send.Close();
+                        var aftermath = UnityEngine.Object.FindFirstObjectByType<AftermathHouseholdController>();
+                        if (!aftermath.Open() || !aftermath.Acknowledge()) throw new InvalidOperationException("Could not complete matching aftermath.");
+                    }
+                    else
+                    {
+                        UnityEngine.Object.FindFirstObjectByType<AftermathHouseholdController>().Close();
+                        var session = UnityEngine.Object.FindFirstObjectByType<CaseSession>();
+                        session.ReplaceState(new CaseState(session.Content));
+                        if (!UnityEngine.Object.FindFirstObjectByType<InvestigationHintController>().RequestHint()) throw new InvalidOperationException("Could not request optional hint.");
                     }
                     requested = true;
                     frames = 0;

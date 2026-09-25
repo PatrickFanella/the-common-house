@@ -1,0 +1,9 @@
+{
+  "name": "CommonHouse.Aftermath",
+  "rootNamespace": "CommonHouse.Aftermath",
+  "references": [
+    "CommonHouse.Domain",
+    "CommonHouse.Interaction",
+    "CommonHouse.Runtime"
+  ]
+}

@@ -28,7 +28,7 @@ def main(argv=None):
         if code:
             raise ValueError(f"Graphical Editor failed with exit {code}")
         unity.validate_log(evidence / "editor.log")
-        required = ["inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "panel-evidence.txt"]
+        required = ["inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "send-private-panel.png", "aftermath-private-panel.png", "send-refusal-panel.png", "aftermath-refusal-panel.png", "send-public-panel.png", "aftermath-public-panel.png", "hint-panel.png", "panel-evidence.txt"]
         for name in required:
             path = evidence / "test-data" / name
             if not path.is_file() or not path.stat().st_size:

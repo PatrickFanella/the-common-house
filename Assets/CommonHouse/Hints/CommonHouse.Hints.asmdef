@@ -1,0 +1,9 @@
+{
+  "name": "CommonHouse.Hints",
+  "rootNamespace": "CommonHouse.Hints",
+  "references": [
+    "CommonHouse.Domain",
+    "CommonHouse.Runtime",
+    "CommonHouse.Interaction"
+  ]
+}

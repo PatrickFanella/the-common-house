@@ -14,6 +14,8 @@
     "CommonHouse.Radio",
     "CommonHouse.Notebook",
     "CommonHouse.Dialogue",
-    "CommonHouse.Opening"
+    "CommonHouse.Opening",
+    "CommonHouse.Aftermath",
+    "CommonHouse.Hints"
   ]
 }
