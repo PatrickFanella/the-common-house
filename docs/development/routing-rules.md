@@ -71,7 +71,7 @@ python3 scripts/run_unity_tests.py --platform editmode --filter CommonHouse.Test
 The focused fixture covers each missing prerequisite, separate authorization,
 minimal refusal, private recipients and knowledge boundaries, public warning
 acknowledgment, stale summaries, cancellation, defer/resume, cross-session
-summaries, and duplicate sends/aftermaths. Whole-route action transcripts and
-causal rehearsal remain issue #9. Scene interaction, desktop builds, and human
+summaries, and duplicate sends/aftermaths. The [route rehearsal](../planning/case-01-rehearsal.md) exercises the model
+through both discovery orders, optional-content omission, and recovery. Scene interaction, desktop builds, and human
 playtests are distinct evidence tiers. Native checks retain the isolation and
 licensing boundaries in the [development guide](../development.md).

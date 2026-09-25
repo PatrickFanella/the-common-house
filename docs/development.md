@@ -142,3 +142,6 @@ behavior, partial evidence, disclosure records, and `CaseStateTests`.
 
 The [consent and routing guide](development/routing-rules.md) describes explicit
 authorization, send summaries, selected material, and `RoutingRulesTests`.
+
+The [Case 01 rehearsal](planning/case-01-rehearsal.md) includes observed text
+traces for all three outcomes and the focused `CaseRehearsalTests` command.
