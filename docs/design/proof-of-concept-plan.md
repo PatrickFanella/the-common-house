@@ -87,4 +87,4 @@ The proposed five-person round is an eventual external check, not a staffing req
 
 ## Review record
 
-No prototype or playtest has occurred. When testing begins, record build/version, date, participant count, conditions, observations, assistance given, failures, and resulting changes. Keep failed results alongside later improvements.
+The local prototype and automated scene/player checks are complete. The [initial owner evaluation](../playtests/poc-evaluation.md) records one exploratory refusal run and Save use; Load and understanding were not established. The proposed new-player round has not been reported. Record build/version, date, participant count, conditions, observations, assistance given, failures, and resulting changes as testing continues. Keep failed and incomplete results alongside later improvements.
