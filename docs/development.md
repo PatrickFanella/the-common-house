@@ -163,15 +163,16 @@ is blank preparation for future owner-run sessions, not playtest evidence.
 ## Investigation readers
 
 [Inspection](development/inspection.md) uses E to read and Enter to explicitly
-record an inspectable item. The generated scene includes a generic shift notice.
+record an inspectable item. The generated scene includes canonical D01/D02 documents.
 [Radio review](development/transmission-log.md) uses R, arrow keys, and Enter;
 [the notebook](development/notebook.md) uses N and arrow keys. These two readers
 start empty until a case interaction acquires a source. A shared modal owner
 handles Escape and movement pause, preventing panels from stealing focus.
 
-[Dialogue presentation](development/dialogue.md) uses T, arrows, and Enter.
-The generated scene currently opens an effect-free demonstration conversation;
-resident-specific case interactions are separate backlog tasks.
+[Dialogue presentation](development/dialogue.md) opens with E at a reachable
+resident, then uses arrows and Enter. [Ren's private identity and consent
+conversation](development/ren-consent.md) stays in the archive alcove; it is
+not available through a global shortcut.
 
 Run `python3 scripts/capture_panels.py` to launch a temporary graphical Editor,
 open the generated scene, and capture actual Game-view panels including their
@@ -199,3 +200,16 @@ with actual recipients and records verification separately from consent.
 
 [Case interaction verification](verification/case-interactions.md) records
 the focused and integrated results and rendered panels.
+
+## Resident evidence and explicit consent
+
+[The roster and repair note](development/roster-evidence.md) feed the notebook
+only after explicit Enter acquisition. Their shared mark remains a hypothesis.
+[Ivo's page](development/missing-page.md) has a recoverable conversation path;
+[the two repair accounts](development/caller-corroboration.md) support either
+consultation order. [Ren's private conversation](development/ren-consent.md)
+confirms identity and initially authorizes refusal. Private-contact agreement
+is a separate later question after corroboration and route verification.
+
+[Resident evidence verification](verification/resident-evidence.md) records
+the scene checks and inspected conversation captures.

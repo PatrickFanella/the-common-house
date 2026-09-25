@@ -17,11 +17,12 @@ The dialogue panel has no timer. Use `Up` and `Down` to choose a question,
 `Enter` to ask it, and `Escape` to close through `ModalInputCoordinator`.
 Closing has no state effect, so recovery leads remain available.
 
-The generated outpost binds `DialoguePresenter` to its `CaseSession` but uses
-the effect-free outpost check-in nodes by default. `T` opens that generic demo.
-It does not expose Case 01's private-contact effects from any room. A future
-resident interaction must explicitly configure `Case01DialogueNodes.All` after
-the appropriate proximity and case wiring exists.
+Dialogue opens only from a reachable resident through the shared `E` focus
+interaction. `ResidentDialogueTarget` asks `DialogueCatalog` for a fresh node
+list for that resident when the player interacts. There is no global dialogue
+key, so private Ren conversation cannot be opened from another room. The
+presenter uses its `CaseSession`'s current state, including a validated state
+replacement after loading.
 
 ```sh
 python3 scripts/run_unity_tests.py --platform playmode --filter CommonHouse.Tests.DialoguePresenterTests

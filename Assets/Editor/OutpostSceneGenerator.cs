@@ -9,6 +9,7 @@ using CommonHouse.Radio;
 using CommonHouse.Notebook;
 using CommonHouse.Dialogue;
 using CommonHouse.Opening;
+using CommonHouse.Content;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -44,7 +45,7 @@ namespace CommonHouse.Editor
             AddAnchor(root.transform, OutpostLayout.ArchiveWorkshop, "archive-roster", new Vector3(8f, 0.5f, -2.5f));
             AddAnchor(root.transform, OutpostLayout.ArchiveWorkshop, "workshop-bench", new Vector3(11.5f, 0.5f, 2.5f));
             AddAnchor(root.transform, OutpostLayout.ArchiveWorkshop, "routing-switch", new Vector3(7.5f, 0.5f, 2.5f));
-            CreateSampleInspection(root.transform);
+            CreateCaseDocuments(root.transform);
 
             CreateLighting(root.transform);
             CreateCamera(root.transform);
@@ -88,15 +89,13 @@ namespace CommonHouse.Editor
             marker.AddComponent<OutpostAnchor>().Configure(anchorId, roomId);
         }
 
-        private static void CreateSampleInspection(Transform root)
+        private static void CreateCaseDocuments(Transform root)
         {
-            var notice = CreatePrimitive(root, "ShiftNotice", PrimitiveType.Cube, new Vector3(-10f, 1.4f, 2.1f),
-                new Vector3(1.2f, 0.8f, 0.08f), true);
-            notice.AddComponent<InspectionTarget>().Configure(
-                "sample-shift-notice",
-                "Shift notice",
-                "Sample inspection text. Keep the radio log readable for whoever takes the next shift.",
-                "sample-shift-notice");
+            var content = CaseContent.LoadBaseline();
+            var note = CreatePrimitive(root, "RenRepairNote", PrimitiveType.Cube, new Vector3(-10f, 1.4f, 2.1f), new Vector3(1.2f, 0.8f, 0.08f), true);
+            note.AddComponent<InspectionTarget>().Configure("case-d02", "Ren's repair note", content.Sources.Single(source => source.Id == "D02").Text, "D02");
+            var roster = CreatePrimitive(root, "OldRoster", PrimitiveType.Cube, new Vector3(8f, 1.4f, -2.5f), new Vector3(1.1f, 0.7f, 0.08f), true);
+            roster.AddComponent<InspectionTarget>().Configure("case-d01", "Old workshop roster", content.Sources.Single(source => source.Id == "D01").Text, "D01");
         }
 
         private static GameObject CreatePrimitive(Transform parent, string name, PrimitiveType type, Vector3 position, Vector3 scale, bool collider)
@@ -141,9 +140,11 @@ namespace CommonHouse.Editor
             camera.transform.localPosition = new Vector3(0f, 1.6f, 0f);
             camera.tag = "MainCamera";
             movement.SetViewTransform(camera.transform);
-            player.AddComponent<InspectionController>().Configure(camera, movement, modalInput);
+            var inspection = player.AddComponent<InspectionController>();
+            inspection.Configure(camera, movement, modalInput);
             player.AddComponent<InspectionOverlay>();
             var session = player.AddComponent<CaseSession>();
+            player.AddComponent<CaseInspectionBinding>().Configure(session, inspection);
             var transmissionLog = player.AddComponent<TransmissionLog>();
             transmissionLog.Configure(session, modalInput);
             var tape = CreatePrimitive(root, "ArchiveTapeShelf", PrimitiveType.Cube, new Vector3(9.5f, 1.4f, -3f), new Vector3(1f, 0.6f, 0.1f), true);
@@ -156,7 +157,14 @@ namespace CommonHouse.Editor
             routeTarget.AddComponent<RouteInspectionWorldTarget>().Configure(routing);
             player.AddComponent<NotebookController>().Configure(session, modalInput);
             player.AddComponent<NotebookOverlay>();
-            player.AddComponent<DialoguePresenter>().Configure(session, modalInput);
+            var dialogue = player.AddComponent<DialoguePresenter>();
+            dialogue.Configure(session, modalInput);
+            var ren = CreatePrimitive(root, "RenPrivateConversation", PrimitiveType.Capsule, new Vector3(11.5f, 1.4f, 2.5f), new Vector3(0.6f, 0.6f, 0.6f), true);
+            ren.AddComponent<ResidentDialogueTarget>().Configure(dialogue, "ren");
+            var ivo = CreatePrimitive(root, "IvoConversation", PrimitiveType.Capsule, new Vector3(0f, 1.4f, 2.0f), new Vector3(0.6f, 0.6f, 0.6f), true);
+            ivo.AddComponent<ResidentDialogueTarget>().Configure(dialogue, "ivo");
+            var followup = CreatePrimitive(root, "AdaRepairFollowup", PrimitiveType.Cube, new Vector3(-9.5f, 1.4f, -2.5f), new Vector3(0.7f, 0.5f, 0.3f), true);
+            followup.AddComponent<RepairFollowupTarget>().Configure(session, transmissionLog);
             player.AddComponent<DialogueOverlay>();
             var opening = player.AddComponent<OpeningHouseholdController>();
             opening.Configure(session, transmissionLog, modalInput);

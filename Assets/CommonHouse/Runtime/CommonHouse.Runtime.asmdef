@@ -3,6 +3,7 @@
   "rootNamespace": "CommonHouse.Runtime",
   "references": [
     "CommonHouse.Content",
-    "CommonHouse.Domain"
+    "CommonHouse.Domain",
+    "CommonHouse.Interaction"
   ]
 }

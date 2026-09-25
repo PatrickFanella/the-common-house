@@ -9,6 +9,8 @@ namespace CommonHouse.Dialogue
     {
         None,
         AcquirePrivateAccount,
+        AcquireMissingPage,
+        AcquireRenRepair,
         AuthorizeRefusal,
         ProtectPrivateContact,
         AuthorizePrivateContact,
