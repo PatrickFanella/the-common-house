@@ -6,7 +6,7 @@ The player is a newcomer. Strange calls lead to authored cases involving the peo
 
 ## Current state
 
-Design repository, before Unity project creation. Development is planned for one person using Unity on their desktop. No playable build, scene, or game code exists yet. Release structure is deferred until after a proof of concept.
+Unity foundations and a design pack for a solo desktop POC. The real Editor generated a minimal built-in 3D project and a bootstrap scene containing a camera and light. No investigation gameplay or playable build exists yet. Release structure is deferred until after a proof of concept.
 
 ## Design documents
 
@@ -22,9 +22,15 @@ Start with the [design index](docs/design/README.md), then read:
 
 ## Unity setup boundary
 
-Unity is selected, but no Editor version has been verified for this project. Unity Hub was found during repository setup; an Editor was not found in the standard local installation locations checked. This is not proof that no Editor exists elsewhere.
+Unity `6000.4.10f1` is verified on Kvant. The Editor-generated
+`ProjectSettings/ProjectVersion.txt` records its revision; `Packages/` records
+the resolved dependencies. See the [readiness inventory](docs/development/unity-readiness.md)
+and [project creation evidence](docs/development/unity-project.md).
 
-Once the Editor is located or installed, create the Unity project at this repository root, preserving the existing files. Commit the actual generated `Assets/`, `Packages/`, and `ProjectSettings/` contents and asset `.meta` files. Record the real Editor version through Unity's generated `ProjectVersion.txt`. Do not copy another game's settings or fabricate a version pin.
+Run `python3 scripts/check_unity_import.py` for a fresh import in a disposable
+copy. Focused EditMode and PlayMode commands and their [verification evidence](docs/verification/milestone-0.md)
+are documented in the development guide. The bootstrap uses the built-in renderer, legacy input defaults, and
+explicit development company/product names. It contains no third-party assets.
 
 Unity-generated caches, local editor state, builds, and logs are ignored. Before adding large binary assets, choose an appropriate versioning policy. No Git LFS configuration or distribution license has been selected. Open source is a game theme, not an agreed release license.
 
@@ -33,3 +39,18 @@ Unity-generated caches, local editor state, builds, and logs are ignored. Before
 The proposed baseline is one case across a small radio room, kitchen, and archive/workshop: receive a call, inspect evidence, question a resident, route a response, and encounter a household consequence. Temporary assets are sufficient. A short investigative memory is a later POC experiment after the core loop works.
 
 The detailed case, character names, room count, and playtest thresholds remain proposals. Confirmed creative choices are recorded separately in the decision register.
+
+## T3 development environment
+
+The `the-common-house` recipe provides an isolated design-document source
+preview and document checks on Kvant. It does not start Unity or a playable
+game. See [Development environment](docs/development.md) for commands, scope,
+and the Unity setup requirements.
+
+## Implementation tracking
+
+The private [Gitea repository](https://git.subcult.tv/PatrickFanella/the-common-house)
+owns the source and [issue backlog](https://git.subcult.tv/PatrickFanella/the-common-house/issues).
+The [implementation plan](docs/implementation-plan.md) sequences small agent tasks
+using the Open Pilot issue format. Case 01 is the working POC baseline; names
+and story details remain provisional. Issues are not automatically queued.
