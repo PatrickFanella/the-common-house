@@ -118,6 +118,8 @@ namespace CommonHouse.Tests
         public IEnumerator GeneratedOutpostProvidesAReachableGenericReadableNotice()
         {
             yield return SceneManager.LoadSceneAsync("OutpostBlockout", LoadSceneMode.Single);
+            yield return null; // Allow the initial welcome Start callback before dismissing it.
+            Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().Close();
             var controller = Object.FindAnyObjectByType<InspectionController>();
             var notice = Object.FindObjectsByType<InspectionTarget>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             Assert.That(controller, Is.Not.Null);

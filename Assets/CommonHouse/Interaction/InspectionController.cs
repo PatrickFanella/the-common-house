@@ -42,14 +42,18 @@ namespace CommonHouse.Interaction
         private readonly LocalInspectionLedger localLedger = new LocalInspectionLedger();
         private IInspectionLedger ledger;
         private InspectionTarget currentFocus;
+        private WorldInteractionTarget currentWorldFocus;
         private InspectionTarget openTarget;
         private string lastActionMessage = string.Empty;
 
         public InspectionTarget CurrentFocus => currentFocus;
+        public WorldInteractionTarget CurrentWorldFocus => currentWorldFocus;
         public InspectionTarget OpenTarget => openTarget;
         public bool IsOpen => openTarget != null;
         public float FocusRange => focusRange;
-        public string FocusedPrompt => currentFocus == null || (modalInput != null && modalInput.HasOwner) ? string.Empty : "[E] Inspect " + currentFocus.Title;
+        public string FocusedPrompt => modalInput != null && modalInput.HasOwner ? string.Empty
+            : currentWorldFocus != null ? "[E] " + currentWorldFocus.Prompt
+            : currentFocus == null ? string.Empty : "[E] Inspect " + currentFocus.Title;
         public string VisiblePanelText => openTarget == null ? string.Empty : openTarget.ReadableText;
         public string LastActionMessage => lastActionMessage;
 
@@ -87,6 +91,7 @@ namespace CommonHouse.Interaction
 
         public void RefreshFocus()
         {
+            currentWorldFocus = null;
             if (IsOpen || viewCamera == null || (modalInput != null && modalInput.HasOwner && !modalInput.IsOwner(this)))
             {
                 currentFocus = null;
@@ -94,7 +99,10 @@ namespace CommonHouse.Interaction
             }
             if (Physics.Raycast(viewCamera.transform.position, viewCamera.transform.forward, out var hit, focusRange,
                 Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
-                currentFocus = hit.collider.GetComponentInParent<InspectionTarget>();
+            {
+                currentWorldFocus = hit.collider.GetComponentInParent<WorldInteractionTarget>();
+                currentFocus = currentWorldFocus == null ? hit.collider.GetComponentInParent<InspectionTarget>() : null;
+            }
             else
                 currentFocus = null;
         }
@@ -107,7 +115,20 @@ namespace CommonHouse.Interaction
                 else if (input.Acquire) TryAcquireOpen();
                 return;
             }
-            if (input.Open) TryOpenFocused();
+            if (input.Open) TryActivateFocused();
+        }
+
+        public bool TryActivateFocused()
+        {
+            RefreshFocus();
+            if (currentWorldFocus != null)
+            {
+                var target = currentWorldFocus;
+                var opened = target.Interact();
+                RefreshFocus();
+                return opened;
+            }
+            return TryOpenFocused();
         }
 
         public bool TryOpenFocused()
