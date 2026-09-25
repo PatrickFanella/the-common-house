@@ -1,0 +1,66 @@
+---
+title: The Common House
+type: work
+work-type: software
+status: active
+stage: drafting
+created: 2026-09-24
+updated: 2026-09-24
+visibility: private
+tags:
+- project/the-common-house
+- medium/game
+---
+
+# The Common House
+
+A game concept about found family and unsettling investigations, centered on a shared home that operates a radio outpost.
+
+Working title. Preproduction draft v0.2, 2026-09-24. No game implementation, budget, release date, or production commitment is represented by these documents.
+
+## Start here
+
+Read the Concept Brief for the pitch, then the Game Design Document for the proposed player experience. Read Decisions and Open Questions before treating any proposal as settled.
+
+| Document | Purpose |
+|---|---|
+| [Concept Brief](concept-brief.md) | Premise, audience hypothesis, design pillars, and creative boundaries |
+| [Game Design Document](game-design-document.md) | Core loop, progression, interactions, failure, and scope |
+| [Narrative and World Bible](narrative-and-world-bible.md) | World assumptions, character functions, themes, and story structure |
+| [Radio and Investigation Systems](radio-and-investigation-systems.md) | Evidence, transmissions, conversations, routing, and consequences |
+| [Art Audio and UX Direction](art-audio-and-ux-direction.md) | Visual and sound direction, interface, accessibility, and asset priorities |
+| [Technical Design Outline](technical-design-outline.md) | Solo Unity POC, state model, tooling, saves, and technical questions |
+| [Proof of Concept Plan](proof-of-concept-plan.md) | Proof-of-concept scope, evaluation, dependencies, and risks |
+| [Case 01 - The Road Is Clear](case-01-the-road-is-clear.md) | A complete provisional case for testing the concept |
+| [Research and References](research-and-references.md) | Influence map, sources, and limits of the research |
+| [Decisions and Open Questions](decisions-and-open-questions.md) | Confirmed direction, provisional choices, and unresolved decisions |
+
+## Document contract
+
+- **Confirmed:** explicitly selected by the user in the design conversation.
+- **Proposed:** a concrete draft choice for discussion or testing; not approved canon.
+- **Open:** unresolved and potentially material to scope or implementation.
+- **Deferred:** intentionally outside the first prototype; reconsider if evidence supports it.
+
+All design details are proposed unless identified as confirmed in Decisions and Open Questions. Drafts describe intended behavior, not existing features. The sample case demonstrates one possible story and does not establish the final plot.
+
+## Ownership and change control
+
+This repository's `docs/design/` directory is the authoritative design source. The user owns creative decisions; agent-authored details remain proposals until accepted. Update the owning document first, then reconcile summaries and case examples. Record material accepted choices in Decisions and Open Questions with their date and reason.
+
+The original Ars Malefica notes are retained as frozen migration snapshots. Continue design edits here. Source file hashes and the import boundary are recorded in [Import provenance](../import-provenance.json).
+
+## Current review sequence
+
+1. Review the sample case against the confirmed alternate-future, post-collapse setting and suspenseful tone.
+2. Decide whether a short investigative memory belongs in the first POC.
+3. Inspect the existing Unity installation, project location, and desktop configuration before implementation.
+4. Build and evaluate a bounded solo Unity POC before discussing release structure.
+
+Confirmed direction now includes uneven resident knowledge, a newcomer designed for player self-insertion, authored case-based stories, and open source as a theme. Present-day play stays at the outpost; infrequent other locations appear through investigable flashbacks or memories. See the decision register for the full record.
+
+## Relationships
+
+- **Up:** [Repository README](../../README.md)
+- **Source:** User/assistant game-design conversation dated 2026-09-24; external references in Research and References.
+- **Output:** A reviewable preproduction design pack and a proposed Unity proof of concept.

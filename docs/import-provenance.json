@@ -1,0 +1,80 @@
+{
+  "import_date": "2026-09-24",
+  "source_workspace": "/home/onnwee/.t3/worktrees/ars-malefica/t3code-3a6948dc/001 Projects/Works/Software/The Common House",
+  "source_state": "uncommitted design pack v0.2 from this conversation",
+  "canonical_design_location": "docs/design",
+  "transformations": [
+    "Converted Obsidian wikilinks to relative Markdown links",
+    "Replaced vault navigation and ownership statements",
+    "Renamed prototype plan to proof-of-concept-plan.md"
+  ],
+  "note": "Imported hashes describe the import snapshot, not subsequent edits. Original source notes remain in the vault as frozen snapshots.",
+  "files": [
+    {
+      "source_file": "The Common House.md",
+      "source_sha256": "91c050a231390d36817c71364f8288c925645cf0ca81acc7c0aec2afe52c37e8",
+      "destination": "docs/design/README.md",
+      "imported_sha256": "01c5678203cdd087c9b9b4cb29b52490b99a156624701506d3ac2aa2263e8c1d"
+    },
+    {
+      "source_file": "Concept Brief.md",
+      "source_sha256": "1d9de2e13221138dfc2eede611a408c84e4276c724e3301ba5865603fb16a799",
+      "destination": "docs/design/concept-brief.md",
+      "imported_sha256": "10df83f32d340390352a8cd4d1bc861ed7d4bac2f95ced269804db63668dcbeb"
+    },
+    {
+      "source_file": "Game Design Document.md",
+      "source_sha256": "090d6669ce3b3b61d9b766001a5b6edeedeb9ca6aaa4d1d7165540b2f18d0705",
+      "destination": "docs/design/game-design-document.md",
+      "imported_sha256": "ff23c980719aeab840dcfaa6504be2adce4cda7b64290616dc967eedf271dab5"
+    },
+    {
+      "source_file": "Narrative and World Bible.md",
+      "source_sha256": "cbbc320238df1343afb80140982731f86d183ba7c4750746b87981e23898abc8",
+      "destination": "docs/design/narrative-and-world-bible.md",
+      "imported_sha256": "85e43e6ec1f8146c49de699b5ecd96786ccc127f1fd80e9705054d55204b9969"
+    },
+    {
+      "source_file": "Radio and Investigation Systems.md",
+      "source_sha256": "7a6daf42bb4ebd5eaf35051dfbe9c6dcd93e8099f0a2aa3fedd2d1ec70f3883b",
+      "destination": "docs/design/radio-and-investigation-systems.md",
+      "imported_sha256": "6cee78bf263a1c9578c5033eaa88ebb0418f75a61477140c568b1483112a7e46"
+    },
+    {
+      "source_file": "Art Audio and UX Direction.md",
+      "source_sha256": "b5e081f549a1b1210ee4254a2b8a7c17a741a15843f8915133d9ea8a1b617be1",
+      "destination": "docs/design/art-audio-and-ux-direction.md",
+      "imported_sha256": "e37ee74435b19eeb858d45be3f23ff53760afed5c220e409f1b44b0239b1d2b8"
+    },
+    {
+      "source_file": "Technical Design Outline.md",
+      "source_sha256": "29211ccd7f7cf760501e2912af78b877603b8133aef9dddcf7cd3209e1e7fdfb",
+      "destination": "docs/design/technical-design-outline.md",
+      "imported_sha256": "ad9bd183362e2d3c1524fcffe64ccdb76d750564cd77269f2c88e3c5240ecbed"
+    },
+    {
+      "source_file": "Prototype and Production Plan.md",
+      "source_sha256": "cd6dda6702612e83c1c41ab95a0123fc8b7c6c128f72f9054f335cb448a978ef",
+      "destination": "docs/design/proof-of-concept-plan.md",
+      "imported_sha256": "4bb469248ba6300170907a5fd83607a8da42220c793c52b9e0e0877145257806"
+    },
+    {
+      "source_file": "Case 01 - The Road Is Clear.md",
+      "source_sha256": "584c36d9687eeaa3fdf504e153061bb1fad02c46bf4a99b19a907205c564d8c1",
+      "destination": "docs/design/case-01-the-road-is-clear.md",
+      "imported_sha256": "af8777d0ac351a1bf41d40177bd2e65c29dfc97c4084a85ebd6c322dd4e3c93e"
+    },
+    {
+      "source_file": "Research and References.md",
+      "source_sha256": "17461957bb34a3ad90167c4bf8baa96671ce9ba2153bd90cd6d76610de3f842d",
+      "destination": "docs/design/research-and-references.md",
+      "imported_sha256": "6ab842dea1fd7a587e98899ff4d241671421965ba8d0015cb232d68e74af3926"
+    },
+    {
+      "source_file": "Decisions and Open Questions.md",
+      "source_sha256": "be4e42382f1880f89623e33d4b6a69fc66bce0fb2668a0e5f37e93958f6d868d",
+      "destination": "docs/design/decisions-and-open-questions.md",
+      "imported_sha256": "fd1fd84e843dc7d6af7dc07e4698a7637ab2317da7a935f7eed7f071fb29d144"
+    }
+  ]
+}
