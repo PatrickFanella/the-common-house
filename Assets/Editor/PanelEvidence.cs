@@ -25,7 +25,10 @@ namespace CommonHouse.Editor
         private static int frames;
         private static bool requested;
         private static int stage;
+        private static EditorWindow gameView;
+        private static Type gameViewType;
         private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "send-private-panel.png", "aftermath-private-panel.png", "send-refusal-panel.png", "aftermath-refusal-panel.png", "send-public-panel.png", "aftermath-public-panel.png", "hint-panel.png", "comparison-scrolled-panel.png" };
+        private static readonly string[] GuidanceCaptures = { "welcome-controls.png", "pause-controls.png" };
         static PanelEvidence()
         {
             EditorApplication.update += Update;
@@ -37,12 +40,13 @@ namespace CommonHouse.Editor
                 throw new InvalidOperationException("Panel evidence requires disposable test state.");
             EditorSceneManager.OpenScene(OutpostLayout.ScenePath);
             SessionState.SetBool(ActiveKey, true);
-            var gameViewType = typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView");
-            var window = EditorWindow.GetWindow(gameViewType);
-            ConfigureGameView(window, gameViewType);
-            window.Show();
-            window.Focus();
-            window.maximized = true;
+            gameViewType = typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView");
+            // A utility Game view is not docked into the existing editor
+            // layout, whose content dimensions vary with the host desktop.
+            gameView = EditorWindow.GetWindow(gameViewType, true, "Case evidence");
+            gameView.maximized = false;
+            gameView.Show();
+            ConfigureGameView(gameView, gameViewType);
             EditorApplication.isPlaying = true;
         }
 
@@ -52,6 +56,7 @@ namespace CommonHouse.Editor
             public int width = 800;
             public int height = 600;
             public float scale = 1f;
+            public bool guidance;
         }
 
         private static CaptureSettings Settings()
@@ -75,7 +80,13 @@ namespace CommonHouse.Editor
                 null, new object[] { Enum.Parse(modeType, "FixedResolution"), settings.width, settings.height, "Case evidence" }, null);
             group.GetType().GetMethod("AddCustomSize").Invoke(group, new[] { size });
             var count = (int)group.GetType().GetMethod("GetTotalCount").Invoke(group, null);
-            gameViewType.GetProperty("selectedSizeIndex", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).SetValue(window, count - 1);
+            var index = count - 1;
+            gameViewType.GetProperty("selectedSizeIndex", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).SetValue(window, index);
+            // In recent Editors the public setter only updates the menu state;
+            // this callback commits the fixed render target used by Screen.
+            var callback = gameViewType.GetMethod("SizeSelectionCallback", BindingFlags.Instance | BindingFlags.NonPublic);
+            callback?.Invoke(window, new object[] { index, null });
+            window.Repaint();
         }
 
         private static void Ask(string resident, string nodeId)
@@ -94,17 +105,44 @@ namespace CommonHouse.Editor
             try
             {
                 var output = System.Environment.GetEnvironmentVariable("COMMON_HOUSE_TEST_DATA_PATH");
-                if (++frames < 90) return;
+                ++frames;
+                // Play-mode layout restoration can replace the pre-play size selection.
+                if (frames == 30 && stage == 0)
+                {
+                    // Entering play mode reloads this Editor domain, so refresh
+                    // both reflection state and the Game view after the layout
+                    // has finished restoring.
+                    gameViewType = typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView");
+                    gameView = EditorWindow.GetWindow(gameViewType, true, "Case evidence");
+                    gameView.maximized = false;
+                    gameView.position = new Rect(40f, 40f, 860f, 680f);
+                    ConfigureGameView(gameView, gameViewType);
+                }
+                if (frames < 90) return;
                 var settings = Settings();
                 CaseUi.TextScale = settings.scale;
                 if (Screen.width != settings.width || Screen.height != settings.height)
                     throw new InvalidOperationException($"Game view is {Screen.width}x{Screen.height}; expected {settings.width}x{settings.height}.");
-                var path = Path.Combine(output, Captures[stage]);
+                var captures = settings.guidance ? GuidanceCaptures : Captures;
+                var path = Path.Combine(output, captures[stage]);
                 if (!requested)
                 {
                     var controller = UnityEngine.Object.FindFirstObjectByType<InspectionController>();
                     var radio = UnityEngine.Object.FindFirstObjectByType<TransmissionLog>();
-                    if (stage == 0)
+                    if (settings.guidance)
+                    {
+                        var opening = UnityEngine.Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>();
+                        if (stage == 0 && !opening.IsCarePanelOpen) throw new InvalidOperationException("Welcome did not open.");
+                        if (stage == 1)
+                        {
+                            opening.Close();
+                            var modal = UnityEngine.Object.FindFirstObjectByType<ModalInputCoordinator>();
+                            modal.HandleCancel();
+                            if (modal.HasOwner || !modal.GetComponent<CommonHouse.Player.FirstPersonMovement>().MenuOpen)
+                                throw new InvalidOperationException("Plain pause did not open.");
+                        }
+                    }
+                    else if (stage == 0)
                     {
                         UnityEngine.Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().Close();
                         controller.RefreshFocus();
@@ -233,7 +271,7 @@ namespace CommonHouse.Editor
                 }
                 if (frames == 90) ScreenCapture.CaptureScreenshot(path);
                 if (frames < 120 || !File.Exists(path)) return;
-                if (++stage < Captures.Length)
+                if (++stage < captures.Length)
                 {
                     frames = 0;
                     requested = false;

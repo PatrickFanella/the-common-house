@@ -10,6 +10,9 @@ namespace CommonHouse.Opening
         private OpeningHouseholdController opening;
         private Vector2 scrollPosition;
 
+        /// <summary>The exact nonspoiling controls copy rendered at the start of the welcome.</summary>
+        public string VisibleGuidanceText => opening != null && opening.IsCarePanelOpen ? ControlsReference.WelcomeText : string.Empty;
+
         private void Awake()
         {
             opening = GetComponent<OpeningHouseholdController>();
@@ -24,6 +27,8 @@ namespace CommonHouse.Opening
             GUILayout.Label("At the radio desk", CaseUi.WrappedLabel());
             GUILayout.Space(12f);
             scrollPosition = CaseUi.Scroll(scrollPosition); scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
+            GUILayout.Label(VisibleGuidanceText, wrapped);
+            GUILayout.Space(14f);
             foreach (var line in OpeningContent.CareLines)
             {
                 GUILayout.Label(line.Speaker, CaseUi.WrappedLabel());

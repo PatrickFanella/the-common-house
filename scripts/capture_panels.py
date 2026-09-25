@@ -14,6 +14,7 @@ except ImportError:
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--editor")
+    parser.add_argument("--guidance", action="store_true", help="Capture only the welcome and plain-pause controls.")
     parser.add_argument("--scale", type=float, choices=(1.0, 1.5), default=1.0)
     parser.add_argument("--timeout", type=int, default=240)
     args = parser.parse_args(argv)
@@ -25,7 +26,7 @@ def main(argv=None):
         unity.record_source(evidence, unity.snapshot(unity.ROOT, project))
         save = unity.isolate_save_identity(project)
         (evidence / "test-data").mkdir()
-        (evidence / "test-data/capture-settings.json").write_text(json.dumps({"width": 800, "height": 600, "scale": args.scale}))
+        (evidence / "test-data/capture-settings.json").write_text(json.dumps({"width": 800, "height": 600, "scale": args.scale, "guidance": args.guidance}))
         command = [str(editor), "-projectPath", str(project), "-executeMethod",
                    "CommonHouse.Editor.PanelEvidence.Capture", "-logFile", str(evidence / "editor.log")]
         code = unity.execute(command, evidence, args.timeout, "test")
@@ -33,12 +34,14 @@ def main(argv=None):
             raise ValueError(f"Graphical Editor failed with exit {code}")
         unity.validate_log(evidence / "editor.log")
         required = ["inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "send-private-panel.png", "aftermath-private-panel.png", "send-refusal-panel.png", "aftermath-refusal-panel.png", "send-public-panel.png", "aftermath-public-panel.png", "hint-panel.png", "comparison-scrolled-panel.png", "panel-evidence.txt"]
+        if args.guidance:
+            required = ["welcome-controls.png", "pause-controls.png", "panel-evidence.txt"]
         for name in required:
             path = evidence / "test-data" / name
             if not path.is_file() or not path.stat().st_size:
                 raise ValueError(f"Missing artifact: {name}")
         unity.receipt(evidence, status="passed", editor_version=version, command=command,
-                      artifacts=required, resolution=[800, 600], text_scale=args.scale, disposable_save_path=str(save))
+                      artifacts=required, resolution=[800, 600], text_scale=args.scale, guidance_only=args.guidance, disposable_save_path=str(save))
         print(f"PASS: rendered panels available for inspection at {evidence}")
         return 0
     except (OSError, ValueError) as error:
