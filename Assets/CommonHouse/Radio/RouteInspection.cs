@@ -30,6 +30,12 @@ namespace CommonHouse.Radio
 
         public void ReadDiagram() => DiagramRead = true;
         public void ReadConnection() => ConnectionRead = true;
+
+        public void Reset()
+        {
+            DiagramRead = false;
+            ConnectionRead = false;
+        }
     }
 
     public readonly struct RouteInspectionInputFrame

@@ -52,7 +52,7 @@ namespace CommonHouse.Radio
     /// A review-only log of acquired radio transmissions. Receiving is explicit;
     /// opening, selecting, and replaying entries never changes case state.
     /// </summary>
-    public sealed class TransmissionLog : MonoBehaviour, IModalPanel
+    public sealed class TransmissionLog : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         [SerializeField] private CaseSession session;
         [SerializeField] private ModalInputCoordinator modalInput;
@@ -155,6 +155,14 @@ namespace CommonHouse.Radio
                 return;
             }
             Close();
+        }
+
+        public void ResetAfterStateLoad()
+        {
+            Close();
+            isShowingTranscript = false;
+            lastActionMessage = string.Empty;
+            RefreshRecords();
         }
 
         public void Tick(TransmissionLogInputFrame input)

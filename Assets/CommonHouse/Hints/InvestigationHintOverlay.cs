@@ -1,4 +1,5 @@
 using UnityEngine;
+using CommonHouse.Interaction;
 
 namespace CommonHouse.Hints
 {
@@ -6,15 +7,19 @@ namespace CommonHouse.Hints
     public sealed class InvestigationHintOverlay : MonoBehaviour
     {
         private InvestigationHintController controller;
+        private Vector2 scroll;
         private void Awake() => controller = GetComponent<InvestigationHintController>();
         private void OnGUI()
         {
             if (controller == null || !controller.IsOpen || controller.CurrentHint == null) return;
-            var panel = new Rect(Screen.width * .18f, Screen.height * .34f, Screen.width * .64f, Screen.height * .26f);
-            GUI.Box(panel, "Optional investigation hint");
-            var wrapped = new GUIStyle(GUI.skin.label) { wordWrap = true };
-            GUI.Label(new Rect(panel.x + 24f, panel.y + 34f, panel.width - 48f, panel.height - 72f), controller.CurrentHint.Text, wrapped);
-            GUI.Label(new Rect(panel.x + 24f, panel.y + panel.height - 30f, panel.width - 48f, 22f), "[H] More detail   [Escape] Close", wrapped);
+            CaseUi.HandleKeyboardScale(); var panel = CaseUi.Panel(); CaseUi.DrawOpaquePanel(panel, "Optional investigation hint");
+            var wrapped = CaseUi.WrappedLabel();
+            GUILayout.BeginArea(new Rect(panel.x + 24f, panel.y + 38f, panel.width - 48f, panel.height - 72f));
+            scroll = CaseUi.Scroll(scroll); scroll = GUILayout.BeginScrollView(scroll, GUILayout.ExpandHeight(true));
+            GUILayout.Label(controller.CurrentHint.Text, wrapped);
+            GUILayout.EndScrollView();
+            GUILayout.Label("[H] More detail  [PgUp/PgDn] Scroll  [-/=] Text size  [Escape] Close", wrapped);
+            GUILayout.EndArea();
         }
     }
 }

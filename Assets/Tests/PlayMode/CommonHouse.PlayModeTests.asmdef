@@ -16,6 +16,7 @@
     "CommonHouse.Dialogue",
     "CommonHouse.Opening",
     "CommonHouse.Aftermath",
-    "CommonHouse.Hints"
+    "CommonHouse.Hints",
+    "CommonHouse.Persistence"
   ]
 }

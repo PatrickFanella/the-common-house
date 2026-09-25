@@ -178,9 +178,13 @@ namespace CommonHouse.Player
     {
         public FirstPersonInputFrame Read()
         {
+            var keyboardLook = KeyboardLookBindings.Resolve(Input.GetKey(KeyCode.LeftArrow), Input.GetKey(KeyCode.RightArrow),
+                Input.GetKey(KeyCode.UpArrow), Input.GetKey(KeyCode.DownArrow), Time.deltaTime);
+            var keyboardMove = KeyboardMovementBindings.Resolve(Input.GetKey(KeyCode.A), Input.GetKey(KeyCode.D),
+                Input.GetKey(KeyCode.W), Input.GetKey(KeyCode.S));
             return new FirstPersonInputFrame(
-                new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),
-                new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
+                keyboardMove,
+                new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) + keyboardLook);
         }
     }
 }

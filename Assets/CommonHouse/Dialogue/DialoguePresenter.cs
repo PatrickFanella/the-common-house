@@ -35,7 +35,7 @@ namespace CommonHouse.Dialogue
     }
 
     /// <summary>State-driven dialogue selection; the overlay only renders this presenter.</summary>
-    public sealed class DialoguePresenter : MonoBehaviour, IModalPanel
+    public sealed class DialoguePresenter : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         [SerializeField] private ModalInputCoordinator modalInput;
         [SerializeField] private CaseSession session;
@@ -122,6 +122,13 @@ namespace CommonHouse.Dialogue
         public void CloseFromModalInput()
         {
             Close();
+        }
+
+        public void ResetAfterStateLoad()
+        {
+            Close();
+            currentLine = null;
+            selectedIndex = 0;
         }
 
         public void Tick(DialogueInputFrame input)
