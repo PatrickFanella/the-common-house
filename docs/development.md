@@ -1,10 +1,9 @@
 # Development environment
 
-This repository is a design pack. There is no Unity project, Editor version
-pin, package manifest, database, game server, or gameplay test suite yet.
-The T3 profile `the-common-house` supports this stage with Python 3 from the
-shared `t3-dev-tools:20260924-v3` image. It requires no package installation.
-Setup checks the design entry point and parses the import provenance JSON.
+The repository now includes an Editor-generated Unity `6000.4.10f1` project
+and empty 3D bootstrap scene, alongside the design pack. It has no database,
+web game server, or investigation gameplay yet. The existing T3 profile remains
+a document-source preview and link check using Python 3; it does not launch Unity.
 
 ## Actions and commands
 
@@ -59,14 +58,35 @@ loopback. Tests remove their containers and networks when done. Stop Dev
 removes preview containers and networks while retaining snapshots and caches
 under `~/.local/state/t3-dev-environments/fleet/`.
 
-## Next stage
+## Native Unity import
 
-Locate or install an appropriate Unity Editor through the normal desktop
-workflow. Create the actual Unity project at the repository root while
-preserving the design pack, then record the generated Editor version and
-package files. Update the canonical recipe after qualifying real Editor,
-build, and test commands. This setup does not establish Unity licensing, GPU
-access, a build target, or headless Unity support.
+```sh
+python3 scripts/check_unity_import.py
+# On another machine, supply its actual matching Editor:
+python3 scripts/check_unity_import.py --editor /absolute/path/to/Editor/Unity
+```
+
+`UNITY_EDITOR` is also accepted. Without an override, the tool uses the path
+in the Kvant readiness inventory and verifies its version against the generated
+project pin. It fails if that Editor is absent or mismatched. This is a Linux
+local-desktop tool; it does not install Unity, activate licenses, or configure
+a remote worker. Python 3.10 or newer is required.
+
+Only `Assets/`, `Packages/`, and `ProjectSettings/` enter the temporary project.
+External symlinks, credential-like files, and unreviewed local/Git package
+references are rejected. In the copy only, a unique company/product identity
+keeps Unity's persistent-data path separate from user saves. The temporary
+project and that run's save directory are removed afterward. Logs, source
+hashes, and result receipts remain privately under
+`~/.local/state/common-house-unity/`. These may contain local licensing
+diagnostics; do not commit or post the raw logs.
+
+Unity needs the existing normal HOME/XDG licensing context. Redirecting its
+configuration home caused exit 198 during qualification; no license data was
+copied or activation changed. Native verification isolates project and save
+state, but it is not a container security/network sandbox. Do not use it to run
+unreviewed source. The T3 container and Open Pilot worker remain unqualified
+for Unity. See [project evidence](development/unity-project.md).
 
 Recipe ownership: `/home/onnwee/Work/Tools/t3-dev-environments` on Kvant.
 Installed copy: `~/.local/share/t3-dev-environments`. The profile works with

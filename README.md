@@ -6,7 +6,7 @@ The player is a newcomer. Strange calls lead to authored cases involving the peo
 
 ## Current state
 
-Design repository, before Unity project creation. Development is planned for one person using Unity on their desktop. No playable build, scene, or game code exists yet. Release structure is deferred until after a proof of concept.
+Unity foundations and a design pack for a solo desktop POC. The real Editor generated a minimal built-in 3D project and a bootstrap scene containing a camera and light. No investigation gameplay or playable build exists yet. Release structure is deferred until after a proof of concept.
 
 ## Design documents
 
@@ -22,9 +22,14 @@ Start with the [design index](docs/design/README.md), then read:
 
 ## Unity setup boundary
 
-Unity is selected, but no Editor version has been verified for this project. Unity Hub was found during repository setup; an Editor was not found in the standard local installation locations checked. This is not proof that no Editor exists elsewhere.
+Unity `6000.4.10f1` is verified on Kvant. The Editor-generated
+`ProjectSettings/ProjectVersion.txt` records its revision; `Packages/` records
+the resolved dependencies. See the [readiness inventory](docs/development/unity-readiness.md)
+and [project creation evidence](docs/development/unity-project.md).
 
-Once the Editor is located or installed, create the Unity project at this repository root, preserving the existing files. Commit the actual generated `Assets/`, `Packages/`, and `ProjectSettings/` contents and asset `.meta` files. Record the real Editor version through Unity's generated `ProjectVersion.txt`. Do not copy another game's settings or fabricate a version pin.
+Run `python3 scripts/check_unity_import.py` for a fresh import in a disposable
+copy. The bootstrap uses the built-in renderer, legacy input defaults, and
+explicit development company/product names. It contains no third-party assets.
 
 Unity-generated caches, local editor state, builds, and logs are ignored. Before adding large binary assets, choose an appropriate versioning policy. No Git LFS configuration or distribution license has been selected. Open source is a game theme, not an agreed release license.
 
