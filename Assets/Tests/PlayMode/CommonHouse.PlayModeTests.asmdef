@@ -1,5 +1,11 @@
 {
   "name": "CommonHouse.PlayModeTests",
   "rootNamespace": "CommonHouse.Tests",
-  "optionalUnityReferences": ["TestAssemblies"]
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "references": [
+    "CommonHouse.Environment",
+    "CommonHouse.Player"
+  ]
 }
