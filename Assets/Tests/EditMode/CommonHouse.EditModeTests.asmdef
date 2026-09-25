@@ -8,6 +8,7 @@
     "TestAssemblies"
   ],
   "references": [
-    "CommonHouse.Content"
+    "CommonHouse.Content",
+    "CommonHouse.Domain"
   ]
 }
