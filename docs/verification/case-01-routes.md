@@ -37,3 +37,23 @@ build verification, or substitute for participant evaluation. The command
 creates an isolated Unity project and each route removes its temporary case-save
 directory. Record the source revision, Unity evidence directory, any failures,
 and the remaining limits with the run that qualifies a change.
+
+## Executed qualification
+
+The focused matrix passed 6/6 PlayMode tests on Kvant with Unity 6000.4.10f1:
+`tests-playmode-20260925T051107Z-9_yun2o7`.
+
+After the build-smoke source was added, clean commit
+`26680d2` passed the full 94 EditMode and 88 PlayMode tests:
+
+- `tests-editmode-20260925T051535Z-nuyljx65`
+- `tests-playmode-20260925T051535Z-sc_e5onr`
+
+The subsequent `55ed4c4` change selects the outpost as the standalone build's
+entry scene; it changes no runtime or route-test source. Its fresh native import
+and [actual Linux player build/smoke](local-build.md) passed. That report retains
+the earlier failed player-entry attempt and final artifact identity.
+
+Native runners removed the temporary project and unique save identities. The
+Python suite and its covered modules remain unchanged from PR #41's isolated
+30-test result. Documentation links were rechecked for the final report.
