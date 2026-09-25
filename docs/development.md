@@ -183,3 +183,19 @@ visual claim. This is scripted rendering evidence, not a human playtest.
 
 [Reader verification and rendered panels](verification/investigation-readers.md)
 record the local checks and their limits.
+
+## Case interactions and source comparison
+
+[The household opening](development/opening-household.md) offers care before
+the waiting first call. Closing the welcome does not consume the call or
+require a reward task. World targets share E, range checks, and occlusion with
+inspection. The radio-desk call target opens Ada's transcript.
+
+[The archive tape](development/archive-tape.md) provides E02 through a dated
+transcript and sound caption. [Evidence comparison](development/evidence-comparison.md)
+adds two player-selected notebook columns; unknown source times are explicit.
+[Private-route inspection](development/route-inspection.md) compares the diagram
+with actual recipients and records verification separately from consent.
+
+[Case interaction verification](verification/case-interactions.md) records
+the focused and integrated results and rendered panels.

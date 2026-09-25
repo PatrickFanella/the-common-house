@@ -179,6 +179,15 @@ namespace CommonHouse.Radio
             if (selectedIndex < 0) selectedIndex += records.Count;
         }
 
+        public bool SelectReceivedSource(string sourceId)
+        {
+            RefreshRecords();
+            var index = records.FindIndex(record => record.SourceId == sourceId);
+            if (!isOpen || index < 0) return false;
+            selectedIndex = index;
+            return true;
+        }
+
         public bool OpenSelectedTranscript()
         {
             RefreshRecords();

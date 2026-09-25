@@ -13,6 +13,7 @@
     "CommonHouse.Runtime",
     "CommonHouse.Radio",
     "CommonHouse.Notebook",
-    "CommonHouse.Dialogue"
+    "CommonHouse.Dialogue",
+    "CommonHouse.Opening"
   ]
 }

@@ -101,6 +101,8 @@ namespace CommonHouse.Tests
         public IEnumerator GeneratedOutpostPlayerTraversesConnectedRoomsButCannotExitTheBoundary()
         {
             yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("OutpostBlockout", UnityEngine.SceneManagement.LoadSceneMode.Single);
+            yield return null; // Allow the initial welcome Start callback before dismissing it.
+            Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().Close();
             Physics.SyncTransforms();
             var outpostPlayer = Object.FindAnyObjectByType<FirstPersonMovement>();
             Assert.That(outpostPlayer, Is.Not.Null, "The generated outpost must include the first-person player.");

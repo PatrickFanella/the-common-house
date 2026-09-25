@@ -1,0 +1,10 @@
+{
+  "name": "CommonHouse.Opening",
+  "rootNamespace": "CommonHouse.Opening",
+  "references": [
+    "CommonHouse.Content",
+    "CommonHouse.Interaction",
+    "CommonHouse.Radio",
+    "CommonHouse.Runtime"
+  ]
+}

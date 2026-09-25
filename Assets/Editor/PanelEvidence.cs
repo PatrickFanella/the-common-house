@@ -19,7 +19,7 @@ namespace CommonHouse.Editor
         private static int frames;
         private static bool requested;
         private static int stage;
-        private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png" };
+        private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png" };
         static PanelEvidence()
         {
             EditorApplication.update += Update;
@@ -53,6 +53,7 @@ namespace CommonHouse.Editor
                     var radio = UnityEngine.Object.FindFirstObjectByType<TransmissionLog>();
                     if (stage == 0)
                     {
+                        UnityEngine.Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().Close();
                         controller.RefreshFocus();
                         if (!controller.TryOpenFocused()) throw new InvalidOperationException("Scene notice was not reachable.");
                     }
@@ -67,11 +68,38 @@ namespace CommonHouse.Editor
                         radio.Close();
                         if (!UnityEngine.Object.FindFirstObjectByType<NotebookController>().TryOpen()) throw new InvalidOperationException("Could not open notebook.");
                     }
-                    else
+                    else if (stage == 3)
                     {
                         UnityEngine.Object.FindFirstObjectByType<NotebookController>().Close();
                         var dialogue = UnityEngine.Object.FindFirstObjectByType<DialoguePresenter>();
                         if (!dialogue.Open() || !dialogue.SelectCurrent()) throw new InvalidOperationException("Could not open dialogue.");
+                    }
+                    else if (stage == 4)
+                    {
+                        UnityEngine.Object.FindFirstObjectByType<DialoguePresenter>().Close();
+                        if (!UnityEngine.Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().OpenCare()) throw new InvalidOperationException("Could not reopen care.");
+                    }
+                    else if (stage == 5)
+                    {
+                        UnityEngine.Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().Close();
+                        if (!UnityEngine.Object.FindFirstObjectByType<ArchiveTapeTarget>().Interact()) throw new InvalidOperationException("Could not read archive tape.");
+                    }
+                    else if (stage == 6)
+                    {
+                        radio.Close();
+                        var notebook = UnityEngine.Object.FindFirstObjectByType<NotebookController>();
+                        if (!notebook.TryOpen() || !notebook.Comparison.Open(notebook.Entries)) throw new InvalidOperationException("Could not compare sources.");
+                        notebook.Comparison.SetSide(EvidenceComparisonSide.Left, "T01", notebook.Entries);
+                        notebook.Comparison.SetSide(EvidenceComparisonSide.Right, "T02", notebook.Entries);
+                    }
+                    else
+                    {
+                        UnityEngine.Object.FindFirstObjectByType<NotebookController>().Close();
+                        var route = UnityEngine.Object.FindFirstObjectByType<RouteInspectionController>();
+                        if (!route.Open()) throw new InvalidOperationException("Could not open route inspection.");
+                        route.Tick(new RouteInspectionInputFrame(false, false, true, false));
+                        route.Tick(new RouteInspectionInputFrame(false, true, true, false));
+                        if (route.VerifyPrivateRoute() != RouteInspectionResult.Verified) throw new InvalidOperationException("Could not verify route.");
                     }
                     requested = true;
                     frames = 0;

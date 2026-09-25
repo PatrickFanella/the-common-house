@@ -9,13 +9,16 @@ namespace CommonHouse.Content
     [Serializable]
     public sealed class ContentSource
     {
-        [SerializeField] private string id, kind, speakerId, text, caption, recoveryId;
+        [SerializeField] private string id, kind, speakerId, text, caption, recoveryId, recordedAt;
         public string Id => id;
         public string Kind => kind;
         public string SpeakerId => speakerId;
         public string Text => text;
         public string Caption => caption;
         public string RecoveryId => recoveryId;
+        // Optional authored metadata. An absent value is intentionally distinct
+        // from an invented timestamp in the notebook presentation.
+        public string RecordedAt => recordedAt;
     }
 
     [Serializable]

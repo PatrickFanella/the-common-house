@@ -111,6 +111,8 @@ namespace CommonHouse.Tests
         public System.Collections.IEnumerator GeneratedOutpostUsesEffectFreeDemoDialogue()
         {
             yield return SceneManager.LoadSceneAsync("OutpostBlockout", LoadSceneMode.Single);
+            yield return null; // Allow the initial welcome Start callback before dismissing it.
+            Object.FindFirstObjectByType<CommonHouse.Opening.OpeningHouseholdController>().Close();
             var sceneSession = Object.FindAnyObjectByType<CaseSession>();
             var scenePresenter = Object.FindAnyObjectByType<DialoguePresenter>();
             Assert.That(sceneSession, Is.Not.Null);

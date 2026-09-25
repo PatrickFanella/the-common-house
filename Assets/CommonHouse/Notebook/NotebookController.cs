@@ -10,16 +10,22 @@ namespace CommonHouse.Notebook
 {
     public readonly struct NotebookInputFrame
     {
-        public NotebookInputFrame(bool open, bool next, bool previous)
+        public NotebookInputFrame(bool open, bool next, bool previous, bool comparisonToggle = false, bool comparisonSideToggle = false, bool comparisonSetSelected = false)
         {
             Open = open;
             Next = next;
             Previous = previous;
+            ComparisonToggle = comparisonToggle;
+            ComparisonSideToggle = comparisonSideToggle;
+            ComparisonSetSelected = comparisonSetSelected;
         }
 
         public bool Open { get; }
         public bool Next { get; }
         public bool Previous { get; }
+        public bool ComparisonToggle { get; }
+        public bool ComparisonSideToggle { get; }
+        public bool ComparisonSetSelected { get; }
     }
 
     public sealed class NotebookStatement
@@ -62,6 +68,7 @@ namespace CommonHouse.Notebook
             Attribution = attribution;
             OriginalText = source.Text;
             Caption = source.Caption;
+            RecordedAt = string.IsNullOrWhiteSpace(source.RecordedAt) ? "Time not recorded" : source.RecordedAt;
             Evidence = evidence;
         }
 
@@ -70,6 +77,7 @@ namespace CommonHouse.Notebook
         public string Attribution { get; }
         public string OriginalText { get; }
         public string Caption { get; }
+        public string RecordedAt { get; }
         public IReadOnlyList<NotebookEvidenceReference> Evidence { get; }
     }
 
@@ -84,6 +92,7 @@ namespace CommonHouse.Notebook
         [SerializeField] private ModalInputCoordinator modalInput;
 
         private readonly List<NotebookEntry> entries = new List<NotebookEntry>();
+        private readonly EvidenceComparison comparison = new EvidenceComparison();
         private bool isOpen;
         private int selectedIndex;
 
@@ -91,6 +100,7 @@ namespace CommonHouse.Notebook
         public bool IsOpen => isOpen;
         public int SelectedIndex => selectedIndex;
         public NotebookEntry SelectedEntry => entries.Count == 0 ? null : entries[selectedIndex];
+        public EvidenceComparison Comparison => comparison;
 
         private void Awake()
         {
@@ -109,7 +119,10 @@ namespace CommonHouse.Notebook
             Tick(new NotebookInputFrame(
                 Input.GetKeyDown(KeyCode.N),
                 Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow),
-                Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow)));
+                Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow),
+                Input.GetKeyDown(KeyCode.C),
+                Input.GetKeyDown(KeyCode.Tab),
+                Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)));
         }
 
         public void Configure(CaseSession caseSession, ModalInputCoordinator coordinator)
@@ -128,11 +141,21 @@ namespace CommonHouse.Notebook
             }
             if (!modalInput.IsOwner(this))
             {
+                comparison.Close();
                 isOpen = false;
+                return;
+            }
+            if (input.ComparisonToggle)
+            {
+                if (comparison.IsOpen) comparison.Close();
+                else comparison.Open(Entries);
                 return;
             }
             if (input.Next) SelectNext();
             if (input.Previous) SelectPrevious();
+            if (comparison.IsOpen && input.ComparisonSideToggle) comparison.ToggleActiveSide();
+            if (comparison.IsOpen && input.ComparisonSetSelected && SelectedEntry != null)
+                comparison.SetActiveSide(SelectedEntry.SourceId, Entries);
         }
 
         public bool TryOpen()
@@ -146,12 +169,18 @@ namespace CommonHouse.Notebook
 
         public void CloseFromModalInput()
         {
+            if (comparison.IsOpen)
+            {
+                comparison.Close();
+                return;
+            }
             Close();
         }
 
         public void Close()
         {
             if (!isOpen) return;
+            comparison.Close();
             isOpen = false;
             modalInput?.Release(this);
         }
@@ -168,6 +197,7 @@ namespace CommonHouse.Notebook
             foreach (var source in session.Content.Sources.Where(item => acquired.Contains(item.Id)))
                 entries.Add(CreateEntry(session.Content, source, acquired));
             selectedIndex = entries.Count == 0 ? 0 : Mathf.Clamp(selectedIndex, 0, entries.Count - 1);
+            comparison.RemoveUnavailableSelections(Entries);
         }
 
         public void SelectNext()
