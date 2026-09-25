@@ -32,3 +32,6 @@
 Thumbs.db
 *~
 *.swp
+# Python tooling caches
+__pycache__/
+*.pyc

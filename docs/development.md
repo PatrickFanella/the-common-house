@@ -8,6 +8,21 @@ Setup checks the design entry point and parses the import provenance JSON.
 
 ## Actions and commands
 
+Portable document checks need Python 3.10 or newer and no packages:
+
+```sh
+python3 scripts/check_docs.py
+python3 scripts/check_docs.py docs/design/case-01-the-road-is-clear.md
+python3 -m unittest discover -s tests -p test_check_docs.py
+```
+
+The checker supports simple inline Markdown links and images, angle-bracket
+destinations, percent-encoded filenames, and optional quoted titles. It skips
+fenced/inline code, external URLs, and anchor validation. Reference-style links,
+HTML links, escaped delimiters, and nested-parenthesis destinations are outside
+its scope. Local targets must be files inside the repository, including after
+symlink resolution. The existing T3 recipe remains unchanged.
+
 The T3 project on Kvant has Setup Worktree, Start Dev, Watch Changes, Sync
 Changes, Preview URL, Test, Check Code, Dev Status, Dev Logs, and Stop Dev.
 New threads default to worktrees; existing threads keep their current checkout.
