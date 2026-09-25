@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-25T01:13:42.061879+00:00",
+  "host": "kvant",
+  "os": {
+    "NAME": "Omarchy",
+    "ID": "omarchy",
+    "VERSION_ID": "4.0.4",
+    "kernel": "7.2.5-4-omarchy",
+    "architecture": "x86_64"
+  },
+  "memory_bytes": 64635879424,
+  "gpu": {
+    "devices": [
+      "\"VGA compatible controller\" \"Advanced Micro Devices, Inc. [AMD/ATI]\" \"Navi 31 [Radeon RX 7900 XT/7900 XTX/7900 GRE/7900M]\" -rcc -p00 \"Advanced Micro Devices, Inc. [AMD/ATI]\" \"Device 1002\"",
+      "\"VGA compatible controller\" \"Advanced Micro Devices, Inc. [AMD/ATI]\" \"Granite Ridge [Radeon Graphics]\" -rc2 -p00 \"Micro-Star International Co., Ltd. [MSI]\" \"Device 7e51\""
+    ],
+    "exit_code": 0
+  },
+  "hub_path": "/usr/bin/unityhub",
+  "editor": {
+    "path": "/home/onnwee/Videos/6000.4.10f1/Editor/Unity",
+    "version": "6000.4.10f1",
+    "version_exit_code": 0,
+    "build_support": [
+      "AndroidPlayer",
+      "LinuxStandaloneSupport",
+      "WebGLSupport",
+      "iOSSupport"
+    ]
+  },
+  "checked_editor_paths": [
+    "/home/onnwee/Videos/6000.4.10f1/Editor/Unity",
+    "/opt/Unity/Editor/Unity",
+    "/opt/unity/Editor/Unity"
+  ],
+  "readiness": {
+    "state": "editor-found-license-unverified",
+    "blockers": [],
+    "license": "unverified",
+    "project_import": "not-run"
+  },
+  "provenance": {
+    "os": "/etc/os-release and Python platform",
+    "memory": "/proc/meminfo:MemTotal",
+    "gpu": [
+      "lspci",
+      "-mm"
+    ],
+    "editor": [
+      "/home/onnwee/Videos/6000.4.10f1/Editor/Unity",
+      "-version"
+    ],
+    "build_support": "Editor/Data/PlaybackEngines directory names only"
+  },
+  "limitations": [
+    "Build module presence is not a successful build.",
+    "Version output does not prove license entitlement, project import, or GPU rendering.",
+    "No account, license file, token, or Hub session data was read."
+  ]
+}
