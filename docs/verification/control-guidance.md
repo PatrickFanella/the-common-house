@@ -46,3 +46,39 @@ remain in private `panel-graphics-*` receipts and logs. The final captures
 retain strict resolution and required-artifact checks; no image resizing or
 relaxed check produced these passes. These are scripted rendered checks, not
 human keyboard or comprehension evidence.
+
+## Rebuilt Linux player
+
+The local Linux Development Build and R2 player smoke passed from clean source
+`87896434198200b545a5ba060a7adcecc9898f42`, using Unity 6000.4.10f1:
+
+```sh
+python3 scripts/build_poc.py --target local --smoke
+```
+
+Private evidence: `local-poc-build-20260925T205119Z-mj6dd1o4`.
+The 249-file output manifest SHA-256 is
+`f56f0a7a6de6cf735639608b4f05a2c13414978401e2e72255c2625f26947400`.
+The 1280×720 player reached R2, restored the pre-send checkpoint, completed the
+refusal and household aftermath, and saved/reloaded the completed state with
+exactly one outgoing refusal disclosure. Source hashes match the committed
+game files. The output manifest still matches after execution. The copied
+project and unique persistent-data identity were absent after cleanup.
+
+![Rebuilt Linux player refusal aftermath](images/controls-player-r2.png)
+
+This is scripted player evidence, separate from the Editor images above and
+from human observations. Your existing development save was not used or
+changed. Run this retained build on Kvant with its own development save slot:
+
+```sh
+COMMON_HOUSE_ENV=development \
+COMMON_HOUSE_SAVE_PATH="$HOME/.local/share/the-common-house/development/case01-8789643" \
+"/home/onnwee/.local/state/common-house-unity/local-poc-build-20260925T205119Z-mj6dd1o4/test-data/player/TheCommonHouse.x86_64" \
+  -screen-width 1280 -screen-height 720 -screen-fullscreen 0
+```
+
+The [owner exploratory report](../playtests/poc-evaluation.md) remains partial.
+Issue #34 still needs player observations about understanding, recipients,
+assistance, and restore behavior. No human evaluation threshold, story approval,
+public release, or hosted Unity worker qualification follows from these checks.
