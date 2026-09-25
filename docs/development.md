@@ -169,6 +169,10 @@ record an inspectable item. The generated scene includes canonical D01/D02 docum
 start empty until a case interaction acquires a source. A shared modal owner
 handles Escape and movement pause, preventing panels from stealing focus.
 
+[Response confirmation](development/send-confirmation.md) opens at the radio
+console with E. It renders the selected material and recipients before sending;
+the public route needs a separate unauthorized-disclosure acknowledgment.
+
 [Dialogue presentation](development/dialogue.md) opens with E at a reachable
 resident, then uses arrows and Enter. [Ren's private identity and consent
 conversation](development/ren-consent.md) stays in the archive alcove; it is
@@ -213,3 +217,5 @@ is a separate later question after corroboration and route verification.
 
 [Resident evidence verification](verification/resident-evidence.md) records
 the scene checks and inspected conversation captures.
+
+See [case resolution verification](verification/case-resolution.md) for send, aftermath, and hint evidence.
