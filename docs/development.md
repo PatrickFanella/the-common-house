@@ -2,8 +2,8 @@
 
 The repository includes an Editor-generated Unity `6000.4.10f1` project,
 primitive outpost with first-person movement, and Case 01 domain model alongside
-the design pack. It has no database or web game server. The investigation UI
-and complete scene loop are not yet wired. The existing T3 profile remains
+the design pack. It has no database or web game server. Inspection, radio review, an evidence notebook, and a dialogue presenter are
+available. The complete case scene loop is not yet wired. The existing T3 profile remains
 a document-source preview and link check using Python 3; it does not launch Unity.
 
 ## Actions and commands
@@ -159,3 +159,27 @@ game or the Editor.
 The [save-store guide](development/case-persistence.md) describes versioned local
 storage and disposable tests. The [observation worksheet](playtests/poc-observation-sheet.md)
 is blank preparation for future owner-run sessions, not playtest evidence.
+
+## Investigation readers
+
+[Inspection](development/inspection.md) uses E to read and Enter to explicitly
+record an inspectable item. The generated scene includes a generic shift notice.
+[Radio review](development/transmission-log.md) uses R, arrow keys, and Enter;
+[the notebook](development/notebook.md) uses N and arrow keys. These two readers
+start empty until a case interaction acquires a source. A shared modal owner
+handles Escape and movement pause, preventing panels from stealing focus.
+
+[Dialogue presentation](development/dialogue.md) uses T, arrows, and Enter.
+The generated scene currently opens an effect-free demonstration conversation;
+resident-specific case interactions are separate backlog tasks.
+
+Run `python3 scripts/capture_panels.py` to launch a temporary graphical Editor,
+open the generated scene, and capture actual Game-view panels including their
+text overlays. This operation needs the local display and normal Unity license.
+It seeds one received call only inside the disposable copy for the reader
+captures. The script exits its Editor and removes project/save state while
+retaining private images and receipts. Inspect those images before making a
+visual claim. This is scripted rendering evidence, not a human playtest.
+
+[Reader verification and rendered panels](verification/investigation-readers.md)
+record the local checks and their limits.

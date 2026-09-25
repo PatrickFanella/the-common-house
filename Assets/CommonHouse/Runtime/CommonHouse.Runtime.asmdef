@@ -1,0 +1,8 @@
+{
+  "name": "CommonHouse.Runtime",
+  "rootNamespace": "CommonHouse.Runtime",
+  "references": [
+    "CommonHouse.Content",
+    "CommonHouse.Domain"
+  ]
+}

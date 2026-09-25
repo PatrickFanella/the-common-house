@@ -1,0 +1,10 @@
+{
+  "name": "CommonHouse.Radio",
+  "rootNamespace": "CommonHouse.Radio",
+  "references": [
+    "CommonHouse.Content",
+    "CommonHouse.Domain",
+    "CommonHouse.Interaction",
+    "CommonHouse.Runtime"
+  ]
+}

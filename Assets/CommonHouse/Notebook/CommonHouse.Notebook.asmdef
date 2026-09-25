@@ -1,0 +1,10 @@
+{
+  "name": "CommonHouse.Notebook",
+  "rootNamespace": "CommonHouse.Notebook",
+  "references": [
+    "CommonHouse.Content",
+    "CommonHouse.Domain",
+    "CommonHouse.Runtime",
+    "CommonHouse.Interaction"
+  ]
+}

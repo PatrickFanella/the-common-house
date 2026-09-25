@@ -25,6 +25,7 @@ namespace CommonHouse.Player
         private IFirstPersonInput inputSource;
         private bool readsNativeInput = true;
         private bool menuOpen;
+        private bool modalInputOwner;
         private float pitch;
         private float verticalVelocity;
 
@@ -43,6 +44,7 @@ namespace CommonHouse.Player
         public bool HeadBobEnabled => headBobEnabled;
         public bool CameraShakeEnabled => cameraShakeEnabled;
         public bool MenuOpen => menuOpen;
+        public bool HasModalInputOwner => modalInputOwner;
         public bool PointerCaptured => Cursor.lockState == CursorLockMode.Locked && Cursor.visible == false;
 
         private void Awake()
@@ -57,7 +59,7 @@ namespace CommonHouse.Player
         private void Update()
         {
             if (!readsNativeInput) return;
-            if (Input.GetKeyDown(KeyCode.Escape)) SetMenuOpen(!menuOpen);
+            if (!modalInputOwner && Input.GetKeyDown(KeyCode.Escape)) SetMenuOpen(!menuOpen);
             if (!menuOpen) CapturePointer();
             Tick(inputSource.Read(), Time.deltaTime);
         }
@@ -126,6 +128,15 @@ namespace CommonHouse.Player
             menuOpen = value;
             if (menuOpen && readsNativeInput) ReleasePointer();
             else if (readsNativeInput) CapturePointer();
+        }
+
+        /// <summary>
+        /// Gives one modal presentation component ownership of Escape. The
+        /// movement controller still supplies the pause and pointer behavior.
+        /// </summary>
+        public void SetModalInputOwner(bool value)
+        {
+            modalInputOwner = value;
         }
 
         private static float NormalizePitch(float angle)
