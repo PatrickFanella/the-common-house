@@ -33,3 +33,18 @@ Unity-generated caches, local editor state, builds, and logs are ignored. Before
 The proposed baseline is one case across a small radio room, kitchen, and archive/workshop: receive a call, inspect evidence, question a resident, route a response, and encounter a household consequence. Temporary assets are sufficient. A short investigative memory is a later POC experiment after the core loop works.
 
 The detailed case, character names, room count, and playtest thresholds remain proposals. Confirmed creative choices are recorded separately in the decision register.
+
+## T3 development environment
+
+The `the-common-house` recipe provides an isolated design-document source
+preview and document checks on Kvant. It does not start Unity or a playable
+game. See [Development environment](docs/development.md) for commands, scope,
+and the Unity setup requirements.
+
+## Implementation tracking
+
+The private [Gitea repository](https://git.subcult.tv/PatrickFanella/the-common-house)
+owns the source and [issue backlog](https://git.subcult.tv/PatrickFanella/the-common-house/issues).
+The [implementation plan](docs/implementation-plan.md) sequences small agent tasks
+using the Open Pilot issue format. Case 01 is the working POC baseline; names
+and story details remain provisional. Issues are not automatically queued.

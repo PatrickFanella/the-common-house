@@ -33,6 +33,7 @@ tags:
 | D-13 | Present-day play stays at the outpost; other locations appear infrequently through investigable flashbacks or memories. | Answer 8 to O-08, including a tentative preference against leaving in reality. | Use this as the current spatial direction; do not plan routine expeditions. |
 | D-14 | Protagonist is a blank slate for player self-insertion. | Answer 9 to O-09, expressed as the current preference. | Avoid a mandatory detailed biography; expression through present choices. |
 | D-15 | Start with a POC before release structure. | Answer 10 to O-10. | Defer release, season, funding, and commercial production planning. |
+| D-16 | Use Case 01 as the working POC backlog baseline. | “Use Case 01 as the working baseline” in the 2026-09-24 planning conversation. | Plan implementation around its six clues and three outcomes; names and story details remain provisional for owner review. |
 
 ## Proposed working choices
 
@@ -44,7 +45,7 @@ tags:
 | P-04 | Authored cases accepted as D-10; conditional household scenes remain proposed | Keeps evidence coherent and responses contextual | POC authoring work |
 | P-05 | No combat, death, or timed dialogue in the POC | Isolates investigation and supports D-09 | Playtest evidence |
 | P-06 | Three rooms, two residents, one caller, one case | A bounded solo test | Case implementation |
-| P-07 | Use Case 01 as the first test | Makes routing, consent, and inference concrete | User reviews case interest |
+| P-07 | Case 01 working baseline accepted as D-16; final story details remain proposed | Makes routing, consent, and inference concrete | Case review and playtest |
 | P-08 | Add one short investigative memory only after the core loop works | Test the mechanic without building another large environment | Core-loop evaluation |
 
 ## Disposition of original questions
@@ -58,7 +59,7 @@ O-01 through O-06, O-08, and O-09 have current answers recorded in D-06 through 
 | Q-01 | How are memories accessed, whose perspective do they represent, and how reliable are they? | Evidence rules and presentation | Implementing a memory scene |
 | Q-02 | What remains of infrastructure, how long ago was collapse, and where is the house? | Material culture and case context | Detailed world canon and representative art |
 | Q-03 | Which Unity version/project location and desktop configuration are actually available? | Setup and a reproducible local build | Implementation |
-| Q-04 | Does Case 01 provide the desired mystery and unease? | First script and clue structure | Locking the POC case |
+| Q-04 | Does the selected Case 01 baseline provide the desired mystery and unease in play? | Revisions to script and clue structure; baseline selected by D-16 | Finalizing case content after review and playtest |
 | Q-05 | How should the player express identity through name, dialogue, and voice? | Self-insertion and asset needs | POC dialogue presentation |
 
 These questions can be resolved at the point of need. They do not justify expanding into release planning.
@@ -72,5 +73,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-24, v0.1: Created the initial pack from the design conversation. Separated four creative commitments from agent proposals. Added a provisional case and an unexecuted evaluation plan.
 
 2026-09-24, v0.2: Recorded the user's ten answers as D-06 through D-15. Superseded the original unanswered questions and engine-selection assumptions. Updated all design documents for uneven knowledge, newcomer self-insertion, alternate-future collapse, restrained suspense, authored cases, thematic open source, solo Unity development, location-bound present-day play, investigable memories, and POC-first scope. The case's cast, events, and numerical scope remain proposals.
+
+2026-09-24, planning update: Recorded D-16 and the owner-selected Case 01 working baseline. This does not approve final names, story details, or a release scope.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.
