@@ -13,18 +13,22 @@ namespace CommonHouse.Domain
         public string EventId { get; }
         public string SourceId { get; }
         public string AttributedTo { get; }
+        public string MaterialId { get; }
+        public string Text { get; }
         public IReadOnlyList<string> Recipients { get; }
-        internal Disclosure(string eventId, ContentSource source, IEnumerable<string> recipients)
+        internal Disclosure(string eventId, ContentSource source, IEnumerable<string> recipients, string materialId = "source", string text = null)
         {
             EventId = eventId;
             SourceId = source.Id;
             AttributedTo = source.SpeakerId;
+            MaterialId = materialId;
+            Text = text ?? source.Text;
             Recipients = Array.AsReadOnly(recipients.OrderBy(id => id, StringComparer.Ordinal).ToArray());
         }
     }
 
     // In-memory facts only: no MonoBehaviour, IO, clock, randomness, or authored-asset mutation.
-    public sealed class CaseState
+    public sealed partial class CaseState
     {
         private readonly CaseContent content;
         private readonly Dictionary<string, ContentSource> sources;
@@ -122,9 +126,9 @@ namespace CommonHouse.Domain
             });
         }
 
-        // Storage seam for issue #8 routing rules. Kept internal so presentation cannot
-        // bypass future eligibility/consent checks. No public send operation exists yet.
-        internal bool CommitResolution(string eventId, string outcomeId, string[] disclosedSourceIds, string[] recipientIds)
+        // Internal storage seam. Presentation sends through ConfirmSend, which validates
+        // current consent and the presented summary inside the atomic event application.
+        internal bool CommitResolution(string eventId, string outcomeId, string[] disclosedSourceIds, string[] recipientIds, string materialId = "source", string materialText = null, Action validate = null)
         {
             if (!content.Outcomes.Any(item => item.Id == outcomeId)) throw new ArgumentException("Unknown outcome.", nameof(outcomeId));
             if (disclosedSourceIds == null || disclosedSourceIds.Length == 0 || disclosedSourceIds.Distinct().Count() != disclosedSourceIds.Length)
@@ -133,12 +137,14 @@ namespace CommonHouse.Domain
             if (recipientIds == null || recipientIds.Length == 0 || recipientIds.Any(id => id == null || !people.Contains(id)) || recipientIds.Distinct().Count() != recipientIds.Length)
                 throw new ArgumentException("Known unique recipients are required.", nameof(recipientIds));
             var recipients = recipientIds.OrderBy(id => id, StringComparer.Ordinal).ToArray();
-            var payload = Payload("resolve", outcomeId, Payload(selected.Select(item => item.Id).ToArray()), Payload(recipients));
+            if (string.IsNullOrWhiteSpace(materialId)) throw new ArgumentException("Material ID is required.");
+            var payload = Payload("resolve", outcomeId, Payload(selected.Select(item => item.Id).ToArray()), Payload(recipients), materialId, materialText ?? "");
             return Apply(eventId, payload, () =>
             {
                 if (OutcomeId != null) throw new InvalidOperationException("Case already resolved.");
                 if (selected.Any(item => !acquired.Contains(item.Id))) throw new InvalidOperationException("Cannot disclose an unacquired source.");
-                var additions = selected.Select(item => new Disclosure(eventId, item, recipients)).ToArray();
+                validate?.Invoke();
+                var additions = selected.Select(item => new Disclosure(eventId, item, recipients, materialId, materialText)).ToArray();
                 disclosures.AddRange(additions);
                 OutcomeId = outcomeId;
                 Phase = CasePhase.Resolved;
