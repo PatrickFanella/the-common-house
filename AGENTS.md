@@ -16,9 +16,9 @@ outcome. Do not add memory scenes, release plans, external services, or final
 assets to the baseline without an explicit scope change.
 
 Run the issue's focused check after implementing its prerequisites. Planned
-paths and test commands are not existing functionality. Until the portable
-checker is implemented, document validation uses the installed T3 recipe
-as described in `docs/development.md`. Unity checks require the actual Editor
+paths and test commands are not existing functionality. Document validation uses `python3 scripts/check_docs.py`; Python tools have
+standard-library regression tests under `tests/`. Run focused Unity tests
+through `scripts/run_unity_tests.py` as described in `docs/development.md`. Unity checks require the actual Editor
 and normal licensing; missing tooling, missing results, and zero matching
 tests must not be reported as passes. Keep scene checks, desktop build checks,
 and human playtest evidence distinct. Use disposable test state.

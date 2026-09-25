@@ -1,0 +1,5 @@
+{
+  "name": "CommonHouse.PlayModeTests",
+  "rootNamespace": "CommonHouse.Tests",
+  "optionalUnityReferences": ["TestAssemblies"]
+}

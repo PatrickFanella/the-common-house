@@ -88,6 +88,43 @@ state, but it is not a container security/network sandbox. Do not use it to run
 unreviewed source. The T3 container and Open Pilot worker remain unqualified
 for Unity. See [project evidence](development/unity-project.md).
 
+## Focused Unity tests
+
+```sh
+python3 -m unittest discover -s tests -p test_unity_runner.py
+python3 scripts/run_unity_tests.py --platform editmode --filter CommonHouse.Tests.ProjectSmokeTests
+python3 scripts/run_unity_tests.py --platform playmode --filter CommonHouse.Tests.ProjectPlayModeSmokeTests
+```
+
+The runner uses the pinned Editor and accepts a fully qualified namespace,
+fixture, or test name. `--timeout SECONDS` bounds execution (default 240).
+Both smoke suites passed with `-nographics` on Kvant. `--graphics` instead uses
+the normal local display for future tests that require rendering; that mode
+and wider graphical interaction are not qualified by these headless checks.
+
+Unity Test Framework 1.6.0 is supplied by the installed Editor and recorded in
+the manifest/lock. Missing tooling, version mismatch, license failure, process
+failure, compiler errors, missing or malformed XML, zero selected tests, skipped
+tests, failed tests, and inconsistent result counts fail the command. Each test
+must belong to the requested fixture/namespace. The runner never passes `-quit`
+to a test invocation, allowing Test Framework to finish writing its results.
+
+The smoke tests check actual scene import/load and the disposable persistent-data
+namespace. They intentionally require the runner's explicit test context rather
+than writing to the ordinary project save location. Native execution retains
+the licensing limitations described above. The successful receipts and failed
+probes are summarized in [M0 verification](verification/milestone-0.md).
+
+Run all Python regression checks through the existing isolated T3 environment:
+
+```sh
+rtk proxy ~/.local/bin/t3-dev --profile the-common-house test --command 'python3 -m unittest discover -s tests && python3 scripts/check_docs.py'
+```
+
+The unchanged default T3 Test/Check Code actions still check the document pack;
+the command above adds the Python tools' regression suite. Unity tests must
+use the separately qualified native runner.
+
 Recipe ownership: `/home/onnwee/Work/Tools/t3-dev-environments` on Kvant.
 Installed copy: `~/.local/share/t3-dev-environments`. The profile works with
 the original design-only checkout because it needs no new repository scripts.

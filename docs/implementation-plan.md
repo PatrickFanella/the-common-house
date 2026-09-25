@@ -15,7 +15,10 @@ There is no release schedule or commercial scope in this plan.
 The inspected revision `12010f0` contains the design pack, with no Unity project,
 Editor pin, package manifest, game code, or game tests. The T3 recipe serves
 document source and validates local links. Its passing checks do not prove
-Unity or gameplay behavior. The new foundation issues resolve these gaps.
+Unity or gameplay behavior. M0 now provides a generated Unity project, portable document checker,
+readiness inventory, causal contract, and local import/test runners on the
+implementation branch. See [M0 verification](verification/milestone-0.md) for
+the evidence and review status. No gameplay or player build is implied.
 
 The plan follows the [decision register](design/decisions-and-open-questions.md),
 [case truth and branches](design/case-01-the-road-is-clear.md),
@@ -111,17 +114,19 @@ safe to resolve mechanically. Keep shared scene wiring sequential where needed.
 ## Verification contracts
 
 Issue test commands are the commands each implementation must make meaningful.
-The portable checker, Unity import checker, test runner, fixtures, and build
-wrapper named in issues do not exist yet. Their owning issues introduce them;
-downstream issues depend on those foundations. Do not run a downstream task
+The portable checker, Unity import checker, focused runner, and bootstrap
+smoke fixtures are implemented in M0. Downstream gameplay fixtures and the
+local build wrapper remain future issue deliverables. Downstream issues
+depend on the relevant foundations being reviewed and integrated. Do not run a downstream task
 and silently replace its unavailable check with a file-existence test.
 
-The proposed runner interface is
+The implemented runner interface is
 `python3 scripts/run_unity_tests.py --platform editmode|playmode --filter NAME`.
 The implementation must verify Editor identity, fail on zero selected tests,
 preserve failure logs, and use disposable state. Actual compatibility, graphics
 requirements, and licensing are established by #2–#5, not inferred from this
-interface. No specific Editor version or package API is selected here.
+interface. The generated project now pins Unity 6000.4.10f1; the import and smoke
+results apply to that installed Editor on Kvant.
 
 Verification increases in scope as implementation proceeds:
 

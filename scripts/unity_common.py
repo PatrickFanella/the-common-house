@@ -109,6 +109,7 @@ def isolate_save_identity(project):
 def execute(argv, evidence, timeout, mode):
     if timeout <= 0:
         raise ValueError("Timeout must be positive")
+    (evidence / "command.json").write_text(json.dumps(argv, indent=2) + "\n")
     with (evidence / "console.log").open("w") as output:
         process = subprocess.Popen(argv, stdout=output, stderr=subprocess.STDOUT,
                                    env=development_env(evidence, mode), start_new_session=True)

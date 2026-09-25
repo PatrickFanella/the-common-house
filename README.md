@@ -28,7 +28,8 @@ the resolved dependencies. See the [readiness inventory](docs/development/unity-
 and [project creation evidence](docs/development/unity-project.md).
 
 Run `python3 scripts/check_unity_import.py` for a fresh import in a disposable
-copy. The bootstrap uses the built-in renderer, legacy input defaults, and
+copy. Focused EditMode and PlayMode commands and their [verification evidence](docs/verification/milestone-0.md)
+are documented in the development guide. The bootstrap uses the built-in renderer, legacy input defaults, and
 explicit development company/product names. It contains no third-party assets.
 
 Unity-generated caches, local editor state, builds, and logs are ignored. Before adding large binary assets, choose an appropriate versioning policy. No Git LFS configuration or distribution license has been selected. Open source is a game theme, not an agreed release license.
