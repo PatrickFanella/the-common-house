@@ -3,6 +3,11 @@ using System.IO;
 using System.Linq;
 using CommonHouse.Outpost;
 using CommonHouse.Player;
+using CommonHouse.Interaction;
+using CommonHouse.Runtime;
+using CommonHouse.Radio;
+using CommonHouse.Notebook;
+using CommonHouse.Dialogue;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -38,6 +43,7 @@ namespace CommonHouse.Editor
             AddAnchor(root.transform, OutpostLayout.ArchiveWorkshop, "archive-roster", new Vector3(8f, 0.5f, -2.5f));
             AddAnchor(root.transform, OutpostLayout.ArchiveWorkshop, "workshop-bench", new Vector3(11.5f, 0.5f, 2.5f));
             AddAnchor(root.transform, OutpostLayout.ArchiveWorkshop, "routing-switch", new Vector3(7.5f, 0.5f, 2.5f));
+            CreateSampleInspection(root.transform);
 
             CreateLighting(root.transform);
             CreateCamera(root.transform);
@@ -81,6 +87,17 @@ namespace CommonHouse.Editor
             marker.AddComponent<OutpostAnchor>().Configure(anchorId, roomId);
         }
 
+        private static void CreateSampleInspection(Transform root)
+        {
+            var notice = CreatePrimitive(root, "ShiftNotice", PrimitiveType.Cube, new Vector3(-10f, 1.4f, 2.1f),
+                new Vector3(1.2f, 0.8f, 0.08f), true);
+            notice.AddComponent<InspectionTarget>().Configure(
+                "sample-shift-notice",
+                "Shift notice",
+                "Sample inspection text. Keep the radio log readable for whoever takes the next shift.",
+                "sample-shift-notice");
+        }
+
         private static GameObject CreatePrimitive(Transform parent, string name, PrimitiveType type, Vector3 position, Vector3 scale, bool collider)
         {
             var item = GameObject.CreatePrimitive(type);
@@ -117,11 +134,21 @@ namespace CommonHouse.Editor
             capsule.radius = 0.3f;
             capsule.center = new Vector3(0f, 0.9f, 0f);
             var movement = player.AddComponent<FirstPersonMovement>();
+            var modalInput = player.AddComponent<ModalInputCoordinator>();
             var camera = new GameObject("PlayerCamera").AddComponent<Camera>();
             camera.transform.SetParent(player.transform, false);
             camera.transform.localPosition = new Vector3(0f, 1.6f, 0f);
             camera.tag = "MainCamera";
             movement.SetViewTransform(camera.transform);
+            player.AddComponent<InspectionController>().Configure(camera, movement, modalInput);
+            player.AddComponent<InspectionOverlay>();
+            var session = player.AddComponent<CaseSession>();
+            player.AddComponent<TransmissionLog>().Configure(session, modalInput);
+            player.AddComponent<TransmissionLogOverlay>();
+            player.AddComponent<NotebookController>().Configure(session, modalInput);
+            player.AddComponent<NotebookOverlay>();
+            player.AddComponent<DialoguePresenter>().Configure(session, modalInput);
+            player.AddComponent<DialogueOverlay>();
             camera.clearFlags = CameraClearFlags.SolidColor;
             camera.backgroundColor = new Color(0.04f, 0.05f, 0.08f);
         }

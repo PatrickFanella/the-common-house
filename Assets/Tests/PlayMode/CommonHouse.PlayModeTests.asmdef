@@ -6,6 +6,13 @@
   ],
   "references": [
     "CommonHouse.Environment",
-    "CommonHouse.Player"
+    "CommonHouse.Player",
+    "CommonHouse.Interaction",
+    "CommonHouse.Content",
+    "CommonHouse.Domain",
+    "CommonHouse.Runtime",
+    "CommonHouse.Radio",
+    "CommonHouse.Notebook",
+    "CommonHouse.Dialogue"
   ]
 }

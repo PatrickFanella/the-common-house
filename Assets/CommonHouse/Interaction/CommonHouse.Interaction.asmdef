@@ -1,0 +1,7 @@
+{
+  "name": "CommonHouse.Interaction",
+  "rootNamespace": "CommonHouse.Interaction",
+  "references": [
+    "CommonHouse.Player"
+  ]
+}

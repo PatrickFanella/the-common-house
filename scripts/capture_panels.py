@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+"""Capture actual Game-view panels in an isolated graphical Editor."""
+import argparse
+import shutil
+import sys
+
+try:
+    from . import unity_common as unity
+except ImportError:
+    import unity_common as unity
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--editor")
+    parser.add_argument("--timeout", type=int, default=240)
+    args = parser.parse_args(argv)
+    evidence = unity.new_evidence("panel-graphics")
+    project = evidence / "project"
+    save = None
+    try:
+        editor, version = unity.resolve_editor(explicit=args.editor)
+        unity.record_source(evidence, unity.snapshot(unity.ROOT, project))
+        save = unity.isolate_save_identity(project)
+        command = [str(editor), "-projectPath", str(project), "-executeMethod",
+                   "CommonHouse.Editor.PanelEvidence.Capture", "-logFile", str(evidence / "editor.log")]
+        code = unity.execute(command, evidence, args.timeout, "test")
+        if code:
+            raise ValueError(f"Graphical Editor failed with exit {code}")
+        unity.validate_log(evidence / "editor.log")
+        required = ["inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "panel-evidence.txt"]
+        for name in required:
+            path = evidence / "test-data" / name
+            if not path.is_file() or not path.stat().st_size:
+                raise ValueError(f"Missing artifact: {name}")
+        unity.receipt(evidence, status="passed", editor_version=version, command=command,
+                      artifacts=required, disposable_save_path=str(save))
+        print(f"PASS: rendered panels available for inspection at {evidence}")
+        return 0
+    except (OSError, ValueError) as error:
+        unity.receipt(evidence, status="failed", error=str(error))
+        print(f"FAIL: {error}. Evidence: {evidence}", file=sys.stderr)
+        return 1
+    finally:
+        if project.exists():
+            shutil.rmtree(project)
+        if save is not None and save.exists():
+            shutil.rmtree(save)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

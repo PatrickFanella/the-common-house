@@ -1,0 +1,10 @@
+{
+  "name": "CommonHouse.Dialogue",
+  "rootNamespace": "CommonHouse.Dialogue",
+  "references": [
+    "CommonHouse.Domain",
+    "CommonHouse.Content",
+    "CommonHouse.Interaction",
+    "CommonHouse.Runtime"
+  ]
+}

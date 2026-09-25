@@ -6,7 +6,7 @@ The player is a newcomer. Strange calls lead to authored cases involving the peo
 
 ## Current state
 
-A primitive three-room outpost with first-person movement, plus a deterministic Case 01 model and local versioned saves. All three narrative outcomes have automated text-only rehearsals. The investigation UI and scene loop are not yet wired, and no desktop player build or human playtest is qualified. Release structure is deferred until after the POC.
+A primitive three-room outpost with first-person movement, plus a deterministic Case 01 model and local versioned saves. All three narrative outcomes have automated text-only rehearsals. Inspection, transmission review, a notebook, and dialogue presentation are available; the complete case scene loop is not yet wired, and no desktop player build or human playtest is qualified. Release structure is deferred until after the POC.
 
 ## Design documents
 
