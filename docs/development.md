@@ -229,6 +229,8 @@ See [case resolution verification](verification/case-resolution.md) for send, af
 development save root. [Keyboard controls](development/keyboard-route.md) cover
 movement, looking, scene actions, readers, decisions, and save/load. The shared
 [text scale](development/text-scale.md) supports 100–150% at 800×600 or larger.
+[Control guidance](development/control-guidance.md) puts the existing nonspoiling
+reference in the welcome and ordinary Escape pause screen.
 See [verification and screenshots](verification/access-and-reload.md).
 
 ## Complete scene routes and local player

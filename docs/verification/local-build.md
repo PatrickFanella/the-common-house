@@ -1,5 +1,9 @@
 # Local Linux POC build verification
 
+The newer [controls-guidance build](control-guidance.md#rebuilt-linux-player)
+includes the welcome and pause reference. Its report has the current retained
+player command; the earlier build and evidence below remain available.
+
 `python3 scripts/build_poc.py --target local --smoke` builds only the Case 01 outpost scene with the Editor pinned in `ProjectSettings/ProjectVersion.txt`, then launches that Linux player and performs the explicit R2 smoke route. The command requires the installed matching Linux standalone support and the normal local Unity licensing context. It never installs an Editor, build support, or license.
 
 The runner copies only `Assets/`, `Packages/`, and `ProjectSettings/` into a disposable project. It rejects project symlinks, credential-like source files, and unreviewed local or Git package references. It gives that copy a unique `CommonHouseVerification/run-*` persistent-data identity, retains the normal host licensing context, and removes both the copied project and the unique save directory afterward. The build output, source receipt, sorted output hash manifest, player screenshot, structured smoke receipt, and private logs remain below `~/.local/state/common-house-unity/local-poc-build-*`.

@@ -7,11 +7,17 @@ namespace CommonHouse.Interaction
     public sealed class InspectionOverlay : MonoBehaviour
     {
         private InspectionController controller;
+        private ModalInputCoordinator modalInput;
         private Vector2 scrollPosition;
+
+        /// <summary>Read-model seam for the same plain-pause help rendered by OnGUI.</summary>
+        public bool IsPauseGuidanceVisible => controller != null && !controller.IsOpen && modalInput != null && modalInput.IsPaused;
+        public string VisiblePauseGuidanceText => IsPauseGuidanceVisible ? ControlsReference.PauseText : string.Empty;
 
         private void Awake()
         {
             controller = GetComponent<InspectionController>();
+            modalInput = GetComponent<ModalInputCoordinator>();
         }
 
         private void OnGUI()
@@ -19,6 +25,21 @@ namespace CommonHouse.Interaction
             if (controller == null) return;
             if (!controller.IsOpen)
             {
+                if (IsPauseGuidanceVisible)
+                {
+                    CaseUi.HandleKeyboardScale();
+                    var pausePanel = CaseUi.Panel();
+                    CaseUi.DrawOpaquePanel(pausePanel);
+                    GUILayout.BeginArea(new Rect(pausePanel.x + 28f, pausePanel.y + 24f, pausePanel.width - 56f, pausePanel.height - 48f));
+                    scrollPosition = CaseUi.Scroll(scrollPosition);
+                    scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
+                    GUILayout.Label(VisiblePauseGuidanceText, CaseUi.WrappedLabel());
+                    GUILayout.EndScrollView();
+                    GUILayout.FlexibleSpace();
+                    GUILayout.Label("[Escape] Resume  [PgUp/PgDn] Scroll  [-/=] Text size", CaseUi.WrappedLabel());
+                    GUILayout.EndArea();
+                    return;
+                }
                 if (!string.IsNullOrEmpty(controller.FocusedPrompt))
                 {
                     var style = CaseUi.WrappedLabel();

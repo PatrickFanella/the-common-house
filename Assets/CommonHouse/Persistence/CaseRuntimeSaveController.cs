@@ -21,6 +21,16 @@ namespace CommonHouse.Persistence
         public bool IsConfigured => store != null && session != null;
         public string LastStatus => lastStatus;
         public string SavePath => store == null ? string.Empty : store.SavePath;
+        /// <summary>Matches the condition under which the development save HUD is rendered.</summary>
+        public bool IsHudVisible
+        {
+            get
+            {
+                var modalInput = GetComponent<ModalInputCoordinator>();
+                return (modalInput == null || (!modalInput.HasOwner && !modalInput.IsPaused)) &&
+                    (IsConfigured || !string.IsNullOrEmpty(lastStatus));
+            }
+        }
 
         private void Awake()
         {
@@ -42,9 +52,7 @@ namespace CommonHouse.Persistence
 
         private void OnGUI()
         {
-            var modalInput = GetComponent<ModalInputCoordinator>();
-            if (modalInput != null && modalInput.HasOwner) return;
-            if (!IsConfigured && string.IsNullOrEmpty(lastStatus)) return;
+            if (!IsHudVisible) return;
             CaseUi.HandleKeyboardScale();
             var wrapped = CaseUi.WrappedLabel();
             var width = Mathf.Max(120f, Mathf.Min(Screen.width - 24f, 500f));

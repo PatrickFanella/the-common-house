@@ -17,6 +17,8 @@ namespace CommonHouse.Interaction
         private IModalPanel currentOwner;
 
         public bool HasOwner => currentOwner != null;
+        /// <summary>True only for the Escape pause state with no modal owner.</summary>
+        public bool IsPaused => currentOwner == null && movement != null && movement.MenuOpen;
         public bool IsOwner(IModalPanel panel) => ReferenceEquals(currentOwner, panel);
 
         private void Awake()
