@@ -7,7 +7,7 @@ using UnityEngine;
 namespace CommonHouse.Radio
 {
     /// <summary>Modal diagram/connection comparison with an explicit, non-consent route fact.</summary>
-    public sealed class RouteInspectionController : MonoBehaviour, IModalPanel
+    public sealed class RouteInspectionController : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         [SerializeField] private CaseSession session;
         [SerializeField] private ModalInputCoordinator modalInput;
@@ -74,6 +74,14 @@ namespace CommonHouse.Radio
         }
 
         public void CloseFromModalInput() => Close();
+
+        public void ResetAfterStateLoad()
+        {
+            Close();
+            model.Reset();
+            selectedPage = 0;
+            lastActionMessage = string.Empty;
+        }
 
         public void Tick(RouteInspectionInputFrame input)
         {

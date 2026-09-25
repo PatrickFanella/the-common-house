@@ -1,4 +1,5 @@
 using UnityEngine;
+using CommonHouse.Interaction;
 
 namespace CommonHouse.Radio
 {
@@ -16,12 +17,13 @@ namespace CommonHouse.Radio
         private void OnGUI()
         {
             if (controller == null || !controller.IsOpen) return;
-            var panel = new Rect(Screen.width * 0.14f, Screen.height * 0.12f, Screen.width * 0.72f, Screen.height * 0.76f);
-            var wrapped = new GUIStyle(GUI.skin.label) { wordWrap = true };
-            GUI.Box(panel, GUIContent.none);
+            CaseUi.HandleKeyboardScale();
+            var panel = CaseUi.Panel();
+            var wrapped = CaseUi.WrappedLabel();
+            CaseUi.DrawOpaquePanel(panel);
             GUILayout.BeginArea(new Rect(panel.x + 28f, panel.y + 24f, panel.width - 56f, panel.height - 48f));
-            GUILayout.Label("Response confirmation", GUI.skin.label);
-            scroll = GUILayout.BeginScrollView(scroll, GUILayout.ExpandHeight(true));
+            GUILayout.Label("Response confirmation", CaseUi.WrappedLabel());
+            scroll = CaseUi.Scroll(scroll); scroll = GUILayout.BeginScrollView(scroll, GUILayout.ExpandHeight(true));
             if (!controller.IsReviewing)
             {
                 DrawRoute("Private headset", controller.SelectedRoute == CommonHouse.Domain.ResponseRoute.PrivateHeadset, wrapped);
@@ -50,7 +52,7 @@ namespace CommonHouse.Radio
                     ? "[Enter] Confirm    [A] Acknowledge public disclosure    [D] Defer    [Escape] Cancel"
                     : "[Enter] Confirm    [D] Defer    [Escape] Cancel"
                 : "[Up/Down] Choose route    [Enter] Review    [D] Defer    [R] Resume draft    [Escape] Close";
-            GUILayout.Label(controls, wrapped);
+            GUILayout.Label(controls + "  [PgUp/PgDn] Scroll  [-/=] Text size", wrapped);
             if (!string.IsNullOrEmpty(controller.LastActionMessage)) GUILayout.Label(controller.LastActionMessage, wrapped);
             GUILayout.EndArea();
         }

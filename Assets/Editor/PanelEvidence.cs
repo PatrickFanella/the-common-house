@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using CommonHouse.Runtime;
 using CommonHouse.Domain;
 using CommonHouse.Aftermath;
@@ -24,7 +25,7 @@ namespace CommonHouse.Editor
         private static int frames;
         private static bool requested;
         private static int stage;
-        private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "send-private-panel.png", "aftermath-private-panel.png", "send-refusal-panel.png", "aftermath-refusal-panel.png", "send-public-panel.png", "aftermath-public-panel.png", "hint-panel.png" };
+        private static readonly string[] Captures = { "inspection-panel.png", "transmission-panel.png", "notebook-panel.png", "dialogue-panel.png", "opening-panel.png", "archive-panel.png", "comparison-panel.png", "routing-panel.png", "missing-page-panel.png", "roster-comparison-panel.png", "repair-account-panel.png", "consent-panel.png", "send-private-panel.png", "aftermath-private-panel.png", "send-refusal-panel.png", "aftermath-refusal-panel.png", "send-public-panel.png", "aftermath-public-panel.png", "hint-panel.png", "comparison-scrolled-panel.png" };
         static PanelEvidence()
         {
             EditorApplication.update += Update;
@@ -38,10 +39,43 @@ namespace CommonHouse.Editor
             SessionState.SetBool(ActiveKey, true);
             var gameViewType = typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView");
             var window = EditorWindow.GetWindow(gameViewType);
+            ConfigureGameView(window, gameViewType);
             window.Show();
             window.Focus();
             window.maximized = true;
             EditorApplication.isPlaying = true;
+        }
+
+        [Serializable]
+        private sealed class CaptureSettings
+        {
+            public int width = 800;
+            public int height = 600;
+            public float scale = 1f;
+        }
+
+        private static CaptureSettings Settings()
+        {
+            var path = Path.Combine(System.Environment.GetEnvironmentVariable("COMMON_HOUSE_TEST_DATA_PATH"), "capture-settings.json");
+            return File.Exists(path) ? JsonUtility.FromJson<CaptureSettings>(File.ReadAllText(path)) : new CaptureSettings();
+        }
+
+        private static void ConfigureGameView(EditorWindow window, Type gameViewType)
+        {
+            var settings = Settings();
+            var assembly = typeof(EditorWindow).Assembly;
+            var sizesType = assembly.GetType("UnityEditor.GameViewSizes", true);
+            var singleton = typeof(ScriptableSingleton<>).MakeGenericType(sizesType);
+            var sizes = singleton.GetProperty("instance", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy).GetValue(null);
+            var groupType = assembly.GetType("UnityEditor.GameViewSizeGroupType", true);
+            var group = sizesType.GetMethod("GetGroup").Invoke(sizes, new[] { Enum.Parse(groupType, "Standalone") });
+            var sizeType = assembly.GetType("UnityEditor.GameViewSize", true);
+            var modeType = assembly.GetType("UnityEditor.GameViewSizeType", true);
+            var size = Activator.CreateInstance(sizeType, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance,
+                null, new object[] { Enum.Parse(modeType, "FixedResolution"), settings.width, settings.height, "Case evidence" }, null);
+            group.GetType().GetMethod("AddCustomSize").Invoke(group, new[] { size });
+            var count = (int)group.GetType().GetMethod("GetTotalCount").Invoke(group, null);
+            gameViewType.GetProperty("selectedSizeIndex", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).SetValue(window, count - 1);
         }
 
         private static void Ask(string resident, string nodeId)
@@ -61,6 +95,10 @@ namespace CommonHouse.Editor
             {
                 var output = System.Environment.GetEnvironmentVariable("COMMON_HOUSE_TEST_DATA_PATH");
                 if (++frames < 90) return;
+                var settings = Settings();
+                CaseUi.TextScale = settings.scale;
+                if (Screen.width != settings.width || Screen.height != settings.height)
+                    throw new InvalidOperationException($"Game view is {Screen.width}x{Screen.height}; expected {settings.width}x{settings.height}.");
                 var path = Path.Combine(output, Captures[stage]);
                 if (!requested)
                 {
@@ -169,12 +207,25 @@ namespace CommonHouse.Editor
                         var aftermath = UnityEngine.Object.FindFirstObjectByType<AftermathHouseholdController>();
                         if (!aftermath.Open() || !aftermath.Acknowledge()) throw new InvalidOperationException("Could not complete matching aftermath.");
                     }
-                    else
+                    else if (stage == 18)
                     {
                         UnityEngine.Object.FindFirstObjectByType<AftermathHouseholdController>().Close();
                         var session = UnityEngine.Object.FindFirstObjectByType<CaseSession>();
                         session.ReplaceState(new CaseState(session.Content));
                         if (!UnityEngine.Object.FindFirstObjectByType<InvestigationHintController>().RequestHint()) throw new InvalidOperationException("Could not request optional hint.");
+                    }
+                    else
+                    {
+                        UnityEngine.Object.FindFirstObjectByType<InvestigationHintController>().CloseFromModalInput();
+                        radio.Receive("T01"); radio.Receive("T02");
+                        var notebook = UnityEngine.Object.FindFirstObjectByType<NotebookController>();
+                        if (!notebook.TryOpen() || !notebook.Comparison.Open(notebook.Entries)) throw new InvalidOperationException("Could not compare captioned sources.");
+                        notebook.Comparison.SetSide(EvidenceComparisonSide.Left, "T01", notebook.Entries);
+                        notebook.Comparison.SetSide(EvidenceComparisonSide.Right, "T02", notebook.Entries);
+                        var overlay = notebook.GetComponent<NotebookOverlay>();
+                        // Apply the same scroll operation as End; this is scripted evidence, not hardware input.
+                        foreach (var field in new[] { "leftComparisonScrollPosition", "rightComparisonScrollPosition" })
+                            typeof(NotebookOverlay).GetField(field, BindingFlags.NonPublic | BindingFlags.Instance).SetValue(overlay, CaseUi.ApplyScrollKey(Vector2.zero, KeyCode.End));
                     }
                     requested = true;
                     frames = 0;
@@ -190,7 +241,7 @@ namespace CommonHouse.Editor
                 }
                 File.WriteAllText(Path.Combine(output, "panel-evidence.txt"),
                     "Actual Game view including IMGUI; explicit scripted interaction, not a human playtest.\n" +
-                    SystemInfo.graphicsDeviceName + "\n" + Screen.width + "x" + Screen.height + "\n");
+                    SystemInfo.graphicsDeviceName + "\n" + Screen.width + "x" + Screen.height + "\nText scale: " + CaseUi.TextScale + "\n");
                 SessionState.SetBool(ActiveKey, false);
                 EditorApplication.Exit(0);
             }

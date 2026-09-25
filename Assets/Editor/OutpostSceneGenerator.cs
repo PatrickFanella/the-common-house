@@ -12,6 +12,7 @@ using CommonHouse.Opening;
 using CommonHouse.Content;
 using CommonHouse.Aftermath;
 using CommonHouse.Hints;
+using CommonHouse.Persistence;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -146,6 +147,8 @@ namespace CommonHouse.Editor
             inspection.Configure(camera, movement, modalInput);
             player.AddComponent<InspectionOverlay>();
             var session = player.AddComponent<CaseSession>();
+            var saves = player.AddComponent<CaseRuntimeSaveController>();
+            saves.EnableDevelopmentEnvironment();
             player.AddComponent<CaseInspectionBinding>().Configure(session, inspection);
             var transmissionLog = player.AddComponent<TransmissionLog>();
             transmissionLog.Configure(session, modalInput);
@@ -173,6 +176,7 @@ namespace CommonHouse.Editor
             player.AddComponent<OpeningHouseholdOverlay>();
             var send = player.AddComponent<SendConfirmationController>();
             send.Configure(session, modalInput);
+            send.ConfigureCheckpoint(saves);
             player.AddComponent<SendConfirmationOverlay>();
             var console = CreatePrimitive(root, "ResponseConsole", PrimitiveType.Cube, new Vector3(-12f, 1.4f, -2.5f), new Vector3(0.7f, 0.5f, 0.3f), true);
             console.AddComponent<SendConfirmationWorldTarget>().Configure(send);

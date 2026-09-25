@@ -172,6 +172,9 @@ handles Escape and movement pause, preventing panels from stealing focus.
 [Response confirmation](development/send-confirmation.md) opens at the radio
 console with E. It renders the selected material and recipients before sending;
 the public route needs a separate unauthorized-disclosure acknowledgment.
+[Keyboard route](development/keyboard-route.md) lists the movement, look,
+focused-action, reader, confirmation, save/load, and pause controls used by
+the scripted local route.
 
 [Dialogue presentation](development/dialogue.md) opens with E at a reachable
 resident, then uses arrows and Enter. [Ren's private identity and consent
@@ -219,3 +222,11 @@ is a separate later question after corroboration and route verification.
 the scene checks and inspected conversation captures.
 
 See [case resolution verification](verification/case-resolution.md) for send, aftermath, and hint evidence.
+
+## Save controls and readable keyboard panels
+
+[Runtime save/reload](development/runtime-save-reload.md) requires an explicit
+development save root. [Keyboard controls](development/keyboard-route.md) cover
+movement, looking, scene actions, readers, decisions, and save/load. The shared
+[text scale](development/text-scale.md) supports 100–150% at 800×600 or larger.
+See [verification and screenshots](verification/access-and-reload.md).

@@ -12,7 +12,7 @@ namespace CommonHouse.Opening
     /// condition, not a reward, timer, evidence item, or prerequisite that can
     /// be consumed by leaving the panel.
     /// </summary>
-    public sealed class OpeningHouseholdController : MonoBehaviour, IModalPanel
+    public sealed class OpeningHouseholdController : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         [SerializeField] private CaseSession session;
         [SerializeField] private TransmissionLog transmissionLog;
@@ -85,6 +85,12 @@ namespace CommonHouse.Opening
         public void CloseFromModalInput()
         {
             Close();
+        }
+
+        public void ResetAfterStateLoad()
+        {
+            Close();
+            lastActionMessage = string.Empty;
         }
 
         /// <summary>Receives the waiting first call only from its dedicated world target.</summary>

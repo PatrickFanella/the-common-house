@@ -86,7 +86,7 @@ namespace CommonHouse.Notebook
     /// shared session's acquired source IDs; opening and reading do not alter
     /// case state or infer facts that have not been acquired.
     /// </summary>
-    public sealed class NotebookController : MonoBehaviour, IModalPanel
+    public sealed class NotebookController : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         [SerializeField] private CaseSession session;
         [SerializeField] private ModalInputCoordinator modalInput;
@@ -183,6 +183,13 @@ namespace CommonHouse.Notebook
             comparison.Close();
             isOpen = false;
             modalInput?.Release(this);
+        }
+
+        public void ResetAfterStateLoad()
+        {
+            Close();
+            comparison.Close();
+            RefreshEntries();
         }
 
         public void RefreshEntries()

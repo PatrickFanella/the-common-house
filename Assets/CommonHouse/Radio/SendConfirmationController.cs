@@ -27,12 +27,14 @@ namespace CommonHouse.Radio
     }
 
     /// <summary>Modal presentation of a domain-owned response draft and its required confirmation.</summary>
-    public sealed class SendConfirmationController : MonoBehaviour, IModalPanel
+    public sealed class SendConfirmationController : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         private static readonly ResponseRoute[] Routes = { ResponseRoute.PrivateHeadset, ResponseRoute.RefusalRelay, ResponseRoute.RoomSpeaker };
 
         [SerializeField] private CaseSession session;
         [SerializeField] private ModalInputCoordinator modalInput;
+        [SerializeField] private MonoBehaviour checkpointSource;
+        private ICaseSaveCheckpoint checkpoint;
         private int selectedRouteIndex;
         private bool isOpen;
         private bool publicDisclosureAcknowledged;
@@ -52,6 +54,7 @@ namespace CommonHouse.Radio
         {
             if (session == null) session = GetComponent<CaseSession>();
             if (modalInput == null) modalInput = GetComponent<ModalInputCoordinator>();
+            if (checkpointSource != null) checkpoint = checkpointSource as ICaseSaveCheckpoint;
         }
 
         private void OnDestroy()
@@ -70,6 +73,12 @@ namespace CommonHouse.Radio
         {
             session = caseSession ?? throw new ArgumentNullException(nameof(caseSession));
             modalInput = coordinator ?? throw new ArgumentNullException(nameof(coordinator));
+        }
+
+        public void ConfigureCheckpoint(ICaseSaveCheckpoint saveCheckpoint)
+        {
+            checkpoint = saveCheckpoint ?? throw new ArgumentNullException(nameof(saveCheckpoint));
+            checkpointSource = saveCheckpoint as MonoBehaviour;
         }
 
         public bool Open()
@@ -101,6 +110,17 @@ namespace CommonHouse.Radio
         }
 
         public void CloseFromModalInput() => Close();
+
+        public void ResetAfterStateLoad()
+        {
+            // Do not call CancelReview here: its old UI summary must never act
+            // on the newly loaded domain state.
+            isOpen = false;
+            summary = null;
+            publicDisclosureAcknowledged = false;
+            lastActionMessage = string.Empty;
+            if (modalInput != null) modalInput.Release(this);
+        }
 
         public void Tick(SendConfirmationInputFrame input)
         {
@@ -229,6 +249,16 @@ namespace CommonHouse.Radio
             if (summary.IsUnauthorizedDisclosure && !publicDisclosureAcknowledged)
             {
                 lastActionMessage = "Acknowledge the unauthorized room disclosure before sending.";
+                return false;
+            }
+            if (State.OutcomeId != null)
+            {
+                lastActionMessage = "This response was already sent.";
+                return false;
+            }
+            if (checkpoint != null && !checkpoint.SaveCheckpoint())
+            {
+                lastActionMessage = "Pre-send checkpoint failed; response was not sent.";
                 return false;
             }
             try

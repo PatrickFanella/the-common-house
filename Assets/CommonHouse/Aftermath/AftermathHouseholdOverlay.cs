@@ -1,4 +1,5 @@
 using UnityEngine;
+using CommonHouse.Interaction;
 
 namespace CommonHouse.Aftermath
 {
@@ -16,13 +17,12 @@ namespace CommonHouse.Aftermath
         private void OnGUI()
         {
             if (aftermath == null || !aftermath.IsOpen || aftermath.ActiveEntry == null) return;
-            var panel = new Rect(Screen.width * 0.14f, Screen.height * 0.12f, Screen.width * 0.72f, Screen.height * 0.76f);
-            GUI.Box(panel, GUIContent.none);
+            CaseUi.HandleKeyboardScale(); var panel = CaseUi.Panel(); CaseUi.DrawOpaquePanel(panel);
             GUILayout.BeginArea(new Rect(panel.x + 28f, panel.y + 24f, panel.width - 56f, panel.height - 48f));
-            var wrapped = new GUIStyle(GUI.skin.label) { wordWrap = true };
-            GUILayout.Label(aftermath.ActiveEntry.Heading, GUI.skin.label);
+            var wrapped = CaseUi.WrappedLabel();
+            GUILayout.Label(aftermath.ActiveEntry.Heading, CaseUi.WrappedLabel());
             GUILayout.Space(12f);
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
+            scrollPosition = CaseUi.Scroll(scrollPosition); scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.ExpandHeight(true));
             GUILayout.Label(aftermath.ActiveEntry.Text, wrapped);
             GUILayout.EndScrollView();
             GUILayout.FlexibleSpace();

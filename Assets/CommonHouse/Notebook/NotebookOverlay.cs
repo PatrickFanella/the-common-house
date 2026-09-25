@@ -1,4 +1,5 @@
 using UnityEngine;
+using CommonHouse.Interaction;
 
 namespace CommonHouse.Notebook
 {
@@ -8,6 +9,7 @@ namespace CommonHouse.Notebook
     {
         private NotebookController notebook;
         private Vector2 scrollPosition;
+        private string lastSelectedSource;
         private Vector2 leftComparisonScrollPosition;
         private Vector2 rightComparisonScrollPosition;
 
@@ -19,13 +21,19 @@ namespace CommonHouse.Notebook
         private void OnGUI()
         {
             if (notebook == null || !notebook.IsOpen) return;
-            var panel = new Rect(Screen.width * 0.12f, Screen.height * 0.1f, Screen.width * 0.76f, Screen.height * 0.8f);
-            GUI.Box(panel, "Evidence notebook");
+            if (lastSelectedSource != notebook.SelectedEntry?.SourceId)
+            {
+                scrollPosition = Vector2.zero;
+                lastSelectedSource = notebook.SelectedEntry?.SourceId;
+            }
+            CaseUi.HandleKeyboardScale();
+            var panel = CaseUi.Panel();
+            CaseUi.DrawOpaquePanel(panel, "Evidence notebook");
             GUILayout.BeginArea(new Rect(panel.x + 24f, panel.y + 32f, panel.width - 48f, panel.height - 56f));
-            var wrappedText = new GUIStyle(GUI.skin.label) { wordWrap = true };
+            var wrappedText = CaseUi.WrappedLabel();
             if (notebook.Comparison.IsOpen)
             {
-                DrawComparison(wrappedText, (panel.width - 56f) * 0.5f);
+                DrawComparison(wrappedText, (panel.width - 64f) * 0.5f);
             }
             else
             {
@@ -33,14 +41,14 @@ namespace CommonHouse.Notebook
             }
             GUILayout.FlexibleSpace();
             GUILayout.Label(notebook.Comparison.IsOpen
-                ? "[Left/Right or Up/Down] Select  [Tab] Choose side  [Enter] Set selected  [C] Close comparison  [Escape] Return to notebook"
-                : "[Left/Right or Up/Down] Select evidence  [C] Compare selected evidence  [Escape] Close", wrappedText);
+                ? "[Left/Right or Up/Down] Select  [Tab] Choose side  [Enter] Set  [PgUp/PgDn] Scroll  [-/=] Text size  [Escape] Return"
+                : "[Left/Right or Up/Down] Select  [C] Compare  [PgUp/PgDn] Scroll  [-/=] Text size  [Escape] Close", wrappedText);
             GUILayout.EndArea();
         }
 
         private void DrawNotebook(GUIStyle wrappedText)
         {
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition);
+            scrollPosition = CaseUi.Scroll(scrollPosition); scrollPosition = GUILayout.BeginScrollView(scrollPosition);
             if (notebook.Entries.Count == 0)
             {
                 GUILayout.Label("No acquired evidence yet.", wrappedText);
@@ -85,6 +93,7 @@ namespace CommonHouse.Notebook
             var active = notebook.Comparison.ActiveSide == side ? "> " : string.Empty;
             GUILayout.BeginVertical(GUI.skin.box, GUILayout.Width(width), GUILayout.ExpandHeight(true));
             GUILayout.Label(active + side + " side", wrappedText);
+            if (notebook.Comparison.ActiveSide == side) scroll = CaseUi.Scroll(scroll);
             scroll = GUILayout.BeginScrollView(scroll, GUILayout.ExpandHeight(true));
             if (entry == null)
             {

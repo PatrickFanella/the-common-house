@@ -1,5 +1,10 @@
 {
   "name": "CommonHouse.Persistence",
   "rootNamespace": "CommonHouse.Persistence",
-  "references": ["CommonHouse.Content", "CommonHouse.Domain"]
+  "references": [
+    "CommonHouse.Content",
+    "CommonHouse.Domain",
+    "CommonHouse.Runtime",
+    "CommonHouse.Interaction"
+  ]
 }

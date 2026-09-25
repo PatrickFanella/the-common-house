@@ -21,7 +21,7 @@ namespace CommonHouse.Aftermath
     /// player explicitly acknowledges it; that acknowledgment completes the
     /// domain aftermath once and changes no disclosure or relationship facts.
     /// </summary>
-    public sealed class AftermathHouseholdController : MonoBehaviour, IModalPanel
+    public sealed class AftermathHouseholdController : MonoBehaviour, IModalPanel, ICaseStateLoadReset
     {
         private const string AftermathEventId = "aftermath:household-check-in";
 
@@ -85,6 +85,12 @@ namespace CommonHouse.Aftermath
         }
 
         public void CloseFromModalInput() => Close();
+
+        public void ResetAfterStateLoad()
+        {
+            Close();
+            lastActionMessage = string.Empty;
+        }
 
         public bool Acknowledge()
         {
