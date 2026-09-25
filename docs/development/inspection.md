@@ -15,10 +15,10 @@ not record evidence.
 
 The target owns its identifier, title, readable text, and optional acquisition
 identifier. `IInspectionLedger` reports `Acquired`, `AlreadyAcquired`, or
-`Rejected`; a rejected acquisition remains visible to the player. The generic
-scene notice uses an in-memory ledger and no Case 01 identifier. Future case
-wiring must provide a reviewed adapter rather than treating an open panel as
-evidence acquisition.
+`Rejected`; a rejected acquisition remains visible to the player. The generic controller retains a local ledger for isolated examples. The
+outpost scene binds `CaseInspectionBinding` to the shared case session and
+uses canonical D01/D02 targets. Opening either panel remains read-only; Enter
+records its document through the case-aware ledger.
 
 `ModalInputCoordinator` owns `Escape` and the movement pause while a panel is
 open. It permits one modal owner at a time and restores focus to the same

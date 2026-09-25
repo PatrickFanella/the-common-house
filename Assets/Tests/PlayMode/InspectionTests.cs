@@ -11,6 +11,7 @@ namespace CommonHouse.Tests
 {
     public class InspectionTests
     {
+        private static readonly Vector3 TestOrigin = new Vector3(200, 0, 200);
         private GameObject player;
         private GameObject target;
         private FirstPersonMovement movement;
@@ -21,6 +22,7 @@ namespace CommonHouse.Tests
         public void SetUp()
         {
             player = new GameObject("Inspection Test Player");
+            player.transform.position = TestOrigin;
             var controller = player.AddComponent<CharacterController>();
             controller.height = 1.8f;
             controller.radius = 0.3f;
@@ -36,7 +38,7 @@ namespace CommonHouse.Tests
             inspection.Configure(camera, movement, modalInput, 2.5f);
             target = GameObject.CreatePrimitive(PrimitiveType.Cube);
             target.name = "Readable Test Notice";
-            target.transform.position = new Vector3(0f, 1.6f, 2f);
+            target.transform.position = TestOrigin + new Vector3(0f, 1.6f, 2f);
             target.transform.localScale = new Vector3(1f, 1f, 0.1f);
             target.AddComponent<InspectionTarget>().Configure("test-notice", "Test notice", "Readable transcript text.", "test-source");
             Physics.SyncTransforms();
@@ -56,14 +58,14 @@ namespace CommonHouse.Tests
             Assert.That(inspection.CurrentFocus, Is.EqualTo(target.GetComponent<InspectionTarget>()));
             Assert.That(inspection.FocusedPrompt, Does.Contain("Test notice"));
 
-            target.transform.position = new Vector3(0f, 1.6f, 3f);
+            target.transform.position = TestOrigin + new Vector3(0f, 1.6f, 3f);
             Physics.SyncTransforms();
             inspection.RefreshFocus();
             Assert.That(inspection.CurrentFocus, Is.Null);
 
-            target.transform.position = new Vector3(0f, 1.6f, 2f);
+            target.transform.position = TestOrigin + new Vector3(0f, 1.6f, 2f);
             var blocker = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            blocker.transform.position = new Vector3(0f, 1.6f, 1f);
+            blocker.transform.position = TestOrigin + new Vector3(0f, 1.6f, 1f);
             blocker.transform.localScale = new Vector3(1f, 1f, 0.1f);
             try
             {
@@ -115,7 +117,7 @@ namespace CommonHouse.Tests
         }
 
         [UnityTest]
-        public IEnumerator GeneratedOutpostProvidesAReachableGenericReadableNotice()
+        public IEnumerator GeneratedOutpostProvidesReachableCaseDocuments()
         {
             yield return SceneManager.LoadSceneAsync("OutpostBlockout", LoadSceneMode.Single);
             yield return null; // Allow the initial welcome Start callback before dismissing it.
@@ -123,10 +125,9 @@ namespace CommonHouse.Tests
             var controller = Object.FindAnyObjectByType<InspectionController>();
             var notice = Object.FindObjectsByType<InspectionTarget>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             Assert.That(controller, Is.Not.Null);
-            Assert.That(notice, Has.Length.EqualTo(1));
-            Assert.That(notice[0].InspectionId, Is.EqualTo("sample-shift-notice"));
+            Assert.That(notice, Has.Length.EqualTo(2));
             controller.RefreshFocus();
-            Assert.That(controller.CurrentFocus, Is.EqualTo(notice[0]));
+            Assert.That(controller.CurrentFocus.AcquisitionId, Is.EqualTo("D02"));
         }
 
         private sealed class FixedInput : IFirstPersonInput

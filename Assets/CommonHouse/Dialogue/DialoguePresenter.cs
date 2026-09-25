@@ -64,7 +64,6 @@ namespace CommonHouse.Dialogue
         private void Update()
         {
             if (Application.isBatchMode || string.Equals(Environment.GetEnvironmentVariable("COMMON_HOUSE_ENV"), "test", StringComparison.Ordinal)) return;
-            if (!IsOpen && Input.GetKeyDown(KeyCode.T)) Open();
             Tick(new DialogueInputFrame(Input.GetKeyDown(KeyCode.UpArrow), Input.GetKeyDown(KeyCode.DownArrow), Input.GetKeyDown(KeyCode.Return)));
         }
 
@@ -98,6 +97,19 @@ namespace CommonHouse.Dialogue
             currentLine = null;
             ClampSelection();
             return true;
+        }
+
+        /// <summary>Opens a resident-scoped authored set through a world interaction.</summary>
+        public bool Open(IEnumerable<DialogueNode> authoredNodes)
+        {
+            if (authoredNodes == null) throw new ArgumentNullException(nameof(authoredNodes));
+            var selectedNodes = authoredNodes.ToArray();
+            if (selectedNodes.Length == 0) return false;
+            if (IsOpen) Close();
+            nodes = selectedNodes;
+            selectedIndex = 0;
+            currentLine = null;
+            return Open();
         }
 
         public void Close()
@@ -150,6 +162,12 @@ namespace CommonHouse.Dialogue
                     return;
                 case DialogueEffectKind.AcquirePrivateAccount:
                     ActiveState.AcquireSource("dialogue:" + nodeId + ":acquire", "C01");
+                    return;
+                case DialogueEffectKind.AcquireMissingPage:
+                    ActiveState.AcquireSource("dialogue:" + nodeId + ":acquire", "D03");
+                    return;
+                case DialogueEffectKind.AcquireRenRepair:
+                    ActiveState.AcquireSource("dialogue:" + nodeId + ":acquire", "C02");
                     return;
                 case DialogueEffectKind.AuthorizeRefusal:
                     ActiveState.RecordRefusalAuthorization("dialogue:" + nodeId + ":refusal");
