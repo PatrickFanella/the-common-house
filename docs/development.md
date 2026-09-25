@@ -1,8 +1,9 @@
 # Development environment
 
-The repository now includes an Editor-generated Unity `6000.4.10f1` project
-and empty 3D bootstrap scene, alongside the design pack. It has no database,
-web game server, or investigation gameplay yet. The existing T3 profile remains
+The repository includes an Editor-generated Unity `6000.4.10f1` project,
+primitive outpost with first-person movement, and Case 01 domain model alongside
+the design pack. It has no database or web game server. The investigation UI
+and complete scene loop are not yet wired. The existing T3 profile remains
 a document-source preview and link check using Python 3; it does not launch Unity.
 
 ## Actions and commands
@@ -145,3 +146,16 @@ authorization, send summaries, selected material, and `RoutingRulesTests`.
 
 The [Case 01 rehearsal](planning/case-01-rehearsal.md) includes observed text
 traces for all three outcomes and the focused `CaseRehearsalTests` command.
+
+## Outpost and local POC foundations
+
+The [blockout verification](verification/outpost-foundations.md) covers the
+three-room scene, Editor-rendered captures, and physical traversal. Open
+`Assets/CommonHouse/Scenes/OutpostBlockout.unity` in the pinned Editor to inspect
+the scene. [Movement controls](development/player-movement.md) use the existing
+legacy input system. T3 still provides document preview; it does not launch the
+game or the Editor.
+
+The [save-store guide](development/case-persistence.md) describes versioned local
+storage and disposable tests. The [observation worksheet](playtests/poc-observation-sheet.md)
+is blank preparation for future owner-run sessions, not playtest evidence.

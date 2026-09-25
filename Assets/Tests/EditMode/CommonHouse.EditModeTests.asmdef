@@ -9,6 +9,7 @@
   ],
   "references": [
     "CommonHouse.Content",
-    "CommonHouse.Domain"
+    "CommonHouse.Domain",
+    "CommonHouse.Persistence"
   ]
 }
