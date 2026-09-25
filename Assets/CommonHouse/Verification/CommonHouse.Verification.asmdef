@@ -1,0 +1,14 @@
+{
+  "name": "CommonHouse.Verification",
+  "rootNamespace": "CommonHouse.Verification",
+  "references": [
+    "CommonHouse.Domain",
+    "CommonHouse.Interaction",
+    "CommonHouse.Opening",
+    "CommonHouse.Radio",
+    "CommonHouse.Aftermath",
+    "CommonHouse.Dialogue",
+    "CommonHouse.Persistence",
+    "CommonHouse.Runtime"
+  ]
+}
