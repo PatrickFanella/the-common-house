@@ -1,6 +1,13 @@
 {
   "name": "CommonHouse.EditModeTests",
   "rootNamespace": "CommonHouse.Tests",
-  "includePlatforms": ["Editor"],
-  "optionalUnityReferences": ["TestAssemblies"]
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "references": [
+    "CommonHouse.Content"
+  ]
 }

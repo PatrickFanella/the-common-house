@@ -1,0 +1,276 @@
+{
+  "id": "case-01",
+  "residents": [
+    {
+      "id": "ren",
+      "text": "Ren (provisional)"
+    },
+    {
+      "id": "ivo",
+      "text": "Ivo (provisional)"
+    }
+  ],
+  "callers": [
+    {
+      "id": "ada",
+      "text": "Ada (provisional)"
+    }
+  ],
+  "recoveries": [
+    {
+      "id": "replay-call",
+      "text": "Reopen or replay the automatically logged current call without a countdown."
+    },
+    {
+      "id": "archive-tape",
+      "text": "Use the archive shelf label or Ivo’s suggestion; return to the tape later."
+    },
+    {
+      "id": "roster",
+      "text": "Reopen the legible archive roster and compare it with the repair note."
+    },
+    {
+      "id": "repair-note",
+      "text": "Reopen Ren’s opening repair note and compare it with the roster."
+    },
+    {
+      "id": "private-question",
+      "text": "After E01, ask Ren privately; E03 is not required. Return after cancellation."
+    },
+    {
+      "id": "log-gap",
+      "text": "Ask Ivo about the visible log gap; he supplies the page or points to it. No trespass required."
+    },
+    {
+      "id": "ada-follow-up",
+      "text": "Return to Ada’s follow-up call before resolution; retain her account independently."
+    },
+    {
+      "id": "ren-follow-up",
+      "text": "Return to Ren’s private follow-up before resolution; retain their account independently."
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "R1",
+      "text": "Private contact"
+    },
+    {
+      "id": "R2",
+      "text": "Refusal relayed — complete resolution"
+    },
+    {
+      "id": "R3",
+      "text": "Informed unauthorized public disclosure"
+    }
+  ],
+  "sources": [
+    {
+      "id": "T01",
+      "kind": "transmission",
+      "speakerId": "ada",
+      "text": "Ada: I am Ada. Please tell Mara that the road is clear. I can remain available for a later response.",
+      "caption": "",
+      "recoveryId": "replay-call"
+    },
+    {
+      "id": "T02",
+      "kind": "transmission",
+      "speakerId": "ada",
+      "text": "Archive tape, dated before the current call. Ada is addressed by name at the house.",
+      "caption": "[Kitchen bell sounds on the recording.]",
+      "recoveryId": "archive-tape"
+    },
+    {
+      "id": "D01",
+      "kind": "document",
+      "speakerId": "",
+      "text": "Old roster: Mara — workshop. A distinctive handwritten repair mark is visible.",
+      "caption": "",
+      "recoveryId": "roster"
+    },
+    {
+      "id": "D02",
+      "kind": "document",
+      "speakerId": "ren",
+      "text": "Ren’s current repair note carries the same distinctive repair mark as the old roster.",
+      "caption": "",
+      "recoveryId": "repair-note"
+    },
+    {
+      "id": "C01",
+      "kind": "conversation",
+      "speakerId": "ren",
+      "text": "Ren: Mara was my network name. My location was relayed without my permission. I do not want immediate contact; you may relay my refusal.",
+      "caption": "",
+      "recoveryId": "private-question"
+    },
+    {
+      "id": "D03",
+      "kind": "document",
+      "speakerId": "ivo",
+      "text": "Removed log page records the unauthorized relay of Ren’s location and Ivo’s involvement.",
+      "caption": "",
+      "recoveryId": "log-gap"
+    },
+    {
+      "id": "T03",
+      "kind": "transmission",
+      "speakerId": "ada",
+      "text": "Ada describes a mundane repair shared with Mara at the house. [Specific repair detail remains provisional.]",
+      "caption": "",
+      "recoveryId": "ada-follow-up"
+    },
+    {
+      "id": "C02",
+      "kind": "conversation",
+      "speakerId": "ren",
+      "text": "Ren corroborates the shared repair detail described by Ada. [Specific repair detail remains provisional.]",
+      "caption": "",
+      "recoveryId": "ren-follow-up"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E01",
+      "sourceIds": [
+        "T01"
+      ],
+      "statements": [
+        {
+          "kind": "attributed-claim",
+          "text": "The caller identifies herself as Ada and requests contact with Mara; neither identity is established.",
+          "sourceIds": [
+            "T01"
+          ],
+          "attributedTo": "ada"
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "sourceIds": [
+        "T02"
+      ],
+      "statements": [
+        {
+          "kind": "observation",
+          "text": "The dated tape names Ada and includes a captioned kitchen bell.",
+          "sourceIds": [
+            "T02"
+          ],
+          "attributedTo": ""
+        },
+        {
+          "kind": "corroboration",
+          "text": "Supports Ada’s past presence in this house, not every current claim.",
+          "sourceIds": [
+            "T02"
+          ],
+          "attributedTo": ""
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "sourceIds": [
+        "D01",
+        "D02"
+      ],
+      "statements": [
+        {
+          "kind": "observation",
+          "text": "The roster names Mara at the workshop and shares a repair mark with Ren’s note.",
+          "sourceIds": [
+            "D01",
+            "D02"
+          ],
+          "attributedTo": ""
+        },
+        {
+          "kind": "hypothesis",
+          "text": "Ren may be Mara; the matching mark does not confirm identity.",
+          "sourceIds": [
+            "D01",
+            "D02"
+          ],
+          "attributedTo": ""
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "sourceIds": [
+        "C01"
+      ],
+      "statements": [
+        {
+          "kind": "attributed-claim",
+          "text": "Ren confirms Mara was their former name and describes the unwanted relay.",
+          "sourceIds": [
+            "C01"
+          ],
+          "attributedTo": "ren"
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "sourceIds": [
+        "D03"
+      ],
+      "statements": [
+        {
+          "kind": "observation",
+          "text": "The page records the unauthorized relay and Ivo’s involvement.",
+          "sourceIds": [
+            "D03"
+          ],
+          "attributedTo": ""
+        },
+        {
+          "kind": "corroboration",
+          "text": "Documentary support for the previous breach described by Ren.",
+          "sourceIds": [
+            "D03"
+          ],
+          "attributedTo": ""
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "sourceIds": [
+        "T03",
+        "C02"
+      ],
+      "statements": [
+        {
+          "kind": "attributed-claim",
+          "text": "Ada recalls a shared repair.",
+          "sourceIds": [
+            "T03"
+          ],
+          "attributedTo": "ada"
+        },
+        {
+          "kind": "attributed-claim",
+          "text": "Ren corroborates that repair account.",
+          "sourceIds": [
+            "C02"
+          ],
+          "attributedTo": "ren"
+        },
+        {
+          "kind": "corroboration",
+          "text": "The two accounts support the caller being the Ada Ren knows; they grant no consent and prove no motives.",
+          "sourceIds": [
+            "T03",
+            "C02"
+          ],
+          "attributedTo": ""
+        }
+      ]
+    }
+  ]
+}

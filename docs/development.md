@@ -131,3 +131,8 @@ the original design-only checkout because it needs no new repository scripts.
 The private canonical remote is
 `https://git.subcult.tv/PatrickFanella/the-common-house.git`.
 The [implementation plan](implementation-plan.md) links the Gitea task backlog.
+
+## Case content
+
+The [Case 01 content guide](development/case-content.md) describes the authored
+evidence asset, validation rules, and focused `CaseContentTests` command.
