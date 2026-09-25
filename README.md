@@ -6,7 +6,9 @@ The player is a newcomer. Strange calls lead to authored cases involving the peo
 
 ## Current state
 
-A primitive three-room outpost with first-person movement, plus a deterministic Case 01 model and local versioned saves. All three narrative outcomes have automated text-only rehearsals. Inspection, transmission review, source comparison, resident conversations, consequential send confirmation, and matching aftermath are wired into the scene. Runtime save/reload, keyboard action paths, and shared text scaling are implemented. The full route matrix and desktop player qualification remain in progress; no human playtest is claimed. Release structure is deferred until after the POC.
+A primitive three-room outpost with first-person movement, plus a deterministic Case 01 model and local versioned saves. All three narrative outcomes have automated text-only rehearsals. Inspection, transmission review, source comparison, resident conversations, consequential send confirmation, and matching aftermath are wired into the scene. Runtime save/reload, keyboard action paths, and shared text scaling are implemented. All six scene routes and a local Linux development build with an R2 player smoke are qualified. Actual owner-supplied playtest observations remain pending; no human playtest is claimed. Release structure is deferred until after the POC.
+
+The [local build report](docs/verification/local-build.md) includes the retained player, launch command, artifact identity, and current limits.
 
 ## Design documents
 

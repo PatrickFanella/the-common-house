@@ -230,3 +230,15 @@ development save root. [Keyboard controls](development/keyboard-route.md) cover
 movement, looking, scene actions, readers, decisions, and save/load. The shared
 [text scale](development/text-scale.md) supports 100–150% at 800×600 or larger.
 See [verification and screenshots](verification/access-and-reload.md).
+
+## Complete scene routes and local player
+
+[Case route qualification](verification/case-01-routes.md) covers all three
+outcomes in both investigation orders, muted transcripts, replay, defer/resume,
+and pre/post-send reload. [Local Linux build verification](verification/local-build.md)
+records the compiled player, artifact hash, launch command, cleanup, and the
+remaining owner-supplied playtest evidence.
+
+```sh
+python3 scripts/build_poc.py --target local --smoke
+```
