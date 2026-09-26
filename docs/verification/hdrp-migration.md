@@ -69,10 +69,11 @@ rendering. The build smoke player created a Vulkan swapchain at 1280×720. Its o
 
 ## Known limits
 
-- The style board still uses the built-in Standard shader and a built-in surface shader for
-  labels. Neither renders under HDRP: `capture_style_board.py` still exits 0, but every study
-  image is a flat purple field (`style-board-20260926T162615Z-ry84hpfn`). The committed v0.1
-  images remain built-in renders until the board is ported.
+- At migration, the style board still used the built-in Standard shader and a built-in surface
+  shader for labels. Neither rendered under HDRP: `capture_style_board.py` exited 0, but every
+  study image was a flat purple field (`style-board-20260926T162615Z-ry84hpfn`).
+  [Style board v0.2](../design/style-board.md) ports it, and the capture now fails on a
+  near-uniform image.
 - The blockout uses HDRP's default grey material. Bloom and tonemapping come from HDRP's
   default volume profile and have not been tuned.
 - There are no reflection probes, baked lighting, or light probes. Indirect light is limited
