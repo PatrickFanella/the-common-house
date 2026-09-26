@@ -16,6 +16,10 @@ python3 scripts/check_docs.py docs/design/case-01-the-road-is-clear.md
 python3 -m unittest discover -s tests -p test_check_docs.py
 ```
 
+Binaries are stored in plain Git. Before committing images or other binary
+files, run `python3 scripts/check_binary_sizes.py`; it fails on any tracked or
+staged binary over 5 MiB. Its tests are in `tests/test_check_binary_sizes.py`.
+
 The checker supports simple inline Markdown links and images, angle-bracket
 destinations, percent-encoded filenames, and optional quoted titles. It skips
 fenced/inline code, external URLs, and anchor validation. Reference-style links,
