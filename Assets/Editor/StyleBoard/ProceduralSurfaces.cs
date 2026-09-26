@@ -20,12 +20,12 @@ namespace CommonHouse.Editor.StyleBoard
         }
     }
 
-    /// <summary>Albedo, normal, and metallic/smoothness textures for the Standard shader.</summary>
+    /// <summary>Albedo, normal, and HDRP mask textures (metallic, occlusion, detail mask, smoothness).</summary>
     internal sealed class Surface
     {
         public Texture2D Albedo;
         public Texture2D Normal;
-        public Texture2D MetallicGloss;
+        public Texture2D Mask;
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ namespace CommonHouse.Editor.StyleBoard
                 var i = y * size + x;
                 albedo[i] = s.Albedo;
                 height[i] = s.Height;
-                metal[i] = new Color(Mathf.Clamp01(s.Metallic), 0f, 0f, Mathf.Clamp01(s.Smoothness));
+                metal[i] = new Color(Mathf.Clamp01(s.Metallic), 1f, 0f, Mathf.Clamp01(s.Smoothness));
             }
             var normal = new Color32[size * size];
             for (var y = 0; y < size; y++)
@@ -61,7 +61,7 @@ namespace CommonHouse.Editor.StyleBoard
             {
                 Albedo = Pack(name + "-albedo", size, albedo, false),
                 Normal = Pack(name + "-normal", size, normal, true),
-                MetallicGloss = Pack(name + "-metallic", size, metal, true),
+                Mask = Pack(name + "-mask", size, metal, true),
             };
         }
 
@@ -136,38 +136,6 @@ namespace CommonHouse.Editor.StyleBoard
 
         // ---- Materials ---------------------------------------------------------------------
 
-        /// <summary>Wood grain running along u; worn lighter in broad patches.</summary>
-        public static SurfaceSample Timber(float u, float v, Color light, Color dark, int seed)
-        {
-            var warp = Fbm(u, v, 2, 3, 4, seed);
-            var rings = Frac(v * 20f + warp * 5f);
-            var line = Smooth(0f, 0.3f, rings) * (1f - Smooth(0.6f, 1f, rings));
-            var fibre = Fbm(u, v, 3, 96, 3, seed + 7);
-            var wear = Fbm(u, v, 3, 3, 4, seed + 11);
-            var t = Mathf.Clamp01(0.55f * line + 0.55f * fibre - 0.05f);
-            var color = Scale(Color.Lerp(dark, light, t), 0.82f + 0.3f * wear);
-            return new SurfaceSample(color, 0.15f * line + 0.3f * fibre, 0f, 0.22f + 0.2f * wear);
-        }
-
-        /// <summary>Boards across v with staggered end joints and dark gaps.</summary>
-        public static SurfaceSample Floorboards(float u, float v, Color light, Color dark, int seed)
-        {
-            const int rows = 5;
-            var row = Mathf.FloorToInt(v * rows);
-            var offset = Lattice(row, 3, seed);
-            var along = Frac(u + offset);
-            var across = Frac(v * rows);
-            var tint = 0.85f + 0.3f * Lattice(row, Mathf.FloorToInt((u + offset) * 2f), seed + 5);
-            var wood = Timber(along, across * 0.2f + row * 0.2f, light, dark, seed + row);
-            var gap = Mathf.Min(Smooth(0f, 0.035f, across), Smooth(1f, 0.965f, across));
-            var joint = Mathf.Min(Smooth(0f, 0.006f, Frac(along * 2f)), Smooth(1f, 0.994f, Frac(along * 2f)));
-            var edge = gap * joint;
-            wood.Albedo = Scale(wood.Albedo, tint * Mathf.Lerp(0.25f, 1f, edge));
-            wood.Height = wood.Height * 0.4f + edge;
-            wood.Smoothness *= edge;
-            return wood;
-        }
-
         /// <summary>Paint over a substrate, chipped at irregular patches with a primer rim and rust on metal.</summary>
         public static SurfaceSample Painted(float u, float v, Color paint, Color substrate, float substrateMetallic, float chipThreshold, int seed)
         {
@@ -189,17 +157,6 @@ namespace CommonHouse.Editor.StyleBoard
             var metallic = bare * substrateMetallic * (1f - rust);
             var smooth = Mathf.Lerp(0.42f * (0.7f + 0.3f * grime), 0.35f * (1f - rust), bare);
             return new SurfaceSample(color, 1f - 0.6f * bare, metallic, smooth);
-        }
-
-        /// <summary>Uneven plaster with water stains.</summary>
-        public static SurfaceSample Plaster(float u, float v, Color baseColor, int seed)
-        {
-            var broad = Fbm(u, v, 2, 2, 4, seed);
-            var stain = Smooth(0.6f, 0.74f, Fbm(u, v, 3, 3, 5, seed + 5));
-            var grain = Fbm(u, v, 48, 48, 2, seed + 2);
-            var color = Scale(baseColor, 0.9f + 0.14f * broad + 0.05f * grain);
-            color = Color.Lerp(color, new Color(color.r * 0.82f, color.g * 0.76f, color.b * 0.62f), stain);
-            return new SurfaceSample(color, grain * 0.3f + broad * 0.1f, 0f, 0.07f);
         }
 
         /// <summary>Square tiles in an alternating pattern with worn glaze and grout.</summary>
