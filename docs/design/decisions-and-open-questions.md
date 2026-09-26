@@ -3,7 +3,7 @@ title: Decisions and Open Questions
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-25
+updated: 2026-09-26
 visibility: private
 tags:
 - project/the-common-house
@@ -37,6 +37,7 @@ tags:
 | D-17 | Begin the base asset set with a style board, generated procedurally inside Unity. | 2026-09-25 answers: "Style board first" and "Procedural in Unity". | Editor code is the source for materials, textures, and study props; no third-party asset files. The board proposes directions for review; it does not approve a style or resolve Q-02. |
 | D-18 | Store binaries in plain Git with a per-file size cap. | 2026-09-25 answer: "Plain Git, size cap". | `scripts/check_binary_sizes.py` fails on tracked binaries over 5 MiB. Git LFS is not configured; revisit if the asset set outgrows the cap. |
 | D-19 | Writing follows a working asset set, mostly new cases, plus Case 01 revisions and world/character material. | 2026-09-25: "mostly new cases, but all of the above, obviously some will come as we make the asset". | Asset studies may prompt world and character notes; new cases still need owner review before becoming baseline scope. |
+| D-20 | Target a high level of visual realism, rendered with HDRP. | 2026-09-25: "I want to go for a very high level of realism", then "HDRP (Recommended)". | The project uses HDRP 17.4.0 with Vulkan on Linux and linear colour. Lighting uses physical units and fixed exposure. Built-in shaders, including the style-board materials, must be ported before they render correctly. |
 
 ## Proposed working choices
 
@@ -80,5 +81,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-24, planning update: Recorded D-16 and the owner-selected Case 01 working baseline. This does not approve final names, story details, or a release scope.
 
 2026-09-25, asset direction: Recorded D-17 through D-19 for procedural style-board work, plain-Git binary storage with a 5 MiB cap, and the owner's writing order. No visual style, license, or new case is approved by these entries.
+
+2026-09-25, rendering: Recorded D-20. The owner asked for a very high level of realism and chose HDRP. Asset sourcing and binary storage were also revisited that day; they are recorded separately. No visual style is approved by this entry.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.

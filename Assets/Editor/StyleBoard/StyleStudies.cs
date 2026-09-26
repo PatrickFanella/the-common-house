@@ -446,6 +446,8 @@ namespace CommonHouse.Editor.StyleBoard
             {
                 target.Create();
                 camera.targetTexture = target;
+                // HDRP applies exposure from the previous frame; the first render only primes it.
+                camera.Render();
                 camera.Render();
                 RenderTexture.active = target;
                 pixels.ReadPixels(new Rect(0, 0, Width, Height), 0, 0);

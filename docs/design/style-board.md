@@ -109,9 +109,10 @@ labels lit by the scene, so they do not glow in dark rooms.
 
 ## Known limits
 
-- Rendered with the project's current gamma colour space and no reflection probes, so metals
-  look flatter than they would with linear lighting and probes. Changing colour space would
-  affect the POC and needs its own decision.
+- Rendered with the built-in renderer in gamma colour space and no reflection probes, so metals
+  look flatter than they would with linear lighting and probes. The project has since moved to
+  HDRP in linear colour (D-20). These materials use built-in shaders and must be ported before
+  the board can be re-rendered.
 - Props are built from boxes, cylinders, spheres, and tubes. There are no bevels, cloth
   simulation, or sculpted forms, and no characters.
 - Label text uses Unity's built-in sans-serif font rather than handwriting. Small labels are
