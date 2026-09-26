@@ -16,6 +16,7 @@ using CommonHouse.Persistence;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.SceneManagement;
 
 namespace CommonHouse.Editor
@@ -118,13 +119,37 @@ namespace CommonHouse.Editor
 
         private static void CreateLighting(Transform root)
         {
-            var light = new GameObject("Temporary Directional Light").AddComponent<Light>();
-            light.transform.SetParent(root);
-            light.type = LightType.Directional;
-            light.intensity = 1.2f;
+            var light = AddLight("Temporary Directional Light", root, LightType.Directional);
+            // HDRP uses physical units; pairs with the fixed exposure in OutpostVolume.
+            light.lightUnit = UnityEngine.Rendering.LightUnit.Lux;
+            light.intensity = 20f;
             light.transform.rotation = Quaternion.Euler(50f, -30f, 0f);
+            // One ordinary ceiling lamp per room, roughly a household bulb.
+            foreach (var x in new[] { -9.5f, 0f, 9.5f })
+            {
+                var lamp = AddLight("Temporary Room Lamp", root, LightType.Point);
+                lamp.transform.position = new Vector3(x, WallHeight - 0.4f, 0f);
+                lamp.lightUnit = UnityEngine.Rendering.LightUnit.Lumen;
+                lamp.intensity = 1500f;
+                lamp.range = 12f;
+                lamp.color = new Color(1f, 0.9f, 0.78f);
+            }
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(0.2f, 0.2f, 0.25f);
+            OutpostVolume.AddTo(root);
+        }
+
+        // HDRP resets a light without HDAdditionalLightData to its defaults (a 100000 lux sun) when the
+        // scene loads, so add it before setting units and intensity. Shadows keep the sun out of rooms.
+        private static Light AddLight(string name, Transform root, LightType type)
+        {
+            var go = new GameObject(name);
+            go.transform.SetParent(root);
+            var light = go.AddComponent<Light>();
+            light.type = type;
+            go.AddComponent<HDAdditionalLightData>();
+            light.shadows = LightShadows.Soft;
+            return light;
         }
 
         private static void CreateCamera(Transform root)

@@ -19,8 +19,9 @@ this repository root; design documents and history were preserved. Asset
 `.meta` files came from the Editor. Library, user settings, and logs were not
 added to Git.
 
-The project uses the built-in 3D renderer and the generated legacy input
-configuration. Multiplayer Center and the unused ARM64 SDK were removed from
+The project was created with the built-in 3D renderer and the generated legacy input
+configuration. It moved to HDRP on 2026-09-26; see the
+[HDRP migration report](../verification/hdrp-migration.md). Multiplayer Center and the unused ARM64 SDK were removed from
 the generated manifest. Linux x86_64 SDK/toolchain entries and built-in engine
 modules remain; the Editor regenerated the dependency lock. No paid assets,
 external dialogue framework, cloud project, or release license was introduced.

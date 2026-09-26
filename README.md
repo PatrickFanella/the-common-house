@@ -33,7 +33,8 @@ and [project creation evidence](docs/development/unity-project.md).
 
 Run `python3 scripts/check_unity_import.py` for a fresh import in a disposable
 copy. Focused EditMode and PlayMode commands and their [verification evidence](docs/verification/milestone-0.md)
-are documented in the development guide. The bootstrap uses the built-in renderer, legacy input defaults, and
+are documented in the development guide. The project renders with HDRP on Vulkan in linear colour (decision D-20; see the
+[HDRP migration report](docs/verification/hdrp-migration.md)). It uses legacy input defaults and
 explicit development company/product names. It contains no third-party assets.
 
 Unity-generated caches, local editor state, builds, and logs are ignored. Binaries stay in plain Git; `python3 scripts/check_binary_sizes.py` fails on any tracked binary over 5 MiB (decision D-18). Git LFS is not configured. No distribution license has been selected. Open source is a game theme, not an agreed release license.
