@@ -16,9 +16,14 @@ python3 scripts/check_docs.py docs/design/case-01-the-road-is-clear.md
 python3 -m unittest discover -s tests -p test_check_docs.py
 ```
 
-Binaries are stored in plain Git. Before committing images or other binary
-files, run `python3 scripts/check_binary_sizes.py`; it fails on any tracked or
-staged binary over 5 MiB. Its tests are in `tests/test_check_binary_sizes.py`.
+Textures and models under `Assets/` go through Git LFS; `.gitattributes` lists
+the formats. Run `git lfs install` once per clone before adding them. Other
+binaries stay in plain Git. Before committing binary files, run
+`python3 scripts/check_binary_sizes.py`. It fails on a plain-Git binary over
+5 MiB, and on a file that matches an LFS pattern but was staged without an LFS
+pointer. `python3 scripts/check_provenance.py` checks the asset provenance
+manifest; see [asset sourcing](development/asset-sourcing.md). Tests for both
+are in `tests/`.
 
 The checker supports simple inline Markdown links and images, angle-bracket
 destinations, percent-encoded filenames, and optional quoted titles. It skips

@@ -37,7 +37,7 @@ are documented in the development guide. The project renders with HDRP on Vulkan
 [HDRP migration report](docs/verification/hdrp-migration.md)). It uses legacy input defaults and
 explicit development company/product names. It contains no third-party assets.
 
-Unity-generated caches, local editor state, builds, and logs are ignored. Binaries stay in plain Git; `python3 scripts/check_binary_sizes.py` fails on any tracked binary over 5 MiB (decision D-18). Git LFS is not configured. No distribution license has been selected. Open source is a game theme, not an agreed release license.
+Unity-generated caches, local editor state, builds, and logs are ignored. Textures and models under `Assets/` are stored with Git LFS (decision D-22); run `git lfs install` once per clone. Other binaries, such as documentation images, stay in plain Git, and `python3 scripts/check_binary_sizes.py` fails on any over 5 MiB. Scanned assets must be CC0 and listed in the [provenance manifest](docs/development/asset-sourcing.md) (decision D-21). No distribution license has been selected. Open source is a game theme, not an agreed release license.
 
 ## First proof of concept
 

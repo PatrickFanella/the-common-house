@@ -13,3 +13,19 @@
 *.ogg binary
 *.mp3 binary
 *.fbx binary
+
+# Unity textures and models go through Git LFS (decision D-22). Images under docs/ stay in
+# plain Git and remain subject to scripts/check_binary_sizes.py.
+Assets/**/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.exr filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.hdr filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.tif filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.tiff filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.tga filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.psd filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.obj filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.blend filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.glb filter=lfs diff=lfs merge=lfs -text
