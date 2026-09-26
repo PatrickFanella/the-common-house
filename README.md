@@ -36,7 +36,7 @@ copy. Focused EditMode and PlayMode commands and their [verification evidence](d
 are documented in the development guide. The bootstrap uses the built-in renderer, legacy input defaults, and
 explicit development company/product names. It contains no third-party assets.
 
-Unity-generated caches, local editor state, builds, and logs are ignored. Before adding large binary assets, choose an appropriate versioning policy. No Git LFS configuration or distribution license has been selected. Open source is a game theme, not an agreed release license.
+Unity-generated caches, local editor state, builds, and logs are ignored. Binaries stay in plain Git; `python3 scripts/check_binary_sizes.py` fails on any tracked binary over 5 MiB (decision D-18). Git LFS is not configured. No distribution license has been selected. Open source is a game theme, not an agreed release license.
 
 ## First proof of concept
 

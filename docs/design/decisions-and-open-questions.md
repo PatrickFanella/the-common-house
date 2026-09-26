@@ -3,7 +3,7 @@ title: Decisions and Open Questions
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-25
 visibility: private
 tags:
 - project/the-common-house
@@ -34,6 +34,9 @@ tags:
 | D-14 | Protagonist is a blank slate for player self-insertion. | Answer 9 to O-09, expressed as the current preference. | Avoid a mandatory detailed biography; expression through present choices. |
 | D-15 | Start with a POC before release structure. | Answer 10 to O-10. | Defer release, season, funding, and commercial production planning. |
 | D-16 | Use Case 01 as the working POC backlog baseline. | “Use Case 01 as the working baseline” in the 2026-09-24 planning conversation. | Plan implementation around its six clues and three outcomes; names and story details remain provisional for owner review. |
+| D-17 | Begin the base asset set with a style board, generated procedurally inside Unity. | 2026-09-25 answers: "Style board first" and "Procedural in Unity". | Editor code is the source for materials, textures, and study props; no third-party asset files. The board proposes directions for review; it does not approve a style or resolve Q-02. |
+| D-18 | Store binaries in plain Git with a per-file size cap. | 2026-09-25 answer: "Plain Git, size cap". | `scripts/check_binary_sizes.py` fails on tracked binaries over 5 MiB. Git LFS is not configured; revisit if the asset set outgrows the cap. |
+| D-19 | Writing follows a working asset set, mostly new cases, plus Case 01 revisions and world/character material. | 2026-09-25: "mostly new cases, but all of the above, obviously some will come as we make the asset". | Asset studies may prompt world and character notes; new cases still need owner review before becoming baseline scope. |
 
 ## Proposed working choices
 
@@ -75,5 +78,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-24, v0.2: Recorded the user's ten answers as D-06 through D-15. Superseded the original unanswered questions and engine-selection assumptions. Updated all design documents for uneven knowledge, newcomer self-insertion, alternate-future collapse, restrained suspense, authored cases, thematic open source, solo Unity development, location-bound present-day play, investigable memories, and POC-first scope. The case's cast, events, and numerical scope remain proposals.
 
 2026-09-24, planning update: Recorded D-16 and the owner-selected Case 01 working baseline. This does not approve final names, story details, or a release scope.
+
+2026-09-25, asset direction: Recorded D-17 through D-19 for procedural style-board work, plain-Git binary storage with a 5 MiB cap, and the owner's writing order. No visual style, license, or new case is approved by these entries.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.
