@@ -12,7 +12,7 @@ tags:
 
 # Art Audio and UX Direction
 
-[Project home](README.md) · Proposed direction brief. No approved visual assets or final style exist yet.
+[Project home](README.md) · Proposed direction brief. No approved visual assets or final style exist yet. The first procedural studies are in [Style Board v0.1](style-board.md).
 
 ## Visual premise
 
