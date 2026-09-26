@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 using static CommonHouse.Editor.StyleBoard.ProceduralSurfaces;
 
 namespace CommonHouse.Editor.StyleBoard
@@ -44,26 +47,35 @@ namespace CommonHouse.Editor.StyleBoard
         }
     }
 
-    /// <summary>The generated material library used by the style studies.</summary>
+    /// <summary>
+    /// The style-study material library: CC0 scans for the largest surfaces (decision D-21) and
+    /// generated textures for the rest, all on HDRP/Lit.
+    /// </summary>
     internal sealed class StyleMaterials
     {
+        private const string ScanRoot = "Assets/CommonHouse/Art/Sourced/PolyHaven/";
         private readonly int size;
+        private readonly Shader lit;
         public readonly List<(string Name, Material Material)> Library = new List<(string, Material)>();
 
         public Material Timber, DarkTimber, WeatheredTimber, Floorboards, Plaster, KitchenTiles, WallTiles;
         public Material RadioPaint, UtilityPaint, TealPaint, CreamEnamel, RedEnamel, MustardPaint, PegboardPaint;
         public Material Polymer, Copper, Brass, Steel, Paper, OldPaper, Cardboard, Tape, Tablecloth, Cork, Cable, RedCable, ClothTape;
-        public Material Glass, Bulb, Dial, Indicator, NightWindow, Tube, Ink, RedInk, Pencil;
+        public Material Glass, Bulb, Dial, Indicator, NightWindow, Tube, Ink, RedInk, Pencil, Backdrop;
 
         public StyleMaterials(int textureSize)
         {
             size = textureSize;
-            Timber = Make("Honey timber", 1.2f, 1f, (u, v) => ProceduralSurfaces.Timber(u, v, StylePalette.HoneyTimber, StylePalette.DarkTimber, 11));
-            DarkTimber = Make("Dark timber", 1.2f, 1f, (u, v) => ProceduralSurfaces.Timber(u, v, Lighten(StylePalette.DarkTimber, 0.25f), Darken(StylePalette.DarkTimber, 0.4f), 23));
-            WeatheredTimber = Make("Weathered timber", 1.4f, 1f, (u, v) => ProceduralSurfaces.Timber(u, v, StylePalette.GreyTimber, Darken(StylePalette.GreyTimber, 0.45f), 37));
-            Floorboards = Make("Floorboards", 1.6f, 0.8f, (u, v) => ProceduralSurfaces.Floorboards(u, v, StylePalette.HoneyTimber, StylePalette.DarkTimber, 41));
-            Plaster = Make("Plaster", 0.25f, 0.5f, (u, v) => ProceduralSurfaces.Plaster(u, v, StylePalette.PlasterCream, 53));
-            KitchenTiles = Make("Kitchen floor tiles", 1.5f, 0.6f, (u, v) => Tiles(u, v, StylePalette.EnamelCream, StylePalette.KitchenTeal, Hex(0.3f), 4, 61));
+            lit = Shader.Find("HDRP/Lit");
+            if (lit == null) throw new InvalidOperationException("HDRP/Lit is unavailable; the style board needs HDRP.");
+            // Scans, tiled at their real size (metres) because study meshes use metre UVs.
+            Timber = Scan("Worn table timber (scan)", "wood_table_worn", 0.55f);
+            Floorboards = Scan("Worn floorboards (scan)", "wood_floor_worn", 2.0f);
+            Plaster = Scan("Plastered wall (scan)", "plastered_wall_04", 3.2f);
+            KitchenTiles = Scan("Worn floor tiles (scan)", "worn_tile_floor", 2.0f);
+            // The same table scan, darkened or greyed, for frames, legs, shelving, and salvage.
+            DarkTimber = Scan("Dark timber (scan)", "wood_table_worn", 0.55f, Hex(0.42f));
+            WeatheredTimber = Scan("Weathered timber (scan)", "wood_table_worn", 0.55f, new Color(0.95f, 1f, 1.05f), 0.55f);
             WallTiles = Make("Splashback tiles", 1.2f, 1.6f, (u, v) => Tiles(u, v, StylePalette.EnamelCream, Darken(StylePalette.EnamelCream, 0.08f), Hex(0.5f), 6, 67));
             RadioPaint = Make("Radio green paint", 2f, 2f, (u, v) => Painted(u, v, StylePalette.RadioGreen, Hex(0.55f), 1f, 0.7f, 71));
             UtilityPaint = Make("Utility blue paint", 2f, 2f, (u, v) => Painted(u, v, StylePalette.UtilityBlue, Hex(0.55f), 1f, 0.68f, 73));
@@ -86,59 +98,184 @@ namespace CommonHouse.Editor.StyleBoard
             RedCable = Make("Red cable", 0.6f, 6f, (u, v) => Rubber(u, v, Darken(StylePalette.EnamelRed, 0.15f), 163));
             ClothTape = Make("Cloth tape", 0.8f, 8f, (u, v) => Rubber(u, v, Hex(0.12f), 167));
             Glass = Transparent("Glass", new Color(0.75f, 0.85f, 0.85f, 0.22f));
-            Bulb = Emissive("Warm bulb", new Color(1f, 0.78f, 0.5f), 2.2f);
-            Dial = Emissive("Amber dial", StylePalette.DialAmber, 1.1f);
-            Indicator = Emissive("Cyan indicator", StylePalette.IndicatorCyan, 1.4f);
-            NightWindow = Emissive("Night window", new Color(0.1f, 0.14f, 0.24f), 0.6f);
-            Tube = Emissive("Cool tube", new Color(0.85f, 0.93f, 1f), 1.6f);
+            // Emission in nits; compare with the exposure values in StyleStudies.
+            Bulb = Emissive("Warm bulb", new Color(1f, 0.78f, 0.5f), 3000f);
+            Dial = Emissive("Amber dial", StylePalette.DialAmber, 60f);
+            Indicator = Emissive("Cyan indicator", StylePalette.IndicatorCyan, 80f);
+            NightWindow = Emissive("Night window", new Color(0.1f, 0.14f, 0.24f), 25f);
+            Tube = Emissive("Cool tube", new Color(0.85f, 0.93f, 1f), 2000f);
             Ink = Text("Ink", StylePalette.Ink);
             RedInk = Text("Red ink", StylePalette.RedInk);
             Pencil = Text("Pencil", StylePalette.PencilGrey);
+            Backdrop = Plain("Backdrop", Hex(0.32f), 0.1f);
+        }
+
+        /// <summary>Gives the ink materials an RGBA copy of the font atlas; call after all labels exist.</summary>
+        public void ApplyFontAtlas(Font font)
+        {
+            var atlas = FontAtlas(font);
+            foreach (var ink in new[] { Ink, RedInk, Pencil }) ink.SetTexture("_BaseColorMap", atlas);
         }
 
         private Material Make(string name, float normalStrength, float tiling, Func<float, float, SurfaceSample> sample)
         {
             var surface = Build(name, size, normalStrength * size / 256f, sample);
-            var material = new Material(Shader.Find("Standard")) { name = name };
-            material.SetTexture("_MainTex", surface.Albedo);
-            material.SetTexture("_BumpMap", surface.Normal);
-            material.SetFloat("_BumpScale", 1f);
-            material.EnableKeyword("_NORMALMAP");
-            material.SetTexture("_MetallicGlossMap", surface.MetallicGloss);
-            material.SetFloat("_GlossMapScale", 1f);
-            material.EnableKeyword("_METALLICGLOSSMAP");
-            material.mainTextureScale = new Vector2(tiling, tiling);
+            return Register(name, Textured(name, surface.Albedo, surface.Normal, surface.Mask, tiling));
+        }
+
+        /// <summary>A scanned material; tint multiplies the albedo, and desaturate greys it toward its luminance.</summary>
+        private Material Scan(string name, string asset, float metres, Color? tint = null, float desaturate = 0f)
+        {
+            var folder = ScanRoot + asset + "/" + asset;
+            var albedo = AssetDatabase.LoadAssetAtPath<Texture2D>(folder + "_diff_2k.jpg");
+            var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(folder + "_nor_gl_2k.jpg");
+            if (albedo == null || normal == null) throw new InvalidOperationException("Missing scan textures for " + asset);
+            if (!masks.TryGetValue(asset, out var mask)) masks[asset] = mask = MaskFromArm(folder + "_arm_2k.jpg");
+            var material = Textured(name, albedo, normal, mask, 1f / metres);
+            if (desaturate > 0f)
+            {
+                // HDRP/Lit has no saturation control, so bake a greyed copy of the albedo instead.
+                material.SetTexture("_BaseColorMap", Desaturated(folder + "_diff_2k.jpg", desaturate));
+            }
+            if (tint.HasValue) material.SetColor("_BaseColor", tint.Value);
+            return Register(name, material);
+        }
+
+        private readonly Dictionary<string, Texture2D> masks = new Dictionary<string, Texture2D>();
+
+        private static Texture2D Desaturated(string path, float amount)
+        {
+            var texture = new Texture2D(2, 2, TextureFormat.RGBA32, true, false);
+            if (!texture.LoadImage(File.ReadAllBytes(path))) throw new InvalidOperationException("Cannot decode " + path);
+            var pixels = texture.GetPixels32();
+            for (var i = 0; i < pixels.Length; i++)
+            {
+                var p = pixels[i];
+                var grey = (byte)Mathf.Clamp(0.2126f * p.r + 0.7152f * p.g + 0.0722f * p.b, 0f, 255f);
+                pixels[i] = Color32.Lerp(p, new Color32(grey, grey, grey, 255), amount);
+            }
+            texture.SetPixels32(pixels);
+            texture.Apply(true);
+            texture.name = Path.GetFileNameWithoutExtension(path) + "-grey";
+            texture.wrapMode = TextureWrapMode.Repeat;
+            texture.anisoLevel = 8;
+            return texture;
+        }
+
+        private Material Register(string name, Material material)
+        {
             Library.Add((name, material));
             return material;
         }
 
-        private Material Emissive(string name, Color color, float intensity)
+        private Material Textured(string name, Texture albedo, Texture normal, Texture mask, float tiling)
         {
-            var material = new Material(Shader.Find("Standard")) { name = name, color = color * 0.3f };
-            material.EnableKeyword("_EMISSION");
-            material.SetColor("_EmissionColor", color * intensity);
+            var material = new Material(lit) { name = name };
+            material.SetTexture("_BaseColorMap", albedo);
+            material.SetTextureScale("_BaseColorMap", new Vector2(tiling, tiling));
+            material.SetTexture("_NormalMap", normal);
+            material.SetFloat("_NormalScale", 1f);
+            material.SetTexture("_MaskMap", mask);
+            material.SetFloat("_MetallicRemapMax", 1f);
+            material.SetFloat("_SmoothnessRemapMax", 1f);
+            material.SetFloat("_AORemapMax", 1f);
+            HDMaterial.ValidateMaterial(material);
+            return material;
+        }
+
+        /// <summary>Repacks a Poly Haven ARM map (occlusion, roughness, metal) into an HDRP mask map.</summary>
+        private static Texture2D MaskFromArm(string path)
+        {
+            var arm = new Texture2D(2, 2, TextureFormat.RGBA32, false, true);
+            if (!arm.LoadImage(File.ReadAllBytes(path))) throw new InvalidOperationException("Cannot decode " + path);
+            var pixels = arm.GetPixels32();
+            for (var i = 0; i < pixels.Length; i++)
+            {
+                var p = pixels[i];
+                pixels[i] = new Color32(p.b, p.r, 0, (byte)(255 - p.g));
+            }
+            var mask = new Texture2D(arm.width, arm.height, TextureFormat.RGBA32, true, true)
+            {
+                name = Path.GetFileNameWithoutExtension(path) + "-mask",
+                wrapMode = TextureWrapMode.Repeat,
+                filterMode = FilterMode.Trilinear,
+                anisoLevel = 8,
+            };
+            mask.SetPixels32(pixels);
+            mask.Apply(true);
+            UnityEngine.Object.DestroyImmediate(arm);
+            return mask;
+        }
+
+        private Material Plain(string name, Color color, float smoothness)
+        {
+            var material = new Material(lit) { name = name };
+            material.SetColor("_BaseColor", color);
+            material.SetFloat("_Smoothness", smoothness);
+            HDMaterial.ValidateMaterial(material);
+            return material;
+        }
+
+        private Material Emissive(string name, Color color, float nits)
+        {
+            var material = Plain(name, color * 0.3f, 0.6f);
+            material.SetFloat("_UseEmissiveIntensity", 1f);
+            HDMaterial.SetEmissiveColor(material, color);
+            HDMaterial.SetEmissiveIntensity(material, nits, EmissiveIntensityUnit.Nits);
             material.globalIlluminationFlags = MaterialGlobalIlluminationFlags.None;
+            HDMaterial.ValidateMaterial(material);
             return material;
         }
 
-        private static Material Transparent(string name, Color color)
+        private Material Transparent(string name, Color color)
         {
-            var material = new Material(Shader.Find("Standard")) { name = name, color = color };
-            material.SetFloat("_Mode", 3f);
-            material.SetFloat("_Glossiness", 0.9f);
-            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            material.SetInt("_ZWrite", 0);
-            material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
-            material.renderQueue = 3000;
+            var material = Plain(name, color, 0.95f);
+            HDMaterial.SetSurfaceType(material, true);
             return material;
         }
 
-        private static Material Text(string name, Color ink)
+        private Material Text(string name, Color ink)
         {
-            var shader = Shader.Find("CommonHouse/LitText");
-            if (shader == null) throw new InvalidOperationException("Missing CommonHouse/LitText shader.");
-            return new Material(shader) { name = name, color = ink };
+            // Lit and alpha-clipped, so handwriting takes the scene's light instead of glowing.
+            var material = Plain(name, ink, 0.2f);
+            HDMaterial.SetAlphaClipping(material, true);
+            HDMaterial.SetAlphaCutoff(material, 0.5f);
+            HDMaterial.ValidateMaterial(material);
+            return material;
+        }
+
+        /// <summary>
+        /// HDRP/Lit multiplies base colour by the texture's RGB, and the dynamic font atlas stores
+        /// glyph coverage in a single channel, so copy it into white RGB with coverage as alpha.
+        /// </summary>
+        private static Texture2D FontAtlas(Font font)
+        {
+            var source = font.material.mainTexture;
+            var target = RenderTexture.GetTemporary(source.width, source.height, 0, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);
+            var previous = RenderTexture.active;
+            var copy = new Texture2D(source.width, source.height, TextureFormat.RGBA32, false, true) { name = "Label font atlas" };
+            try
+            {
+                Graphics.Blit(source, target);
+                RenderTexture.active = target;
+                copy.ReadPixels(new Rect(0, 0, source.width, source.height), 0, 0);
+            }
+            finally
+            {
+                RenderTexture.active = previous;
+                RenderTexture.ReleaseTemporary(target);
+            }
+            var pixels = copy.GetPixels32();
+            byte minA = 255, maxA = 0;
+            foreach (var p in pixels) { if (p.a < minA) minA = p.a; if (p.a > maxA) maxA = p.a; }
+            // Depending on the graphics API, coverage arrives in alpha or in red.
+            var useAlpha = maxA - minA > 16;
+            for (var i = 0; i < pixels.Length; i++)
+                pixels[i] = new Color32(255, 255, 255, useAlpha ? pixels[i].a : pixels[i].r);
+            copy.SetPixels32(pixels);
+            copy.Apply(false);
+            copy.filterMode = FilterMode.Bilinear;
+            return copy;
         }
 
         private static Color Hex(float grey) => new Color(grey, grey, grey);

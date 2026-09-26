@@ -1,4 +1,152 @@
 {
   "version": 1,
-  "assets": []
+  "assets": [
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/plastered_wall_04",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "01034a617bb4ecf42da38bfa5abe70b3e8f5b76f73f783f43b68ffd06865e205"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/plastered_wall_04",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "aaf0e693291d51d13531480625a942f950fed23f6b1d1008ee0e91f2a23a7b1e"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/plastered_wall_04",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "904f6ca0b569754502675b8891b5d6aad1d8a07f938e8a43cf385170a21a12dc"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wood_floor_worn",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "fc4ea76de51603812ce83bc5e0c2a47d8de0925cd79571c9e4c80564e145d581"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wood_floor_worn",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "aff7c4037c3d4d900d2702d9f676ea86338099e98f69fc91b3e3c5de9f488cbf"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wood_floor_worn",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "f9b32fe92b13b4a1de3041408f5cc2fd8d9f6caae1a2dbfea780e141982760e0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_table_worn/wood_table_worn_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wood_table_worn",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "7f6bf892105ec6be35bcdf4fbd8cac9f804c98457ae1cf23f4660f3b35e7c5a2"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_table_worn/wood_table_worn_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wood_table_worn",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "165cdba449d56ea8e9675116622b95d7af372b7d7c47b8a98a03fcc630f1d51c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_table_worn/wood_table_worn_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wood_table_worn",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "a90aaa321194fb41d6e44776c6ee88134e4be416051357a3c9e323cc447c4cf0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/worn_tile_floor",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "0f4a7cf420a992e1f93d4b7ed10589a83793bf49ff1755449a74f8e89016e428"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/worn_tile_floor",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "c900a66f7307a100ec52a246bda856f37fd39ee2cda2f155aa4f7d37258326a8"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/worn_tile_floor",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-26",
+      "sha256": "da86ecd63bc84ea2d371a90bae30f3914796056d93617f247aac51d79e9fa0f3"
+    }
+  ]
 }

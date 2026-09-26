@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 namespace CommonHouse.Editor.StyleBoard
 {
@@ -27,6 +28,8 @@ namespace CommonHouse.Editor.StyleBoard
             public Vector3 Camera;
             public Vector3 Target;
             public float Fov = 55f;
+            // Fixed exposure (EV100) and the sky radiance that stands in for bounced light.
+            public float Ev;
             public Color Ambient;
         }
 
@@ -36,8 +39,7 @@ namespace CommonHouse.Editor.StyleBoard
             if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var studies = BuildAll(new StyleMaterials(TextureSize));
-            RenderSettings.ambientMode = AmbientMode.Flat;
-            RenderSettings.ambientLight = studies[0].Ambient;
+            new StudyVolume().Show(studies[0]);
             var view = SceneView.lastActiveSceneView;
             if (view != null)
             {
@@ -56,27 +58,20 @@ namespace CommonHouse.Editor.StyleBoard
                 throw new InvalidOperationException("Use the disposable verification environment.");
             Directory.CreateDirectory(output);
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            QualitySettings.shadows = UnityEngine.ShadowQuality.All;
-            QualitySettings.shadowResolution = UnityEngine.ShadowResolution.VeryHigh;
-            QualitySettings.shadowDistance = 12f;
-            QualitySettings.pixelLightCount = 8;
-            QualitySettings.antiAliasing = 0;
 
             var materials = new StyleMaterials(TextureSize);
             var studies = BuildAll(materials);
             var camera = new GameObject("Study camera").AddComponent<Camera>();
-            camera.clearFlags = CameraClearFlags.SolidColor;
-            camera.backgroundColor = new Color(0.02f, 0.02f, 0.025f);
             camera.nearClipPlane = 0.02f;
             camera.farClipPlane = 30f;
-            camera.allowMSAA = true;
-            camera.allowHDR = false;
-            RenderSettings.ambientMode = AmbientMode.Flat;
-            RenderSettings.fog = false;
+            var hdCamera = camera.gameObject.AddComponent<HDAdditionalCameraData>();
+            hdCamera.antialiasing = HDAdditionalCameraData.AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+            hdCamera.SMAAQuality = HDAdditionalCameraData.SMAAQualityLevel.High;
+            var volume = new StudyVolume();
             foreach (var study in studies)
             {
                 foreach (var other in studies) other.Root.gameObject.SetActive(other == study);
-                RenderSettings.ambientLight = study.Ambient;
+                volume.Show(study);
                 camera.fieldOfView = study.Fov;
                 camera.transform.position = study.Root.TransformPoint(study.Camera);
                 camera.transform.LookAt(study.Root.TransformPoint(study.Target));
@@ -84,7 +79,7 @@ namespace CommonHouse.Editor.StyleBoard
             }
             File.WriteAllBytes(Path.Combine(output, "palette.png"), PaletteStrip().EncodeToPNG());
             var inventory = new StringBuilder();
-            inventory.AppendLine("# Generated materials (" + TextureSize + "px, deterministic seeds)");
+            inventory.AppendLine("# Materials: CC0 scans (see docs/development/asset-provenance.json) and generated textures (" + TextureSize + "px, deterministic seeds)");
             foreach (var entry in materials.Library) inventory.AppendLine(entry.Name);
             inventory.AppendLine("# Palette");
             foreach (var entry in StylePalette.Entries()) inventory.AppendLine(entry.Name + " #" + ColorUtility.ToHtmlStringRGB(entry.Color));
@@ -94,7 +89,7 @@ namespace CommonHouse.Editor.StyleBoard
 
         private static List<Study> BuildAll(StyleMaterials materials)
         {
-            return new List<Study>
+            var studies = new List<Study>
             {
                 RadioDesk(materials, new Vector3(0, 0, 0), night: false),
                 RadioDesk(materials, new Vector3(0, 0, 12), night: true),
@@ -102,6 +97,44 @@ namespace CommonHouse.Editor.StyleBoard
                 Archive(materials, new Vector3(20, 0, 0)),
                 Swatches(materials, new Vector3(30, 0, 0)),
             };
+            materials.ApplyFontAtlas(Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"));
+            return studies;
+        }
+
+        /// <summary>One global volume whose exposure and sky follow the study being shown.</summary>
+        private sealed class StudyVolume
+        {
+            private readonly Exposure exposure;
+            private readonly GradientSky sky;
+
+            public StudyVolume()
+            {
+                var profile = ScriptableObject.CreateInstance<VolumeProfile>();
+                exposure = profile.Add<Exposure>(true);
+                exposure.mode.value = ExposureMode.Fixed;
+                profile.Add<MotionBlur>(true).intensity.value = 0f;
+                // HDRP's default bloom haloes the small emissive dials and labels.
+                profile.Add<Bloom>(true).intensity.value = 0.05f;
+                var environment = profile.Add<VisualEnvironment>(true);
+                environment.skyType.value = (int)SkyType.Gradient;
+                environment.skyAmbientMode.value = SkyAmbientMode.Dynamic;
+                sky = profile.Add<GradientSky>(true);
+                sky.exposure.value = 0f;
+                var volume = new GameObject("Study volume").AddComponent<Volume>();
+                volume.isGlobal = true;
+                volume.priority = 1f;
+                volume.sharedProfile = profile;
+            }
+
+            public void Show(Study study)
+            {
+                exposure.fixedExposure.value = study.Ev;
+                // Scale the sky so that Ambient is roughly its on-screen value at this exposure.
+                var radiance = study.Ambient * 1.2f * Mathf.Pow(2f, study.Ev);
+                sky.top.value = radiance * 1.1f;
+                sky.middle.value = radiance;
+                sky.bottom.value = radiance * 0.6f;
+            }
         }
 
         private static Study RadioDesk(StyleMaterials m, Vector3 origin, bool night)
@@ -159,10 +192,10 @@ namespace CommonHouse.Editor.StyleBoard
             b.Sphere("Mic head", new Vector3(0.28f, 0.98f, 0.21f), new Vector3(0.05f, 0.075f, 0.05f), m.RadioPaint);
 
             b.Lamp("Desk lamp", new Vector3(0.62f, 0.785f, 0.4f), m.MustardPaint, lit: !night);
-            b.Point("Dial glow", new Vector3(-0.4f, 1.04f, 0.12f), new Color(1f, 0.62f, 0.3f), 0.9f, night ? 0.6f : 0.35f, false);
-            b.Point("Equipment glow", new Vector3(-0.3f, 1.22f, 0.15f), new Color(0.4f, 0.82f, 0.95f), night ? 1.6f : 1.1f, night ? 0.8f : 0.4f);
-            if (!night) b.Point("Room bounce", new Vector3(0.6f, 2.6f, -0.8f), new Color(1f, 0.82f, 0.62f), 5f, 0.35f, false);
-            else b.Point("Hall spill", new Vector3(1.8f, 1.6f, -1.2f), new Color(0.55f, 0.62f, 0.8f), 4f, 0.25f);
+            b.Point("Dial glow", new Vector3(-0.4f, 1.04f, 0.12f), new Color(1f, 0.62f, 0.3f), 0.9f, 40f, false);
+            b.Point("Equipment glow", new Vector3(-0.3f, 1.22f, 0.15f), new Color(0.4f, 0.82f, 0.95f), night ? 1.6f : 1.1f, 40f);
+            if (!night) b.Point("Room bounce", new Vector3(0.6f, 2.6f, -0.8f), new Color(1f, 0.82f, 0.62f), 5f, 250f, false);
+            else b.Point("Hall spill", new Vector3(1.8f, 1.6f, -1.2f), new Color(0.55f, 0.62f, 0.8f), 4f, 150f);
 
             if (!night)
             {
@@ -196,6 +229,7 @@ namespace CommonHouse.Editor.StyleBoard
                 Camera = new Vector3(0.45f, 1.45f, -1.35f),
                 Target = new Vector3(-0.15f, 1.05f, 0.35f),
                 Fov = 52f,
+                Ev = night ? 3.5f : 5f,
                 Ambient = night ? new Color(0.018f, 0.022f, 0.035f) : new Color(0.04f, 0.042f, 0.05f),
             };
         }
@@ -243,7 +277,7 @@ namespace CommonHouse.Editor.StyleBoard
                 b.Box("Window frame", pos, size, m.DarkTimber);
             var pane = b.Box("Window pane", new Vector3(-0.35f, 1.55f, 1.795f), new Vector3(0.7f, 0.8f, 0.01f), m.NightWindow);
             pane.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
-            b.Spot("Night spill", new Vector3(-0.35f, 1.6f, 1.7f), new Vector3(0.3f, 0f, 0.2f), new Color(0.55f, 0.65f, 0.9f), 4f, 55f, 0.45f);
+            b.Spot("Night spill", new Vector3(-0.35f, 1.6f, 1.7f), new Vector3(0.3f, 0f, 0.2f), new Color(0.55f, 0.65f, 0.9f), 4f, 55f, 200f);
 
             // Shelf of jars with competing labels.
             b.Box("Shelf", new Vector3(0.9f, 1.55f, 1.69f), new Vector3(0.9f, 0.03f, 0.22f), m.Timber);
@@ -282,8 +316,8 @@ namespace CommonHouse.Editor.StyleBoard
             b.Cable("Pendant cord", m.Cable, 0.006f, new Vector3(0.1f, 3f, 0.6f), new Vector3(0.1f, 1.76f, 0.6f));
             b.Cylinder("Pendant shade", new Vector3(0.1f, 1.72f, 0.6f), 0.17f, 0.09f, m.CreamEnamel);
             b.Sphere("Pendant bulb", new Vector3(0.1f, 1.65f, 0.6f), Vector3.one * 0.07f, m.Bulb);
-            b.Point("Pendant light", new Vector3(0.1f, 1.6f, 0.6f), new Color(1f, 0.76f, 0.5f), 5.5f, 1.5f);
-            b.Point("Room bounce", new Vector3(0.8f, 2.4f, -0.8f), new Color(1f, 0.82f, 0.64f), 5f, 0.3f, false);
+            b.Point("Pendant light", new Vector3(0.1f, 1.6f, 0.6f), new Color(1f, 0.76f, 0.5f), 5.5f, 800f);
+            b.Point("Room bounce", new Vector3(0.8f, 2.4f, -0.8f), new Color(1f, 0.82f, 0.64f), 5f, 250f, false);
 
             return new Study
             {
@@ -291,6 +325,7 @@ namespace CommonHouse.Editor.StyleBoard
                 Root = b.Root,
                 Camera = new Vector3(1.0f, 1.55f, -1.25f),
                 Target = new Vector3(-0.2f, 1.0f, 1.0f),
+                Ev = 5f,
                 Ambient = new Color(0.06f, 0.052f, 0.046f),
             };
         }
@@ -379,8 +414,8 @@ namespace CommonHouse.Editor.StyleBoard
             // Overhead tube and its fixture.
             b.Box("Tube fixture", new Vector3(0.1f, 2.6f, 0.4f), new Vector3(1.2f, 0.05f, 0.14f), m.Steel);
             b.Cylinder("Tube", new Vector3(0.1f, 2.56f, 0.4f), 0.018f, 1.1f, m.Tube, new Vector3(0, 0, 90), 12);
-            b.Point("Tube light", new Vector3(0.1f, 2.45f, 0.35f), new Color(0.82f, 0.9f, 1f), 6f, 1.2f);
-            b.Point("Room bounce", new Vector3(0.9f, 2f, -1f), new Color(0.75f, 0.8f, 0.9f), 4f, 0.2f, false);
+            b.Point("Tube light", new Vector3(0.1f, 2.45f, 0.35f), new Color(0.82f, 0.9f, 1f), 6f, 1500f);
+            b.Point("Room bounce", new Vector3(0.9f, 2f, -1f), new Color(0.75f, 0.8f, 0.9f), 4f, 200f, false);
             b.Chair("Stool", new Vector3(0.1f, 0.46f, 0.35f), 200f, m.WeatheredTimber, m.DarkTimber);
 
             return new Study
@@ -389,6 +424,7 @@ namespace CommonHouse.Editor.StyleBoard
                 Root = b.Root,
                 Camera = new Vector3(1.05f, 1.55f, -1.3f),
                 Target = new Vector3(-0.35f, 1.15f, 0.85f),
+                Ev = 5.5f,
                 Ambient = new Color(0.045f, 0.048f, 0.055f),
             };
         }
@@ -396,9 +432,7 @@ namespace CommonHouse.Editor.StyleBoard
         private static Study Swatches(StyleMaterials m, Vector3 origin)
         {
             var b = new StudyBuilder("Material swatches", origin, m);
-            var backdrop = new Material(Shader.Find("Standard")) { color = new Color(0.32f, 0.32f, 0.32f) };
-            backdrop.SetFloat("_Glossiness", 0.1f);
-            b.Box("Backdrop", new Vector3(0, 1.4f, 0.1f), new Vector3(6f, 3.6f, 0.05f), backdrop);
+            b.Box("Backdrop", new Vector3(0, 1.4f, 0.1f), new Vector3(6f, 3.6f, 0.05f), m.Backdrop);
             var labelInk = m.Ink;
             var library = m.Library.ToList();
             const int columns = 6;
@@ -411,8 +445,8 @@ namespace CommonHouse.Editor.StyleBoard
                 b.Box("Swatch card", center + new Vector3(0, -0.27f, -0.03f), new Vector3(0.66f, 0.075f, 0.004f), m.Paper);
                 b.Label(library[i].Name, center + new Vector3(0, -0.27f, -0.0325f), 0.05f, labelInk);
             }
-            b.Point("Key", new Vector3(-2f, 3.2f, -2.5f), new Color(1f, 0.95f, 0.88f), 10f, 1.6f);
-            b.Point("Fill", new Vector3(2.5f, 1.2f, -2.5f), new Color(0.85f, 0.9f, 1f), 10f, 1.0f, false);
+            b.Point("Key", new Vector3(-2f, 3.2f, -2.5f), new Color(1f, 0.95f, 0.88f), 10f, 6000f);
+            b.Point("Fill", new Vector3(2.5f, 1.2f, -2.5f), new Color(0.85f, 0.9f, 1f), 10f, 3000f, false);
             return new Study
             {
                 Id = "material-swatches",
@@ -420,6 +454,7 @@ namespace CommonHouse.Editor.StyleBoard
                 Camera = new Vector3(0, 1.3f, -4.2f),
                 Target = new Vector3(0, 1.28f, 0),
                 Fov = 45f,
+                Ev = 5.5f,
                 Ambient = new Color(0.12f, 0.12f, 0.12f),
             };
         }
@@ -437,21 +472,39 @@ namespace CommonHouse.Editor.StyleBoard
             return texture;
         }
 
+        /// <summary>Fails on a near-uniform image, such as an unsupported shader or a blown exposure.</summary>
+        private static void RequireDetail(Texture2D image, string path)
+        {
+            var pixels = image.GetPixels32();
+            double sum = 0, squares = 0;
+            foreach (var p in pixels)
+            {
+                var y = (0.2126 * p.r + 0.7152 * p.g + 0.0722 * p.b) / 255.0;
+                sum += y;
+                squares += y * y;
+            }
+            var mean = sum / pixels.Length;
+            var deviation = Math.Sqrt(Math.Max(0, squares / pixels.Length - mean * mean));
+            if (deviation < 0.03 || mean < 0.02 || mean > 0.95)
+                throw new InvalidOperationException($"{Path.GetFileName(path)} looks broken: mean {mean:F3}, deviation {deviation:F3}.");
+        }
+
         private static void Save(Camera camera, string path)
         {
             var previous = RenderTexture.active;
-            var target = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGB32) { antiAliasing = 8 };
+            var target = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGB32);
             var pixels = new Texture2D(Width, Height, TextureFormat.RGB24, false);
             try
             {
                 target.Create();
                 camera.targetTexture = target;
-                // HDRP applies exposure from the previous frame; the first render only primes it.
-                camera.Render();
-                camera.Render();
+                // HDRP applies exposure from the previous frame, and the sky's ambient lighting
+                // also updates a frame late, so the first renders only prime them.
+                for (var frame = 0; frame < 3; frame++) camera.Render();
                 RenderTexture.active = target;
                 pixels.ReadPixels(new Rect(0, 0, Width, Height), 0, 0);
                 pixels.Apply();
+                RequireDetail(pixels, path);
                 File.WriteAllBytes(path, pixels.EncodeToJPG(90));
             }
             finally

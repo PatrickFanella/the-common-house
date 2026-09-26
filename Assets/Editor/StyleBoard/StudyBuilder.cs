@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 namespace CommonHouse.Editor.StyleBoard
 {
@@ -17,8 +18,21 @@ namespace CommonHouse.Editor.StyleBoard
             Root.position = origin;
             Materials = materials;
             font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            foreach (var ink in new[] { materials.Ink, materials.RedInk, materials.Pencil })
-                ink.mainTexture = font.material.mainTexture;
+            // Fill the dynamic atlas before any label exists, so the copy made by
+            // StyleMaterials.ApplyFontAtlas already holds every glyph.
+            font.RequestCharactersInTexture(Glyphs, FontSize);
+        }
+
+        public Font Font => font;
+
+        private const int FontSize = 64;
+        private static readonly string Glyphs = BuildGlyphs();
+
+        private static string BuildGlyphs()
+        {
+            var glyphs = new System.Text.StringBuilder("—─┬└");
+            for (var c = ' '; c <= '~'; c++) glyphs.Append(c);
+            return glyphs.ToString();
         }
 
         public GameObject Box(string name, Vector3 center, Vector3 size, Material material, Vector3 euler = default)
@@ -57,8 +71,8 @@ namespace CommonHouse.Editor.StyleBoard
             label.transform.localEulerAngles = euler;
             var mesh = label.AddComponent<TextMesh>();
             mesh.font = font;
-            mesh.fontSize = 64;
-            mesh.characterSize = lineHeight * 10f / 64f;
+            mesh.fontSize = FontSize;
+            mesh.characterSize = lineHeight * 10f / FontSize;
             mesh.anchor = anchor;
             mesh.alignment = TextAlignment.Left;
             mesh.text = text;
@@ -77,27 +91,31 @@ namespace CommonHouse.Editor.StyleBoard
             return sheet;
         }
 
-        public Light Point(string name, Vector3 position, Color color, float range, float intensity, bool shadows = true)
+        /// <summary>A point light in HDRP's physical units; intensity is in lumens.</summary>
+        public Light Point(string name, Vector3 position, Color color, float range, float lumens, bool shadows = true)
         {
-            var light = new GameObject(name).AddComponent<Light>();
-            light.transform.SetParent(Root, false);
-            light.transform.localPosition = position;
+            var go = new GameObject(name);
+            go.transform.SetParent(Root, false);
+            go.transform.localPosition = position;
+            var light = go.AddComponent<Light>();
             light.type = LightType.Point;
+            // Added before units and intensity; otherwise HDRP replaces them with its defaults on load.
+            go.AddComponent<HDAdditionalLightData>();
+            light.lightUnit = UnityEngine.Rendering.LightUnit.Lumen;
+            light.intensity = lumens;
             light.color = color;
             light.range = range;
-            light.intensity = intensity;
             light.shadows = shadows ? LightShadows.Soft : LightShadows.None;
-            light.shadowBias = 0.02f;
-            light.shadowNormalBias = 0.2f;
-            light.renderMode = LightRenderMode.ForcePixel;
             return light;
         }
 
-        public Light Spot(string name, Vector3 position, Vector3 target, Color color, float range, float angle, float intensity)
+        public Light Spot(string name, Vector3 position, Vector3 target, Color color, float range, float angle, float lumens)
         {
-            var light = Point(name, position, color, range, intensity);
+            var light = Point(name, position, color, range, lumens);
             light.type = LightType.Spot;
             light.spotAngle = angle;
+            light.lightUnit = UnityEngine.Rendering.LightUnit.Lumen;
+            light.intensity = lumens;
             light.transform.LookAt(Root.TransformPoint(target));
             return light;
         }
@@ -142,7 +160,7 @@ namespace CommonHouse.Editor.StyleBoard
             Cylinder(name + " arm", basePosition + new Vector3(-0.08f, 0.4f, -0.02f), 0.01f, 0.2f, Materials.Steel, new Vector3(0, 0, 70));
             Cylinder(name + " shade", basePosition + new Vector3(-0.17f, 0.4f, -0.02f), 0.08f, 0.12f, shade, new Vector3(0, 0, -20));
             Sphere(name + " bulb", basePosition + new Vector3(-0.19f, 0.34f, -0.02f), Vector3.one * 0.05f, lit ? Materials.Bulb : Materials.Glass);
-            if (lit) Point(name + " light", basePosition + new Vector3(-0.2f, 0.3f, -0.03f), new Color(1f, 0.74f, 0.46f), 3.2f, 1.7f);
+            if (lit) Point(name + " light", basePosition + new Vector3(-0.2f, 0.3f, -0.03f), new Color(1f, 0.74f, 0.46f), 3.2f, 450f);
         }
 
         private GameObject Place(string name, Mesh mesh, Vector3 position, Vector3 euler, Material material)
