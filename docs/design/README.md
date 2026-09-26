@@ -29,6 +29,7 @@ Read the Concept Brief for the pitch, then the Game Design Document for the prop
 | [Narrative and World Bible](narrative-and-world-bible.md) | World assumptions, character functions, themes, and story structure |
 | [Radio and Investigation Systems](radio-and-investigation-systems.md) | Evidence, transmissions, conversations, routing, and consequences |
 | [Art Audio and UX Direction](art-audio-and-ux-direction.md) | Visual and sound direction, interface, accessibility, and asset priorities |
+| [Style Board v0.1](style-board.md) | Procedurally generated room studies, materials, and palette for review |
 | [Technical Design Outline](technical-design-outline.md) | Solo Unity POC, state model, tooling, saves, and technical questions |
 | [Proof of Concept Plan](proof-of-concept-plan.md) | Proof-of-concept scope, evaluation, dependencies, and risks |
 | [Case 01 - The Road Is Clear](case-01-the-road-is-clear.md) | A complete provisional case for testing the concept |
