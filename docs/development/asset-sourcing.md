@@ -10,6 +10,7 @@ page describes how to add a sourced file.
 |---|---|---|
 | Poly Haven | `https://polyhaven.com/a/<asset>` | CC0-1.0 |
 | ambientCG | `https://ambientcg.com/view?id=<asset>` | CC0-1.0 |
+| MakeHuman | `https://static.makehumancommunity.org/assets/assetpacks/<pack>.html` | CC0-1.0 |
 
 Check the license on the asset page when downloading. Adding another source or license needs
 a new decision; the checker rejects anything else.
@@ -33,6 +34,9 @@ Models are prepared by `CommonHouse.Editor.OutpostProps`, which builds one HDRP/
 each part and remaps it in the FBX importer. Parts without a diffuse map, such as glass, become
 transparent. Add a new model to `OutpostProps.Models` and place it in
 `OutpostSceneGenerator.Furnish`.
+
+MakeHuman textures are recorded automatically when characters are built; see
+[characters](characters.md).
 
 ## Adding a file by hand
 
