@@ -3,7 +3,7 @@ title: Decisions and Open Questions
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-26
+updated: 2026-09-28
 visibility: private
 tags:
 - project/the-common-house
@@ -40,6 +40,7 @@ tags:
 | D-20 | Target a high level of visual realism, rendered with HDRP. | 2026-09-25: "I want to go for a very high level of realism", then "HDRP (Recommended)". | The project uses HDRP 17.4.0 with Vulkan on Linux and linear colour. Lighting uses physical units and fixed exposure. Built-in shaders, including the style-board materials, must be ported before they render correctly. |
 | D-21 | Source realistic materials from CC0 scans, combined with procedural work. | 2026-09-25, for the realism direction: "CC0 scans + procedural". Revises D-17. | Scanned files come only from Poly Haven or ambientCG under CC0 and live under `Assets/CommonHouse/Art/Sourced/`. Each file needs an entry in `docs/development/asset-provenance.json` with its source page, authors, retrieval date, and hash; `scripts/check_provenance.py` enforces this. Other sources or licenses need a new decision. |
 | D-22 | Store textures and models with Git LFS. | 2026-09-25: "Git LFS". Revises D-18. | `.gitattributes` sends texture and model formats under `Assets/` through LFS. The 5 MiB cap still applies to plain-Git binaries such as documentation images. Gitea reported LFS enabled on 2026-09-26. |
+| D-23 | Generate residents with MPFB2 (MakeHuman for Blender) from recipes kept in the repository. | 2026-09-28: at least a dozen characters, "realistic people", sourced or generated because the owner does not model or animate, and later ones "will appear to be the same"; then "we go with MPFB2". | Characters are rebuilt from JSON recipes with a pinned Blender, MPFB, and MakeHuman CC0 asset packs, so new residents match earlier ones. Exported characters and the packs are CC0; MakeHuman joins the CC0 sources allowed by D-21. Realism is below Character Creator or MetaHuman, and animation needs another source. |
 
 ## Proposed working choices
 
@@ -87,5 +88,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-25, rendering: Recorded D-20. The owner asked for a very high level of realism and chose HDRP. Asset sourcing and binary storage were also revisited that day; see D-21 and D-22. No visual style is approved by this entry.
 
 2026-09-25, sourcing and storage: Recorded D-21 and D-22. CC0 scans from two named sources join procedural generation, with per-file provenance. Textures and models move to Git LFS. D-17 and D-18 remain as the earlier choices they revise. No scanned asset is added by these entries.
+
+2026-09-28, characters: Recorded D-23 after comparing Character Creator 5, MetaHuman, MPFB2, and Microsoft Rocketbox with the owner. No resident design is approved by this entry.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.

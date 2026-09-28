@@ -1,0 +1,143 @@
+{
+  "id": "test-resident-01",
+  "materials": [
+    {
+      "diffuse": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+      "kind": "basemesh",
+      "name": "Human.body"
+    },
+    {
+      "diffuse": "eyebrows/eyebrow001/eyebrow001.png",
+      "kind": "eyebrows",
+      "name": "Human.eyebrow001"
+    },
+    {
+      "diffuse": "eyelashes/eyelashes01/eyelashes01.png",
+      "kind": "eyelashes",
+      "name": "Human.eyelashes01"
+    },
+    {
+      "diffuse": "eyes/materials/brown_eye.png",
+      "kind": "eyes",
+      "name": "Human.high-poly"
+    },
+    {
+      "ao": "clothes/male_worksuit01/male_worksuit01_ao.png",
+      "diffuse": "clothes/male_worksuit01/male_worksuit01_diffuse.png",
+      "kind": "clothes",
+      "name": "Human.male_worksuit01",
+      "normal": "clothes/male_worksuit01/male_worksuit01_normal.png"
+    },
+    {
+      "diffuse": "clothes/shoes02/shoes02_diffuse.png",
+      "kind": "clothes",
+      "name": "Human.shoes02"
+    },
+    {
+      "diffuse": "hair/short02/short02_diffuse.png",
+      "kind": "hair",
+      "name": "Human.short02"
+    },
+    {
+      "diffuse": "teeth/teeth_base/teeth.png",
+      "kind": "teeth",
+      "name": "Human.teeth_base"
+    },
+    {
+      "diffuse": "tongue/tongue01/tongue01_diffuse.png",
+      "kind": "tongue",
+      "name": "Human.tongue01"
+    }
+  ],
+  "recipe": "test-resident-01.json",
+  "textures": [
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "clothes/male_worksuit01/male_worksuit01_ao.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "clothes/male_worksuit01/male_worksuit01_diffuse.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "clothes/male_worksuit01/male_worksuit01_normal.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "clothes/shoes02/shoes02_diffuse.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "eyebrows/eyebrow001/eyebrow001.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "eyelashes/eyelashes01/eyelashes01.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "eyes/materials/brown_eye.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "hair/short02/short02_diffuse.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "teeth/teeth_base/teeth.png"
+    },
+    {
+      "authors": [
+        "Data Collection AB",
+        "Joel Palmius",
+        "Jonas Hauquier"
+      ],
+      "path": "tongue/tongue01/tongue01_diffuse.png"
+    }
+  ]
+}

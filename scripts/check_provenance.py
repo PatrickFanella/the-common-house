@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = "docs/development/asset-provenance.json"
 SOURCED_ROOT = "Assets/CommonHouse/Art/Sourced/"
 # Approved external sources and the host their asset pages must use. Extend only with a recorded decision.
-SOURCES = {"Poly Haven": "polyhaven.com", "ambientCG": "ambientcg.com"}
+SOURCES = {"Poly Haven": "polyhaven.com", "ambientCG": "ambientcg.com", "MakeHuman": "makehumancommunity.org"}
 LICENSES = {"CC0-1.0"}
 COMMON_FIELDS = {"path", "kind", "sha256"}
 KIND_FIELDS = {
