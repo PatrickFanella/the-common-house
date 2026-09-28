@@ -2,6 +2,733 @@
   "version": 1,
   "assets": [
     {
+      "path": "Assets/CommonHouse/Art/Generated/binder_notebook_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "3d7642b46c940724cd694b21c166e5f49a3503d7e091e1486d771300d9ccac21",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/cardboard_box_01_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "efd46dd76a1c0a1c86bcb671cea7aa0e851fa75316742f4241e4e3d1859de5cc",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/clipboard_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "4d99efbfec64c9506da0cfd2f979a9704e4b87a481931a40bb62a2da2f68b41b",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/dining_table_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "6b7f6b9bb0b17d7fbbcf7989f74cc6371d2862581a29f84e7a2d80c41cb27a62",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/hanging_industrial_lamp_glass_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "b76592395f86720d34a2127f19796bc8fcbf557c3a3282df9788d4e647b60b64",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_glass_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/hanging_industrial_lamp_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "fe7b4a098c138592ede1f4d7b6994026290f068defd5d15d26189db4aab37024",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/metal_office_desk_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "05c5e9d911ac2719ea1ad0a414c318706190f63ebf175e8014b45bb61ea6300d",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/metal_stool_01_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "5d0750eef814a2f70e03aad61835e55c88ec990212fab4b9b264adf4f68dd044",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/mounted_fluorescent_lights_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "b3d66377c7cdefc43a0331b53ad1953d675ce3490edd3dd9659c08c8de6253e2",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/painted_wooden_cabinet_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "9dfc4d46488b947594d22162d50c93a1e859f57d1a74e6df7ee72d758d24d409",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/painted_wooden_chair_01_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "24a83ef0927521e6dbb5ec1e7411c4efe5291126856bc18bed1d282f7141f0fa",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/painted_wooden_chair_02_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "fd6df1c0b18ac9a185f8fdaeff2fc074cd271e950ebe21d8d452e8115cfaec94",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/plastered_wall_04_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostMaterials.cs",
+      "sha256": "ee09612f90787063359f9723e7cecc7a5dc3591860d7d0c42ce115bbeb80b830",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/portable_cassette_player_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "c5d85563735fe82149cd28e00a69be51fceed89064218306de3186f33bce9f99",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/pot_enamel_01_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "ce0445b362e90c811fd2939ff571f8ab063c1c3d75c6897718e2120a47cf3299",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/standing_chalkboard_01_board_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "14da0524fd0b1600f13038cc8eb8ba7de645408642ce6e39c6b219c7ee03b9e9",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_board_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/standing_chalkboard_01_frame_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "324dcc12dfaa37578ee904596b12bc2accb72b5c9fdaf775b16b0ef3efe4bb78",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_frame_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/vintage_electric_kettle_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "917b6455a9d5a2299433f8564015a96ddf85ec3fe532e55eb3275f9365a4f66e",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/vintage_radio_transceiver_accessories_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "59a09340a957c758f2e3ac8f44cadfb92dc750fc262f924cafdf3c207d7e044d",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_accessories_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/vintage_radio_transceiver_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "2da1d5ec1b64e70891b0cc75d316f69678775837fca1ed8b5d213c10f6798fbd",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/wall_clock_glass_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "0aa263cdebed41d79057354f1b9ade35e542534c3552ef8db0030f130afc87d6",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_glass_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/wall_clock_mask_1k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "6f4a92f325df56c266c496971ca0db2ff3db7904ef0936bbfded7cde59c2eef4",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_arm_1k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/wood_floor_worn_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostMaterials.cs",
+      "sha256": "80dac175b8ba2bcd512a7d0d16e0acd48647ac40a744d20d6c444056ae5d1cdb",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/wooden_bookshelf_worn_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostProps.cs",
+      "sha256": "ae870c799158d0283664ef80da10c73d023df571565442539215544bbde48573",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/worn_tile_floor_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostMaterials.cs",
+      "sha256": "333b90a4cb4cde2c7dc9d15e4c4b70700c6fcc83604bed05dd69bf4a318693a8",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/binder_notebook",
+      "authors": [
+        "DaDrood"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "d4de5da356605b5b8c55e500e9a1f178f241fdd4d6dd05a03f295b07238afb9c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/binder_notebook",
+      "authors": [
+        "DaDrood"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "c0bc38cd13e5ada9552c3a9b60f88c36acf9e672011d97d066a6c0148f01898a"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/binder_notebook",
+      "authors": [
+        "DaDrood"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "8591cce815138bd737c252dc12a4d9bf41bceb499ace7dbfef0725e64dadda2d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/binder_notebook",
+      "authors": [
+        "DaDrood"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "24b18d9792c3816337d7d09b30aed400a887747ea6beb04b23612b6e1210a29e"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/cardboard_box_01",
+      "authors": [
+        "Rahul Chaudhary"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "292a3e5fd1f101babfac802836cc8364ded7d31af4596e022212f067b404d6b0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/cardboard_box_01",
+      "authors": [
+        "Rahul Chaudhary"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "5db63828d0f904c6a8d9c83afc912260b2a27261c15a28d06360519384574d2b"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/cardboard_box_01",
+      "authors": [
+        "Rahul Chaudhary"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "122c7ba8c5935e289804a730b480677a4bffdf74a45c91970cba682df92e171c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/cardboard_box_01",
+      "authors": [
+        "Rahul Chaudhary"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "d2d1f529a851966b65411b5094510dd9eba03cd5c0a89921f79325c377a8e8eb"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/clipboard",
+      "authors": [
+        "ProgrammerOnCoffee"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "48fe1c8fb9090916b1aad0835a5d6078bb3e1d6463474b51f4d84c8e80f4b215"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/clipboard",
+      "authors": [
+        "ProgrammerOnCoffee"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "79658043713f9adb64d2dfc956e2818cda727d7a08fd85aa0967f1f4f9ce660f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/clipboard",
+      "authors": [
+        "ProgrammerOnCoffee"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "2e823a490f24a70ff76418c578871f08608bfc370f64f5068d833e5ee63b457a"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/clipboard",
+      "authors": [
+        "ProgrammerOnCoffee"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "ea6700ba026222656f47c654d1631f075aedb57d52977ca22bdf8d417e1eca07"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/dining_table",
+      "authors": [
+        "Aron \u0141yczek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "a19925ee0b64ccf92231d858951672d134b3e67babf3408736a1aba3ec03e026"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/dining_table",
+      "authors": [
+        "Aron \u0141yczek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "68e05c23755446328d9cb85d017ce55626ad847ec989908dedb4002f74b4404f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/dining_table",
+      "authors": [
+        "Aron \u0141yczek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "47dc7c58b5c37193195cbf91068134562bc6becbd0a2ab5da44bed858b841110"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/dining_table",
+      "authors": [
+        "Aron \u0141yczek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "1c3a85fce0878216bd28e33afaf8305d674489486c0a78396ce0bd3d45c3c74f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "c18164a9bff969d1f80213fff1fddfe312c636854acafb06c71dca896d316a71"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "888d78437900b43874af5195694c7b867568c9a96ef528846ad7d001f9e096ae"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "22cafeccd4421495c860f8c522bb9e45eaa19fda6ec3a2365dcb5b1db66aad96"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_glass_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "74a9712c3c0c75a947e9e74a53423af9f5ff014b7fa768dec4a60dd4282cad77"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_glass_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "5393af7d78e85689cba7c7b198fafddcee540d3125ebd133799d56f19945d8bf"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "ef524876a1a4c5b6d7fb4c652d21e55474ee85b50b8896537fd60e82b288b5f0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_office_desk",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "e32b348853f0dd4c07a9fe7d30de13cb17c81b0dd82fb70cd145a0b0cbc5c50f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_office_desk",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "23c94b99aec8c9b105ff4d843ac41f229b0effb97abe921f0f8b506ccfd76952"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_office_desk",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "3f5854edc8a7979ed4576b914c184bda64d7e6ee9969357738703be49118da30"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_office_desk",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "25392e7682c43ca07abbbbe717388b9e6d40bbca663836916204f99ac0378d34"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_stool_01",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "317d9a6dd998c764f2c70d31b6abae9f16cba7a0ca88420d8d4f85ea2cd521fe"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_stool_01",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "eb13e80e9fe232d022b4136e817d4590a7279d8da327d35e525e1aa4cf30e334"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_stool_01",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "d11949df1f0c59b5a85145395703a2aa7617e76b80759a5ef80b09e1798acb3d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/metal_stool_01",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "55d71cb01dd9afba245d4513728ce0cde8b112d5a7e1695a68578445c7b02b82"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/mounted_fluorescent_lights",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "f1746f5fac0519a751ed39a0b67a9f5eb1c0ba87d45da7f125b263ba2b6e9089"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/mounted_fluorescent_lights",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "6bb051b47c5e684f7d981595e7a88c3f41989621dc4b8c9460dba989e6421438"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/mounted_fluorescent_lights",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "8e56f625c04198792d8e9e5551137cbbd399072c26fe27827b37734afd584ea1"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/mounted_fluorescent_lights",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "3a4504ed0f70061994b37c9ef512e7a2a7e0b7680a977add1643226ae56ea60d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_cabinet",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "65c6981e0c8d7333f7d395d6120edd85e4f58edb12701fd73d0e217d286cd905"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_cabinet",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "4dedb866c4a86d0c32fde3f77736e74440b0f95a90128d0526ea5bad61b1519d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_cabinet",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "295ae8c562e3a75379558a4620ef4c06c67385db7a863e6a0b35a2ca73ee1a59"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_cabinet",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "7ca37c5a81684c53181bc6d523ac7dfe983d737787bcda379517d14c8105c2be"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "6feb167ec07525ae195aaea1091cadb36037ccc7e32787697a72e65b8c04934a"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "65d0dface1fe516d43e6594d1c587692ce99a6ebc2e8e7027920c3d3e4711289"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "7c2914843fd3e73c91c7a25058e20460195095a99b8d4ffd78ea61391f0966a9"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "70e4fbbe62831f7a93c0e821479ee463fef30ef43599589c46a6b5d23a359181"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_02",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "799a26c5fb7ae3e3b87a779e6e15e8b0ae0e833efd7f1202e6a702e3fca6da5e"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_02",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "b5bddec6863cadee32cb60f11703bbb6fd73f671364005c7374ed276ee3f2159"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_02",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "7b5b06b10d2b11b51465974bcea3cb5cd9333bbefb3c6d35a5de16bf695b6c55"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/painted_wooden_chair_02",
+      "authors": [
+        "Kirill Sannikov"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "b0a7131c14078cd7dc7bad3ea4512d49f90ce1c3c86fa0489f0ea3e478802562"
+    },
+    {
       "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_arm_2k.jpg",
       "kind": "cc0",
       "source": "Poly Haven",
@@ -36,6 +763,378 @@
       "license": "CC0-1.0",
       "retrieved": "2026-09-26",
       "sha256": "904f6ca0b569754502675b8891b5d6aad1d8a07f938e8a43cf385170a21a12dc"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/portable_cassette_player",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "256f6f8fb96583742974fbd5efb2a7685a436e99e0918d86b2f875afbf50c38f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/portable_cassette_player",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "ebbb6ec6f5b5c75b87b1b72160d35a9b94d27d6b44e8be8c5cf7460ad1361f3d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/portable_cassette_player",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "bea3b6d37788842c414e49cb618d84d5aa3da08853170ecc6e79b9b70707c8ee"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/portable_cassette_player",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "0c2ded713627055753d65d2344abfb7284cd7963f77f5b6f0924997edaba84cd"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/pot_enamel_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "34c6c8ffc25872a7640d99de7f65489d92284ecf73ee29a1a719acdffa17277b"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/pot_enamel_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "e8ab66b9a9f3e136d78dc393d30a9436b53570a4aaea26d5ae46913752bf15fe"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/pot_enamel_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "b8b15e6cbdeebc49034f06418f5daf097fd954a4df1e63f1efbc85c96dec2c7d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/pot_enamel_01",
+      "authors": [
+        "Kuutti Siitonen"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "e489edcf2014fa96c3dfca2c966a5b3bb8c0d02e88c9adeea96465d44662f56e"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "a59658d78548aa1c2f025e36db08072a11b99745d1b8fe933745568b306578f6"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_board_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "06224b87bddcd007ff3d9b25a290620ed96de913e200cc237df74676ba4208c5"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_board_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "fa59a7a015c8aaa737d234f95a5b50e7b5ad616046895ae890ba9648a5b118eb"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_board_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "b0b1a8bdf1a1d6b6de3ed69b865e94ce61d2b8fdde72a2e48cadd533de5c2b91"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_frame_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "3ef75fa77d92a1d7d914a00629682aba91d84593b09967863b7bb17de7756ca4"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_frame_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "6154d5a59469c8c18924b766c097bfc3f8915af32e89edaf9e652ad94ced5ddd"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_frame_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/standing_chalkboard_01",
+      "authors": [
+        "ParzivalCG"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "b798608bc865db00714ddfb80be30546ff36319b451983f25962cfdec1d88e40"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_electric_kettle",
+      "authors": [
+        "SV Garip"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "e1edab433e48b401e583964fb3661549b092dced5283cc7873b75a33a4e69c8f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_electric_kettle",
+      "authors": [
+        "SV Garip"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "ff683e24348d6319edf7bd5a14659a846d3008ae614bf966d4db23fc156b5e0c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_electric_kettle",
+      "authors": [
+        "SV Garip"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "eee3052a610f24055f7b25749cfaf64016a5621afcff931fe513ab62c0a829f3"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_electric_kettle",
+      "authors": [
+        "SV Garip"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "7723e22b77b73c6cc20d2593849d56cc64ee5c8e54bacf3bf8b2f4dd4f2ffaf0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "739abdfe223e8e7250b4f67ef70d23af04d929e274e17bd537adc2831069e9b4"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_accessories_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "f9c03b0960f0e0723327ff9f73e9818a8c17fdbc28fa931c82b295647067397c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_accessories_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "67124a78e7de97188ddee5f43b5dc58068dacd679a03cfc15da3c768bd495991"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_accessories_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "fb0a8dc541d9b6337405354df580144c95804490f1ba0bc24a46ed7b79128979"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "3b301d0a23ccc10711e88380af600e12b74c5e564b6bb3b94f002bfd86124bc1"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "87f03f8ce4b48d78083609a91afc9172f09ffe572c622342c6352b04ab90356f"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_radio_transceiver",
+      "authors": [
+        "Mateusz Sadek"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "0847075bff7d68574dcf65986f6c441cfb46c4619878786b1beffe3ad853622a"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_1k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wall_clock",
+      "authors": [
+        "PierreB3D"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "1134703dab540da8a2f0a43f819e3d5d1bb468680b1e06bcf0effeb523c414a2"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wall_clock",
+      "authors": [
+        "PierreB3D"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "c78aabec7bb4af4fd6818be1099523e59bf12d88c872530b2260cdea08d81968"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_diff_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wall_clock",
+      "authors": [
+        "PierreB3D"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "012bfc3ceecd5e35679fe5764e33b6d1b8a631ad4fc9f5b267af25ad10468672"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_glass_arm_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wall_clock",
+      "authors": [
+        "PierreB3D"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "42804955958b3d0fdc1da8d4c4e8e909b04f659ae1b02911e148abe0741b8b84"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_nor_gl_1k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wall_clock",
+      "authors": [
+        "PierreB3D"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "6138946e055828e92d5e0d8d50c75e3d2da0ea789dd6512b30f85f0e18435d00"
     },
     {
       "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_arm_2k.jpg",
@@ -113,6 +1212,54 @@
       "sha256": "a90aaa321194fb41d6e44776c6ee88134e4be416051357a3c9e323cc447c4cf0"
     },
     {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_2k.fbx",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wooden_bookshelf_worn",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "632e521d9c4ba1811c465f9f3c509b9ca0bd2b5fe2be6c79812a345762cf4749"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_arm_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wooden_bookshelf_worn",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "e61cb355df38ab67feaf9df9e898703cb99d93e33b86028c87d0947f2b7664c0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_diff_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wooden_bookshelf_worn",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "2a6b9d7bff3a02aaa07cb9de30f57673bdc4b8c43ed50c95f4bb7eeaed3a5468"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_nor_gl_2k.jpg",
+      "kind": "cc0",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wooden_bookshelf_worn",
+      "authors": [
+        "Ulan Cabanilla"
+      ],
+      "license": "CC0-1.0",
+      "retrieved": "2026-09-27",
+      "sha256": "90f575dc0623901240c54a1b617833584f1f18e56b6f1ddd11a6a04e84c62b07"
+    },
+    {
       "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg",
       "kind": "cc0",
       "source": "Poly Haven",
@@ -147,27 +1294,6 @@
       "license": "CC0-1.0",
       "retrieved": "2026-09-26",
       "sha256": "da86ecd63bc84ea2d371a90bae30f3914796056d93617f247aac51d79e9fa0f3"
-    },
-    {
-      "path": "Assets/CommonHouse/Art/Generated/plastered_wall_04_mask_2k.png",
-      "kind": "generated",
-      "generator": "Assets/Editor/OutpostMaterials.cs",
-      "sha256": "ee09612f90787063359f9723e7cecc7a5dc3591860d7d0c42ce115bbeb80b830",
-      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
-    },
-    {
-      "path": "Assets/CommonHouse/Art/Generated/wood_floor_worn_mask_2k.png",
-      "kind": "generated",
-      "generator": "Assets/Editor/OutpostMaterials.cs",
-      "sha256": "80dac175b8ba2bcd512a7d0d16e0acd48647ac40a744d20d6c444056ae5d1cdb",
-      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
-    },
-    {
-      "path": "Assets/CommonHouse/Art/Generated/worn_tile_floor_mask_2k.png",
-      "kind": "generated",
-      "generator": "Assets/Editor/OutpostMaterials.cs",
-      "sha256": "333b90a4cb4cde2c7dc9d15e4c4b70700c6fcc83604bed05dd69bf4a318693a8",
-      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
     }
   ]
 }

@@ -37,6 +37,16 @@ namespace CommonHouse.Editor
             foreach (var ceiling in ceilings) ceiling.enabled = true;
             camera.orthographic = false;
 
+            // Eye-level views of each furnished area, for reviewing props and their lighting.
+            camera.fieldOfView = 60;
+            foreach (var (name, eye, target) in DetailViews)
+            {
+                camera.transform.position = eye;
+                camera.transform.LookAt(target);
+                Save(camera, Path.Combine(output, "outpost-view-" + name + ".png"));
+            }
+            camera.fieldOfView = 75;
+
             foreach (var existing in layout.GetComponentsInChildren<CharacterController>()) existing.enabled = false;
             var probe = new GameObject("Verification traversal probe");
             var controller = probe.AddComponent<CharacterController>();
@@ -74,6 +84,14 @@ namespace CommonHouse.Editor
             File.WriteAllText(Path.Combine(output, "graphics-device.txt"), SystemInfo.graphicsDeviceName + "\n" + SystemInfo.graphicsDeviceVersion + "\n");
             UnityEngine.Object.DestroyImmediate(probe);
         }
+
+        public static readonly (string Name, Vector3 Eye, Vector3 Target)[] DetailViews =
+        {
+            ("radio-desk", new Vector3(-9.6f, 1.6f, 0.4f), new Vector3(-10.2f, 0.9f, -2.6f)),
+            ("kitchen", new Vector3(2.8f, 1.6f, -1.4f), new Vector3(0.3f, 0.9f, 1.8f)),
+            ("archive-shelf", new Vector3(8.4f, 1.6f, 0.6f), new Vector3(9f, 1f, -3f)),
+            ("workshop", new Vector3(9.6f, 1.6f, -0.6f), new Vector3(10.2f, 1f, 3f)),
+        };
 
         private static void Save(Camera camera, string path)
         {
