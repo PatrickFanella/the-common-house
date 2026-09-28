@@ -53,7 +53,6 @@ namespace CommonHouse.Editor.StyleBoard
     /// </summary>
     internal sealed class StyleMaterials
     {
-        private const string ScanRoot = "Assets/CommonHouse/Art/Sourced/PolyHaven/";
         private readonly int size;
         private readonly Shader lit;
         public readonly List<(string Name, Material Material)> Library = new List<(string, Material)>();
@@ -126,11 +125,11 @@ namespace CommonHouse.Editor.StyleBoard
         /// <summary>A scanned material; tint multiplies the albedo, and desaturate greys it toward its luminance.</summary>
         private Material Scan(string name, string asset, float metres, Color? tint = null, float desaturate = 0f)
         {
-            var folder = ScanRoot + asset + "/" + asset;
+            var folder = ScanTextures.PolyHaven(asset);
             var albedo = AssetDatabase.LoadAssetAtPath<Texture2D>(folder + "_diff_2k.jpg");
             var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(folder + "_nor_gl_2k.jpg");
             if (albedo == null || normal == null) throw new InvalidOperationException("Missing scan textures for " + asset);
-            if (!masks.TryGetValue(asset, out var mask)) masks[asset] = mask = MaskFromArm(folder + "_arm_2k.jpg");
+            if (!masks.TryGetValue(asset, out var mask)) masks[asset] = mask = ScanTextures.MaskFromArm(folder + "_arm_2k.jpg");
             var material = Textured(name, albedo, normal, mask, 1f / metres);
             if (desaturate > 0f)
             {
@@ -181,30 +180,6 @@ namespace CommonHouse.Editor.StyleBoard
             material.SetFloat("_AORemapMax", 1f);
             HDMaterial.ValidateMaterial(material);
             return material;
-        }
-
-        /// <summary>Repacks a Poly Haven ARM map (occlusion, roughness, metal) into an HDRP mask map.</summary>
-        private static Texture2D MaskFromArm(string path)
-        {
-            var arm = new Texture2D(2, 2, TextureFormat.RGBA32, false, true);
-            if (!arm.LoadImage(File.ReadAllBytes(path))) throw new InvalidOperationException("Cannot decode " + path);
-            var pixels = arm.GetPixels32();
-            for (var i = 0; i < pixels.Length; i++)
-            {
-                var p = pixels[i];
-                pixels[i] = new Color32(p.b, p.r, 0, (byte)(255 - p.g));
-            }
-            var mask = new Texture2D(arm.width, arm.height, TextureFormat.RGBA32, true, true)
-            {
-                name = Path.GetFileNameWithoutExtension(path) + "-mask",
-                wrapMode = TextureWrapMode.Repeat,
-                filterMode = FilterMode.Trilinear,
-                anisoLevel = 8,
-            };
-            mask.SetPixels32(pixels);
-            mask.Apply(true);
-            UnityEngine.Object.DestroyImmediate(arm);
-            return mask;
         }
 
         private Material Plain(string name, Color color, float smoothness)

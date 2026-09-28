@@ -21,7 +21,7 @@ using UnityEngine.SceneManagement;
 
 namespace CommonHouse.Editor
 {
-    /// <summary>Creates the temporary-lighting, primitive-only Case 01 outpost scene.</summary>
+    /// <summary>Creates the Case 01 outpost from primitives, with scanned room materials and temporary lighting.</summary>
     public static class OutpostSceneGenerator
     {
         private const float WallHeight = 3f;
@@ -42,6 +42,7 @@ namespace CommonHouse.Editor
             CreateOuterWalls(root.transform);
             CreateDoorwayWall(root.transform, -5f);
             CreateDoorwayWall(root.transform, 5f);
+            ApplyMaterials(root.transform, OutpostMaterials.Build());
 
             AddAnchor(root.transform, OutpostLayout.RadioRoom, "radio-console", new Vector3(-11.5f, 0.5f, -2.5f));
             AddAnchor(root.transform, OutpostLayout.RadioRoom, "radio-receiver", new Vector3(-8f, 0.5f, -2.5f));
@@ -83,6 +84,26 @@ namespace CommonHouse.Editor
             CreatePrimitive(root, "Partition-" + x + "-north", PrimitiveType.Cube, new Vector3(x, WallHeight / 2f, 2.65f), new Vector3(WallThickness, WallHeight, 2.7f), true);
             CreatePrimitive(root, "Partition-" + x + "-south", PrimitiveType.Cube, new Vector3(x, WallHeight / 2f, -2.65f), new Vector3(WallThickness, WallHeight, 2.7f), true);
             CreatePrimitive(root, "DoorLintel-" + x, PrimitiveType.Cube, new Vector3(x, 2.75f, 0f), new Vector3(WallThickness, 0.5f, DoorHalfWidth * 2f), true);
+        }
+
+        private static void ApplyMaterials(Transform root, OutpostMaterials.Set materials)
+        {
+            foreach (var roomId in new[] { OutpostLayout.RadioRoom, OutpostLayout.Kitchen, OutpostLayout.ArchiveWorkshop })
+            {
+                var room = root.Find(roomId);
+                Paint(room.Find("Floor"), roomId == OutpostLayout.Kitchen ? materials.KitchenTiles : materials.Floorboards);
+                Paint(room.Find("Ceiling"), materials.Ceiling);
+            }
+            foreach (Transform child in root)
+                if (child.name.EndsWith("Wall", StringComparison.Ordinal) || child.name.StartsWith("Partition-", StringComparison.Ordinal)
+                    || child.name.StartsWith("DoorLintel-", StringComparison.Ordinal))
+                    Paint(child, materials.Plaster);
+        }
+
+        private static void Paint(Transform item, Material material)
+        {
+            if (item == null) throw new InvalidOperationException("Missing generated surface for " + material.name);
+            item.GetComponent<MeshRenderer>().sharedMaterial = material;
         }
 
         private static void AddAnchor(Transform root, string roomId, string anchorId, Vector3 position)

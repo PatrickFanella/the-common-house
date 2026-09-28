@@ -147,6 +147,27 @@
       "license": "CC0-1.0",
       "retrieved": "2026-09-26",
       "sha256": "da86ecd63bc84ea2d371a90bae30f3914796056d93617f247aac51d79e9fa0f3"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/plastered_wall_04_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostMaterials.cs",
+      "sha256": "ee09612f90787063359f9723e7cecc7a5dc3591860d7d0c42ce115bbeb80b830",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/wood_floor_worn_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostMaterials.cs",
+      "sha256": "80dac175b8ba2bcd512a7d0d16e0acd48647ac40a744d20d6c444056ae5d1cdb",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Generated/worn_tile_floor_mask_2k.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OutpostMaterials.cs",
+      "sha256": "333b90a4cb4cde2c7dc9d15e4c4b70700c6fcc83604bed05dd69bf4a318693a8",
+      "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
     }
   ]
 }
