@@ -1,0 +1,154 @@
+// Experimental PlayStation-style surface for HDRP (issue #69). Unlit as far as HDRP knows: it
+// lights each vertex itself from globals set by PS1Lighting, snaps vertices to a coarse screen
+// grid, interpolates texture coordinates without perspective correction, and samples textures
+// without filtering. Values are written as display colour; the PS1 volume turns off tonemapping.
+Shader "CommonHouse/PS1"
+{
+    Properties
+    {
+        _MainTex("Texture", 2D) = "white" {}
+        _Color("Colour", Color) = (1, 1, 1, 1)
+        _Cutoff("Alpha cutoff", Range(0, 1)) = 0.5
+        [Toggle] _WorldUV("World-space box mapping", Float) = 0
+        _WorldUVScale("World-space texture repeats per metre", Float) = 0.625
+        [Enum(UnityEngine.Rendering.CullMode)] _Cull("Cull", Float) = 2
+    }
+
+    HLSLINCLUDE
+    #pragma target 4.5
+    #pragma only_renderers d3d11 playstation xboxone xboxseries vulkan metal switch switch2
+
+    #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+    #include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
+
+    TEXTURE2D(_MainTex);
+    SAMPLER(sampler_point_repeat);
+
+    CBUFFER_START(UnityPerMaterial)
+        float4 _MainTex_ST;
+        float4 _Color;
+        float _Cutoff;
+        float _WorldUV;
+        float _WorldUVScale;
+        float _Cull;
+    CBUFFER_END
+
+    float4 _PS1LightPositions[8];
+    float4 _PS1LightColors[8];
+    int _PS1LightCount;
+    float4 _PS1Ambient;
+    float4 _PS1FogColor;
+    float4 _PS1Fog;
+    float4 _PS1SnapResolution;
+
+    struct Attributes
+    {
+        float3 positionOS : POSITION;
+        float3 normalOS : NORMAL;
+        float2 uv : TEXCOORD0;
+        UNITY_VERTEX_INPUT_INSTANCE_ID
+    };
+
+    struct Varyings
+    {
+        float4 positionCS : SV_POSITION;
+        // Affine mapping: interpolate uv * w and w in screen space, divide per pixel.
+        noperspective float3 affineUV : TEXCOORD0;
+        float4 light : TEXCOORD1; // rgb vertex light, a fog amount
+        UNITY_VERTEX_OUTPUT_STEREO
+    };
+
+    float4 Snap(float4 positionCS)
+    {
+        float2 grid = max(_PS1SnapResolution.xy, 1.0) * 0.5;
+        float2 ndc = positionCS.xy / positionCS.w;
+        ndc = round(ndc * grid) / grid;
+        positionCS.xy = ndc * positionCS.w;
+        return positionCS;
+    }
+
+    Varyings Vert(Attributes input)
+    {
+        Varyings output;
+        UNITY_SETUP_INSTANCE_ID(input);
+        UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
+        float3 positionRWS = TransformObjectToWorld(input.positionOS);
+        float3 positionAWS = GetAbsolutePositionWS(positionRWS);
+        float3 normalWS = normalize(TransformObjectToWorldNormal(input.normalOS));
+        float4 positionCS = Snap(TransformWorldToHClip(positionRWS));
+
+        float2 uv = TRANSFORM_TEX(input.uv, _MainTex);
+        if (_WorldUV > 0.5)
+        {
+            // Box mapping by the dominant normal axis, for the stretched blockout cubes.
+            float3 n = abs(normalWS);
+            float2 planar = n.y > max(n.x, n.z) ? positionAWS.xz : (n.x > n.z ? positionAWS.zy : positionAWS.xy);
+            uv = planar * _WorldUVScale;
+        }
+
+        float3 light = _PS1Ambient.rgb;
+        for (int i = 0; i < _PS1LightCount; i++)
+        {
+            float3 toLight = _PS1LightPositions[i].xyz - positionAWS;
+            float distance = length(toLight);
+            float falloff = saturate(1.0 - distance / max(_PS1LightPositions[i].w, 0.001));
+            light += _PS1LightColors[i].rgb * saturate(dot(normalWS, toLight / max(distance, 0.0001))) * falloff * falloff;
+        }
+        float fog = saturate((length(positionRWS) - _PS1Fog.x) / max(_PS1Fog.y - _PS1Fog.x, 0.001));
+
+        output.positionCS = positionCS;
+        output.affineUV = float3(uv * positionCS.w, positionCS.w);
+        output.light = float4(light, fog);
+        return output;
+    }
+
+    float4 Frag(Varyings input) : SV_Target
+    {
+        float2 uv = input.affineUV.xy / input.affineUV.z;
+        float4 texel = SAMPLE_TEXTURE2D(_MainTex, sampler_point_repeat, uv) * _Color;
+        clip(texel.a - _Cutoff);
+        float3 color = texel.rgb * input.light.rgb;
+        color = lerp(color, _PS1FogColor.rgb, input.light.a);
+        return float4(color, 1.0);
+    }
+
+    float4 DepthFrag(Varyings input) : SV_Target
+    {
+        float2 uv = input.affineUV.xy / input.affineUV.z;
+        clip(SAMPLE_TEXTURE2D(_MainTex, sampler_point_repeat, uv).a * _Color.a - _Cutoff);
+        return 0;
+    }
+    ENDHLSL
+
+    SubShader
+    {
+        Tags { "RenderPipeline" = "HDRenderPipeline" "RenderType" = "Opaque" "Queue" = "Geometry" }
+
+        Pass
+        {
+            Name "DepthForwardOnly"
+            Tags { "LightMode" = "DepthForwardOnly" }
+            Cull [_Cull]
+            ZWrite On
+            ColorMask 0
+            HLSLPROGRAM
+            #pragma vertex Vert
+            #pragma fragment DepthFrag
+            ENDHLSL
+        }
+
+        Pass
+        {
+            Name "SRPDefaultUnlit"
+            Tags { "LightMode" = "SRPDefaultUnlit" }
+            Cull [_Cull]
+            ZWrite On
+            ZTest LEqual
+            HLSLPROGRAM
+            #pragma vertex Vert
+            #pragma fragment Frag
+            ENDHLSL
+        }
+    }
+    Fallback Off
+}

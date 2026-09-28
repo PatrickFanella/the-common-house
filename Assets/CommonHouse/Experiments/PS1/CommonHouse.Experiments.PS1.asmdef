@@ -1,0 +1,7 @@
+{
+  "name": "CommonHouse.Experiments.PS1",
+  "rootNamespace": "CommonHouse.Experiments.PS1",
+  "references": [
+    "Unity.RenderPipelines.Core.Runtime"
+  ]
+}
