@@ -29,6 +29,8 @@ MonoBehaviour:
     m_AfterPostProcessCustomPostProcesses:
       m_InjectionPoint: 2
       m_CustomPostProcessTypesAsString:
+      - CommonHouse.Experiments.PS1.HazeFilter, CommonHouse.Experiments.PS1, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
       - CommonHouse.Experiments.N64.N64Screen, CommonHouse.Experiments.N64, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   beforeTransparentCustomPostProcesses: []
@@ -630,6 +632,8 @@ MonoBehaviour:
         m_AfterPostProcessCustomPostProcesses:
           m_InjectionPoint: 2
           m_CustomPostProcessTypesAsString:
+          - CommonHouse.Experiments.PS1.HazeFilter, CommonHouse.Experiments.PS1,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
           - CommonHouse.Experiments.N64.N64Screen, CommonHouse.Experiments.N64, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
     - rid: 6119499681200603153
