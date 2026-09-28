@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+"""Regenerate the outpost scene with the D-24 look and record provenance for generated assets.
+
+    python3 scripts/build_outpost.py [--redecimate]
+
+1. Decimates each prop listed in tools/look/decimate_targets.json with the pinned Blender (see
+   scripts/characters.py setup) into Assets/CommonHouse/Art/Retro/Models/, unless the model
+   already exists. FBX export embeds a timestamp, so rebuilding unchanged models only adds churn;
+   pass --redecimate after changing a target or source model.
+2. Runs CommonHouse.Editor.OutpostSceneGenerator.Generate in a disposable copy and copies the
+   result back.
+3. Strips Unity's trailing YAML whitespace and records `generated` provenance entries for the
+   decimated models and the 64 px textures listed in Retro/Textures/sources.json.
+"""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+try:
+    from . import characters, fetch_polyhaven
+except ImportError:
+    import characters
+    import fetch_polyhaven
+
+ROOT = Path(__file__).resolve().parents[1]
+RETRO = "Assets/CommonHouse/Art/Retro"
+MODELS = RETRO + "/Models"
+SOURCES = RETRO + "/Textures/sources.json"
+TARGETS = ROOT / "tools/look/decimate_targets.json"
+DECIMATE = "tools/look/decimate.py"
+POLYHAVEN = "Assets/CommonHouse/Art/Sourced/PolyHaven"
+TEXTURE_GENERATOR = "Assets/Editor/RetroLook.cs"
+MANIFEST = ROOT / "docs/development/asset-provenance.json"
+
+
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def decimate(force):
+    """Decimates missing (or, with force, all) props and returns their provenance entries."""
+    if not (characters.BLENDER_DIR / "blender").is_file():
+        raise ValueError("Blender is not installed; run `python3 scripts/characters.py setup`")
+    (ROOT / MODELS).mkdir(parents=True, exist_ok=True)
+    entries = []
+    for asset, triangles in sorted(json.loads(TARGETS.read_text(encoding="utf-8")).items()):
+        source = next((ROOT / POLYHAVEN / asset).glob("*.fbx"))
+        target = ROOT / MODELS / f"{asset}.fbx"
+        if force or not target.exists():
+            output = characters.blender("-b", "--python", str(ROOT / DECIMATE), "--", str(source), str(target), str(triangles))
+            print(next(line for line in output.splitlines() if line.startswith("DECIMATED")))
+        entries.append({
+            "path": f"{MODELS}/{asset}.fbx",
+            "kind": "generated",
+            "generator": DECIMATE,
+            "sha256": sha256(target),
+            "changes": f"Decimated to about {triangles} triangles from {source.relative_to(ROOT)} for the D-24 look.",
+        })
+    return entries
+
+
+def strip_yaml_whitespace():
+    changed = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-m", "-o", "--exclude-standard"],
+                             capture_output=True, text=True, check=True).stdout.split()
+    for name in changed:
+        if name.endswith((".asset", ".unity", ".meta", ".mat", ".prefab")):
+            path = ROOT / name
+            text = path.read_text(encoding="utf-8")
+            cleaned = re.sub(r"[ \t]+\n", "\n", text)
+            if cleaned != text:
+                path.write_text(cleaned, encoding="utf-8")
+
+
+def texture_entries():
+    sources = json.loads((ROOT / SOURCES).read_text(encoding="utf-8"))
+    return [{
+        "path": item["texture"],
+        "kind": "generated",
+        "generator": TEXTURE_GENERATOR,
+        "sha256": sha256(ROOT / item["texture"]),
+        "changes": f"Area-averaged to 64 px from {item['source']} for the D-24 look.",
+    } for item in sources["textures"]]
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--redecimate", action="store_true", help="Rebuild every decimated model.")
+    args = parser.parse_args(argv)
+    try:
+        models = decimate(args.redecimate)
+    except (OSError, ValueError, subprocess.SubprocessError) as error:
+        print(f"FAIL: {error}", file=sys.stderr)
+        return 1
+    code = subprocess.run([sys.executable, str(ROOT / "scripts/run_editor_method.py"),
+                           "CommonHouse.Editor.OutpostSceneGenerator.Generate", "--copy-back"]).returncode
+    if code:
+        return code
+    subprocess.run(["git", "-C", str(ROOT), "checkout", "--", "ProjectSettings/ShaderGraphSettings.asset"], check=False)
+    strip_yaml_whitespace()
+    textures = texture_entries()
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    manifest["assets"] = [item for item in manifest["assets"] if not item["path"].startswith(RETRO + "/")]
+    fetch_polyhaven.merge(manifest, models + textures)
+    MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    print(f"PASS: outpost regenerated with {len(models)} decimated models and {len(textures)} textures")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

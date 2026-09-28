@@ -264,6 +264,12 @@ regenerate the HDRP settings or the outpost scene, then review the diff. The
 [HDRP migration report](verification/hdrp-migration.md) lists the settings,
 the light setup HDRP requires, and the verification results.
 
+The outpost is drawn in the retro look chosen in D-24. Regenerate it with
+`python3 scripts/build_outpost.py` instead of running the generator directly.
+It decimates props, applies the look, and records provenance. See
+[the retro look](development/look.md) and its
+[verification](verification/retro-look.md).
+
 The outpost's floors, walls, and ceilings use saved HDRP materials built from
 the CC0 scans by `CommonHouse.Editor.OutpostMaterials.Build`, which the scene
 generator calls. They are under `Assets/CommonHouse/Art/Materials/`, and their

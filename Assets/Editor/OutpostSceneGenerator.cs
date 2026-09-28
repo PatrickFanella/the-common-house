@@ -21,7 +21,7 @@ using UnityEngine.SceneManagement;
 
 namespace CommonHouse.Editor
 {
-    /// <summary>Creates the Case 01 outpost from primitives, with scanned room materials and temporary lighting.</summary>
+    /// <summary>Creates the Case 01 outpost from primitives, with CC0 materials and props, temporary lighting, and the D-24 retro look.</summary>
     public static class OutpostSceneGenerator
     {
         private const float WallHeight = 3f;
@@ -55,6 +55,9 @@ namespace CommonHouse.Editor
             CreateLighting(root.transform);
             CreateCamera(root.transform);
             Furnish(root.transform);
+            // The chosen look (D-24) is applied last, over the realistic materials and props.
+            RetroLook.Configure();
+            RetroLook.Apply(root.transform);
             if (!EditorSceneManager.SaveScene(scene, OutpostLayout.ScenePath))
                 throw new InvalidOperationException("Could not save the outpost blockout scene.");
             EditorBuildSettings.scenes = EditorBuildSettings.scenes

@@ -24,6 +24,10 @@ namespace CommonHouse.Editor
             if (layout == null) throw new InvalidOperationException("Missing outpost layout.");
             var camera = Camera.main;
             if (camera == null) throw new InvalidOperationException("Missing scene camera.");
+            // HDRP applies dynamic resolution only in play mode, so captures reproduce RetroScreen:
+            // render the look's line count, then scale up to the capture size.
+            var retroScreen = camera.GetComponent<CommonHouse.Look.RetroScreen>();
+            renderLines = retroScreen != null ? retroScreen.lines : 0;
             camera.fieldOfView = 75;
             camera.nearClipPlane = 0.05f;
             camera.farClipPlane = 100;
@@ -93,18 +97,22 @@ namespace CommonHouse.Editor
             ("workshop", new Vector3(9.6f, 1.6f, -0.6f), new Vector3(10.2f, 1f, 3f)),
         };
 
+        private static int renderLines;
+
         private static void Save(Camera camera, string path)
         {
             var previous = RenderTexture.active;
             var target = new RenderTexture(1280, 720, 24, RenderTextureFormat.ARGB32);
+            var low = renderLines > 0 ? new RenderTexture(Mathf.RoundToInt(renderLines * 1280f / 720f), renderLines, 24, RenderTextureFormat.ARGB32) { filterMode = FilterMode.Bilinear } : null;
             var pixels = new Texture2D(1280, 720, TextureFormat.RGB24, false);
             try
             {
                 target.Create();
-                camera.targetTexture = target;
+                camera.targetTexture = low ?? target;
                 // HDRP applies exposure from the previous frame; the first render only primes it.
                 camera.Render();
                 camera.Render();
+                if (low != null) Graphics.Blit(low, target);
                 RenderTexture.active = target;
                 pixels.ReadPixels(new Rect(0, 0, 1280, 720), 0, 0);
                 pixels.Apply();
@@ -116,6 +124,11 @@ namespace CommonHouse.Editor
                 RenderTexture.active = previous;
                 target.Release();
                 UnityEngine.Object.DestroyImmediate(target);
+                if (low != null)
+                {
+                    low.Release();
+                    UnityEngine.Object.DestroyImmediate(low);
+                }
                 UnityEngine.Object.DestroyImmediate(pixels);
             }
         }

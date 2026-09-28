@@ -1,0 +1,8 @@
+{
+  "name": "CommonHouse.Look",
+  "rootNamespace": "CommonHouse.Look",
+  "references": [
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.HighDefinition.Runtime"
+  ]
+}
