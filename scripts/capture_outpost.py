@@ -9,6 +9,9 @@ try:
 except ImportError:
     import unity_common as unity
 
+# Must match OutpostEvidence.DetailViews.
+DETAIL_VIEWS = ["radio-desk", "kitchen", "archive-shelf", "workshop"]
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
@@ -31,6 +34,7 @@ def main(argv=None):
         unity.validate_log(evidence / "editor.log", require_import=True)
         required = ["outpost-cutaway.png", "traversal-observation.txt", "graphics-device.txt"]
         required += [f"outpost-traverse-{index}.png" for index in range(5)]
+        required += [f"outpost-view-{name}.png" for name in DETAIL_VIEWS]
         for name in required:
             path = evidence / "test-data" / name
             if not path.is_file() or path.stat().st_size == 0:

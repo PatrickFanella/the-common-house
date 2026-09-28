@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
@@ -51,7 +50,7 @@ namespace CommonHouse.Editor
             var albedo = AssetDatabase.LoadAssetAtPath<Texture2D>(prefix + "_diff_2k.jpg");
             var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(prefix + "_nor_gl_2k.jpg");
             if (albedo == null || normal == null) throw new InvalidOperationException("Missing scan textures for " + asset + "; run `git lfs pull`.");
-            var mask = SavedMask(asset);
+            var mask = ScanTextures.SavedMask(prefix + "_arm_2k.jpg", GeneratedRoot + "/" + asset + "_mask_2k.png");
 
             var path = MaterialRoot + "/" + name + ".mat";
             var shader = Shader.Find("HDRP/Lit");
@@ -77,34 +76,6 @@ namespace CommonHouse.Editor
             HDMaterial.ValidateMaterial(material);
             EditorUtility.SetDirty(material);
             return material;
-        }
-
-        /// <summary>Writes the scan's HDRP mask map as a PNG, only when its content changes.</summary>
-        private static Texture2D SavedMask(string asset)
-        {
-            var path = GeneratedRoot + "/" + asset + "_mask_2k.png";
-            var mask = ScanTextures.MaskFromArm(ScanTextures.PolyHaven(asset) + "_arm_2k.jpg");
-            byte[] png;
-            try
-            {
-                png = mask.EncodeToPNG();
-            }
-            finally
-            {
-                UnityEngine.Object.DestroyImmediate(mask);
-            }
-            if (!File.Exists(path) || !File.ReadAllBytes(path).SequenceEqual(png))
-            {
-                File.WriteAllBytes(path, png);
-                AssetDatabase.ImportAsset(path);
-            }
-            var importer = (TextureImporter)AssetImporter.GetAtPath(path);
-            if (importer.sRGBTexture)
-            {
-                importer.sRGBTexture = false;
-                importer.SaveAndReimport();
-            }
-            return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
         }
     }
 }

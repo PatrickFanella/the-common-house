@@ -54,6 +54,7 @@ namespace CommonHouse.Editor
 
             CreateLighting(root.transform);
             CreateCamera(root.transform);
+            Furnish(root.transform);
             if (!EditorSceneManager.SaveScene(scene, OutpostLayout.ScenePath))
                 throw new InvalidOperationException("Could not save the outpost blockout scene.");
             EditorBuildSettings.scenes = EditorBuildSettings.scenes
@@ -84,6 +85,75 @@ namespace CommonHouse.Editor
             CreatePrimitive(root, "Partition-" + x + "-north", PrimitiveType.Cube, new Vector3(x, WallHeight / 2f, 2.65f), new Vector3(WallThickness, WallHeight, 2.7f), true);
             CreatePrimitive(root, "Partition-" + x + "-south", PrimitiveType.Cube, new Vector3(x, WallHeight / 2f, -2.65f), new Vector3(WallThickness, WallHeight, 2.7f), true);
             CreatePrimitive(root, "DoorLintel-" + x, PrimitiveType.Cube, new Vector3(x, 2.75f, 0f), new Vector3(WallThickness, 0.5f, DoorHalfWidth * 2f), true);
+        }
+
+        // Radio room and archive: ceiling panels; kitchen: a pendant over the table, lit at its bulb.
+        // The panel lights sit 0.4 m below the fixture so that some light reaches the ceiling, standing
+        // in for bounce light until the project has global illumination.
+        private static readonly Vector3[] LampPositions =
+        {
+            new Vector3(-9.5f, WallHeight - 0.4f, 0f),
+            new Vector3(0f, WallHeight - 1.2f, 1.1f),
+            new Vector3(9.5f, WallHeight - 0.4f, 0f),
+        };
+
+        // Interaction targets and anchor markers whose grey placeholders are replaced by models. The
+        // objects, positions, and colliders stay, because interaction and its tests depend on them.
+        private static readonly string[] ReplacedPlaceholders =
+        {
+            "radio-console", "radio-receiver", "kitchen-table", "archive-roster", "workshop-bench", "routing-switch",
+            "ResponseConsole", "WaitingFirstCall", "FoodAtRadioDesk", "AdaRepairFollowup", "HouseholdAftermath",
+            "ArchiveTapeShelf", "RoutingConnectionDiagram",
+        };
+
+        /// <summary>Places CC0 models around the existing targets. Models have no colliders.</summary>
+        private static void Furnish(Transform root)
+        {
+            var props = new GameObject("Props").transform;
+            props.SetParent(root, false);
+            var north = Vector3.forward;
+            var south = Vector3.back;
+            var west = Vector3.left;
+            const float desk = 0.788f;
+            void Place(string asset, float x, float y, float z, Vector3 facing) => OutpostProps.Place(props, asset, new Vector3(x, y, z), facing);
+
+            // Radio room: two desks facing the room, a receiving set and a transmitting set, and care left by a resident.
+            Place("metal_office_desk", -11.1f, 0f, -2.5f, north);
+            Place("metal_office_desk", -9.0f, 0f, -2.5f, north);
+            Place("vintage_radio_transceiver", -11.8f, desk, -2.6f, north);
+            Place("vintage_radio_transceiver", -8.5f, desk, -2.6f, north);
+            Place("pot_enamel_01", -11.1f, desk, -2.3f, north);
+            Place("portable_cassette_player", -10.3f, desk, -2.7f, north + west * 0.3f);
+            Place("clipboard", -9.5f, desk, -2.3f, north + west * 0.2f);
+            Place("metal_stool_01", -9.8f, 0f, -1.6f, north);
+            Place("painted_wooden_cabinet", -10f, 0f, 2.45f, south);
+            Place("mounted_fluorescent_lights", -9.5f, WallHeight - 0.035f, 0f, north);
+
+            // Kitchen: a shared table with mismatched chairs, a pendant, a kettle on the cabinet, a clock.
+            Place("dining_table", 0f, 0f, 1.5f, south);
+            Place("painted_wooden_chair_01", -0.5f, 0f, 0.55f, north);
+            Place("painted_wooden_chair_02", 0.7f, 0f, 0.5f, north + west * 0.3f);
+            Place("hanging_industrial_lamp", 0f, WallHeight - 1.355f, 1.1f, south);
+            Place("painted_wooden_cabinet", 2.2f, 0f, 2.45f, south);
+            Place("vintage_electric_kettle", 2f, 1.182f, 2.3f, south);
+            Place("wall_clock", -2.5f, 1.94f, 3.85f, south);
+
+            // Archive and workshop: tape shelving, a notice cabinet, the routing chalkboard, and a bench.
+            Place("wooden_bookshelf_worn", 9.5f, 0f, -3.55f, north);
+            Place("cardboard_box_01", 10.6f, 0f, -3.45f, north);
+            Place("painted_wooden_cabinet", 8f, 0f, -2.85f, north);
+            Place("standing_chalkboard_01", 7.5f, 0f, 2.75f, south);
+            Place("metal_office_desk", 11.5f, 0f, 3.35f, south);
+            Place("binder_notebook", 11.2f, desk, 3.3f, south);
+            Place("metal_stool_01", 10.8f, 0f, 2.6f, south);
+            Place("mounted_fluorescent_lights", 9.5f, WallHeight - 0.035f, 0f, north);
+
+            foreach (var name in ReplacedPlaceholders)
+            {
+                var placeholder = root.GetComponentsInChildren<Transform>(true).SingleOrDefault(item => item.name == name)
+                                  ?? throw new InvalidOperationException("Missing placeholder " + name);
+                placeholder.GetComponent<MeshRenderer>().enabled = false;
+            }
         }
 
         private static void ApplyMaterials(Transform root, OutpostMaterials.Set materials)
@@ -145,16 +215,25 @@ namespace CommonHouse.Editor
             light.lightUnit = UnityEngine.Rendering.LightUnit.Lux;
             light.intensity = 20f;
             light.transform.rotation = Quaternion.Euler(50f, -30f, 0f);
-            // One ordinary ceiling lamp per room, roughly a household bulb.
-            foreach (var x in new[] { -9.5f, 0f, 9.5f })
+            // One ordinary lamp per room, roughly a household bulb, at the fixtures placed by Furnish.
+            foreach (var position in LampPositions)
             {
                 var lamp = AddLight("Temporary Room Lamp", root, LightType.Point);
-                lamp.transform.position = new Vector3(x, WallHeight - 0.4f, 0f);
+                lamp.transform.position = position;
                 lamp.lightUnit = UnityEngine.Rendering.LightUnit.Lumen;
                 lamp.intensity = 1500f;
                 lamp.range = 12f;
                 lamp.color = new Color(1f, 0.9f, 0.78f);
             }
+            // The kitchen pendant's shade blocks upward light, and HDRP here has no global illumination,
+            // so an unshadowed fill stands in for light bounced off the table and floor.
+            var fill = AddLight("Temporary Kitchen Bounce Fill", root, LightType.Point);
+            fill.transform.position = new Vector3(0f, WallHeight - 0.5f, 0f);
+            fill.lightUnit = UnityEngine.Rendering.LightUnit.Lumen;
+            fill.intensity = 500f;
+            fill.range = 10f;
+            fill.color = new Color(1f, 0.88f, 0.74f);
+            fill.shadows = LightShadows.None;
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(0.2f, 0.2f, 0.25f);
             OutpostVolume.AddTo(root);

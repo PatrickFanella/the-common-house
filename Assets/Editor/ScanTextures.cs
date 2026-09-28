@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace CommonHouse.Editor
@@ -44,6 +46,37 @@ namespace CommonHouse.Editor
             {
                 UnityEngine.Object.DestroyImmediate(arm);
             }
+        }
+
+        /// <summary>
+        /// Saves the HDRP mask map for an ARM map as a linear PNG, rewriting it only when its content
+        /// changes, and returns the imported texture.
+        /// </summary>
+        public static Texture2D SavedMask(string armPath, string maskPath)
+        {
+            var mask = MaskFromArm(armPath);
+            byte[] png;
+            try
+            {
+                png = mask.EncodeToPNG();
+            }
+            finally
+            {
+                UnityEngine.Object.DestroyImmediate(mask);
+            }
+            Directory.CreateDirectory(Path.GetDirectoryName(maskPath) ?? "Assets");
+            if (!File.Exists(maskPath) || !File.ReadAllBytes(maskPath).SequenceEqual(png))
+            {
+                File.WriteAllBytes(maskPath, png);
+                AssetDatabase.ImportAsset(maskPath);
+            }
+            var importer = (TextureImporter)AssetImporter.GetAtPath(maskPath);
+            if (importer.sRGBTexture)
+            {
+                importer.sRGBTexture = false;
+                importer.SaveAndReimport();
+            }
+            return AssetDatabase.LoadAssetAtPath<Texture2D>(maskPath);
         }
     }
 }

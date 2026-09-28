@@ -14,7 +14,27 @@ page describes how to add a sourced file.
 Check the license on the asset page when downloading. Adding another source or license needs
 a new decision; the checker rejects anything else.
 
-## Adding a file
+## Fetching from Poly Haven
+
+`scripts/fetch_polyhaven.py` downloads Poly Haven textures and models and writes their
+provenance entries:
+
+```sh
+python3 scripts/fetch_polyhaven.py wood_floor_worn vintage_radio_transceiver clipboard:1k
+```
+
+For each asset it fetches the diffuse, OpenGL normal, and ARM maps as JPG, and the FBX mesh for
+models, at 2K unless another resolution follows a colon. Model parts such as `glass` or
+`accessories` get their own maps. Every file is checked against the MD5 that Poly Haven
+publishes. The script records the authors listed by Poly Haven's API and today's date. Review
+the asset page's license before committing. Its tests are in `tests/test_fetch_polyhaven.py`.
+
+Models are prepared by `CommonHouse.Editor.OutpostProps`, which builds one HDRP/Lit material for
+each part and remaps it in the FBX importer. Parts without a diffuse map, such as glass, become
+transparent. Add a new model to `OutpostProps.Models` and place it in
+`OutpostSceneGenerator.Furnish`.
+
+## Adding a file by hand
 
 1. Run `git lfs install` once in the clone, so textures and models are committed as LFS
    pointers.
