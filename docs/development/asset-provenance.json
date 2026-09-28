@@ -1457,122 +1457,129 @@
       "sha256": "da86ecd63bc84ea2d371a90bae30f3914796056d93617f247aac51d79e9fa0f3"
     },
     {
+      "path": "Assets/CommonHouse/Experiments/Faces/test-resident-01_face.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/FacePhotos.cs",
+      "sha256": "f3064c4c3aff8106ba1e38f46b2d85d8e0f63397cdf03db24199c528fe6da596",
+      "changes": "Frontal render of the generated character test-resident-01 (MakeHuman CC0 assets), shrunk to 64x80 with an oval mask."
+    },
+    {
       "path": "Assets/CommonHouse/Experiments/N64/Characters/test-resident-01.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "ec019473cbe63f6e6cc53c0c6fcc47a9b6c3a9ef52a7ecafda00374e1e348c16",
+      "sha256": "60f69380296705df521e6d3c47112f00f293d496cb8b3b0c9095e17915d81812",
       "changes": "Decimated to about 1200 triangles from Assets/CommonHouse/Art/Characters/test-resident-01/test-resident-01.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/binder_notebook.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "461d91d55f6855dbc8b8f11d946e9370f9f0e455433a612b14092e8c1f9ea9a6",
+      "sha256": "f679fe848de7cd77303bd6b634a97b6a85934ca6f79385fd519a59cfe718ef3b",
       "changes": "Decimated to about 40 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/cardboard_box_01.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "3bb974c9365c68206a761fb91bfb30e0c4318bd3f75777026fac7a6c5b6e2939",
+      "sha256": "9e070eddbd8e40744bfce829ed7fbd2c62e7fb9d52926a80f04f8a2cc3ae9e77",
       "changes": "Decimated to about 40 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/clipboard.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "dadbfb1d3b1aab1e5ff942eba7c4f22ded80d06b82624f8eaaac373b03755f45",
+      "sha256": "fecdafc025022960753a35682d0ead51896a2f600cee8b8becdda4d6b1320919",
       "changes": "Decimated to about 40 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/dining_table.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "f86bb443ce7f642b2c2481f76c5986d9f7f7c7799884b648f18a94181ef023d1",
+      "sha256": "4beecc4953711a53b95e23ef52fcd2096e7aecfa8ef6efbe6345d439a5c5fc32",
       "changes": "Decimated to about 250 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_2k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/metal_office_desk.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "fbbc0453ef5b4b99b09424c8f2e0da0569c03da3ff2c653863c894ec96079f67",
+      "sha256": "78d58648cf8d537b34b2e283b31ae36880b2d457c4b8a6a90befeacaed13a91c",
       "changes": "Decimated to about 400 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_2k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/metal_stool_01.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "16ab77b95c231cf4f89c34ed095e86506736e97b1bbf1eb3b659a2e0438b01ce",
+      "sha256": "0f34b634e079b5f432bd9939974f89c7be497e31e363ae9b37e196a0db5737ae",
       "changes": "Decimated to about 300 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/mounted_fluorescent_lights.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "374341eeeaa8dcbcdcccd04ea86b5f858ef9a473ce5bea75e42a8a7cddae1cdd",
+      "sha256": "ab69ea19db894be4c006f08e5537935344479e686273888ac12549ecfd116b3c",
       "changes": "Decimated to about 60 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/painted_wooden_cabinet.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "d13475e36ffff3d835c4770ff0a7d3773b2091c39d23b527e46526fcb84a0ccc",
+      "sha256": "4046ad066ae92b15d0c1ec49bb38877e25592d8a516b67062042cb8d2421b345",
       "changes": "Decimated to about 400 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_2k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/painted_wooden_chair_01.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "67b9d6b228ebe527821342b07dfde7f0907458dc84c9782b9e16a8ba522c321f",
+      "sha256": "a9724a2f28e158a6ee42885ce7202aa32f2dc6a190fdd2cf4edfd0328dd39662",
       "changes": "Decimated to about 150 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_2k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/painted_wooden_chair_02.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "6b55c292ee27eea334a98a4393b4c9321771917a24fca912ccd3afea4d62013c",
+      "sha256": "21328da460867d69d8528fb9b58393be581b525ad6a9b0a59bbdaffd8e8ed231",
       "changes": "Decimated to about 180 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_2k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/portable_cassette_player.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "a24275327345cfbb919e0bfc0b47a5a3efe7a65730079a73849470c9f737dee8",
+      "sha256": "695a62e9e7ec1991e79ec514e475c03694d8d57d05036b5dc34c72f75616a837",
       "changes": "Decimated to about 80 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/pot_enamel_01.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "7e724274446f84d48d4f0e0b099a92ea408ff06cf3b3c1ac3f6d48d21892cc98",
+      "sha256": "472ca6eff5c0f7faecc53a2b21330bf82e609deedf55af788f869b42756166a7",
       "changes": "Decimated to about 100 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/vintage_electric_kettle.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "c5d593e67819a9e156982f6e6855939af45697b2219a5cce2699257d80f880cc",
+      "sha256": "c3badffd00ed4d7ef3340e7ea673fc3407e17fbead175e7f2150fc00b9ff5dce",
       "changes": "Decimated to about 120 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/vintage_radio_transceiver.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "8eed491eccddc83bc4b2423e8395f8bb791c55aeb92fdae18a39c1d9a766b256",
+      "sha256": "9cb1cbb0f26ee6d048bbc12152109037d1d1062754836d7d4b2f6c58a1cc1356",
       "changes": "Decimated to about 300 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_2k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/wall_clock.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "9175773025d78cb1f46fa7f60b0ea2249a966fd74afa870e2a9e94a8e39c1e45",
+      "sha256": "0e5dc5643aea0f53d606847c872a2503e2c4a8794eb4b8737ff70dbe6c7a6254",
       "changes": "Decimated to about 60 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_1k.fbx for the N64 experiment."
     },
     {
       "path": "Assets/CommonHouse/Experiments/N64/Models/wooden_bookshelf_worn.fbx",
       "kind": "generated",
       "generator": "tools/experiments/n64_decimate.py",
-      "sha256": "ca56f872bfa5f8c4a9598ceed4a6a5a4cbb10c64c32988cf9a3d88e9a795c7a7",
+      "sha256": "84ee552f4b0644c6f16669a3e81bab31a06f864d26d515250ae4390bc15e08b3",
       "changes": "Decimated to about 250 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_2k.fbx for the N64 experiment."
     },
     {

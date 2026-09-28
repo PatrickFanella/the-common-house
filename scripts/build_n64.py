@@ -87,9 +87,32 @@ def decimate():
 GENERATED = ["Textures", "Materials", "Models", "Characters", "OutpostN64.unity", "N64VolumeProfile.asset"]
 
 
+FACES = "Assets/CommonHouse/Experiments/Faces"
+FACE_GENERATOR = "Assets/Editor/Experiments/FacePhotos.cs"
+
+
+def face_entries():
+    result = []
+    for photo in sorted((ROOT / FACES).glob("*_face.png")):
+        character = photo.name[: -len("_face.png")]
+        result.append({
+            "path": str(photo.relative_to(ROOT)),
+            "kind": "generated",
+            "generator": FACE_GENERATOR,
+            "sha256": hashlib.sha256(photo.read_bytes()).hexdigest(),
+            "changes": f"Frontal render of the generated character {character} (MakeHuman CC0 assets), shrunk to 64x80 with an oval mask.",
+        })
+    return result
+
+
 def clean():
     """Remove earlier outputs, so files dropped from the build do not linger without provenance."""
     base = ROOT / "Assets/CommonHouse/Experiments/N64"
+    for path in (ROOT / FACES, ROOT / (FACES + ".meta")):
+        if path.is_dir():
+            shutil.rmtree(path)
+        elif path.exists():
+            path.unlink()
     for name in GENERATED:
         for path in (base / name, base / (name + ".meta")):
             if path.is_dir():
@@ -109,8 +132,9 @@ def main():
     strip_yaml_whitespace()
     sources = json.loads((ROOT / SOURCES).read_text(encoding="utf-8"))
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    manifest["assets"] = [item for item in manifest["assets"] if not item["path"].startswith("Assets/CommonHouse/Experiments/N64/")]
-    fetch_polyhaven.merge(manifest, entries(sources) + models)
+    manifest["assets"] = [item for item in manifest["assets"]
+                          if not item["path"].startswith(("Assets/CommonHouse/Experiments/N64/", FACES + "/"))]
+    fetch_polyhaven.merge(manifest, entries(sources) + models + face_entries())
     MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"PASS: N64 outpost built with {len(sources['textures'])} downsampled textures")
     return 0

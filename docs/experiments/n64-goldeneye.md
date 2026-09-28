@@ -35,7 +35,18 @@ The decimated test resident stands where the two resident capsules are. It is th
 character from issue #65, not a resident design. The capsules keep their colliders and dialogue
 targets.
 
-`python3 scripts/capture_n64.py` renders five views from both scenes: the realistic one at
+### Pasted faces
+
+GoldenEye put photographs of the developers onto simple heads. Here, `FacePhotos` photographs
+the detailed resident head-on in even light. It crops the photo to an oval and shrinks it to
+64×80 px, then projects it onto each low-poly resident's face with an HDRP decal attached to the
+head bone, so it follows the head. The photo is a render of our own generated character, not of
+a real person. Using real faces, as Rare did, would need each person's consent and a recorded
+decision.
+
+![Resident with a pasted face photo, scaled up](n64-goldeneye/resident-n64-display.png)
+
+`python3 scripts/capture_n64.py` renders six views from both scenes: the realistic one at
 1280×960, and the N64 one at 320×240 plus a scaled-up copy.
 
 ## Comparison
@@ -54,7 +65,7 @@ Workshop, realistic and N64 (scaled up):
 
 Native 320×240 frames, as the renderer produced them:
 
-![Corridor](n64-goldeneye/corridor-n64.png) ![Radio desk](n64-goldeneye/radio-desk-n64.png)
+![Corridor](n64-goldeneye/corridor-n64.png) ![Resident](n64-goldeneye/resident-n64.png) ![Radio desk](n64-goldeneye/radio-desk-n64.png)
 ![Kitchen](n64-goldeneye/kitchen-n64.png) ![Archive shelf](n64-goldeneye/archive-shelf-n64.png)
 ![Workshop](n64-goldeneye/workshop-n64.png)
 
@@ -64,8 +75,7 @@ Native 320×240 frames, as the renderer produced them:
   soft vertex gradients rather than hotspots. Matching that needs a custom vertex-lit shader.
 - Textures are shrunken scans, not hand-painted. GoldenEye textures were small paintings and
   photographs with strong patterns. Walls here read as flat grey.
-- GoldenEye faces were photographs of the developers on very simple heads. The test resident
-  keeps MPFB's modelled face.
+- The face photo sits on MPFB's modelled face, which is far more detailed than a GoldenEye head.
 - Decimation leaves some artefacts, such as the cabinet door's diagonal triangle. Two models are
   not decimated: the chalkboard lost its board, and the pendant lamp fell apart.
 - The playable build and first-person camera still render at full resolution. The N64 look only
@@ -76,5 +86,5 @@ Native 320×240 frames, as the renderer produced them:
 
 On Kvant, 2026-09-28, from an uncommitted tree based on `0a5b674`:
 `capture_n64.py` passed and all views were inspected
-(`n64-20260928T175757Z-xw2b28fy`). EditMode (94) and PlayMode (89) passed. `check_provenance.py`
+(`n64-20260928T183058Z-xfqqt07f`). EditMode (94) and PlayMode (89) passed. `check_provenance.py`
 reported 205 entries. Every generated texture and model has a `generated` entry naming its source.

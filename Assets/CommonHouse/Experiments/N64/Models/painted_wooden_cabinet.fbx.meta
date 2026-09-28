@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8719e8a24e8017e8cb9920ef6099dc21
+guid: e7c2e81b203105825ac41e62aaa5bc4d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: painted_wooden_cabinet
-    second: {fileID: 2100000, guid: d4427028dd68fe7f283b94487274301c, type: 2}
+    second: {fileID: 2100000, guid: f00efcf8203a0d04abe9ebfb4f919fb8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

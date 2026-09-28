@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 45547bf53f34a5de393a219901d8f452
+guid: 2d548516b7efa91f5ad3b40113e9a357
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: cardboard_box_01
-    second: {fileID: 2100000, guid: 3dc86234253b4d7a2b511f5c6318dff0, type: 2}
+    second: {fileID: 2100000, guid: 1e3ff4ba1c2b19b398713f6f4949ad57, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

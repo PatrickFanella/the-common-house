@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5484ce57b19c83f59b4dc12d65e1ea29
+guid: f65fe599efc847abc9af43ecbb9bf4a4
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: vintage_radio_transceiver
-    second: {fileID: 2100000, guid: 86081ef92091f5535a6be9c9391b08c6, type: 2}
+    second: {fileID: 2100000, guid: 829d93ddb23426b56a4fcba2b35465e1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: vintage_radio_transceiver_accessories
-    second: {fileID: 2100000, guid: e3a858de0b18ba9cd904f45781f4d9b9, type: 2}
+    second: {fileID: 2100000, guid: f6fa3e7f12d713c5b98b40b8427121d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

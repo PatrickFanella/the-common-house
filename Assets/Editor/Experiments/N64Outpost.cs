@@ -28,6 +28,7 @@ namespace CommonHouse.Editor.Experiments
         // The test resident stands in for the resident capsules in this experiment only.
         private const string StandIn = "test-resident-01";
         private static readonly string[] ResidentCapsules = { "IvoConversation", "RenPrivateConversation" };
+        private static Material faceDecal;
         public const string ProfilePath = Root + "/N64VolumeProfile.asset";
         public const string SourcesPath = TextureRoot + "/sources.json";
         public const int TextureSize = 64;
@@ -53,6 +54,9 @@ namespace CommonHouse.Editor.Experiments
             RegisterScreen();
             Directory.CreateDirectory(TextureRoot);
             Directory.CreateDirectory(MaterialRoot);
+            // The face photo is rendered in its own scene before the outpost is opened.
+            var facePhoto = File.Exists(CharacterAssets.FbxPath(StandIn)) ? FacePhotos.Capture(StandIn) : null;
+            faceDecal = facePhoto != null ? FacePhotos.DecalMaterial(StandIn, facePhoto, FilterMode.Bilinear) : null;
             var scene = EditorSceneManager.OpenScene(OutpostLayout.ScenePath);
             var variants = new Dictionary<Material, Material>();
             var sources = new SourceList();
@@ -151,6 +155,7 @@ namespace CommonHouse.Editor.Experiments
                 resident.name = "N64 resident at " + name;
                 // The Blender round trip leaves the decimated character facing -Z, into the room.
                 resident.transform.position = new Vector3(capsule.position.x, 0f, capsule.position.z);
+                if (faceDecal != null) FacePhotos.Attach(resident, faceDecal, Vector3.back);
             }
         }
 
@@ -402,6 +407,8 @@ namespace CommonHouse.Editor.Experiments
         public static IEnumerable<(string Name, Vector3 Eye, Vector3 Target)> Views()
         {
             yield return ("corridor", new Vector3(-12.5f, 1.6f, 0f), new Vector3(0f, 1.4f, 0f));
+            // Close enough to see the face photo on the resident at the workshop bench.
+            yield return ("resident", new Vector3(11.2f, 1.65f, 1.1f), new Vector3(11.5f, 1.6f, 2.5f));
             foreach (var view in OutpostEvidence.DetailViews) yield return view;
         }
 

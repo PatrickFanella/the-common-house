@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6675f5d3bfd591478238b8e67380e9e
+guid: 5d8cbf7b5d0a894429bcd439b9a3553b
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: dining_table
-    second: {fileID: 2100000, guid: 176cd9a44d6207834986ad58137ace15, type: 2}
+    second: {fileID: 2100000, guid: 387ac35148a1615d09bfc0a9c5798045, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

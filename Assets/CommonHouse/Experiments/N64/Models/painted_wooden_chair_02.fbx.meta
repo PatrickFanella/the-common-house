@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0945de42dbfa6f857b7a3f3f2244bebf
+guid: 78fd5f93d664a30b6959c8260b7d19eb
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: painted_wooden_chair_02
-    second: {fileID: 2100000, guid: f1e339f2724c3694ca2fabe1512f9751, type: 2}
+    second: {fileID: 2100000, guid: eb7730d7a6f219eb5a2475495595556d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

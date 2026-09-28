@@ -1,6 +1,26 @@
 {
     "textures": [
         {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_diff_1k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_diff_2k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_diff_1k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_diff_2k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_diff_1k.jpg"
+        },
+        {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_diff_2k_64.png",
             "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_diff_2k.jpg"
         },
@@ -9,12 +29,36 @@
             "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_accessories_diff_2k.jpg"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_diff_1k.jpg"
-        },
-        {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64.png",
             "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_diff_1k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_diff_2k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_diff_1k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_diff_1k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_diff_2k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_diff_1k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_diff_2k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_diff_1k.jpg"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64.png",
@@ -23,50 +67,6 @@
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64.png",
             "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_diff_2k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_diff_2k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_diff_2k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_diff_2k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_diff_1k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_diff_2k.jpg"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/male_worksuit01_diffuse_64.png",
@@ -105,88 +105,64 @@
             "source": "Assets/CommonHouse/Art/Characters/Textures/clothes/shoes02/shoes02_diffuse.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/plastered_wall_04_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_diff_2k.jpg"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64.png"
-        },
-        {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_diff_2k_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_diff_2k_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_accessories_diff_2k_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_accessories_diff_2k_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/plastered_wall_04_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_diff_2k.jpg"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wood_floor_worn_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_diff_2k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/worn_tile_floor_diff_2k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_diff_2k.jpg"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/hanging_industrial_lamp_diff_1k_64.png",
-            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_diff_1k.jpg"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/hanging_industrial_lamp_diff_1k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_diff_1k.jpg"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/standing_chalkboard_01_frame_diff_2k_64.png",
@@ -197,20 +173,48 @@
             "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_board_diff_2k.jpg"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/teeth_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/teeth_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/wood_floor_worn_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_diff_2k.jpg"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/worn_tile_floor_diff_2k_64.png",
+            "source": "Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_diff_2k.jpg"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/eyelashes01_64_64.png",
             "source": "Assets/CommonHouse/Experiments/N64/Textures/eyelashes01_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/teeth_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/teeth_64.png"
+        },
+        {
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64.png"
         },
         {
             "texture": "Assets/CommonHouse/Experiments/N64/Textures/brown_eye_64_64.png",
@@ -221,16 +225,12 @@
             "source": "Assets/CommonHouse/Experiments/N64/Textures/male_worksuit01_diffuse_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64.png"
         },
         {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64.png"
-        },
-        {
-            "texture": "Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64_64.png",
-            "source": "Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64.png"
+            "texture": "Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64_64.png",
+            "source": "Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64.png"
         }
     ]
 }

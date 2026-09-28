@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 622c7158e83befc14b315782284ebcac
+guid: 018c4d42803a9da3598565355a1b3e46
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wall_clock
-    second: {fileID: 2100000, guid: e9b8d406438dedb9facf37b28d57a512, type: 2}
+    second: {fileID: 2100000, guid: a88e9f908f3d1a9198fc12a0996b4250, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wall_clock_glass
-    second: {fileID: 2100000, guid: 406ce097bd57f113f9b15313d76ab19f, type: 2}
+    second: {fileID: 2100000, guid: 21c5a3e82b13ae2fba54386010903414, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

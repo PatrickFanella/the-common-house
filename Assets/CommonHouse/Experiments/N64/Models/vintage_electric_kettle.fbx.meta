@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee9d4719291e2fdbabf60de0e4250624
+guid: e8f007109dba75e99bd99d8b48583d81
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: vintage_electric_kettle
-    second: {fileID: 2100000, guid: 6b7342da2515211e48b12dcc11702b64, type: 2}
+    second: {fileID: 2100000, guid: caad8c1d554de52dbb9ceba1216c266e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

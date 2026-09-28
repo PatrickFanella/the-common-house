@@ -10,7 +10,7 @@ except ImportError:
     import unity_common as unity
 
 # Must match N64Outpost.Views: a corridor view plus OutpostEvidence.DetailViews.
-VIEWS = ["corridor", "radio-desk", "kitchen", "archive-shelf", "workshop"]
+VIEWS = ["corridor", "resident", "radio-desk", "kitchen", "archive-shelf", "workshop"]
 
 
 def artifacts():

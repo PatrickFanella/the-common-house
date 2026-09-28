@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 660a01b5a0793e8b59b2959b60c0344f
+guid: 3b5ded5c32676fa2885a39399d20ec28
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mounted_fluorescent_lights
-    second: {fileID: 2100000, guid: df14d6504f2e33af89d615f1c0238694, type: 2}
+    second: {fileID: 2100000, guid: bafcec6a32a2f0c9d867b180477204a4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mounted_fluorescent_lights_glass
-    second: {fileID: 2100000, guid: df14d6504f2e33af89d615f1c0238694, type: 2}
+    second: {fileID: 2100000, guid: bafcec6a32a2f0c9d867b180477204a4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ace0bde22c31fa639889fdcf1f9fa13
+guid: c8585396754c5e1cfb2fb46ead922000
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: metal_stool_01
-    second: {fileID: 2100000, guid: a94e22d0c9ad56c6baebd865a4a327b1, type: 2}
+    second: {fileID: 2100000, guid: e730344ccccbb258b8d995a32f076661, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

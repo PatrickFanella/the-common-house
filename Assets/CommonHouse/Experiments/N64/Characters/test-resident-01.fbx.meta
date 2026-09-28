@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 288fcd9bbd05b719da203608bd2a7fcf
+guid: bc62afb8a31112e21a1155275c8b5138
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,47 +8,47 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.body
-    second: {fileID: 2100000, guid: 79935993c2606c9fe80ac5a7bf6cb319, type: 2}
+    second: {fileID: 2100000, guid: 0b0114e0b8fa7c9f7b6a3fb33c88a95e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.eyebrow001
-    second: {fileID: 2100000, guid: 0d891b0cbe6110af094ae544858a88c4, type: 2}
+    second: {fileID: 2100000, guid: a4963c88601cf0059a1da15d33909602, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.eyelashes01
-    second: {fileID: 2100000, guid: f2f4e2c5076652254ba9a31a2fc760da, type: 2}
+    second: {fileID: 2100000, guid: 47001ba8e4003a3c59a0cbadc80b34ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.high-poly
-    second: {fileID: 2100000, guid: c05c570222d3068da88225076785d0bc, type: 2}
+    second: {fileID: 2100000, guid: 0f8d61741dd2f0921b775d15349ac898, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.male_worksuit01
-    second: {fileID: 2100000, guid: 0b96fb43bb9b20b74b6b5dc161e8e92c, type: 2}
+    second: {fileID: 2100000, guid: 2b2a410057ef2a84c8be36ec788ccda5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.shoes02
-    second: {fileID: 2100000, guid: b5d8ac21a57aecfb48b5a6526f81547f, type: 2}
+    second: {fileID: 2100000, guid: 201fb92343cbba27bb9d6a2bf46dea36, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.short02
-    second: {fileID: 2100000, guid: ef86e03ebca4979b599d84fe54584ab4, type: 2}
+    second: {fileID: 2100000, guid: 51562391bb130491d8cf8190ad86c508, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.teeth_base
-    second: {fileID: 2100000, guid: 0a996a9afa41315b6ac8a5e2746f183b, type: 2}
+    second: {fileID: 2100000, guid: 06e028267dd941dfaa38cc94510dcb1a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Human.tongue01
-    second: {fileID: 2100000, guid: 118eef8d9158b1ea7b49fc0431d316d6, type: 2}
+    second: {fileID: 2100000, guid: 240431e4284909966ba87db0630f0654, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

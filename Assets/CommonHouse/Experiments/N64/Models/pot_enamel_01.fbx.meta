@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bfc8c4442d01c2c4e98f15c3e60bf71b
+guid: 7aa377d25643b1647a5b10b238db6459
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pot_enamel_01
-    second: {fileID: 2100000, guid: b415667c2c075feee9138035dad832ac, type: 2}
+    second: {fileID: 2100000, guid: 23ee8aa30d7e3eb02858d09752005c6e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
