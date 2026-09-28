@@ -1455,6 +1455,531 @@
       "license": "CC0-1.0",
       "retrieved": "2026-09-26",
       "sha256": "da86ecd63bc84ea2d371a90bae30f3914796056d93617f247aac51d79e9fa0f3"
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Characters/test-resident-01.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "ec019473cbe63f6e6cc53c0c6fcc47a9b6c3a9ef52a7ecafda00374e1e348c16",
+      "changes": "Decimated to about 1200 triangles from Assets/CommonHouse/Art/Characters/test-resident-01/test-resident-01.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/binder_notebook.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "461d91d55f6855dbc8b8f11d946e9370f9f0e455433a612b14092e8c1f9ea9a6",
+      "changes": "Decimated to about 40 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/cardboard_box_01.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "3bb974c9365c68206a761fb91bfb30e0c4318bd3f75777026fac7a6c5b6e2939",
+      "changes": "Decimated to about 40 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/clipboard.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "dadbfb1d3b1aab1e5ff942eba7c4f22ded80d06b82624f8eaaac373b03755f45",
+      "changes": "Decimated to about 40 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/dining_table.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "f86bb443ce7f642b2c2481f76c5986d9f7f7c7799884b648f18a94181ef023d1",
+      "changes": "Decimated to about 250 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/metal_office_desk.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "fbbc0453ef5b4b99b09424c8f2e0da0569c03da3ff2c653863c894ec96079f67",
+      "changes": "Decimated to about 400 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/metal_stool_01.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "16ab77b95c231cf4f89c34ed095e86506736e97b1bbf1eb3b659a2e0438b01ce",
+      "changes": "Decimated to about 300 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/mounted_fluorescent_lights.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "374341eeeaa8dcbcdcccd04ea86b5f858ef9a473ce5bea75e42a8a7cddae1cdd",
+      "changes": "Decimated to about 60 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/painted_wooden_cabinet.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "d13475e36ffff3d835c4770ff0a7d3773b2091c39d23b527e46526fcb84a0ccc",
+      "changes": "Decimated to about 400 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/painted_wooden_chair_01.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "67b9d6b228ebe527821342b07dfde7f0907458dc84c9782b9e16a8ba522c321f",
+      "changes": "Decimated to about 150 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/painted_wooden_chair_02.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "6b55c292ee27eea334a98a4393b4c9321771917a24fca912ccd3afea4d62013c",
+      "changes": "Decimated to about 180 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/portable_cassette_player.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "a24275327345cfbb919e0bfc0b47a5a3efe7a65730079a73849470c9f737dee8",
+      "changes": "Decimated to about 80 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/pot_enamel_01.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "7e724274446f84d48d4f0e0b099a92ea408ff06cf3b3c1ac3f6d48d21892cc98",
+      "changes": "Decimated to about 100 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/vintage_electric_kettle.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "c5d593e67819a9e156982f6e6855939af45697b2219a5cce2699257d80f880cc",
+      "changes": "Decimated to about 120 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/vintage_radio_transceiver.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "8eed491eccddc83bc4b2423e8395f8bb791c55aeb92fdae18a39c1d9a766b256",
+      "changes": "Decimated to about 300 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/wall_clock.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "9175773025d78cb1f46fa7f60b0ea2249a966fd74afa870e2a9e94a8e39c1e45",
+      "changes": "Decimated to about 60 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_1k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Models/wooden_bookshelf_worn.fbx",
+      "kind": "generated",
+      "generator": "tools/experiments/n64_decimate.py",
+      "sha256": "ca56f872bfa5f8c4a9598ceed4a6a5a4cbb10c64c32988cf9a3d88e9a795c7a7",
+      "changes": "Decimated to about 250 triangles from Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_2k.fbx for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "89907095c30416d752cd534925b7d575da6a7c178788531f95e3575f0bd14cc3",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "89907095c30416d752cd534925b7d575da6a7c178788531f95e3575f0bd14cc3",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/binder_notebook_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/brown_eye_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "92322bb86f1a2ff5b7d9606e2c53bea7a2e839bbfaeeff85c4bfcc209a205e79",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/eyes/materials/brown_eye.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/brown_eye_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "92322bb86f1a2ff5b7d9606e2c53bea7a2e839bbfaeeff85c4bfcc209a205e79",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/brown_eye_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "af721cd6eccb54d4074b85155cb9a8e6ea4e745218d3dab38c0b9fb024f7987c",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/cardboard_box_01/cardboard_box_01_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "af721cd6eccb54d4074b85155cb9a8e6ea4e745218d3dab38c0b9fb024f7987c",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/cardboard_box_01_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "9dbc872f869b30ffb0f684fc112442023300bfc5e6897c366a75896df5be3736",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/clipboard/clipboard_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "9dbc872f869b30ffb0f684fc112442023300bfc5e6897c366a75896df5be3736",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/clipboard_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "2b2662689235689efdaadaf0f1c3228c70087547dff73c10051dae6d718b3b67",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/dining_table/dining_table_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "2b2662689235689efdaadaf0f1c3228c70087547dff73c10051dae6d718b3b67",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/dining_table_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bc17742fdfaff1b2d6ad24f0cefaf23fc350edddd7ecabba003cb8ec22a5b0fe",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/eyebrows/eyebrow001/eyebrow001.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bc17742fdfaff1b2d6ad24f0cefaf23fc350edddd7ecabba003cb8ec22a5b0fe",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/eyebrow001_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/eyelashes01_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "d40df0e5570317b02da76f0275d457a2cc3a303e3b9e8e1f5dffe448d86cf0c4",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/eyelashes/eyelashes01/eyelashes01.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/eyelashes01_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "d40df0e5570317b02da76f0275d457a2cc3a303e3b9e8e1f5dffe448d86cf0c4",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/eyelashes01_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/hanging_industrial_lamp_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "d39ac386ad34d7a45f753e00e8309103aad7e13547b2985b56da06ea67b91635",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/hanging_industrial_lamp/hanging_industrial_lamp_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/male_worksuit01_diffuse_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "c1932f28fe20104a9c22e5526b18e939ef2290b84a064d2f3f32f79042b3928a",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/clothes/male_worksuit01/male_worksuit01_diffuse.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/male_worksuit01_diffuse_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "c1932f28fe20104a9c22e5526b18e939ef2290b84a064d2f3f32f79042b3928a",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/male_worksuit01_diffuse_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "887a3b95b2d65876286467e6419d36758084adc74b3ef365af207c983f5add5c",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_office_desk/metal_office_desk_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "887a3b95b2d65876286467e6419d36758084adc74b3ef365af207c983f5add5c",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/metal_office_desk_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "dc5233a8d0ea99422fb765b2c7993d2949efb280897740067599e0fabbaf1fa3",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/metal_stool_01/metal_stool_01_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "dc5233a8d0ea99422fb765b2c7993d2949efb280897740067599e0fabbaf1fa3",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/metal_stool_01_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "d156c314b46786103133f68058eee9d926c7f7ba9efa268f4dd930a0c8760161",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "d156c314b46786103133f68058eee9d926c7f7ba9efa268f4dd930a0c8760161",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/middleage_lightskinned_male_diffuse_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bad0654504e2f0b08e5c2e0fc3cccd81a7afbc020b8a7fa5f76504e827f6e9c6",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/mounted_fluorescent_lights/mounted_fluorescent_lights_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bad0654504e2f0b08e5c2e0fc3cccd81a7afbc020b8a7fa5f76504e827f6e9c6",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/mounted_fluorescent_lights_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "2a7eb3712be4d14ff8526f61daace073c64426da1484c5c5696c36441db89abd",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_cabinet/painted_wooden_cabinet_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "2a7eb3712be4d14ff8526f61daace073c64426da1484c5c5696c36441db89abd",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_cabinet_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "755c4b286482f5b455d7159b9c7ce94ea4a7c0f99dc7a5108e87f3acc1bb0d0c",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_01/painted_wooden_chair_01_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "755c4b286482f5b455d7159b9c7ce94ea4a7c0f99dc7a5108e87f3acc1bb0d0c",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_01_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "821f5e50dde6942a55fbd78a584de48b4b35b36194cd157647ed6808ad1e4960",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/painted_wooden_chair_02/painted_wooden_chair_02_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "821f5e50dde6942a55fbd78a584de48b4b35b36194cd157647ed6808ad1e4960",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/painted_wooden_chair_02_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/plastered_wall_04_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "745532b74949371aea708ab1be0d1368c52767eb8816769d63f88bba97173da9",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/plastered_wall_04/plastered_wall_04_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "4badcc31972f599ae17a4d35399e28ba6afcb9c08c00b1ae7c9dfec2b3154ae2",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/portable_cassette_player/portable_cassette_player_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "4badcc31972f599ae17a4d35399e28ba6afcb9c08c00b1ae7c9dfec2b3154ae2",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/portable_cassette_player_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "2ca248a27307f8f3b4f6b4d66c545f6770572d104e61ccb0f6b197f4dcf91008",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/pot_enamel_01/pot_enamel_01_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "2ca248a27307f8f3b4f6b4d66c545f6770572d104e61ccb0f6b197f4dcf91008",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/pot_enamel_01_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "01228b2cffdb070ce70fca597fb31c3a53ca89b1ee33962e88b4e4624ffeb836",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/clothes/shoes02/shoes02_diffuse.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "01228b2cffdb070ce70fca597fb31c3a53ca89b1ee33962e88b4e4624ffeb836",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/shoes02_diffuse_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "b0c26fd542687ab76a41d380dc2396ec98eb576aba02178c95100933eb5e3855",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/hair/short02/short02_diffuse.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "b0c26fd542687ab76a41d380dc2396ec98eb576aba02178c95100933eb5e3855",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/short02_diffuse_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/standing_chalkboard_01_board_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bfcb8bfc36999d08068878b3ff03f5ee55b09d9fcaf0760cafbb6f00874daebd",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_board_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/standing_chalkboard_01_frame_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "0a642de49aab568df1e4c350fef2caead2adeff5e5ff2f583c3e61135dc58452",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/standing_chalkboard_01/standing_chalkboard_01_frame_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/teeth_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "f19003de5a404c06f871a44ee7af5dc1c80686815b279d0a2c0310197b4b1f79",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/teeth/teeth_base/teeth.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/teeth_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "f19003de5a404c06f871a44ee7af5dc1c80686815b279d0a2c0310197b4b1f79",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/teeth_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bb8d6b53e59c3424967d1010851e1eb36a58fbcc34240bff10d28527dd5cea7e",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Characters/Textures/tongue/tongue01/tongue01_diffuse.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "bb8d6b53e59c3424967d1010851e1eb36a58fbcc34240bff10d28527dd5cea7e",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/tongue01_diffuse_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "965b8124c4dc1ceb240c870b1b224589803cb128560ed9aaa2b94d1d2f385621",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_electric_kettle/vintage_electric_kettle_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "965b8124c4dc1ceb240c870b1b224589803cb128560ed9aaa2b94d1d2f385621",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/vintage_electric_kettle_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_accessories_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "3092cfb96e43f1a6b995b61b3f39df905293a57ce5f053ce9db16dddc72a7f65",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_accessories_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_accessories_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "3092cfb96e43f1a6b995b61b3f39df905293a57ce5f053ce9db16dddc72a7f65",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_accessories_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "a4a1c1a0b9c3095acde218181fc137fbb97f4fd57767274ab51a9b1b0087118b",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/vintage_radio_transceiver/vintage_radio_transceiver_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "a4a1c1a0b9c3095acde218181fc137fbb97f4fd57767274ab51a9b1b0087118b",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/vintage_radio_transceiver_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "cd91789f8da8dd644fb03e9dd284f5f4c001c4750e555fe4e72f439d301157bc",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/wall_clock/wall_clock_diff_1k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "cd91789f8da8dd644fb03e9dd284f5f4c001c4750e555fe4e72f439d301157bc",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/wall_clock_diff_1k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/wood_floor_worn_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "df9f091d1853acb3623864ff66d395180fb944252983ff263b9c2a250e42345b",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/wood_floor_worn/wood_floor_worn_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "5764f54629ac36e7cefbe36f8ebf028011b049170e378511c70fc644c596e318",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/wooden_bookshelf_worn/wooden_bookshelf_worn_diff_2k.jpg for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "5764f54629ac36e7cefbe36f8ebf028011b049170e378511c70fc644c596e318",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Experiments/N64/Textures/wooden_bookshelf_worn_diff_2k_64.png for the N64 experiment."
+    },
+    {
+      "path": "Assets/CommonHouse/Experiments/N64/Textures/worn_tile_floor_diff_2k_64.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/Experiments/N64Outpost.cs",
+      "sha256": "db44bfa3de22b1469d3597ad0fd2f382ad85b25c860b499409f1ebf5dedee3ac",
+      "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_diff_2k.jpg for the N64 experiment."
     }
   ]
 }

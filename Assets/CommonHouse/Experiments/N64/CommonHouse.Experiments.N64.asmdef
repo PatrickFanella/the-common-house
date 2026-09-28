@@ -1,0 +1,8 @@
+{
+  "name": "CommonHouse.Experiments.N64",
+  "rootNamespace": "CommonHouse.Experiments.N64",
+  "references": [
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.HighDefinition.Runtime"
+  ]
+}
