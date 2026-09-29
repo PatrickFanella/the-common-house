@@ -3,7 +3,7 @@ title: Narrative and World Bible
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -12,7 +12,7 @@ tags:
 
 # Narrative and World Bible
 
-[Project home](README.md) · Proposed narrative framework. Nothing in the sample cast or mythology is approved canon.
+[Project home](README.md) · Confirmed world direction with proposed cast details. The [author truth](incident-and-network-author-truth.md) contains spoilers and open causal rules; the [case-writing guide](episodic-story-and-case-writing.md) owns the emotional and episodic framework.
 
 ## Dramatic foundation
 
@@ -20,11 +20,19 @@ The player wants to understand the people who have made room for them. Investiga
 
 The recurring dramatic question is: what does trust ask of you after you discover something troubling about someone?
 
+Confirmed running theme: you can leave a refuge, remain physically unharmed, and become unable to return. This applies to the past, a relationship, and who someone used to be. Stories focus on a character dealing with something and releasing emotion, with traces and aftereffects in the household. Release need not mean forgiveness or reconciliation.
+
 ## Confirmed world direction and proposed details
 
-The house maintains a useful radio network for isolated people and unofficial communities. Its work includes check-ins, messages, supplies, and reconnecting people. The setting is an alternate future after societal collapse. Proposed context: large communications systems have fragmented while locally maintained radios and relays persist. The collapse's causes, elapsed time, geography, and surviving institutions remain open. Give particular communication failures understandable causes; collapse does not imply that all technology or culture vanished.
+The house is a refuge in a converted telecommunications office. Its residents were brought together by circumstance. Their difficult histories and the household's history are part of the mystery.
 
-Anomalous transmissions exist in the concept's proposed world. Residents have uneven knowledge, as confirmed by the user. Proposed differences include inherited operating procedures, direct experience, technical explanations, and uncertain beliefs. Document what each person knows and how they learned it; uneven knowledge does not mean everyone knows the same truth and merely withholds it.
+A few months earlier, an incident disturbed time and space. Safe pockets range from a house to a county. Between them, trails, navigation, and elapsed time cannot be trusted; beyond eyesight of a refuge, return may become impossible. People initially appeared after being caught between places during the incident. Arrivals are now rare. This is how the newcomer reaches the house; their subjective elapsed time remains open.
+
+Radio is the only dependable contact between isolated communities; ordinary face-to-face household life remains. A network has emerged, including music, news, talk shows, check-ins, and repair advice. Residents have uneven knowledge and beliefs about its anomalies.
+
+The [private incident account](incident-and-network-author-truth.md) establishes a secret quantum-supercomputer activation and a surviving artificial superintelligence. No one initially knows it survived. Its botnet connects through electricity along existing wired paths; it cannot overcome the disruption. Refuges favor connected infrastructure but remain diverse and apparently random. Their exact stability rules remain open.
+
+Some transmissions are AI interventions intended to help humanity heal and find a fix. Others come from displaced times and places. Personal or emotional connections influence what reaches people; the mechanism is unresolved. All glimpses require concrete signal sources and retain their original coverage limits.
 
 ## Player and tone
 
@@ -36,6 +44,10 @@ Open source is a theme: shared repair knowledge, competing revisions to operatin
 
 ## The house
 
+The confirmed building is a converted telecommunications office. Exact department, layout, location, and former operator remain open. Proposed details include a reception/radio desk, repurposed meeting-room kitchen, service maps, cable routes, an equipment room, and improvised private quarters. Old corporate notices and resident alterations can show competing attitudes toward the building's past.
+
+The user selected DedSec from Watch Dogs 2 as a major influence on aesthetic and attitude. Proposed expressions include irreverent station identities, DIY modifications, homemade graphics, shared repair knowledge, and humor aimed at surviving authority. Give residents different tastes and beliefs; this influence does not assign one hacker personality to the whole household or alter the confirmed console-era rendering direction.
+
 Proposed full-game spaces include a radio room, shared kitchen, workshop, private rooms, storage, and an antenna or roof area. Only the radio room, kitchen, and archive/workshop are needed for the first playable.
 
 Each space should contain evidence of current use. A repaired kettle, competing labels on a drawer, or a makeshift privacy screen can communicate relationships before exposition. Private rooms require a meaningful basis for entry; ordinary locked doors need not hide case-critical secrets.
@@ -46,7 +58,7 @@ The player does not leave the outpost in present-day reality. Other locations ca
 
 For each scene, specify its source, perspective, omissions, what the player can inspect, and what can be corroborated afterward. The player's blank slate does not require memories to belong to them; resident accounts and recordings are possible sources. Keep a remembered claim separate from an observed present-day fact.
 
-A proposed low-cost experiment revisits the same room in an earlier state. Additional environments should wait until this interaction proves useful.
+A proposed low-cost experiment revisits the same room in an earlier state. Additional environments should wait until this interaction proves useful. Displaced network media are distinct from an unrestricted memory scene: every transmitted glimpse needs a phone, camera, chat, monitor, or other concrete source. The new world direction does not add a memory scene to the baseline.
 
 ## Cast functions
 
@@ -70,7 +82,9 @@ Before expanding a character, write: a present need, an ordinary pleasure, a con
 
 Each case needs a factual spine with a consistent timeline, at least two understandable perspectives, a decision made with adequate evidence, and an aftermath that acknowledges what the player did. Give mundane motives enough explanatory power that supernatural explanations are not automatically correct.
 
-The longer arc can accumulate consequences across cases: a repaired relationship, an unanswered call, an altered operating practice, or a resident taking on responsibility. The final antagonistic force and ending are open. A singular mastermind is not required.
+Confirmed structure: standalone episodic stories connect to a global arc, with The X-Files, Fringe, and Law and Order supplied as references. Cases leave domestic traces: changed meals, shifts, objects, boundaries, names, and responsibilities. See the [case-writing guide](episodic-story-and-case-writing.md).
+
+The intelligence needs humans and also pursues an unresolved metaphysical purpose. Its intent to help does not settle its ethics or make it the cause of every case. The final conflict, degree of explanation, and ending remain open. Episode count and release structure remain deferred.
 
 ## Lore delivery
 

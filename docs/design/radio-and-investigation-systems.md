@@ -3,7 +3,7 @@ title: Radio and Investigation Systems
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -19,6 +19,16 @@ tags:
 The first prototype uses a small fictional set of channels and routable endpoints. Tune to a channel, inspect the signal indicator, listen or replay, record an excerpt, and choose a destination. Physical patching is a candidate presentation for routing; a labeled menu is an equivalent accessible control.
 
 Avoid requiring real radio expertise. The outpost exists in a confirmed alternate future after societal collapse. Its precise technology, surviving authorities, and local operating customs remain undecided. These are fictional interaction rules, not claims about real radio capabilities.
+
+## Signal sources and displaced media
+
+The wider world includes ordinary radio programming, displaced signals from different times and places, and some transmissions made by the surviving AI. Their causal boundaries belong in the [author truth](incident-and-network-author-truth.md).
+
+Every transmitted glimpse needs an original signal source. Phone calls, Zoom calls, AIM conversations, security cameras, and baby monitors carry limited perspectives. Personal relevance does not generate an unrestricted scene from someone's past. Preserve frames, microphone coverage, omissions, identities, and uncertain timestamps.
+
+Write source time separately from receipt time. Distinguish a stored fragment, live connection, replay, and edited or synthetic transmission. Receiving an earlier signal does not establish that its participants can be contacted or its events changed. Those rules remain open.
+
+Video or text carried through radio requires a suitable fictional receiver and decoding path. Define that path before it matters to a case. Essential information retains transcript-equivalent or descriptive evidence. This is a future content contract, not a new subsystem in the Case 01 baseline.
 
 ## Transmission lifecycle
 

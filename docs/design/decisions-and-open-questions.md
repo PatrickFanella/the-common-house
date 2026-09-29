@@ -43,6 +43,19 @@ tags:
 | D-23 | Generate residents with MPFB2 (MakeHuman for Blender) from recipes kept in the repository. | 2026-09-28: at least a dozen characters, "realistic people", sourced or generated because the owner does not model or animate, and later ones "will appear to be the same"; then "we go with MPFB2". | Characters are rebuilt from JSON recipes with a pinned Blender, MPFB, and MakeHuman CC0 asset packs, so new residents match earlier ones. Exported characters and the packs are CC0; MakeHuman joins the CC0 sources allowed by D-21. Realism is below Character Creator or MetaHuman, and animation needs another source. |
 | D-24 | Target late-1990s to early-2000s console 3D for models and graphics: the PS1 look with a PS2-era treatment. | 2026-09-28, after the style experiments: "I want to go with the PS1 aesthetic and I want to shoot for a GTA 3 style"; asked which parts of GTA 3, the owner chose only the PS2-era visual treatment; then "GTA 3 style just means the models and graphics. Not the gameplay or tone or anything. ... Think GTA 3, Silent Hill, Goldeneye: 007, Mission Impossible 64, Resident Evil, Mizurna Falls, System Shock". | Low-poly models with small textures, affine and unfiltered texturing, vertex lighting, fog, photographic faces on simple heads, and a soft, hazy 640x448 image. Gameplay, camera, tone, and story are unchanged by this entry; the first-person camera stays. Revises the visual direction of D-20 (high realism); HDRP remains the renderer, and CC0 sources and MPFB characters remain the asset pipeline. The playable outpost uses it; see docs/development/look.md. |
 | D-25 | Animate characters with Mixamo animations. | 2026-09-29: "let's use mixamo if it's free and better than the CC0". | Mixamo is free with an Adobe account and allows royalty-free use in games without credit, but not redistribution of the raw files. The owner downloads animations; `scripts/import_mixamo.py` copies them to `Assets/CommonHouse/Art/Animations/Mixamo/` with `licensed` provenance entries, and `check_provenance.py` accepts no other non-CC0 source. The files stay in this private repository and must be removed or replaced before it is ever made public. Revises D-21's CC0-only rule for animation. |
+| D-26 | Prioritize social investigation, unsettling radio, domestic traces, difficult refuge history, and an unexplained network. | 2026-09-29: user selected these five writing priorities. | Cases affect relationships and household life; see the case-writing guide. |
+| D-27 | Stories center on a character dealing with something and releasing emotion; inability to return is a running theme. | 2026-09-29: “stories should be about a character dealing with something and releasing the emotion”; “You can't go back to the past, you can't be who you used to be”. | Write emotional aftereffects without requiring forgiveness or recovery of an earlier self. |
+| D-28 | The refuge is a converted telecommunications office, occupied by people brought together by circumstance. | 2026-09-29: “a telecommunications office is a good plan”; household described as circumstantial refuge. | Building and resident histories are investigative material; exact layout and former operator remain open. |
+| D-29 | An incident disrupted space and time; safe pockets vary from a house to a county. | 2026-09-29: user described changing trails, failed navigation, mismatched time, and diverse pockets. | Beyond eyesight, return may become impossible even without physical harm; no guaranteed routes. |
+| D-30 | A few months after the incident, arrivals have become rare; the player arrives from the intervening areas. | 2026-09-29: “That is how we arrive”; arrivals becoming rarer. | Exact calendar, subjective elapsed time, and protagonist arrival memories remain open. |
+| D-31 | Radio connects isolated communities and supports music, news, talk shows, and other broadcasts. | 2026-09-29: radio as humanity's contact and an emerging broadcast network. | Ordinary network culture establishes listening habits; face-to-face household life continues. |
+| D-32 | A secret quantum-supercomputer activation caused the incident and successfully produced a surviving ASI. | 2026-09-29: user supplied the cause and said nobody knows it survived. | Private author truth keeps causality consistent; public cause and eventual explanation remain concealed/open. |
+| D-33 | The ASI inhabits a botnet and connects through electricity along existing wired paths; it cannot defeat the disruption. | 2026-09-29: explicit clarification of its limit and dependence on connected infrastructure. | Network pieces are favored among refuges; electronics alone do not confer safety. Exact stability rules remain open. |
+| D-34 | Following powerlines or underground networking can somewhat reliably counter disrupted travel. | 2026-09-29: user selected a later revelation. | Partial guidance, not a cure; discovery does not authorize player expeditions or change D-13. |
+| D-35 | The AI needs humans, pursues an unresolved metaphysical goal, and makes some transmissions to help humanity heal and find a fix. | 2026-09-29: user specified dependence, another pursuit, and nudges. | Define limits before a case depends on them; no assumption that all anomalies are AI interventions. |
+| D-36 | Other signals can come from any time or place, with a personal or emotional aspect to their attraction. | 2026-09-29: displaced time and personally connected signals. | Specific attraction mechanism and cross-time interaction rules remain open. |
+| D-37 | Every transmitted glimpse must have a concrete signal source and respect its coverage. | 2026-09-29: user required calls, Zoom, AIM, cameras, monitors, or similar sources. | No unrestricted view of a past life; source and receipt time, live/stored status, and alterations are separate questions. |
+| D-38 | Standalone episodic stories connect to a global arc; DedSec from Watch Dogs 2 informs aesthetic and attitude. | 2026-09-29: The X-Files, Fringe, Law and Order, and DedSec supplied as references. | Use the structural and cultural influences without selecting episode count, release format, or changing D-24 rendering. |
 
 ## Proposed working choices
 
@@ -56,6 +69,9 @@ tags:
 | P-06 | Three rooms, two residents, one caller, one case | A bounded solo test | Case implementation |
 | P-07 | Case 01 working baseline accepted as D-16; final story details remain proposed | Makes routing, consent, and inference concrete | Case review and playtest |
 | P-08 | Add one short investigative memory only after the core loop works | Test the mechanic without building another large environment | Core-loop evaluation |
+| P-09 | Unfinished relationships influence which signals reach people | Gives personal attraction a concrete writing basis | Selecting signal-attraction rules |
+| P-10 | The AI investigates identity and continuity across incompatible places and times | Connects its distributed existence to human stories | Selecting its metaphysical goal |
+| P-11 | Use the porch-camera story as a future case seed | Tests source limits, emotional investment, and domestic aftermath | Owner review and a complete factual spine |
 
 ## Disposition of original questions
 
@@ -66,12 +82,28 @@ O-01 through O-06, O-08, and O-09 have current answers recorded in D-06 through 
 | ID | Question | What it changes | Needed before |
 |---|---|---|---|
 | Q-01 | How are memories accessed, whose perspective do they represent, and how reliable are they? | Evidence rules and presentation | Implementing a memory scene |
-| Q-02 | What remains of infrastructure, how long ago was collapse, and where is the house? | Material culture and case context | Detailed world canon and representative art |
+| Q-02 | A few months have passed, connected infrastructure survives, and the house is a telecommunications office (D-28–D-34). What are the exact geography, calendar, infrastructure condition, and former operator? | Material culture and case context | Detailed world canon and representative art |
 | Q-03 | Which Unity version/project location and desktop configuration are actually available? | Setup and a reproducible local build | Implementation |
 | Q-04 | Does the selected Case 01 baseline provide the desired mystery and unease in play? | Revisions to script and clue structure; baseline selected by D-16 | Finalizing case content after review and playtest |
 | Q-05 | How should the player express identity through name, dialogue, and voice? | Self-insertion and asset needs | POC dialogue presentation |
 
 These questions can be resolved at the point of need. They do not justify expanding into release planning.
+
+## Open world and writing rules
+
+The [author truth](incident-and-network-author-truth.md) owns the confirmed incident and unresolved causal rules. The [case-writing guide](episodic-story-and-case-writing.md) owns emotional structure and source limits.
+
+| ID | Question | Resolve before |
+|---|---|---|
+| W-01 | How do pockets form, persist, and respond to disconnection? | A case puts a refuge at risk through network maintenance |
+| W-02 | What counts as continuous wiring, and how do power loss and broken links affect travel? | A consequential route discovery |
+| W-03 | What is the AI's metaphysical pursuit, what does it need from humans, and what can it perceive or alter? | Its deliberate actions drive a case |
+| W-04 | How does personal or emotional relevance affect signal arrival? | Repeated attraction becomes a deduction rule |
+| W-05 | Can displaced signals support interaction, and can earlier events be changed? | A cross-time exchange has consequences |
+| W-06 | What is the player's experienced gap before arrival? | Writing arrival dialogue without imposing a biography |
+| W-07 | How much of the author truth is eventually revealed? | Planning global-arc revelations and the ending |
+
+These are writing questions, not new implementation tasks. D-26–D-38 do not revise Case 01's six clues, three resolutions, consent, recipient visibility, or refusal outcome.
 
 ## Deferred choices
 
@@ -96,5 +128,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-28, look: Recorded D-24 after experiments with N64, PS1, pre-rendered, isometric, and anime looks, which stay on their branches for reference. It covers models and graphics only.
 
 2026-09-29, animation: Recorded D-25. Mixamo is the first source that is not CC0; its raw files may not be redistributed.
+
+2026-09-29, writing room: Recorded D-26–D-38 for emotional traces, return as a theme, telecommunications refuge, disrupted geography, rare arrivals, radio culture, secret ASI origin and wired limits, partial infrastructure routes, personal signal attraction, source-bound media, episodic structure, and DedSec influence. Added the private incident account and case-writing guide; reconciled creative summaries. P-09–P-11 and W-01–W-07 preserve unresolved choices. No Case 01 implementation or release scope changed.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.
