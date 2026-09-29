@@ -101,6 +101,33 @@ class ProvenanceChecks(unittest.TestCase):
         self.assertIn("unknown fields", self.run_check([self.cc0(SOURCED + "diff.png", data, note="x")], [path])[1][0])
         self.assertIn("manifest", check_provenance.check({"assets": []}, self.root, [], set())[1][0])
 
+    def licensed(self, name, data, **changes):
+        entry = {"path": name, "kind": "licensed", "sha256": hashlib.sha256(data).hexdigest(), "source": "Mixamo",
+                 "url": "https://www.mixamo.com/", "license": "Adobe-Mixamo-Terms", "retrieved": "2026-09-29"}
+        entry.update(changes)
+        return entry
+
+    def test_mixamo_file_in_its_folder_passes(self):
+        name = "Assets/CommonHouse/Art/Animations/Mixamo/idle.fbx"
+        path = self.write(name, b"fbx")
+        self.assertEqual(self.run_check([self.licensed(name, b"fbx")], [path], [path]), (1, []))
+
+    def test_licensed_file_rules(self):
+        inside = "Assets/CommonHouse/Art/Animations/Mixamo/idle.fbx"
+        outside = "Assets/CommonHouse/Art/Other/idle.fbx"
+        self.write(inside, b"fbx")
+        self.write(outside, b"fbx")
+        cases = {
+            "folder": (outside, {}),
+            "licensed source": (inside, {"source": "Somewhere"}),
+            "license": (inside, {"license": "CC0-1.0"}),
+            "url": (inside, {"url": "https://example.com/"}),
+        }
+        for field, (name, changes) in cases.items():
+            with self.subTest(field=field):
+                _, errors = self.run_check([self.licensed(name, b"fbx", **changes)], [self.root / name])
+                self.assertTrue(any(field in error for error in errors), errors)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -3,7 +3,7 @@ title: Decisions and Open Questions
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-28
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -42,6 +42,7 @@ tags:
 | D-22 | Store textures and models with Git LFS. | 2026-09-25: "Git LFS". Revises D-18. | `.gitattributes` sends texture and model formats under `Assets/` through LFS. The 5 MiB cap still applies to plain-Git binaries such as documentation images. Gitea reported LFS enabled on 2026-09-26. |
 | D-23 | Generate residents with MPFB2 (MakeHuman for Blender) from recipes kept in the repository. | 2026-09-28: at least a dozen characters, "realistic people", sourced or generated because the owner does not model or animate, and later ones "will appear to be the same"; then "we go with MPFB2". | Characters are rebuilt from JSON recipes with a pinned Blender, MPFB, and MakeHuman CC0 asset packs, so new residents match earlier ones. Exported characters and the packs are CC0; MakeHuman joins the CC0 sources allowed by D-21. Realism is below Character Creator or MetaHuman, and animation needs another source. |
 | D-24 | Target late-1990s to early-2000s console 3D for models and graphics: the PS1 look with a PS2-era treatment. | 2026-09-28, after the style experiments: "I want to go with the PS1 aesthetic and I want to shoot for a GTA 3 style"; asked which parts of GTA 3, the owner chose only the PS2-era visual treatment; then "GTA 3 style just means the models and graphics. Not the gameplay or tone or anything. ... Think GTA 3, Silent Hill, Goldeneye: 007, Mission Impossible 64, Resident Evil, Mizurna Falls, System Shock". | Low-poly models with small textures, affine and unfiltered texturing, vertex lighting, fog, photographic faces on simple heads, and a soft, hazy 640x448 image. Gameplay, camera, tone, and story are unchanged by this entry; the first-person camera stays. Revises the visual direction of D-20 (high realism); HDRP remains the renderer, and CC0 sources and MPFB characters remain the asset pipeline. The playable outpost uses it; see docs/development/look.md. |
+| D-25 | Animate characters with Mixamo animations. | 2026-09-29: "let's use mixamo if it's free and better than the CC0". | Mixamo is free with an Adobe account and allows royalty-free use in games without credit, but not redistribution of the raw files. The owner downloads animations; `scripts/import_mixamo.py` copies them to `Assets/CommonHouse/Art/Animations/Mixamo/` with `licensed` provenance entries, and `check_provenance.py` accepts no other non-CC0 source. The files stay in this private repository and must be removed or replaced before it is ever made public. Revises D-21's CC0-only rule for animation. |
 
 ## Proposed working choices
 
@@ -93,5 +94,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-28, characters: Recorded D-23 after comparing Character Creator 5, MetaHuman, MPFB2, and Microsoft Rocketbox with the owner. No resident design is approved by this entry.
 
 2026-09-28, look: Recorded D-24 after experiments with N64, PS1, pre-rendered, isometric, and anime looks, which stay on their branches for reference. It covers models and graphics only.
+
+2026-09-29, animation: Recorded D-25. Mixamo is the first source that is not CC0; its raw files may not be redistributed.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.

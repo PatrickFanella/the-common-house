@@ -110,6 +110,7 @@ namespace CommonHouse.Editor
         /// </summary>
         private static void PlaceResidents(Transform root, Shader shader)
         {
+            var animation = ResidentAnimation.Build();
             foreach (var (capsuleName, character) in Residents)
             {
                 var model = RetroCharacter(character, shader);
@@ -120,6 +121,12 @@ namespace CommonHouse.Editor
                 resident.name = "Resident " + character + " at " + capsuleName;
                 // MPFB characters face +Z; turn them to face into the room.
                 resident.transform.SetPositionAndRotation(new Vector3(capsule.position.x, 0f, capsule.position.z), Quaternion.Euler(0f, 180f, 0f));
+                var animator = resident.GetComponent<Animator>();
+                if (animation != null && animator != null)
+                {
+                    animator.runtimeAnimatorController = animation;
+                    animator.applyRootMotion = false;
+                }
             }
         }
 

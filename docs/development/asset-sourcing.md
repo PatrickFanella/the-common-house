@@ -12,6 +12,10 @@ page describes how to add a sourced file.
 | ambientCG | `https://ambientcg.com/view?id=<asset>` | CC0-1.0 |
 | MakeHuman | `https://static.makehumancommunity.org/assets/assetpacks/<pack>.html` | CC0-1.0 |
 
+Animations from Mixamo are the one non-CC0 source ([D-25](../design/decisions-and-open-questions.md)).
+They are recorded as `licensed` entries, allowed only under
+`Assets/CommonHouse/Art/Animations/Mixamo/`; see [characters](characters.md#animation).
+
 Check the license on the asset page when downloading. Adding another source or license needs
 a new decision; the checker rejects anything else.
 

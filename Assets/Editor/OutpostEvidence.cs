@@ -26,6 +26,12 @@ namespace CommonHouse.Editor
             if (camera == null) throw new InvalidOperationException("Missing scene camera.");
             // HDRP applies dynamic resolution only in play mode, so captures reproduce RetroScreen:
             // render the look's line count, then scale up to the capture size.
+            // Animators do not run in edit mode; step each one so residents show a frame of their clip.
+            foreach (var animator in UnityEngine.Object.FindObjectsByType<Animator>(FindObjectsSortMode.None).Where(item => item.runtimeAnimatorController != null))
+            {
+                animator.Rebind();
+                animator.Update(1.2f);
+            }
             var retroScreen = camera.GetComponent<CommonHouse.Look.RetroScreen>();
             renderLines = retroScreen != null ? retroScreen.lines : 0;
             camera.fieldOfView = 75;
