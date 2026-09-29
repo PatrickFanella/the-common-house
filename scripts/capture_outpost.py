@@ -10,7 +10,7 @@ except ImportError:
     import unity_common as unity
 
 # Must match OutpostEvidence.DetailViews.
-DETAIL_VIEWS = ["radio-desk", "kitchen", "archive-shelf", "workshop"]
+DETAIL_VIEWS = ["radio-desk", "kitchen", "archive-shelf", "workshop", "resident"]
 
 
 def main(argv=None):

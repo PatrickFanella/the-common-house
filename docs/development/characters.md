@@ -70,6 +70,26 @@ maps are applied. Run it on a disposable copy and bring the results back with:
 python3 scripts/run_editor_method.py CommonHouse.Editor.CharacterAssets.PrepareAll --copy-back
 ```
 
+## Retro characters
+
+The D-24 look uses low-poly characters like late-1990s console games, with face, clothes, and
+hair painted into one small texture rather than modelled:
+
+```sh
+python3 scripts/characters.py retro            # every recipe
+python3 scripts/characters.py retro <id> ...
+```
+
+For each recipe, `tools/characters/retro_bake.py` builds the detailed character and fits MPFB's
+`proxy741` body (730 faces). It keeps the proxy whole under the clothes, and bakes the detailed
+character's colour onto the proxy's UVs with Cycles. The bake is 1024 px, shrunk to 128 px. The
+FBX (game-engine rig and proxy), the texture, and a small description go to
+`Assets/CommonHouse/Art/Characters/Retro/<id>/`, with `generated` provenance entries. `RetroLook`
+imports them as humanoids with one retro material each.
+
+Hair is painted onto the head, and eyes and teeth are part of the texture. Pick hair and clothes by
+their colour at small size: `bob02`, for example, is dyed teal, which read as white.
+
 ## Review capture
 
 ```sh

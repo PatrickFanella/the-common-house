@@ -1,0 +1,19 @@
+{
+  "faces": 730,
+  "id": "test-resident-02",
+  "recipe": "test-resident-02.json",
+  "sources": [
+    "clothes/female_casualsuit01/female_casualsuit01_ao.png",
+    "clothes/female_casualsuit01/female_casualsuit01_diffuse.png",
+    "clothes/female_casualsuit01/female_casualsuit01_normal.png",
+    "clothes/shoes05/shoes05_diffuse.png",
+    "eyebrows/eyebrow010/eyebrow010.png",
+    "eyelashes/eyelashes02/eyelashes02.png",
+    "eyes/materials/brown_eye.png",
+    "hair/long01/long01_diffuse.png",
+    "skins/middleage_african_female/middleage_darkskinned_female_diffuse.png",
+    "teeth/teeth_base/teeth.png",
+    "tongue/tongue01/tongue01_diffuse.png"
+  ],
+  "texture_size": 128
+}

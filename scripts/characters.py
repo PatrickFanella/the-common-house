@@ -3,12 +3,15 @@
 
     python3 scripts/characters.py setup
     python3 scripts/characters.py build [ID ...]
+    python3 scripts/characters.py retro [ID ...]
 
 `setup` downloads Blender, the MPFB extension, and the MakeHuman CC0 asset packs, checks each
 against a pinned SHA-256, and installs them into a Blender profile used only by this project.
 `build` runs tools/characters/mpfb_build.py for each recipe in tools/characters/recipes/ (or
 the named ones), then copies the FBX, its character description, and its textures into
-Assets/CommonHouse/Art/Characters/ and records their provenance. Rebuilding a recipe with the
+Assets/CommonHouse/Art/Characters/ and records their provenance. `retro` builds the low-poly
+version used by the D-24 look with tools/characters/retro_bake.py: MPFB's proxy741 body with the
+detailed character baked onto one small texture, in Assets/CommonHouse/Art/Characters/Retro/. Rebuilding a recipe with the
 same pins reproduces the same character.
 """
 import argparse
@@ -32,6 +35,8 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 RECIPES = ROOT / "tools/characters/recipes"
 BUILD_SCRIPT = "tools/characters/mpfb_build.py"
+RETRO_SCRIPT = "tools/characters/retro_bake.py"
+RETRO_TEXTURE_SIZE = 128
 INSTALL_SCRIPT = "tools/characters/mpfb_install_packs.py"
 CHARACTERS = "Assets/CommonHouse/Art/Characters"
 MANIFEST = ROOT / "docs/development/asset-provenance.json"
@@ -211,16 +216,69 @@ def build(ids):
     print(f"PASS: built {len(recipes)} character(s). Import them in Unity and run the checks.")
 
 
+def selected_recipes(ids):
+    recipes = sorted(RECIPES.glob("*.json"))
+    if ids:
+        wanted = set(ids)
+        recipes = [recipe for recipe in recipes if recipe.stem in wanted]
+        missing = wanted - {recipe.stem for recipe in recipes}
+        if missing:
+            raise ValueError("no recipe for " + ", ".join(sorted(missing)))
+    if not recipes:
+        raise ValueError("no recipes to build")
+    return recipes
+
+
+def retro_entries(character, description, folder):
+    packs = sorted({pack for pack in (pack_index().get(source) for source in description["sources"]) if pack})
+    origin = (f"tools/characters/recipes/{character}.json with MakeHuman CC0 assets ({', '.join(packs)}), "
+              f"MPFB {MPFB['version']} proxy741 body")
+    return [
+        {"path": f"{folder}/{character}.fbx", "kind": "generated", "generator": RETRO_SCRIPT,
+         "sha256": sha256(ROOT / folder / f"{character}.fbx"),
+         "changes": f"Low-poly export of {origin}; built by scripts/characters.py retro in Blender 4.5.14."},
+        {"path": f"{folder}/{character}_albedo.png", "kind": "generated", "generator": RETRO_SCRIPT,
+         "sha256": sha256(ROOT / folder / f"{character}_albedo.png"),
+         "changes": f"Colour of the detailed character from {origin} baked onto the proxy's UVs with Cycles, "
+                    f"shrunk to {description['texture_size']} px."},
+    ]
+
+
+def retro(ids):
+    if not (BLENDER_DIR / "blender").is_file():
+        raise ValueError("Blender is not installed; run `python3 scripts/characters.py setup`")
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    recipes = selected_recipes(ids)
+    for recipe in recipes:
+        character = json.loads(recipe.read_text(encoding="utf-8"))["id"]
+        folder = f"{CHARACTERS}/Retro/{character}"
+        with tempfile.TemporaryDirectory(prefix="common-house-retro-") as temp:
+            blender("-b", "--python", str(ROOT / RETRO_SCRIPT), "--", str(recipe), temp, str(RETRO_TEXTURE_SIZE))
+            target = ROOT / folder
+            target.mkdir(parents=True, exist_ok=True)
+            for suffix in (".fbx", "_albedo.png", ".retro.json"):
+                shutil.copyfile(Path(temp) / (character + suffix), target / (character + suffix))
+        description = json.loads((ROOT / folder / f"{character}.retro.json").read_text(encoding="utf-8"))
+        fetch_polyhaven.merge(manifest, retro_entries(character, description, folder))
+        print(f"{character}: {description['faces']} faces, {description['texture_size']} px texture")
+    MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    print(f"PASS: built {len(recipes)} retro character(s).")
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("setup", help="Install the pinned Blender, MPFB, and asset packs.")
     build_parser = commands.add_parser("build", help="Build characters from recipes.")
     build_parser.add_argument("ids", nargs="*", help="Recipe IDs (default: all).")
+    retro_parser = commands.add_parser("retro", help="Build low-poly retro characters from recipes.")
+    retro_parser.add_argument("ids", nargs="*", help="Recipe IDs (default: all).")
     args = parser.parse_args(argv)
     try:
         if args.command == "setup":
             setup()
+        elif args.command == "retro":
+            retro(args.ids)
         else:
             build(args.ids)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
