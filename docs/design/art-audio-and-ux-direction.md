@@ -3,7 +3,7 @@ title: Art Audio and UX Direction
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -12,13 +12,21 @@ tags:
 
 # Art Audio and UX Direction
 
-[Project home](README.md) · Proposed direction brief. No approved visual assets or final style exist yet. The first procedural studies are in [Style Board v0.1](style-board.md).
+[Project home](README.md) · Creative direction and proposed treatments. D-24 in the [decision register](decisions-and-open-questions.md) owns the confirmed console-era rendering direction. The initial procedural studies remain in [Style Board v0.1](style-board.md).
 
 ## Visual premise
 
 A home maintained by people with different tastes, means, and repair habits. Equipment has understandable functions and visible modifications. Shared spaces should feel lived in before they become unsettling.
 
 Explore worn timber, painted metal, salvaged furniture, handwritten revisions, cables that go somewhere, and objects repaired more than once. The confirmed setting is an alternate future after societal collapse. Treat these as reference directions rather than a fixed palette. Mix surviving future equipment with locally repaired objects coherently; avoid making the house generically mid-century by default. Avoid assigning a uniform occult aesthetic to every resident.
+
+## Telecommunications refuge and household attitude
+
+The home is a converted telecommunications office. Proposed details include service counters, cable maps, equipment cabinets, corporate notices, and meeting-room furniture repurposed for communal living. Preserve signs of different residents' tastes and the building's former use.
+
+DedSec from Watch Dogs 2 is the confirmed reference for aesthetic and attitude. Proposed expressions include irreverent homemade graphics, station identifiers, stickers, conspicuous repairs, and humor about obsolete authority. Residents need not share one style or worldview. This cultural influence does not supersede the low-poly console-era treatment selected in D-24.
+
+Case aftermath can alter small visible or audible details: a photograph moves, an evening check-in gains a name, a familiar chair remains empty, or a resident resumes communal meals. Such traces belong to authored stories; they do not authorize additional final assets or baseline mechanics.
 
 ## Space and lighting
 
@@ -33,6 +41,8 @@ Build distinct layers: room tone, equipment hum, channel noise, transmitted spee
 Spatial sound can make the home tangible: footsteps on a familiar stair, a cupboard closing, somebody moving a chair to join you. Use silence and absence deliberately after ordinary routines have become familiar.
 
 Separate voice, music, ambience, and radio-noise levels. Supply subtitles and sound captions for consequential cues. A clean playback mode may reduce filtering while retaining the evidence's meaning.
+
+Ordinary network programming includes music, news, and talk shows. Give broadcasts recognizable habits before introducing discrepancies. Any future security feed, call, chat, or monitor retains its original perspective and coverage. Provide captions, transcripts, and equivalent descriptions for essential evidence; displaced media are not an unrestricted visual memory.
 
 ## Suspense and memories
 
