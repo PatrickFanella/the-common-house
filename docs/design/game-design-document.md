@@ -3,7 +3,7 @@ title: Game Design Document
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -47,11 +47,17 @@ Allow returns to earlier steps. Players should be able to revisit evidence, revi
 
 Use a flexible shift structure: domestic scene, radio work, investigation, decision, aftermath. Advance major phases through authored events or an explicit end-shift action in the first prototype. Avoid a continuously running clock until it proves useful.
 
-Each case resolves a local question while leaving consequences in the house. A later case can revisit an earlier promise or disclosure. The user has selected case-based storytelling. Release structure, case count, longer arcs, and final endings are deferred until after the POC. Do not assume every episode reveals a larger conspiracy.
+Each case resolves a local human question while leaving consequences in the house. Standalone episodic stories connect to a global arc, as selected in the 2026-09-29 writing conversation. A later case can revisit an earlier promise, disclosure, or domestic trace. Not every case needs a revelation about the incident or AI.
+
+Stories center on someone dealing with something and releasing emotion. Investigation is social: consulting a resident or sharing a source changes who knows what and can affect a relationship. Emotional aftermath should become visible in routines, objects, boundaries, and responsibilities. The [case-writing guide](episodic-story-and-case-writing.md) provides the authoring framework.
+
+Release structure, case count, and final endings remain deferred. This creative direction adds no cases or mechanics to the current POC backlog.
 
 ## Place, memory, and suspense
 
-Present-day play stays at the radio outpost in an alternate future after societal collapse. The wider world reaches the house through people, transmissions, objects, and records. Infrequent flashbacks or memories may allow investigation of other places; routine external expeditions are outside the direction.
+Present-day play stays at the radio outpost in an alternate future after societal collapse. The house occupies a converted telecommunications office. The wider world reaches it through arrivals, transmissions, objects, and records. Disrupted terrain isolates safe pockets, while following existing powerlines or underground networking is a later, partially reliable travel discovery. This world rule does not add player expeditions.
+
+Transmitted glimpses of other lives require an actual source such as a call, chat, camera, or monitor. Preserve its coverage and uncertainty; see [signal rules](radio-and-investigation-systems.md) and the [author truth](incident-and-network-author-truth.md). Infrequent flashbacks or memories may allow investigation of other places; routine external expeditions are outside the direction.
 
 A proposed memory interaction lets the player revisit a limited scene, inspect a detail, then compare it with present-day evidence. Identify whose account the scene represents and its source. A remembered detail is not automatically an independently verified fact. Memory access, perspective, reliability, and whether the experience is supernatural remain open.
 

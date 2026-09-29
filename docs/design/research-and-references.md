@@ -3,7 +3,7 @@ title: Research and References
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -46,6 +46,12 @@ User concepts: procedural; short stories; vignettes; noir; the Red Scare; deep l
 
 These references express interests, not a feature checklist. The user subsequently selected case-based stories, an alternate future after societal collapse, and open source as a theme. They also selected uneven resident knowledge, a newcomer for self-insertion, suspense over fright, solo Unity development, and a POC before release planning. Present-day play stays at the outpost; other locations appear infrequently through investigable memories or flashbacks.
 
+## Writing-room influences, 2026-09-29
+
+The user selected The X-Files, Fringe, and Law and Order for standalone stories linked by a global arc. DedSec from Watch Dogs 2 is a major reference for aesthetic and attitude. These are user-supplied creative references; no new external research or full comparative review was conducted for this update.
+
+Proposed applications: episodic human mysteries with cumulative consequences; irreverent DIY station identities, modified equipment, homemade graphics, and disputes over shared knowledge. These expressions remain proposals. DedSec does not change D-24's rendering direction, and episodic structure does not select a release model or case count.
+
 ## Additional comparisons from the initial research
 
 - [Unavowed](https://wadjeteyegames.com/games/unavowed/): companions and rebuilding a life in a supernatural setting.
@@ -56,6 +62,6 @@ These are suggested comparisons, not assigned prerequisites or claims of a full 
 
 ## Research still needed
 
-The broad setting is now an alternate future after societal collapse. Narrow geography, time since collapse, and surviving infrastructure before choosing specific radio equipment, operating culture, architecture, or historical analogies. If using Red Scare history, begin with the [Senate historical account](https://www.senate.gov/about/powers-procedures/censure/133Joseph_McCarthy.htm) and [hearing transcript collection](https://www.senate.gov/about/powers-procedures/investigations/mccarthy-transcripts.htm), then broaden perspectives. Those sources are a starting point, not a complete history.
+The broad setting is now an alternate future after societal collapse. The writing room establishes a few months since the incident, diverse safe pockets, surviving wired connections, and a telecommunications-office refuge. Exact geography, calendar, equipment, former operator, and operating customs remain open. Narrow those before choosing detailed historical analogies. If using Red Scare history, begin with the [Senate historical account](https://www.senate.gov/about/powers-procedures/censure/133Joseph_McCarthy.htm) and [hearing transcript collection](https://www.senate.gov/about/powers-procedures/investigations/mccarthy-transcripts.htm), then broaden perspectives. Those sources are a starting point, not a complete history.
 
 Research real cooperative living practices, community radio, the specific spiritual traditions under consideration, and accessible audio game design after narrowing the premise. Establish the desired player experience before importing real-world complexity.

@@ -1,12 +1,12 @@
 # Converted-office home base
 
-Direction confirmed by the owner on 2026-09-29; decision D-26 in the
+Direction confirmed by the owner on 2026-09-29; decisions D-28, D-38, and D-39 in the
 [register](decisions-and-open-questions.md). This document owns environment
 direction. [Issue #87](https://git.subcult.tv/PatrickFanella/the-common-house/issues/87)
 owns the first implementation slice. Room uses below are provisional and can
 change as the writing develops.
 
-The home occupies a converted office building. The owner's image supplies a
+The home occupies a converted telecommunications office building. The owner's image supplies a
 large modern shell: pale masonry wings, wide curtain-glass fronts, repeated
 vertical fins, deep entrance recesses, and horizontal facade bands. It is an
 architectural reference, not an imported game asset or a confirmed real-world
@@ -32,7 +32,7 @@ prior use. Plywood repairs, exposed conduit, salvaged terminals, parts bins,
 portable privacy screens, patched upholstery, and communal work surfaces show
 how it has been made useful again.
 
-Teal, magenta, and yellow mark signs and repaired equipment against bone white,
+The first implemented study uses teal, magenta, and yellow to mark signs and repaired equipment against bone white,
 charcoal, and worn neutrals. Graphic panels use original bitmap lettering,
 offset print blocks, stripes, and original interrupted broadcast-ring prints. Broad architectural shapes and readable
 color patches should survive the existing PS1 surfaces and soft PS2 frame.
@@ -88,7 +88,9 @@ one upper-floor zone, improve domestic facilities, or add more environmental
 variation. Those are follow-up candidates, not implemented locations or queued
 tasks.
 
-Exact geography, the building's previous occupants, collapse chronology,
-available infrastructure, resident ownership of spaces, and character-specific
-decoration remain open. Nothing in this study establishes new case evidence,
+The incident occurred a few months before the player arrives (D-30). Exact
+geography, calendar, former operator, infrastructure condition, resident
+ownership of spaces, and character-specific decoration remain open. The
+[graphic reference study](graphic-language.md) proposes how the supplied
+DedSec images can inform later environment assets. Nothing in this study establishes new case evidence,
 resident histories, or a release scope.

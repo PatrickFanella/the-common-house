@@ -5,7 +5,7 @@ work-type: software
 status: active
 stage: drafting
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -16,7 +16,7 @@ tags:
 
 A game concept about found family and unsettling investigations, centered on a shared home that operates a radio outpost.
 
-Working title. Preproduction draft v0.2, 2026-09-24. No game implementation, budget, release date, or production commitment is represented by these documents.
+Working title. Creative design pack updated 2026-09-29. These documents distinguish confirmed direction from proposals; implementation and verification status belong in the [repository README](../../README.md) and development reports.
 
 ## Start here
 
@@ -27,9 +27,12 @@ Read the Concept Brief for the pitch, then the Game Design Document for the prop
 | [Concept Brief](concept-brief.md) | Premise, audience hypothesis, design pillars, and creative boundaries |
 | [Game Design Document](game-design-document.md) | Core loop, progression, interactions, failure, and scope |
 | [Narrative and World Bible](narrative-and-world-bible.md) | World assumptions, character functions, themes, and story structure |
+| [Incident and Network — Author Truth](incident-and-network-author-truth.md) | Private causal history, AI limits, disrupted geography, and open world rules; contains spoilers |
+| [Episodic Story and Case Writing](episodic-story-and-case-writing.md) | Emotional release, social investigation, source-bound signals, domestic traces, and a proposed case seed |
 | [Radio and Investigation Systems](radio-and-investigation-systems.md) | Evidence, transmissions, conversations, routing, and consequences |
 | [Art Audio and UX Direction](art-audio-and-ux-direction.md) | Visual and sound direction, interface, accessibility, and asset priorities |
 | [Converted-office home base](home-base.md) | Confirmed architectural reference and provisional shared locations and asset kit |
+| [Home-base graphic language](graphic-language.md) | Interpretation of supplied collage, halftone, glitch, and fluorescent graphic references |
 | [Style Board v0.1](style-board.md) | Procedurally generated room studies, materials, and palette for review |
 | [Technical Design Outline](technical-design-outline.md) | Solo Unity POC, state model, tooling, saves, and technical questions |
 | [Proof of Concept Plan](proof-of-concept-plan.md) | Proof-of-concept scope, evaluation, dependencies, and risks |
@@ -54,15 +57,15 @@ The original Ars Malefica notes are retained as frozen migration snapshots. Cont
 
 ## Current review sequence
 
-1. Review the sample case against the confirmed alternate-future, post-collapse setting and suspenseful tone.
-2. Decide whether a short investigative memory belongs in the first POC.
-3. Inspect the existing Unity installation, project location, and desktop configuration before implementation.
-4. Build and evaluate a bounded solo Unity POC before discussing release structure.
+1. Use the decision register to distinguish accepted writing choices from proposals.
+2. Read the author truth before drafting anomalies or global-arc clues; resolve an open rule before making a case depend on it.
+3. Draft human stories using the case-writing guide, including an original signal source and a domestic trace.
+4. Review future cases and any Case 01 revisions with the owner before changing the working baseline. Memory experiments and release structure remain outside this writing update.
 
 Confirmed direction now includes uneven resident knowledge, a newcomer designed for player self-insertion, authored case-based stories, and open source as a theme. Present-day play stays at the outpost; infrequent other locations appear through investigable flashbacks or memories. See the decision register for the full record.
 
 ## Relationships
 
 - **Up:** [Repository README](../../README.md)
-- **Source:** User/assistant game-design conversation dated 2026-09-24; external references in Research and References.
+- **Source:** User/assistant design conversations beginning 2026-09-24, including the 2026-09-29 writing room; external references in Research and References.
 - **Output:** A reviewable preproduction design pack and a proposed Unity proof of concept.

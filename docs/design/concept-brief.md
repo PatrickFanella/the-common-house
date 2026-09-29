@@ -3,7 +3,7 @@ title: Concept Brief
 type: documentation
 status: draft
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 visibility: private
 tags:
 - project/the-common-house
@@ -16,7 +16,9 @@ tags:
 
 ## Pitch
 
-You find a place in a communal radio outpost that helps people reconnect when ordinary channels fail. Working its radio network draws you into unsettling investigations. The voices you trace have histories with the people who have welcomed you into their home.
+You arrive at a converted telecommunications office where people brought together by circumstance have made a home. A few months after an incident disrupted time and space, scattered refuges can reach one another only by radio. Ordinary broadcasts share the network with signals from other times and places, some intimately connected to the residents' lives.
+
+Investigating those signals draws you into difficult histories. Each story follows someone dealing with an emotional burden and leaves a trace in the household. Standalone cases connect to a larger mystery whose cause is recorded separately in the [author-only account](incident-and-network-author-truth.md).
 
 ## Player promise
 
@@ -39,7 +41,9 @@ The POC will be developed by the user alone in Unity on their desktop rig. Comme
 
 ## Confirmed world and player direction
 
-The setting is an alternate future after societal collapse. Residents have uneven knowledge of strange transmissions. The player is a newcomer, conceived as a blank slate for self-insertion. The tone favors suspense, mystery, and creepiness over fright. Stories are authored cases; open source is a theme of the world, not an engine or licensing requirement.
+The setting is an alternate future after societal collapse. Safe pockets vary from a house to a county; the intervening terrain cannot be navigated reliably. You can leave a refuge unharmed and still never return. That impossibility echoes the stories' concern with the past and former selves. Arrivals have become rare; the player is one of them.
+
+Residents have uneven knowledge of strange transmissions. The player is a newcomer, conceived as a blank slate for self-insertion. The tone favors suspense, mystery, and creepiness over fright. Stories are authored cases; open source is a theme of the world, not an engine or licensing requirement.
 
 Present-day play remains at the outpost. Other locations are used infrequently for investigable flashbacks and memories. The nature and reliability of those experiences remain to be designed.
 
