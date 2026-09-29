@@ -98,10 +98,10 @@ namespace CommonHouse.Editor
         }
 
         // Placeholder residents: pipeline test characters, not resident designs.
-        private static readonly (string Capsule, string Character)[] Residents =
+        private static readonly (string Capsule, string Character, string Idle)[] Residents =
         {
-            ("IvoConversation", "test-resident-01"),
-            ("RenPrivateConversation", "test-resident-02"),
+            ("IvoConversation", "test-resident-01", "breathing-idle"),
+            ("RenPrivateConversation", "test-resident-02", "neutral-idle"),
         };
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace CommonHouse.Editor
         private static void PlaceResidents(Transform root, Shader shader)
         {
             var animation = ResidentAnimation.Build();
-            foreach (var (capsuleName, character) in Residents)
+            foreach (var (capsuleName, character, idle) in Residents)
             {
                 var model = RetroCharacter(character, shader);
                 if (model == null) continue;
@@ -124,7 +124,7 @@ namespace CommonHouse.Editor
                 var animator = resident.GetComponent<Animator>();
                 if (animation != null && animator != null)
                 {
-                    animator.runtimeAnimatorController = animation;
+                    animator.runtimeAnimatorController = ResidentAnimation.ForResident(animation, character, idle);
                     animator.applyRootMotion = false;
                 }
             }

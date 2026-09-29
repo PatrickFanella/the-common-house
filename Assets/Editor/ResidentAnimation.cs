@@ -11,7 +11,7 @@ namespace CommonHouse.Editor
     /// <summary>
     /// Turns the Mixamo animations imported by scripts/import_mixamo.py (decision D-25) into looping
     /// humanoid clips and a Residents Animator Controller. The first clip whose name contains
-    /// "idle" is the default state.
+    /// "idle" is the default state; each resident can override it with its own idle.
     /// </summary>
     public static class ResidentAnimation
     {
@@ -41,6 +41,34 @@ namespace CommonHouse.Editor
             return controller;
         }
 
+        /// <summary>
+        /// Transitions and single actions play once; idles, poses, and repeated motions loop.
+        /// </summary>
+        public static bool Loops(string name)
+        {
+            var once = new[] { "-to-", "start-", "stop-", "turn", "open", "sit-to", "stand-to", "type-to" };
+            return !once.Any(part => name.Contains(part));
+        }
+
+        /// <summary>
+        /// An override of the Residents controller whose default state plays <paramref name="idle"/>,
+        /// so residents do not move in step. Falls back to the shared controller.
+        /// </summary>
+        public static RuntimeAnimatorController ForResident(RuntimeAnimatorController shared, string character, string idle)
+        {
+            if (shared == null) return null;
+            var controller = (AnimatorController)shared;
+            var defaultClip = controller.layers[0].stateMachine.defaultState.motion as AnimationClip;
+            var clip = AssetDatabase.LoadAllAssetsAtPath(ClipRoot + "/" + idle + ".fbx").OfType<AnimationClip>().FirstOrDefault(item => item.name == idle);
+            if (defaultClip == null || clip == null) return shared;
+            var path = Path.GetDirectoryName(ControllerPath).Replace('\\', '/') + "/" + character + ".overrideController";
+            AssetDatabase.DeleteAsset(path);
+            var overrides = new AnimatorOverrideController(shared) { name = character };
+            overrides[defaultClip] = clip;
+            AssetDatabase.CreateAsset(overrides, path);
+            return overrides;
+        }
+
         /// <summary>Imports one Mixamo FBX as a looping, in-place humanoid clip named after the file.</summary>
         private static AnimationClip Clip(string path)
         {
@@ -57,7 +85,7 @@ namespace CommonHouse.Editor
             if (settings.Length == 0) throw new InvalidOperationException(path + " contains no animation");
             var clip = settings[0];
             clip.name = name;
-            clip.loopTime = true;
+            clip.loopTime = Loops(name);
             // Bake root motion into the pose, so residents stay where the scene puts them.
             clip.lockRootRotation = true;
             clip.lockRootHeightY = true;

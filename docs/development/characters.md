@@ -107,6 +107,15 @@ each clip as a looping humanoid clip, with root motion baked into the pose so re
 place. It builds `Residents.controller`, whose default state is the first clip with "idle" in its
 name. Unity's humanoid retargeting maps Mixamo's skeleton onto the MPFB game-engine rig.
 
+Transitions and single actions (names containing `-to-`, `start-`, `stop-`, `turn`, or `open`)
+play once; the rest loop. Each resident gets an override controller whose default state plays
+its own idle, set in `RetroLook.Residents`, so residents do not move in step.
+
+The full downloaded library (1,254 animations and 22 packs) is kept outside the repository in
+`~/Documents/Common House Assets/Mixamo/` on Kvant. Only the clips the game uses are imported;
+the 2026-09-29 selection is listed there in `kept-2026-09-29.txt`. To add one, copy it into an
+empty folder and run `python3 scripts/import_mixamo.py FOLDER`.
+
 The raw Mixamo files may not be redistributed. They stay in this private repository and must be
 removed or replaced before it is ever made public.
 
