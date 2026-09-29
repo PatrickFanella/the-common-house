@@ -26,7 +26,7 @@ namespace CommonHouse.Dialogue
 
         public override bool Interact()
         {
-            return presenter != null && !string.IsNullOrEmpty(residentId) && presenter.Open(DialogueCatalog.ForResident(residentId));
+            return presenter != null && !string.IsNullOrEmpty(residentId) && presenter.OpenForResident(residentId);
         }
     }
 }

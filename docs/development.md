@@ -284,6 +284,8 @@ materials; and the scene generator places them. See
 Residents are generated with MPFB2 from recipes in `tools/characters/recipes/`
 (decision D-23). See [characters](development/characters.md) for setup, building,
 and the review capture.
+[Resident animation](development/resident-animation.md) describes talking, sitting,
+and the short walking routines, with the focused scene test command.
 
 ## Style board
 
