@@ -26,6 +26,14 @@ namespace CommonHouse.Dialogue
         private bool returning;
         private string playing;
         private bool wasTalking;
+        private Transform head;
+        private Transform partnerView;
+        private Quaternion headFacingOffset;
+        private Quaternion beforeConversation;
+        private bool wasFacingPlayer;
+        private bool restoreStandingFacing;
+        private float headYaw;
+        private float headPitch;
 
         public ResidentMotionPhase Phase { get; private set; }
         public string ResidentId => residentId;
@@ -33,6 +41,7 @@ namespace CommonHouse.Dialogue
         public Vector3 SeatPosition => seatPosition;
         public bool IsTalking { get; private set; }
         public string PlayingClip => playing;
+        public bool IsFacingPlayer { get; private set; }
 
         public void Configure(DialoguePresenter presenter, ModalInputCoordinator coordinator, Transform target,
             string id, Vector3 seat, float idleSeconds)
@@ -54,12 +63,82 @@ namespace CommonHouse.Dialogue
             // These two rigs must keep their pose current when their routine moves them out of view.
             animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
             playing = "ResidentIdle";
+            if (animator.isHuman)
+            {
+                head = animator.GetBoneTransform(HumanBodyBones.Head);
+                if (head != null) headFacingOffset = Quaternion.Inverse(transform.rotation) * head.rotation;
+            }
         }
 
         private void Update()
         {
             if (!Application.isBatchMode && Environment.GetEnvironmentVariable("COMMON_HOUSE_ENV") != "test")
                 Tick(Time.deltaTime);
+        }
+
+        // Apply gaze after the Animator has evaluated the body pose.
+        private void LateUpdate()
+        {
+            TickConversationFacing(Time.deltaTime);
+        }
+
+        /// <summary>Standing residents turn their body; seated residents keep chair alignment and turn only their head.</summary>
+        public void TickConversationFacing(float seconds)
+        {
+            if (seconds < 0f || float.IsNaN(seconds) || float.IsInfinity(seconds))
+                throw new ArgumentOutOfRangeException(nameof(seconds));
+            if (dialogue == null || modal == null || modal.IsPaused) return;
+            if (partnerView == null)
+            {
+                var camera = modal.GetComponentInChildren<Camera>();
+                partnerView = camera != null ? camera.transform : modal.transform;
+            }
+            var engaged = dialogue.IsOpen && dialogue.ActiveResidentId == residentId;
+            var seated = Phase == ResidentMotionPhase.Seated;
+            var transition = Phase == ResidentMotionPhase.SittingDown || Phase == ResidentMotionPhase.StandingUp;
+            IsFacingPlayer = engaged && !transition;
+            if (engaged && !wasFacingPlayer)
+            {
+                beforeConversation = transform.rotation;
+                restoreStandingFacing = !seated && !transition;
+            }
+            if (IsFacingPlayer && !seated)
+            {
+                var direction = partnerView.position - transform.position;
+                direction.y = 0f;
+                if (direction.sqrMagnitude > 0.0001f)
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), 120f * seconds);
+            }
+            else if (!engaged && restoreStandingFacing)
+            {
+                // Travel takes ownership of facing again as soon as its routine resumes.
+                if (Phase == ResidentMotionPhase.Standing)
+                {
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, beforeConversation, 120f * seconds);
+                    if (Quaternion.Angle(transform.rotation, beforeConversation) < 0.1f) restoreStandingFacing = false;
+                }
+                else restoreStandingFacing = false;
+            }
+            if (head != null)
+            {
+                var targetYaw = 0f;
+                var targetPitch = 0f;
+                if (IsFacingPlayer)
+                {
+                    var direction = transform.InverseTransformDirection(partnerView.position - head.position);
+                    if (direction.sqrMagnitude > 0.0001f)
+                    {
+                        targetYaw = Mathf.Clamp(Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, -65f, 65f);
+                        targetPitch = Mathf.Clamp(-Mathf.Atan2(direction.y, new Vector2(direction.x, direction.z).magnitude) * Mathf.Rad2Deg, -20f, 20f);
+                    }
+                }
+                headYaw = Mathf.MoveTowards(headYaw, targetYaw, 90f * seconds);
+                headPitch = Mathf.MoveTowards(headPitch, targetPitch, 90f * seconds);
+                // Use an absolute rig reference so a paused listening pose cannot accumulate head turns.
+                if (IsFacingPlayer || Mathf.Abs(headYaw) > 0.01f || Mathf.Abs(headPitch) > 0.01f)
+                    head.rotation = transform.rotation * Quaternion.Euler(headPitch, headYaw, 0f) * headFacingOffset;
+            }
+            wasFacingPlayer = engaged;
         }
 
         /// <summary>Explicit clock permits disposable scene tests without waiting through idle holds.</summary>
@@ -172,6 +251,10 @@ namespace CommonHouse.Dialogue
         {
             if (animator != null) animator.speed = 1f;
             IsTalking = false;
+            IsFacingPlayer = false;
+            wasFacingPlayer = false;
+            restoreStandingFacing = false;
+            headYaw = headPitch = 0f;
         }
     }
 }

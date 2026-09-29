@@ -34,7 +34,34 @@ resumes an interrupted walking clip at its prior time. Routine positions are
 scene presentation state and restart when the scene is loaded; they are not
 stored in case saves and never grant evidence or consent.
 
-Run the focused native scene check:
+## Conversation facing
+
+Issue [#86](https://git.subcult.tv/PatrickFanella/the-common-house/issues/86)
+adds facing during a resident's world conversation, including listening before
+its first response. Standing residents turn toward the player's camera at up
+to 120 degrees per second. Seated residents keep their body orientation and
+chair position; their head turns within 65 degrees of yaw and 20 degrees of
+pitch, at up to 90 degrees per second.
+
+Facing runs after the Animator evaluates its pose. It uses an absolute rig
+reference so a paused listening clip cannot accumulate additional head turns.
+Inactive residents do not track the player. Closing, switching residents, and
+the existing load reset release facing. A standing resident returns toward its
+previous orientation; walking takes control of its route direction again when
+it resumes. Escape pause holds facing. Sitting and standing transitions retain
+their existing orientation rather than turning the body mid-transition.
+
+The same scene component owns facing, so this change needs no regenerated
+scene, new clips, or packages. Facing changes no positions, interaction targets,
+case evidence, or consent.
+
+```sh
+python3 scripts/run_unity_tests.py --platform playmode --filter CommonHouse.Tests.ResidentConversationFacingTests --graphics --timeout 600
+```
+
+## Native checks
+
+Run the focused native animation and motion check:
 
 ```sh
 python3 scripts/run_unity_tests.py --platform playmode --filter CommonHouse.Tests.ResidentAnimationTests
@@ -46,5 +73,6 @@ Headless checks exercise the rigs and clips but produce no rendered evidence.
 The runner uses disposable project and save state with the normal local
 Editor license. Local checks do not qualify an Open Pilot worker.
 
-See the [local verification report](../verification/resident-motion.md) for
-results, inspected captures, build recovery, and remaining evidence limits.
+See the [motion verification report](../verification/resident-motion.md) and
+[conversation facing verification report](../verification/resident-conversation-facing.md)
+for results, inspected captures, and evidence limits.
