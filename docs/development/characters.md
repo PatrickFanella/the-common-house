@@ -90,6 +90,35 @@ imports them as humanoids with one retro material each.
 Hair is painted onto the head, and eyes and teeth are part of the texture. Pick hair and clothes by
 their colour at small size: `bob02`, for example, is dyed teal, which read as white.
 
+## Animation
+
+Residents are animated with Mixamo animations ([D-25](../design/decisions-and-open-questions.md)).
+Mixamo needs an Adobe account, so the owner downloads each animation:
+
+1. Sign in at <https://www.mixamo.com/>. The default character is fine; no upload is needed.
+2. Pick an animation. For walking, tick **In Place**.
+3. Download with **Format:** FBX for Unity (.fbx), **Skin:** Without Skin, **Frames per
+   Second:** 30, **Keyframe Reduction:** none, into `~/Downloads/mixamo/`.
+4. Run `python3 scripts/import_mixamo.py`, then `python3 scripts/build_outpost.py`.
+
+`import_mixamo.py` copies each file to `Assets/CommonHouse/Art/Animations/Mixamo/` under a
+lowercase, hyphenated name and records a `licensed` provenance entry. `ResidentAnimation` imports
+each clip as a looping humanoid clip, with root motion baked into the pose so residents stay in
+place. It builds `Residents.controller`, whose default state is the first clip with "idle" in its
+name. Unity's humanoid retargeting maps Mixamo's skeleton onto the MPFB game-engine rig.
+
+Transitions and single actions (names containing `-to-`, `start-`, `stop-`, `turn`, or `open`)
+play once; the rest loop. Each resident gets an override controller whose default state plays
+its own idle, set in `RetroLook.Residents`, so residents do not move in step.
+
+The full downloaded library (1,254 animations and 22 packs) is kept outside the repository in
+`~/Documents/Common House Assets/Mixamo/` on Kvant. Only the clips the game uses are imported;
+the 2026-09-29 selection is listed there in `kept-2026-09-29.txt`. To add one, copy it into an
+empty folder and run `python3 scripts/import_mixamo.py FOLDER`.
+
+The raw Mixamo files may not be redistributed. They stay in this private repository and must be
+removed or replaced before it is ever made public.
+
 ## Review capture
 
 ```sh

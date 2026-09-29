@@ -98,10 +98,10 @@ namespace CommonHouse.Editor
         }
 
         // Placeholder residents: pipeline test characters, not resident designs.
-        private static readonly (string Capsule, string Character)[] Residents =
+        private static readonly (string Capsule, string Character, string Idle)[] Residents =
         {
-            ("IvoConversation", "test-resident-01"),
-            ("RenPrivateConversation", "test-resident-02"),
+            ("IvoConversation", "test-resident-01", "breathing-idle"),
+            ("RenPrivateConversation", "test-resident-02", "neutral-idle"),
         };
 
         /// <summary>
@@ -110,7 +110,8 @@ namespace CommonHouse.Editor
         /// </summary>
         private static void PlaceResidents(Transform root, Shader shader)
         {
-            foreach (var (capsuleName, character) in Residents)
+            var animation = ResidentAnimation.Build();
+            foreach (var (capsuleName, character, idle) in Residents)
             {
                 var model = RetroCharacter(character, shader);
                 if (model == null) continue;
@@ -120,6 +121,12 @@ namespace CommonHouse.Editor
                 resident.name = "Resident " + character + " at " + capsuleName;
                 // MPFB characters face +Z; turn them to face into the room.
                 resident.transform.SetPositionAndRotation(new Vector3(capsule.position.x, 0f, capsule.position.z), Quaternion.Euler(0f, 180f, 0f));
+                var animator = resident.GetComponent<Animator>();
+                if (animation != null && animator != null)
+                {
+                    animator.runtimeAnimatorController = ResidentAnimation.ForResident(animation, character, idle);
+                    animator.applyRootMotion = false;
+                }
             }
         }
 

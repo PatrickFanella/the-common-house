@@ -2,6 +2,528 @@
   "version": 1,
   "assets": [
     {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/acknowledging.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "5a1cd5bafa856ae875557a812111c7fd5a05cf815aa65fc320e3843bafb98103"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/agreeing.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "2d0c1588d3440f4cfe14ad5ab7fdc87cc47bfa40fa106803fc90ba2bb2b5bed4"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/arm-stretching.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "c33bc185c0b54e987d11353fb8a2844bb3e7f9015a90f53a67aeab63b56ed916"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/bartending.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "ba79fe9d65fb08f4402871cc9d6cd322b82ea62936721af2c8315dadc5e2ee28"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/breathing-idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "af2b3f1a6a182f1ea3e589df6490dca125ff629d34969869e61a5ee1cde91606"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/carrying.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "4d4ba1f23229e41a00d04a4907ad6381b53d099c7c78e38831560d3d5f0f88c9"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/disappointed.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "b04057fa3f23ac594672f95aabc322d325664300dbb4fe6486b8f4a3fd16d158"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/dismissing-gesture.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "f2b5d9d3688e22b4f33fd9cd2421f94a305ddb52a676649e17fff4458fd0aeb0"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/drinking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "66400a6807225b6e0f1b5e828254a99234687703541bda6236bff13aaeb5e43b"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/happy-idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "417c8a27a19b6b9f69a1e4bbfbd2d87bfccf240e95f57b860c5e4da83eb3a122"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "61836a0883dcbab2cf1be533d78c11d4115913144caed9a67e8dffa0ba7e07b6"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/kneeling-inspecting.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "b0bed6202be4018890f10a7fb9ce2d6a35603bb93e5e076625deacec2b2448f7"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/left-turn-90.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "71ca89e261045a40239d0a0f0e2091821fe2c052b79b67d53866e48c00cc85ac"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/lengthy-head-nod.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "4e64924a4290277e0d8ade24568836781c37469741bac2912504cf52169c3f9a"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/look-around.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "93bdc5ab58acbf39962388a142898b46cc7b4bd4ae40469f3a9f43649a161aa8"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/look-away-gesture.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "c7fbddc0ef7e80076445f559f2886b1fb7c0880cc66823885f1f7d7fb38d5f77"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/looking-down.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "91d94f7cafa7c796240ca6bbab8a23fff2df2599efa2604e14fda73f36636dc6"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/neck-stretching.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "ee3ecfd014ab01657e3690bcf7417ad46955dbb8ff89e030aa4e14b38d87f5ab"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/nervously-look-around.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "d5740ccaeb2c238e2a712602ef9372a030813d56344ddc6ea1eaa92f6724b051"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/neutral-idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "7e61dae06745cb1566ec2f86a05c5cbbc638b603508890bd6bc9122afdb48990"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/no.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "c55ec770cf63a4ad33d7cf0629ea448eb7680864e1fa8e36ad6832afae793193"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/open-door-outwards.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "95f18e3e4871e7b286e66c9cc152446c42051b38a601d7f2f82993e594b17d73"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/opening-a-filing-cabinet.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "30e49350606204a2433f1ec95659364fc9f17d09a9999b70c0f8a510bb506ac7"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/opening-a-lid.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "f496fd93a02d2f6e4ad9e375d9eebffc260d0c5ccac74afb02680c0720fa84e7"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/pointing.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "ba8d9193544445941ced655d1e6fa09f5765b264f7d454aaf153294e5b67a618"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/right-turn-90.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "728e9cc523bf12057201e304aa99d94bd2f56644a9177945fdb3935c60f6d642"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sad-idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "6eb28f656f9659cbfdf94088f48f6f034f2194c1bd83c8c78bcc0d6354538466"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/searching-files-high.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "ebf503c47f08eb645beac23b5e81d695f6a1da343af7d490c77f3f522e199674"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/searching-pockets.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "5e6de9a526a310539e98332db361dbd718a0a140b87df569fd0a8edcc9abff57"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/shrugging.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "5f3cab05c7a3a8be5c693dca91acf9c05541fc2858c9393068fcf484c7e722f1"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sit-to-stand.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "4deac93c8739dd282a67a3d18cd6745e44d2c5dbbf6cefe0296f1cea8ee4826d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sit-to-type.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "666470f4f6a810471a96466b4e15eb1f970929e3519b85a2d744fbf03663b131"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sitting-dazed.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "5e866444187b28cffe601d3850a06976cd7c6ad9980b2e76ad25606672495fa3"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sitting-disapproval.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "f2fb6cec3fb000742d7c12e52825a60e52e1a9018147def6086b791c063f3b58"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sitting-drinking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "85e1573db67a94c5318338b2c272e8456fa26011d5cba1a6a6fcecc143de1fdf"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sitting-idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "2afb3931a297367ab1cf36afec5eaffa09be98e25b0b40c9d7db7a99178cd20b"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sitting-laughing.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "7227ce8d23e50baba14d1e955483cdaecb6c7bd57a047fd697fd5ae8a1511d49"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/sitting-talking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "68883e7637b1e5ccdf2a66a802ace3bd8b378e8940a8644f59045f7218566f07"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/stand-to-sit.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "92872bf5c6e0b96c04422d300cb4a1bdecd302ec98b3075599c79ca12a9ea207"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/standing-arguing.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "64f9bfd7d11a39c4ef88b0039eed06a7df3cc231bf7d6718aed20d26259b759c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/standing-idle-02-looking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "033e80fd49dcf17844cae32f30e4194945b21d386dc4a54831e346cabde36281"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/standing-idle.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "e95ba2d1a471d69232cc46af5f28aa0892adad854b1d11e98127c19c376a9ddc"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/standing-turn-left-90.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "54b595c87851b4e9759ec5fda74df212acde8599395040f28b8090708e6c5d80"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/standing-turn-right-90.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "4c5aca0dcd31a9978968c041d4a71ed154373f75ae6cc72be7cb1c3c0690a461"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/start-walking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "a76c8ef65c49c4462a7eb66db12380351f837b48debd0f95bf301f926e00115c"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/stop-walking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "2a13741efdd86e7b01c4d539e66e4277b922928e0c59553ad14d000802208a0b"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/talking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "40b6ca8ebec88f9d0fb2eb01c159d7ad1045e6a4356dcea010aee9861675419d"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/texting.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "a28a26b865a7b3419bcfda701da7e5a455517bd9f7ea3c75e79466e674087164"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/thinking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "55a2aa3ec877070fbf85cc2cd4c3d4bd1e11da24ba657105f4a86de35f3a8d95"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/thoughtful-head-nod.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "3818c74783bb0654b691a6530b2e54d453a362e236e199d411a51f02c0de9c79"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/type-to-sit.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "3e65cf8e111a9950d9afae428a0909c91ba4e24d101866e54a6b767b61c41a5e"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/typing.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "75d1ffa147dc30105ae15be5dede5640ae40af77aaa45473f611b19646e0d4b7"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/walking.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "18ccdac21aa5d7c3639db7faa34412ab655480c5ffdd2cd264ae28e56914f594"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/waving.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "2db075524208bcd6826865388897d11d15529c01339fb631e3e644dafdd86414"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/weight-shift.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "3911a0c1cb99340be5433ce6c4822fb51c160e79e485da888391938dd7ae2bd6"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/wiping-sweat.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "d13e0476216e7e5dcc8e0b83bb2fa6fd324f095078d8ce86482f8c36b2591b85"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/writing.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "8264c4fa2027148957010a241a6fcbf9c7a82bc242ff33f8a27086e66dd98ecc"
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Animations/Mixamo/yawn.fbx",
+      "kind": "licensed",
+      "source": "Mixamo",
+      "url": "https://www.mixamo.com/",
+      "license": "Adobe-Mixamo-Terms",
+      "retrieved": "2026-09-29",
+      "sha256": "15b9250cf1b485c5f748f37376b5909358ab3d97ef792e362b38937147fcb876"
+    },
+    {
       "path": "Assets/CommonHouse/Art/Characters/Retro/test-resident-01/test-resident-01.fbx",
       "kind": "generated",
       "generator": "tools/characters/retro_bake.py",

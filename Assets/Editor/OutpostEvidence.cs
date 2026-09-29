@@ -26,6 +26,8 @@ namespace CommonHouse.Editor
             if (camera == null) throw new InvalidOperationException("Missing scene camera.");
             // HDRP applies dynamic resolution only in play mode, so captures reproduce RetroScreen:
             // render the look's line count, then scale up to the capture size.
+            // Animators do not run in edit mode, so sample each resident's default clip to pose it.
+            SampleDefaultClips(1.2f);
             var retroScreen = camera.GetComponent<CommonHouse.Look.RetroScreen>();
             renderLines = retroScreen != null ? retroScreen.lines : 0;
             camera.fieldOfView = 75;
@@ -97,6 +99,28 @@ namespace CommonHouse.Editor
             ("workshop", new Vector3(9.6f, 1.6f, -0.6f), new Vector3(10.2f, 1f, 3f)),
             ("resident", new Vector3(11.2f, 1.65f, 1.1f), new Vector3(11.5f, 1.5f, 2.5f)),
         };
+
+        private static void SampleDefaultClips(float time)
+        {
+            var animators = UnityEngine.Object.FindObjectsByType<Animator>(FindObjectsSortMode.None).Where(item => item.runtimeAnimatorController != null).ToList();
+            if (animators.Count == 0) return;
+            UnityEditor.AnimationMode.StartAnimationMode();
+            UnityEditor.AnimationMode.BeginSampling();
+            foreach (var animator in animators)
+            {
+                var clip = DefaultClip(animator.runtimeAnimatorController);
+                if (clip != null) UnityEditor.AnimationMode.SampleAnimationClip(animator.gameObject, clip, time);
+            }
+            UnityEditor.AnimationMode.EndSampling();
+        }
+
+        private static AnimationClip DefaultClip(RuntimeAnimatorController runtime)
+        {
+            var overrides = runtime as AnimatorOverrideController;
+            var controller = (overrides != null ? overrides.runtimeAnimatorController : runtime) as UnityEditor.Animations.AnimatorController;
+            var clip = controller != null ? controller.layers[0].stateMachine.defaultState.motion as AnimationClip : null;
+            return overrides != null && clip != null ? overrides[clip] : clip;
+        }
 
         private static int renderLines;
 

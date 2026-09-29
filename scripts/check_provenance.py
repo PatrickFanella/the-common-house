@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail unless every sourced or LFS asset file has a matching provenance entry (decision D-21)."""
+"""Fail unless every sourced or LFS asset file has a matching provenance entry (decisions D-21, D-25)."""
 import argparse
 import datetime
 import hashlib
@@ -20,9 +20,15 @@ SOURCED_ROOT = "Assets/CommonHouse/Art/Sourced/"
 # Approved external sources and the host their asset pages must use. Extend only with a recorded decision.
 SOURCES = {"Poly Haven": "polyhaven.com", "ambientCG": "ambientcg.com", "MakeHuman": "makehumancommunity.org"}
 LICENSES = {"CC0-1.0"}
+# Non-CC0 sources allowed by a decision (D-25), with their licence name and the only folder
+# their files may be in. These files may not be redistributed as raw files.
+LICENSED_SOURCES = {
+    "Mixamo": {"host": "mixamo.com", "license": "Adobe-Mixamo-Terms", "folder": "Assets/CommonHouse/Art/Animations/Mixamo/"},
+}
 COMMON_FIELDS = {"path", "kind", "sha256"}
 KIND_FIELDS = {
     "cc0": {"source", "url", "authors", "license", "retrieved"},
+    "licensed": {"source", "url", "license", "retrieved"},
     "generated": {"generator"},
 }
 OPTIONAL_FIELDS = {"changes"}
@@ -80,6 +86,22 @@ def entry_errors(entry, root):
         if not isinstance(entry["authors"], list) or not entry["authors"] or not all(
                 isinstance(author, str) and author.strip() for author in entry["authors"]):
             errors.append(f"{label}: authors must be a non-empty list of names")
+        try:
+            datetime.date.fromisoformat(str(entry["retrieved"]))
+        except ValueError:
+            errors.append(f"{label}: retrieved must be an ISO date (YYYY-MM-DD)")
+    elif kind == "licensed":
+        terms = LICENSED_SOURCES.get(entry["source"])
+        if terms is None:
+            errors.append(f"{label}: licensed source {entry['source']!r} is not one of {sorted(LICENSED_SOURCES)}")
+        else:
+            url_host = urlparse(str(entry["url"])).hostname or ""
+            if urlparse(str(entry["url"])).scheme != "https" or not (url_host == terms["host"] or url_host.endswith("." + terms["host"])):
+                errors.append(f"{label}: url must be an https page on {terms['host']}")
+            if entry["license"] != terms["license"]:
+                errors.append(f"{label}: license must be {terms['license']!r} for {entry['source']}")
+            if not str(entry["path"]).startswith(terms["folder"]):
+                errors.append(f"{label}: {entry['source']} files must be in the folder {terms['folder']}")
         try:
             datetime.date.fromisoformat(str(entry["retrieved"]))
         except ValueError:
