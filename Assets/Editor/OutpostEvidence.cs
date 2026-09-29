@@ -95,6 +95,7 @@ namespace CommonHouse.Editor
             ("kitchen", new Vector3(2.8f, 1.6f, -1.4f), new Vector3(0.3f, 0.9f, 1.8f)),
             ("archive-shelf", new Vector3(8.4f, 1.6f, 0.6f), new Vector3(9f, 1f, -3f)),
             ("workshop", new Vector3(9.6f, 1.6f, -0.6f), new Vector3(10.2f, 1f, 3f)),
+            ("resident", new Vector3(11.2f, 1.65f, 1.1f), new Vector3(11.5f, 1.5f, 2.5f)),
         };
 
         private static int renderLines;

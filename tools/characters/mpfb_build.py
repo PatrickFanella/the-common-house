@@ -206,4 +206,5 @@ def main():
     print(f"CHARACTER BUILT: {character} -> {fbx} ({len(textures)} textures)")
 
 
-main()
+if __name__ == "__main__":
+    main()

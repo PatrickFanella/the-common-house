@@ -73,6 +73,7 @@ namespace CommonHouse.Editor
             var sources = new SourceList();
 
             ReplaceProps(root, shader, variants, sources);
+            PlaceResidents(root, shader);
             foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
             {
                 renderer.shadowCastingMode = ShadowCastingMode.Off;
@@ -94,6 +95,75 @@ namespace CommonHouse.Editor
 
             File.WriteAllText(SourcesPath, JsonUtility.ToJson(sources, true) + "\n");
             AssetDatabase.SaveAssets();
+        }
+
+        // Placeholder residents: pipeline test characters, not resident designs.
+        private static readonly (string Capsule, string Character)[] Residents =
+        {
+            ("IvoConversation", "test-resident-01"),
+            ("RenPrivateConversation", "test-resident-02"),
+        };
+
+        /// <summary>
+        /// Stands a low-poly character (see scripts/characters.py retro) at each resident capsule.
+        /// The capsules keep their colliders and dialogue targets; only their meshes are hidden.
+        /// </summary>
+        private static void PlaceResidents(Transform root, Shader shader)
+        {
+            foreach (var (capsuleName, character) in Residents)
+            {
+                var model = RetroCharacter(character, shader);
+                if (model == null) continue;
+                var capsule = root.GetComponentsInChildren<Transform>(true).Single(item => item.name == capsuleName);
+                capsule.GetComponent<MeshRenderer>().enabled = false;
+                var resident = (GameObject)PrefabUtility.InstantiatePrefab(model, capsule.parent);
+                resident.name = "Resident " + character + " at " + capsuleName;
+                // MPFB characters face +Z; turn them to face into the room.
+                resident.transform.SetPositionAndRotation(new Vector3(capsule.position.x, 0f, capsule.position.z), Quaternion.Euler(0f, 180f, 0f));
+            }
+        }
+
+        /// <summary>Imports a retro character as a humanoid with one retro material from its baked texture.</summary>
+        private static GameObject RetroCharacter(string character, Shader shader)
+        {
+            var folder = CharacterAssets.Root + "/Retro/" + character;
+            var fbx = folder + "/" + character + ".fbx";
+            var albedoPath = folder + "/" + character + "_albedo.png";
+            if (!File.Exists(fbx) || !File.Exists(albedoPath)) return null;
+            var textureImporter = (TextureImporter)AssetImporter.GetAtPath(albedoPath);
+            if (textureImporter.textureCompression != TextureImporterCompression.Uncompressed)
+            {
+                textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
+                textureImporter.SaveAndReimport();
+            }
+            var path = MaterialRoot + "/" + character + ".mat";
+            var material = AssetDatabase.LoadAssetAtPath<Material>(path);
+            if (material == null)
+            {
+                material = new Material(shader) { name = character };
+                AssetDatabase.CreateAsset(material, path);
+            }
+            material.SetTexture("_MainTex", AssetDatabase.LoadAssetAtPath<Texture2D>(albedoPath));
+            material.SetColor("_Color", Color.white);
+            material.SetFloat("_Cutoff", 0f);
+            material.SetFloat("_WorldUV", 0f);
+            material.SetFloat("_Cull", (float)CullMode.Back);
+            EditorUtility.SetDirty(material);
+            AssetDatabase.SaveAssets();
+
+            var importer = (ModelImporter)AssetImporter.GetAtPath(fbx);
+            importer.animationType = ModelImporterAnimationType.Human;
+            importer.avatarSetup = ModelImporterAvatarSetup.CreateFromThisModel;
+            importer.importAnimation = false;
+            importer.importCameras = false;
+            importer.importLights = false;
+            importer.materialImportMode = ModelImporterMaterialImportMode.ImportViaMaterialDescription;
+            importer.SaveAndReimport();
+            var names = AssetDatabase.LoadAllAssetsAtPath(fbx).OfType<Material>().Select(item => item.name).Distinct().ToList();
+            importer = (ModelImporter)AssetImporter.GetAtPath(fbx);
+            foreach (var name in names) importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), name), material);
+            importer.SaveAndReimport();
+            return AssetDatabase.LoadAssetAtPath<GameObject>(fbx);
         }
 
         /// <summary>Puts post-processes at the front of HDRP's after-post list, in the given order.</summary>
@@ -196,7 +266,12 @@ namespace CommonHouse.Editor
             importer.materialImportMode = ModelImporterMaterialImportMode.ImportViaMaterialDescription;
             importer.SaveAndReimport();
             var remaps = new List<(string, Material)>();
-            foreach (var name in AssetDatabase.LoadAllAssetsAtPath(path).OfType<Material>().Select(material => material.name).Distinct().ToList())
+            // Once remapped, a model's materials are no longer embedded sub-assets, so take their
+            // names from the existing remaps as well as from the embedded materials.
+            var names = AssetDatabase.LoadAllAssetsAtPath(path).OfType<Material>().Select(material => material.name)
+                .Concat(importer.GetExternalObjectMap().Keys.Where(key => key.type == typeof(Material)).Select(key => key.name))
+                .Distinct().ToList();
+            foreach (var name in names)
             {
                 var key = new AssetImporter.SourceAssetIdentifier(typeof(Material), name);
                 if (originalMap.TryGetValue(key, out var mapped) && mapped is Material source)

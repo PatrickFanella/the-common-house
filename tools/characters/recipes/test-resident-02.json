@@ -1,0 +1,22 @@
+{
+  "id": "test-resident-02",
+  "note": "Pipeline test only; not a Case 01 resident.",
+  "phenotype": {
+    "gender": 0.0,
+    "age": 0.55,
+    "muscle": 0.45,
+    "weight": 0.5,
+    "proportions": 0.55,
+    "height": 0.45,
+    "race": {"african": 0.75, "asian": 0.1, "caucasian": 0.15}
+  },
+  "skin": "middleage_african_female/middleage_african_female.mhmat",
+  "eyes": "high-poly/high-poly.mhclo",
+  "eyebrows": "eyebrow010/eyebrow010.mhclo",
+  "eyelashes": "eyelashes02/eyelashes02.mhclo",
+  "teeth": "teeth_base/teeth_base.mhclo",
+  "tongue": "tongue01/tongue01.mhclo",
+  "hair": "long01/long01.mhclo",
+  "clothes": ["female_casualsuit01/female_casualsuit01.mhclo", "shoes05/shoes05.mhclo"],
+  "rig": "game_engine"
+}

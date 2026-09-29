@@ -2,6 +2,34 @@
   "version": 1,
   "assets": [
     {
+      "path": "Assets/CommonHouse/Art/Characters/Retro/test-resident-01/test-resident-01.fbx",
+      "kind": "generated",
+      "generator": "tools/characters/retro_bake.py",
+      "sha256": "b32216f54418acefbbaf6c7e6157c0a2750baf9b1b1ab889c7002574c8c6f633",
+      "changes": "Low-poly export of tools/characters/recipes/test-resident-01.json with MakeHuman CC0 assets (makehuman_system_assets), MPFB 2.0.17 proxy741 body; built by scripts/characters.py retro in Blender 4.5.14."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Characters/Retro/test-resident-01/test-resident-01_albedo.png",
+      "kind": "generated",
+      "generator": "tools/characters/retro_bake.py",
+      "sha256": "f7dc692401a054459b3f5ae4fe767ef4a88d446e3be6e934bf018a531d130a82",
+      "changes": "Colour of the detailed character from tools/characters/recipes/test-resident-01.json with MakeHuman CC0 assets (makehuman_system_assets), MPFB 2.0.17 proxy741 body baked onto the proxy's UVs with Cycles, shrunk to 128 px."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Characters/Retro/test-resident-02/test-resident-02.fbx",
+      "kind": "generated",
+      "generator": "tools/characters/retro_bake.py",
+      "sha256": "f3c1a07ae5a18242069b22054f85ef4b1ab9afa90747fb43334dea73f355fa90",
+      "changes": "Low-poly export of tools/characters/recipes/test-resident-02.json with MakeHuman CC0 assets (makehuman_system_assets), MPFB 2.0.17 proxy741 body; built by scripts/characters.py retro in Blender 4.5.14."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/Characters/Retro/test-resident-02/test-resident-02_albedo.png",
+      "kind": "generated",
+      "generator": "tools/characters/retro_bake.py",
+      "sha256": "8f0a5926d4739e2f996059203d588a5bff63c16eb3fabca33f897a9a1c3cecaf",
+      "changes": "Colour of the detailed character from tools/characters/recipes/test-resident-02.json with MakeHuman CC0 assets (makehuman_system_assets), MPFB 2.0.17 proxy741 body baked onto the proxy's UVs with Cycles, shrunk to 128 px."
+    },
+    {
       "path": "Assets/CommonHouse/Art/Characters/Textures/clothes/male_worksuit01/male_worksuit01_ao.png",
       "kind": "cc0",
       "source": "MakeHuman",

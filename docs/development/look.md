@@ -28,6 +28,7 @@ The generator first builds the realistic outpost (CC0 materials, props, lights).
 | Surfaces | Every material becomes a `CommonHouse/Retro` material. The shader lights and fogs each vertex, snaps vertices to the frame's pixel grid, maps textures affinely (without perspective correction), and samples them without filtering. |
 | Textures | Each colour map is area-averaged to 64 px (`Art/Retro/Textures/`). Walls, floors, and ceilings repeat every 1.6 m. |
 | Props | Each Poly Haven prop is swapped for its decimated model, lined up with the original's bounds. The chalkboard and pendant lamp keep their original meshes, because decimation broke them. |
+| Residents | Low-poly placeholder characters from `scripts/characters.py retro` stand at Ivo's and Ren's positions. The capsules keep their colliders and dialogue targets. See [characters](characters.md#retro-characters). |
 | Lighting | `RetroLighting` passes the scene's point lights, ambient colour, and fog (5–22 m, brownish grey) to the shader. Shadows are off. |
 | Frame | `RetroScreen` on the player camera renders 448 lines through HDRP dynamic resolution, scaled up with Catmull-Rom. Then `HazeFilter` (glow, warm tint, lifted blacks) and `ColorDepth` (6 bits per channel, light ordered dither) run. |
 
