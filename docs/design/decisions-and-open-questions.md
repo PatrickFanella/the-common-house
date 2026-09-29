@@ -44,6 +44,8 @@ tags:
 | D-24 | Target late-1990s to early-2000s console 3D for models and graphics: the PS1 look with a PS2-era treatment. | 2026-09-28, after the style experiments: "I want to go with the PS1 aesthetic and I want to shoot for a GTA 3 style"; asked which parts of GTA 3, the owner chose only the PS2-era visual treatment; then "GTA 3 style just means the models and graphics. Not the gameplay or tone or anything. ... Think GTA 3, Silent Hill, Goldeneye: 007, Mission Impossible 64, Resident Evil, Mizurna Falls, System Shock". | Low-poly models with small textures, affine and unfiltered texturing, vertex lighting, fog, photographic faces on simple heads, and a soft, hazy 640x448 image. Gameplay, camera, tone, and story are unchanged by this entry; the first-person camera stays. Revises the visual direction of D-20 (high realism); HDRP remains the renderer, and CC0 sources and MPFB characters remain the asset pipeline. The playable outpost uses it; see docs/development/look.md. |
 | D-25 | Animate characters with Mixamo animations. | 2026-09-29: "let's use mixamo if it's free and better than the CC0". | Mixamo is free with an Adobe account and allows royalty-free use in games without credit, but not redistribution of the raw files. The owner downloads animations; `scripts/import_mixamo.py` copies them to `Assets/CommonHouse/Art/Animations/Mixamo/` with `licensed` provenance entries, and `check_provenance.py` accepts no other non-CC0 source. The files stay in this private repository and must be removed or replaced before it is ever made public. Revises D-21's CC0-only rule for animation. |
 
+| D-26 | Expand the home base as a converted office complex, with substantial aesthetic and attitude inspiration from DedSec in Watch Dogs 2. | 2026-09-29: "continue building the world", focus on "home base complex, assets and locations" while writing is in progress; "a lot of aesthetic and attitude inspiration" from DedSec; then "a converted office building" and an attached modern-office reference. | Build provisional locations and original reusable assets while keeping character and story choices open. The reference supplies pale masonry wings, broad curtain glazing, deep entrance recesses, and vertical fins. Preserve D-24 graphics, the first-person camera, and existing Case 01 interactions. Upper-floor interiors and exact world context remain open; see [home-base direction](home-base.md). |
+
 ## Proposed working choices
 
 | ID | Proposal | Reason | Revisit when |
@@ -96,5 +98,7 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-28, look: Recorded D-24 after experiments with N64, PS1, pre-rendered, isometric, and anime looks, which stay on their branches for reference. It covers models and graphics only.
 
 2026-09-29, animation: Recorded D-25. Mixamo is the first source that is not CC0; its raw files may not be redistributed.
+
+2026-09-29, home base: Recorded D-26. The owner expands environment scope beyond the three-room POC and supplies a modern office-building reference. Room functions and asset studies remain provisional; character writing continues separately.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.

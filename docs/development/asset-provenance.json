@@ -888,6 +888,258 @@
       "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
     },
     {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/bedding.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/blanket.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/commons-rug.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/exterior-glass.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "b00152894bb65585c839c811a51a59e3169708bc83b4c2d2cc94cc0f2f8bc9c5",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/exterior-masonry.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "7fdfcbecc56bf1dee59589d334b305b69d8c299f2317a652f6b20815f076ed20",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/faux-glass.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "b00152894bb65585c839c811a51a59e3169708bc83b4c2d2cc94cc0f2f8bc9c5",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/graphic-commons-wall.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "535bf7ea60e2adbea136d93a6751fd703a867cdc6d5aeed250f25528b3a4092c",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/graphic-repair-wall.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "535bf7ea60e2adbea136d93a6751fd703a867cdc6d5aeed250f25528b3a4092c",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/landing.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/linen.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/locker.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/office-carpet.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/pale-masonry.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "7fdfcbecc56bf1dee59589d334b305b69d8c299f2317a652f6b20815f076ed20",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/parts-bin.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/plywood.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/privacy-fabric.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-exterior-house.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "303e8f6d916776df37e1323e69883749f788e64768ef55cfccb352bfb7ccc3b4",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-north--9.5.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "d795b4b9dad5705f2182b7c2464239bfb8621eb0a7e0bf99282e9456ccfc4daa",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-north-0.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "f91aa5fa8c908a80df9c1fb2f013fb9564d03fb4022135e73577e77c791c62b2",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-north-9.5.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "783d04469626ae6506261ed97362a9584436ed59ea81610eb329d5ef622b14b0",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-notice.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "17e6b53c6ac4f0c1f7e14b38baf5b03eaeddfd4622757f834820696e3a189fcd",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-office-directory.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "47ffdb2c465ac015159a3a8efb9ea65b5c3d23f823d67a4fce1e89157f0cdcb9",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-power-print.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "fda5adce9ebb5eb9d211e039566f40b16a70c0fc294f58c56552645d70a4d0e1",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-quiet-print.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "a2f75d5c3877039bef563be2d56fbcca945d4cb5f56321eea759681a766861ce",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-repair-print.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "fcbef36598f557adc519fc83d6eafcc3975f5f9849a91a1b69c3349f6ed3758e",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-shared-print.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "02c460f9d1fdd02f69e592a7939001adaec3d07c0740910eebd21c3185fc0b15",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-south--9.5.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "924406875a060bcc0666b6590a92fdef14f6730a54543ad75aa78c19364716a5",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-south-0.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "c679d9a21008d3240ad993d90f6471ec60e3c19f1287a434a0987e8a039bb3f9",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-south-9.5.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "34af317339ef0901550b1248e6d3f66c6a0bb8e50c78939ae76af564e4f918a1",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-upper-access.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "f2119d073d55bc9e1d0a4be48d121a010d4fa4287ecdc298191f7b1d3e793d18",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-welcome.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "303e8f6d916776df37e1323e69883749f788e64768ef55cfccb352bfb7ccc3b4",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sofa-cloth.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sofa-patch.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/terminal-screen.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "710bf1bfe7686361d3eb5a708cb51f167f2b738ec8d51ba823f027adaf9517eb",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/terminal-shell.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/workshop-rug.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
       "path": "Assets/CommonHouse/Art/Retro/Models/binder_notebook.fbx",
       "kind": "generated",
       "generator": "tools/look/decimate.py",

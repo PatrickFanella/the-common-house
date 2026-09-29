@@ -55,9 +55,18 @@ namespace CommonHouse.Editor
             CreateLighting(root.transform);
             CreateCamera(root.transform);
             Furnish(root.transform);
+            OfficeComplex.Build(root.transform);
             // The chosen look (D-24) is applied last, over the realistic materials and props.
             RetroLook.Configure();
             RetroLook.Apply(root.transform);
+            // The larger office shell needs a longer fog range, retaining the same retro haze treatment.
+            var lighting = root.GetComponentInChildren<CommonHouse.Look.RetroLighting>();
+            lighting.fogStart = 10f;
+            lighting.fogEnd = 85f;
+            lighting.fogColor = new Color(0.23f, 0.27f, 0.30f);
+            var cameraData = root.GetComponentInChildren<Camera>().GetComponent<HDAdditionalCameraData>();
+            cameraData.clearColorMode = HDAdditionalCameraData.ClearColorMode.Color;
+            cameraData.backgroundColorHDR = new Color(0.07f, 0.11f, 0.16f);
             if (!EditorSceneManager.SaveScene(scene, OutpostLayout.ScenePath))
                 throw new InvalidOperationException("Could not save the outpost blockout scene.");
             EditorBuildSettings.scenes = EditorBuildSettings.scenes

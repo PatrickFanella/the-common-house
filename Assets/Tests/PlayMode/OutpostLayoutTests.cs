@@ -23,7 +23,7 @@ namespace CommonHouse.Tests
             };
 
         [UnityTest]
-        public IEnumerator GeneratedOutpostContainsOnlyTheThreePresentDayRoomsAndStableAnchors()
+        public IEnumerator ExistingCaseRoomsKeepStableAnchorsInsideTheExpandedHomeBase()
         {
             yield return SceneManager.LoadSceneAsync("OutpostBlockout", LoadSceneMode.Single);
             var layout = Object.FindAnyObjectByType<OutpostLayout>();
