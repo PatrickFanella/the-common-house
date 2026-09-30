@@ -318,3 +318,9 @@ original printed graphics.
 The [city kit guide](development/city-assets.md) covers reusable prefabs, snap
 dimensions, the separate street review scene, and native checks for future
 flashback asset preparation.
+
+## Season 1 props
+
+The [Season 1 asset inventory](design/season-01-asset-inventory.md) maps existing, new,
+and deferred assets to the scripts. The [reusable prop kit](development/season-one-assets.md)
+provides small broadcast, privacy, record, and shared-table objects in a separate review scene.

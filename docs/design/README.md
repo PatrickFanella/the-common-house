@@ -74,3 +74,6 @@ Confirmed direction now includes uneven resident knowledge, a newcomer designed 
 - **Up:** [Repository README](../../README.md)
 - **Source:** User/assistant design conversations beginning 2026-09-24, including the 2026-09-29 writing room; external references in Research and References.
 - **Output:** A reviewable preproduction design pack and a proposed Unity proof of concept.
+
+The [Season 1 asset inventory](season-01-asset-inventory.md) records reusable props,
+source-setting needs, and branch-aware domestic traces for the writing packages.

@@ -1567,6 +1567,104 @@
       "changes": "Area-averaged to 64 px from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_diff_2k.jpg for the D-24 look."
     },
     {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/biscuit.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "083f3eda8d146730ce8ba52d06fd067cfb0e9a4f41db9b9f3c017d6f70e08d5e",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/cloth.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "9da065d39cd925afdebbc35f451dd48f41329dc350e710b5bee55c3e5d0991e5",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/folder.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "80581b3492507b29bbd28760eddd79169aa2c04c00af2ba9a70ddd5cb9afdc85",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/grille.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "897d6d795aa72027b6b9294ca2d33b9cc049691bfec7c211cd3f134d4b2a165c",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/label-ask.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "6e39721cbf5b227d36610b0381745c1b6b3633fe187f9b9ddef2a26fea2d9f72",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/label-local.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "04e76fef12c610740eb36201bd5184fcd31578383c095fcf11e4c2c9e985f5c4",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/label-off-air.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "fa3f30249eef14770673e3c43d150f6aa211b3b7c74bebdacf1d50d3488d15e8",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/ledger.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "5d4f261d30553270d97f12b48b89b8f5deecc2686c827174140251274d55b84c",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/ochre.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "94ae0389a95b243d04778106f7caf1c1a8052ee91ddda249dec3cc06c8ace94d",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/paper.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "ac7c875f2ba58bc717a52aa0b7a82e6d832ee9dcc85d93a9a204e7a8118c46ac",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/pink.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "4b723a5d5ebff248317865a4631912e1a7b8b4dbdcfff745f9e1716322675763",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/shell.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "a9f282e8fdaa82b2b2ed24e2e9de54db273cc978dae3f5d6ea37df3e90b78893",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/steel.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "c93a996d2b189b8b79cead87255148f56bc0739d6414175260e133f1e4768786",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/SeasonOne/Textures/teal.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/SeasonOneAssetKit.cs",
+      "sha256": "ebf60ec226b9e1e3debcfde6e815a915a47f237fb905be71355a579d5e76c099",
+      "changes": "Original deterministic 64px season prop surface or generic operating label. No private account text."
+    },
+    {
       "path": "Assets/CommonHouse/Art/Sourced/PolyHaven/binder_notebook/binder_notebook_1k.fbx",
       "kind": "cc0",
       "source": "Poly Haven",

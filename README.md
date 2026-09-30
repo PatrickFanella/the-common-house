@@ -12,6 +12,8 @@ The [telecommunications environment study](docs/development/telecom-environment.
 
 A [modular city kit](docs/development/city-assets.md) prepares street surfaces, facade bays, and street furniture for future flashback locations. Its separate review scene is excluded from the playable build.
 
+The [first Season 1 prop kit](docs/development/season-one-assets.md) adds 16 reusable broadcast, privacy, record, and shared-table objects. Its [asset inventory](docs/design/season-01-asset-inventory.md) maps these and existing assets to each episode. A separate review scene and [rendered verification](docs/verification/season-one-assets.md) support the provisional art pass.
+
 The deterministic Case 01 model has local versioned saves and automated text-only rehearsals for all three narrative outcomes. Inspection, transmission review, source comparison, resident conversations, consequential send confirmation, and matching aftermath are wired into the scene. Runtime save/reload, keyboard action paths, and shared text scaling are implemented. The six existing case scene routes and a local Linux development build with an R2 player smoke are qualified. An owner has reported reaching refusal and using Save during exploratory play; Load and case understanding remain unverified in that report. The broader playtest evaluation remains open. Release structure is deferred until after the POC.
 
 The [local build report](docs/verification/local-build.md) includes the retained player, launch command, artifact identity, and current limits.
