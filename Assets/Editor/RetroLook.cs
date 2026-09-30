@@ -126,6 +126,14 @@ namespace CommonHouse.Editor
                 {
                     animator.runtimeAnimatorController = ResidentAnimation.ForResident(animation, character, idle);
                     animator.applyRootMotion = false;
+                    var target = capsule.GetComponent<CommonHouse.Dialogue.ResidentDialogueTarget>();
+                    var dialogue = root.GetComponentInChildren<CommonHouse.Dialogue.DialoguePresenter>();
+                    var modal = root.GetComponentInChildren<CommonHouse.Interaction.ModalInputCoordinator>();
+                    var seat = resident.transform.position + Vector3.right * (target.ResidentId == "ivo" ? -1f : 0.9f);
+                    var chair = OutpostProps.Place(root, "painted_wooden_chair_01", seat, Vector3.back);
+                    chair.name = target.ResidentId + " routine chair";
+                    resident.AddComponent<CommonHouse.Dialogue.ResidentMotion>().Configure(
+                        dialogue, modal, capsule, target.ResidentId, seat, target.ResidentId == "ivo" ? 20f : 32f);
                 }
             }
         }

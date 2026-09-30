@@ -33,6 +33,9 @@ Read the Concept Brief for the pitch, then the Game Design Document for the prop
 | [Motion detected episode package](episodes/motion-detected/README.md) | First drafted future episode: playable script, evidence contract, and implementation handoff |
 | [Radio and Investigation Systems](radio-and-investigation-systems.md) | Evidence, transmissions, conversations, routing, and consequences |
 | [Art Audio and UX Direction](art-audio-and-ux-direction.md) | Visual and sound direction, interface, accessibility, and asset priorities |
+| [Converted-office home base](home-base.md) | Confirmed architectural reference and provisional shared locations and asset kit |
+| [Home-base graphic language](graphic-language.md) | Interpretation of supplied collage, halftone, glitch, and fluorescent graphic references |
+| [City asset direction](city-assets.md) | Provisional modular city kit for future flashbacks, with no location or story canon |
 | [Style Board v0.1](style-board.md) | Procedurally generated room studies, materials, and palette for review |
 | [Technical Design Outline](technical-design-outline.md) | Solo Unity POC, state model, tooling, saves, and technical questions |
 | [Proof of Concept Plan](proof-of-concept-plan.md) | Proof-of-concept scope, evaluation, dependencies, and risks |
@@ -62,7 +65,7 @@ The original Ars Malefica notes are retained as frozen migration snapshots. Cont
 3. Draft human stories using the case-writing guide, including an original signal source and a domestic trace.
 4. Review future cases and any Case 01 revisions with the owner before changing the working baseline. Memory experiments and release structure remain outside this writing update.
 
-Confirmed direction now includes uneven resident knowledge, a newcomer designed for player self-insertion, authored case-based stories, and open source as a theme. Present-day play stays at the outpost; infrequent other locations appear through investigable flashbacks or memories. See the decision register for the full record.
+Confirmed direction now includes uneven resident knowledge, a newcomer designed for player self-insertion, authored case-based stories, and open source as a theme. Present-day play stays at the outpost; the owner now expects a good number of flashbacks into other locations (D-40). See the decision register for the full record.
 
 ## Relationships
 

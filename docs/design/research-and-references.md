@@ -44,7 +44,7 @@ User references: Still Wakes the Deep; Phasmophobia; Welcome to the Game 2; Dear
 
 User concepts: procedural; short stories; vignettes; noir; the Red Scare; deep lore; first person; cult; esoteric; dark magic; pagan; techno futurist; cyberpunk; DIY; open source; finding your family. The user subsequently clarified found family and belonging, and prioritized investigating people and uncovering unsettling truths.
 
-These references express interests, not a feature checklist. The user subsequently selected case-based stories, an alternate future after societal collapse, and open source as a theme. They also selected uneven resident knowledge, a newcomer for self-insertion, suspense over fright, solo Unity development, and a POC before release planning. Present-day play stays at the outpost; other locations appear infrequently through investigable memories or flashbacks.
+These references express interests, not a feature checklist. The user subsequently selected case-based stories, an alternate future after societal collapse, and open source as a theme. They also selected uneven resident knowledge, a newcomer for self-insertion, suspense over fright, solo Unity development, and a POC before release planning. Present-day play stays at the outpost; the owner now expects a good number of flashbacks into other locations (D-40).
 
 ## Writing-room influences, 2026-09-29
 

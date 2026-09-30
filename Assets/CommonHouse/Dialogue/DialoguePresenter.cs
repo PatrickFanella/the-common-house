@@ -46,6 +46,7 @@ namespace CommonHouse.Dialogue
 
         public bool IsOpen { get; private set; }
         public DialogueLine CurrentLine => currentLine;
+        public string ActiveResidentId { get; private set; }
         public int SelectedIndex => selectedIndex;
         private CaseState ActiveState => session != null ? session.State : state;
         public IReadOnlyList<DialogueNode> EligibleQuestions => nodes.Where(node => node.Eligibility(ActiveState)).ToArray();
@@ -94,12 +95,20 @@ namespace CommonHouse.Dialogue
         {
             if (ActiveState == null || modalInput == null || !modalInput.TryOpen(this)) return false;
             IsOpen = true;
+            ActiveResidentId = null;
             currentLine = null;
             ClampSelection();
             return true;
         }
 
         /// <summary>Opens a resident-scoped authored set through a world interaction.</summary>
+        public bool OpenForResident(string residentId)
+        {
+            if (!Open(DialogueCatalog.ForResident(residentId))) return false;
+            ActiveResidentId = residentId;
+            return true;
+        }
+
         public bool Open(IEnumerable<DialogueNode> authoredNodes)
         {
             if (authoredNodes == null) throw new ArgumentNullException(nameof(authoredNodes));
@@ -116,6 +125,7 @@ namespace CommonHouse.Dialogue
         {
             if (!IsOpen) return;
             IsOpen = false;
+            ActiveResidentId = null;
             modalInput.Release(this);
         }
 

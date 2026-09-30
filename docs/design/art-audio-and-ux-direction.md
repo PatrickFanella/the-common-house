@@ -26,6 +26,11 @@ The home is a converted telecommunications office. Proposed details include serv
 
 DedSec from Watch Dogs 2 is the confirmed reference for aesthetic and attitude. Proposed expressions include irreverent homemade graphics, station identifiers, stickers, conspicuous repairs, and humor about obsolete authority. Residents need not share one style or worldview. This cultural influence does not supersede the low-poly console-era treatment selected in D-24.
 
+The [home-base graphic study](graphic-language.md) translates the owner's supplied
+images into proposed original prints: monochrome comic collage and halftone,
+torn edges, desktop fragments, text-built silhouettes, and sparse lime or violet
+accents. The [home-base direction](home-base.md) owns their architectural context.
+
 Case aftermath can alter small visible or audible details: a photograph moves, an evening check-in gains a name, a familiar chair remains empty, or a resident resumes communal meals. Such traces belong to authored stories; they do not authorize additional final assets or baseline mechanics.
 
 ## Space and lighting

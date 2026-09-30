@@ -30,7 +30,7 @@ tags:
 | D-10 | Procedural means case-based stories. | Answer 5 to O-05. | Author cases; do not assume generated mysteries. |
 | D-11 | Open source is a theme. | Answer 6 to O-06. | Explore shared knowledge and repair; no license requirement follows. |
 | D-12 | Solo developer, desktop rig, Unity. | Answer 7 to O-07. | Plan a small Unity POC; hardware and installed version still need inspection. |
-| D-13 | Present-day play stays at the outpost; other locations appear infrequently through investigable flashbacks or memories. | Answer 8 to O-08, including a tentative preference against leaving in reality. | Use this as the current spatial direction; do not plan routine expeditions. |
+| D-13 | Present-day play stays at the outpost; other locations appear infrequently through investigable flashbacks or memories. | Answer 8 to O-08, including a tentative preference against leaving in reality. | Revised by D-40 for flashback frequency. Present-day play remains at the outpost; do not plan routine expeditions. |
 | D-14 | Protagonist is a blank slate for player self-insertion. | Answer 9 to O-09, expressed as the current preference. | Avoid a mandatory detailed biography; expression through present choices. |
 | D-15 | Start with a POC before release structure. | Answer 10 to O-10. | Defer release, season, funding, and commercial production planning. |
 | D-16 | Use Case 01 as the working POC backlog baseline. | “Use Case 01 as the working baseline” in the 2026-09-24 planning conversation. | Plan implementation around its six clues and three outcomes; names and story details remain provisional for owner review. |
@@ -56,6 +56,10 @@ tags:
 | D-36 | Other signals can come from any time or place, with a personal or emotional aspect to their attraction. | 2026-09-29: displaced time and personally connected signals. | Specific attraction mechanism and cross-time interaction rules remain open. |
 | D-37 | Every transmitted glimpse must have a concrete signal source and respect its coverage. | 2026-09-29: user required calls, Zoom, AIM, cameras, monitors, or similar sources. | No unrestricted view of a past life; source and receipt time, live/stored status, and alterations are separate questions. |
 | D-38 | Standalone episodic stories connect to a global arc; DedSec from Watch Dogs 2 informs aesthetic and attitude. | 2026-09-29: The X-Files, Fringe, Law and Order, and DedSec supplied as references. | Use the structural and cultural influences without selecting episode count, release format, or changing D-24 rendering. |
+
+| D-39 | Expand the home base as a converted office complex, with substantial aesthetic and attitude inspiration from DedSec in Watch Dogs 2. | 2026-09-29: "continue building the world", focus on "home base complex, assets and locations" while writing is in progress; "a lot of aesthetic and attitude inspiration" from DedSec; then "a converted office building" and an attached modern-office reference. | Build provisional locations and original reusable assets while keeping character and story choices open. The reference supplies pale masonry wings, broad curtain glazing, deep entrance recesses, and vertical fins. Preserve D-24 graphics, the first-person camera, and existing Case 01 interactions. D-28 specifies its telecommunications use; D-38 records the wider cultural influence. Upper-floor interiors and exact geography remain open; see [home-base direction](home-base.md). |
+
+| D-40 | Expect a good number of flashbacks and build reusable city assets for their locations. | 2026-09-29: “I think we will be doing a good number of flashbacks. Can you create some city assets”. | Revises D-13's infrequent-flashback expectation. Build a provisional city kit and separate review scene; individual locations, sources, access rules, and stories remain open. Present-day play and Case 01 scope stay unchanged; see [city asset direction](city-assets.md). |
 
 ## Proposed working choices
 
@@ -130,5 +134,9 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-29, animation: Recorded D-25. Mixamo is the first source that is not CC0; its raw files may not be redistributed.
 
 2026-09-29, writing room: Recorded D-26–D-38 for emotional traces, return as a theme, telecommunications refuge, disrupted geography, rare arrivals, radio culture, secret ASI origin and wired limits, partial infrastructure routes, personal signal attraction, source-bound media, episodic structure, and DedSec influence. Added the private incident account and case-writing guide; reconciled creative summaries. P-09–P-11 and W-01–W-07 preserve unresolved choices. No Case 01 implementation or release scope changed.
+
+2026-09-29, home-base reconciliation: Preserved the writing-room decisions D-26–D-38 and recorded the parallel environment expansion as D-39. The modern-office reference and provisional ground-floor locations remain compatible with the telecommunications refuge in D-28.
+
+2026-09-29, city assets: Recorded D-40 for more frequent flashbacks and a reusable city kit. This authorizes asset preparation, not a new Case 01 memory sequence or city expedition.
 
 When a choice changes, record its date, rationale, affected documents, and remaining limits. Preserve superseded decisions explicitly.
