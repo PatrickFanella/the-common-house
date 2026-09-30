@@ -138,7 +138,7 @@ Release structure, commercial platforms, full-game length beyond the selected Se
 2026-09-29, writing room: Recorded D-26–D-38 for emotional traces, return as a theme, telecommunications refuge, disrupted geography, rare arrivals, radio culture, secret ASI origin and wired limits, partial infrastructure routes, personal signal attraction, source-bound media, episodic structure, and DedSec influence. Added the private incident account and case-writing guide; reconciled creative summaries. P-09–P-11 and W-01–W-07 preserve unresolved choices. No Case 01 implementation or release scope changed.
 
 2026-09-29, Season 1 writing sequence: Recorded D-41 and created the intro script package and Season 1 roadmap. The finale closes a season, not the whole game. Later episode stories and placement of existing cases remain open; release/distribution planning and implementation are unchanged.
-||||||| f4d1ab2
+
 2026-09-29, home-base reconciliation: Preserved the writing-room decisions D-26–D-38 and recorded the parallel environment expansion as D-39. The modern-office reference and provisional ground-floor locations remain compatible with the telecommunications refuge in D-28.
 
 2026-09-29, city assets: Recorded D-40 for more frequent flashbacks and a reusable city kit. This authorizes asset preparation, not a new Case 01 memory sequence or city expedition.
