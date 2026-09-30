@@ -12,7 +12,7 @@ tags:
 
 # Intro: authoring and implementation handoff
 
-[Intro package](../design/episodes/intro/README.md) · [Season 1 roadmap](../design/season-01-story-roadmap.md). IN-1 implementation is tracked in [issue #92](https://git.subcult.tv/PatrickFanella/the-common-house/issues/92); IN-2 in [issue #94](https://git.subcult.tv/PatrickFanella/the-common-house/issues/94); IN-3 in [issue #95](https://git.subcult.tv/PatrickFanella/the-common-house/issues/95). Later units remain planning. No automation is queued.
+[Intro package](../design/episodes/intro/README.md) · [Season 1 roadmap](../design/season-01-story-roadmap.md). IN-1 implementation is tracked in [issue #92](https://git.subcult.tv/PatrickFanella/the-common-house/issues/92); IN-2 in [issue #94](https://git.subcult.tv/PatrickFanella/the-common-house/issues/94); IN-3 in [issue #95](https://git.subcult.tv/PatrickFanella/the-common-house/issues/95). IN-4a presentation is tracked in [issue #101](https://git.subcult.tv/PatrickFanella/the-common-house/issues/101); persistence and the runtime episode connector remain planning. No automation is queued.
 
 ## Assignment for a future implementation issue
 
@@ -31,10 +31,11 @@ No exterior entrance, actor travel, sleeping-space scene, sequential multi-episo
 | IN-1 | Independently load and validate intro text and source/scene references | Reviewed text and authorized issue | New intro content/model tests, baseline unchanged | EditMode `CommonHouse.Tests.IntroContentTests` |
 | IN-2 | Rehearse orientation, optional expression, acknowledgment, and completion | IN-1, reviewed contract | Isolated intro state, no automatic Case 01 mutation | EditMode `CommonHouse.Tests.IntroRehearsalTests` |
 | IN-3 | Play a threshold/reception/welcome slice with recovery | IN-1, IN-2, chosen scene boundary | Isolated scene/controller using appropriate shared UI seams | PlayMode `CommonHouse.Tests.IntroOpeningTests` |
-| IN-4 | Play all intro scenes and preserve state across reload | IN-3, reviewed locations/branding | Full isolated intro integration and save identity | PlayMode `CommonHouse.Tests.IntroRoutesTests` |
-| IN-5 | Connect completed intro to the selected Episode 1 through explicit action | Episode 1 selected and reviewed; IN-4 | Bounded episode-start connector | Fixture and command to choose once connector exists |
+| IN-4a | Play all intro scenes, orientation, and explicit completion | IN-3 | Shared isolated arrival scene; no saves | Existing PlayMode `CommonHouse.Tests.IntroOpeningTests` |
+| IN-4b | Preserve intro state across reload | IN-4a; separate versioned schema | Isolated intro save identity, never Case 01 saves | Future PlayMode `CommonHouse.Tests.IntroReloadTests` |
+| IN-5 | Connect completed intro to the selected Episode 1 through explicit action | Episode 1 selected and reviewed; IN-4b | Bounded episode-start connector | Fixture and command to choose once connector exists |
 
-`IntroContentTests`, `IntroRehearsalTests`, and `IntroOpeningTests` are implemented for IN-1 through IN-3. The other fixtures remain future deliverables; listing them does not establish passing checks. Actual Editor/licensing/result requirements remain in the development guide.
+`IntroContentTests`, `IntroRehearsalTests`, and `IntroOpeningTests` are implemented for IN-1 through IN-3. The new [persistence handoff](intro-persistence-handoff.md) specifies the committed-state and storage boundary. The other fixtures remain future deliverables; listing them does not establish passing checks. Actual Editor/licensing/result requirements remain in the development guide.
 
 ## First issue draft, IN-1
 
@@ -83,6 +84,6 @@ Scene geometry, actor animation, live services, episode numbering, AI revelation
 
 ## Current validation boundary
 
-The [intro content guide](../development/intro-content.md) describes the implemented IN-1 asset/loader and its separate [verification report](../verification/intro-content.md). The [state guide](../development/intro-state.md) describes the IN-2 rehearsal with a separate [verification report](../verification/intro-state.md). Both were committed as `812c2a3` and merged in [PR #96](https://git.subcult.tv/PatrickFanella/the-common-house/pulls/96). The [playable opening guide](../development/intro-opening.md) describes the IN-3 isolated scene and its [verification report](../verification/intro-opening.md). The remaining radio/anomaly/closing scenes and persistence are not implemented by these units. Owner observation remains necessary to assess welcome, orientation, and the first anomaly.
+The [intro content guide](../development/intro-content.md) describes the implemented IN-1 asset/loader and its separate [verification report](../verification/intro-content.md). The [state guide](../development/intro-state.md) describes the IN-2 rehearsal with a separate [verification report](../verification/intro-state.md). Both were committed as `812c2a3` and merged in [PR #96](https://git.subcult.tv/PatrickFanella/the-common-house/pulls/96). The [playable opening guide](../development/intro-opening.md) describes the IN-3 isolated scene and its [verification report](../verification/intro-opening.md). IN-4a extends that scene with radio, anomaly, summary, and closing; its separate presentation report records current evidence. Intro persistence and a runtime Episode 1 connection remain unimplemented. Owner observation remains necessary to assess welcome, orientation, and the first anomaly.
 
-The working Season 1 writing pass now assigns Motion detected as Episode 1 and drafts [ST-S01](../design/season-01-transition-scenes.md) as its explicit connector. This selects writing, not an implemented transition. IN-5 still needs full intro integration and an isolated MD opening.
+The working Season 1 writing pass now assigns Motion detected as Episode 1 and drafts [ST-S01](../design/season-01-transition-scenes.md) as its explicit connector. This selects writing, not an implemented transition. IN-5 still needs intro persistence and an isolated MD opening.

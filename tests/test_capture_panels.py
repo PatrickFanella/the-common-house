@@ -44,7 +44,7 @@ class CapturePanelTests(unittest.TestCase):
 
     def test_intro_selects_its_editor_method_and_requires_all_rendered_artifacts(self):
         names = ["arrival-world.png", "arrival-choice.png", "return-warning.png", "warning-actions.png",
-                 "welcome.png", "welcome-actions.png", "arrival-pause.png", "intro-evidence.txt"]
+                 "welcome.png", "welcome-actions.png", "arrival-pause.png", "radio-programs.png", "radio-actions.png", "office-greeting.png", "greeting-actions.png", "orientation.png", "orientation-actions.png", "closing-choice.png", "closing-actions.png", "arrival-complete.png", "intro-evidence.txt"]
         result, command, receipt = self.run_capture(["--intro", "--scale", "1.5"], names)
         self.assertEqual(result, 0)
         self.assertIn("CommonHouse.Editor.IntroOpeningEvidence.Capture", command)

@@ -23,8 +23,8 @@ namespace CommonHouse.Intro
     public sealed class IntroOpeningController : MonoBehaviour, IModalPanel
     {
         public const string ScenePath = "Assets/CommonHouse/Scenes/IntroOpening.unity";
-        private static readonly string[] sceneIds = { "IN-S00", "IN-S01", "IN-S02", "IN-S03", "IN-S05" };
-        private static readonly string[] sourceIds = { "IN-C01", "IN-C02", "IN-D01" };
+        private static readonly string[] sceneIds = { "IN-S00", "IN-S01", "IN-S02", "IN-S03", "IN-S04", "IN-S05", "IN-S06", "IN-S07" };
+        private static readonly string[] sourceIds = { "IN-C01", "IN-C02", "IN-C03", "IN-C04", "IN-D01", "IN-T01", "IN-T02", "IN-T03", "IN-T04", "IN-T05" };
         [SerializeField] private ModalInputCoordinator modalInput;
         private IntroState state;
         private int acknowledgment;
@@ -77,6 +77,7 @@ namespace CommonHouse.Intro
             if (!sourceIds.Contains(id)) { LastActionMessage = "That record is not available here."; return false; }
             return Open(() => State.OpenSource(id));
         }
+        public bool OpenOrientation() => Open(() => State.OpenOrientation());
         private bool Open(Func<IntroReview> open)
         {
             if (IsOpen || modalInput == null || !modalInput.TryOpen(this))
@@ -84,7 +85,11 @@ namespace CommonHouse.Intro
             try { open(); }
             catch { modalInput.Release(this); throw; }
             SelectedIndex = 0;
-            LastActionMessage = string.Empty;
+            LastActionMessage = State.ActiveReview.Id == "IN-S04"
+                ? State.AcknowledgedSceneIds.Contains("IN-S04")
+                    ? "Local replay. No outgoing transmission."
+                    : "Orchard hears Ivo's arrival statement only. No player name or speech is sent."
+                : State.IsComplete ? "You have a place here. The desk is available when you want it." : string.Empty;
             return true;
         }
 
@@ -111,9 +116,22 @@ namespace CommonHouse.Intro
                     LastActionMessage = action.OptionId == "IN-Q06-A" ? "You can decide what to put in the ledger later." : "Review the response, then acknowledge when ready.";
                     break;
                 case IntroActionKind.Acknowledge:
+                    if (review.Id == "IN-S07")
+                    {
+                        if (State.MissingCoreAcknowledgments.Count > 0)
+                        {
+                            LastActionMessage = "Review these before finishing: " + string.Join(", ", State.MissingCoreAcknowledgments) + ". The orientation summary is available beside reception.";
+                            return false;
+                        }
+                        if (!review.SelectedOptions.ContainsKey("IN-Q03"))
+                        {
+                            LastActionMessage = "Choose whether you would like to learn the desk later. Either response keeps your place here.";
+                            return false;
+                        }
+                    }
                     State.Acknowledge("intro-opening:" + ++acknowledgment, review);
                     modalInput.Release(this);
-                    LastActionMessage = "You can return to this conversation.";
+                    LastActionMessage = State.IsComplete ? "You have a place here. The desk can wait until you are ready." : "You can return to this conversation.";
                     break;
                 case IntroActionKind.Pause: State.Pause(review); break;
                 case IntroActionKind.Resume: State.Resume(review); break;

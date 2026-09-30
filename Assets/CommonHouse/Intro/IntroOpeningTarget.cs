@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CommonHouse.Intro
 {
-    public enum IntroTargetKind { Scene, Source, Threshold }
+    public enum IntroTargetKind { Scene, Source, Threshold, Orientation }
     public sealed class IntroOpeningTarget : WorldInteractionTarget
     {
         [SerializeField] private IntroOpeningController opening;
@@ -20,6 +20,7 @@ namespace CommonHouse.Intro
             prompt = text;
         }
         public override bool Interact() => opening != null &&
-            (kind == IntroTargetKind.Source ? opening.OpenSource(ContentId) : opening.OpenScene(ContentId));
+            (kind == IntroTargetKind.Orientation ? opening.OpenOrientation() :
+                kind == IntroTargetKind.Source ? opening.OpenSource(ContentId) : opening.OpenScene(ContentId));
     }
 }

@@ -16,7 +16,7 @@ The deterministic Case 01 model has local versioned saves and automated text-onl
 
 The [local build report](docs/verification/local-build.md) includes the retained player, launch command, artifact identity, and current limits.
 
-The arrival intro has a separate [authored content asset](docs/development/intro-content.md), [in-memory state rehearsal](docs/development/intro-state.md), and [playable threshold, reception, and welcome slice](docs/development/intro-opening.md). Full-intro presentation and persistence remain later work; it does not replace the Case 01 opening.
+The arrival intro has a separate [authored content asset](docs/development/intro-content.md), [in-memory state rehearsal](docs/development/intro-state.md), and [playable arrival, radio, greeting, and explicit completion](docs/development/intro-opening.md). Intro persistence and the Episode 1 runtime connection remain later work; it does not replace the Case 01 opening.
 
 See the [initial owner evaluation](docs/playtests/poc-evaluation.md) for the reported observations, unknowns, and next evaluation questions.
 

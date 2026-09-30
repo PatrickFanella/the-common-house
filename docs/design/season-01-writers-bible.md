@@ -113,6 +113,6 @@ The concluding invitation from Orchard is a present-day human call. It is recove
 
 ## Production and review limits
 
-The full intro script is written; only its threshold/reception/welcome slice is playable. Motion detected and the new season packages are text drafts. No new runtime, episode saves, cinematic system, soundtrack, or final resident assets are included in this writing pass.
+The full intro script is written. The IN-4a branch extends the playable scene to all eight authored scenes and explicit completion; persistence and a runtime Episode 1 connector remain separate work. See [intro presentation evidence](../verification/intro-presentation.md). Motion detected and the new season packages are text drafts. No new runtime, episode saves, cinematic system, soundtrack, or final resident assets are included in this writing pass.
 
 Review exact lines aloud, test each permission path, and decide concrete scene targets before implementation. Each handoff lists focused future fixtures and makes their unimplemented status explicit. Document checks establish file/link integrity; they do not establish emotional effect, player comprehension, graphics, or build readiness.

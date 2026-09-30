@@ -34,6 +34,7 @@ namespace CommonHouse.Editor
             Box(root, "Reception counter", new Vector3(2.7f, .4f, 4f), new Vector3(1.8f, .8f, .8f), wood);
             Box(root, "Welcome table", new Vector3(-2.2f, .4f, 5.5f), new Vector3(2f, .8f, 1f), wood);
             Box(root, "Temporary bedding", new Vector3(-2.4f, .3f, 7f), new Vector3(1.3f, .6f, 1.5f), wood);
+            Box(root, "Radio desk", new Vector3(0f, .4f, 7.3f), new Vector3(1.6f, .8f, .8f), wood);
 
             var player = new GameObject("Arrival player");
             player.transform.SetParent(root, false);
@@ -64,6 +65,10 @@ namespace CommonHouse.Editor
             Target(root, opening, "Return warning", new Vector3(1.5f, 1.5f, 5f), IntroTargetKind.Source, "IN-C01", "Ask Ren to repeat the return warning", plaster);
             Target(root, opening, "Service area map", new Vector3(3.7f, 1.5f, 5.8f), IntroTargetKind.Source, "IN-D01", "Read the service-area map", plaster);
             Target(root, opening, "Food and bedding", new Vector3(-2.2f, 1.1f, 5f), IntroTargetKind.Scene, "IN-S05", "Join the welcome at the table", wood);
+            Target(root, opening, "Radio programs", new Vector3(0f, 1.1f, 6.8f), IntroTargetKind.Scene, "IN-S04", "Review the radio programs", wood);
+            Target(root, opening, "Office greeting", new Vector3(2f, 1.4f, 7.2f), IntroTargetKind.Scene, "IN-S06", "Review the recorded office greeting", plaster);
+            Target(root, opening, "Orientation summary", new Vector3(.8f, 1.4f, 3.2f), IntroTargetKind.Orientation, "orientation", "Review the house orientation", plaster);
+            Target(root, opening, "Tomorrow's shift", new Vector3(-.6f, 1.2f, 4.3f), IntroTargetKind.Scene, "IN-S07", "Ask Ren about tomorrow", wood);
 
             foreach (var z in new[] { 0f, 4f, 7f })
             {
