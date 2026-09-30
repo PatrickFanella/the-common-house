@@ -704,7 +704,7 @@
     {
       "id": "IN-S00",
       "title": "the lit entrance",
-      "description": "Inside the refuge frontage or at its threshold, a lit entrance, worn telecommunications sign, planter, and upstairs laundry show that people live here. A short visible route reaches the door.",
+      "description": "A lit entrance, worn telecommunications sign, planter, and upstairs laundry show that people live here. A short visible route reaches the door.",
       "modes": [
         "play"
       ],
@@ -720,7 +720,7 @@
     {
       "id": "IN-S01",
       "title": "another arrival",
-      "description": "Ren offers entry and water. The newcomer may describe their immediate experience or request shelter without disclosing a biography.",
+      "description": "Ren waits by the entrance, with water to offer.",
       "modes": [
         "interact",
         "directed",
@@ -743,7 +743,7 @@
     {
       "id": "IN-S02",
       "title": "from here",
-      "description": "At the threshold, Ren explains that paths and instruments cannot provide dependable return. The conversation remains available at reception.",
+      "description": "You are at the threshold. The old reception counter is visible inside.",
       "modes": [
         "interact",
         "choice"
@@ -773,7 +773,7 @@
     {
       "id": "IN-S03",
       "title": "reception",
-      "description": "The old customer counter holds an arrival ledger and spare bedding. A service-area map carries station names, question marks, and crossed-out distances.",
+      "description": "An old customer counter holds an arrival ledger and spare bedding. A service-area map carries station names, question marks, and crossed-out distances.",
       "modes": [
         "play",
         "interact",
@@ -805,7 +805,7 @@
     {
       "id": "IN-S04",
       "title": "people on the network",
-      "description": "At the desk, fictional radio programming and a present-day check-in introduce distant households. The active microphone is visibly and textually marked during the live exchange.",
+      "description": "At the radio desk, music, news, and a live check-in come through. The microphone is active during the check-in.",
       "modes": [
         "media",
         "play",
@@ -842,7 +842,7 @@
     {
       "id": "IN-S05",
       "title": "a place for tonight",
-      "description": "A former meeting room is now a kitchen. A tablecloth, projector bracket, and mismatched labels show adaptation. Food and bedding are offered without a work obligation.",
+      "description": "A former meeting room now serves as a kitchen. A tablecloth covers the table; a projector bracket remains overhead. There is food and bedding for tonight.",
       "modes": [
         "play",
         "directed",
@@ -870,7 +870,7 @@
     {
       "id": "IN-S06",
       "title": "our office is closed",
-      "description": "An explicitly opened receiver log plays a fixed office-closed telephone greeting. Ivo recognizes the recording but cannot identify its arrival source.",
+      "description": "The receiver log holds a recorded office-closed telephone greeting.",
       "modes": [
         "interact",
         "media"
@@ -894,7 +894,7 @@
     {
       "id": "IN-S07",
       "title": "tomorrow",
-      "description": "Ren offers to show the desk tomorrow. Both willingness and uncertainty lead to rest; a later case requires a separate explicit start.",
+      "description": "The house settles for the night. Ren offers to show you the desk tomorrow.",
       "modes": [
         "directed",
         "choice"

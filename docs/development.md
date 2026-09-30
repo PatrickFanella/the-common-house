@@ -144,7 +144,7 @@ The [implementation plan](implementation-plan.md) links the Gitea task backlog.
 
 ## Arrival intro content
 
-The [intro content guide](development/intro-content.md) documents the isolated authored arrival asset and `IntroContentTests`. It loads separately from Case 01. The [intro state guide](development/intro-state.md) describes explicit acknowledgment, recovery, optional expression, and `IntroRehearsalTests`. Scene presentation and persistence remain later units.
+The [intro content guide](development/intro-content.md) documents the isolated authored arrival asset and `IntroContentTests`. It loads separately from Case 01. The [intro state guide](development/intro-state.md) describes explicit acknowledgment, recovery, optional expression, and `IntroRehearsalTests`. The [playable opening guide](development/intro-opening.md) covers the separate threshold, reception, and welcome scene. Full-intro presentation and persistence remain later units.
 
 ## Case content
 

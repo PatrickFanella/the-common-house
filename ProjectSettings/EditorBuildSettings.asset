@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CommonHouse/Scenes/OutpostBlockout.unity
     guid: ae51d67b13e29143b8ce58fcc456df2e
+  - enabled: 1
+    path: Assets/CommonHouse/Scenes/IntroOpening.unity
+    guid: bca05f5744c70987eba478496e4f7e78
   m_configObjects: {}

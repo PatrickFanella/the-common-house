@@ -8,6 +8,8 @@ Issue [#92](https://git.subcult.tv/PatrickFanella/the-common-house/issues/92) im
 
 Scenes carry line/source/choice references and a proposed next-scene link. These are authored data, not a running scene controller. Each option has exact text, response-line references, and a destination scene. The separate [state model](intro-state.md) implements in-memory acknowledgment and recovery. Scene presentation must preserve the contract's conditions and flexible order; the links do not implement them.
 
+Scene descriptions are player-facing readable context. They describe the setting without showing author-only staging, identity constraints, or implementation notes. Those constraints remain in the script, contract, and handoff. IN-3 revised the descriptions for presentation without changing dialogue, choices, source coverage, or identifiers.
+
 All sources include accessible descriptions, and spoken sources retain ordered line references whose speakers supply transcript labels. The map remains a document description. The office greeting is a recorded fragment rather than a live connection; its unknown timestamp is kept absent. The undecided company name uses the scripted generic local-service wording. Fictional live program records do not contact a real radio or internet service.
 
 ## Focused verification
