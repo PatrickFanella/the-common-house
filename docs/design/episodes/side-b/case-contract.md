@@ -34,6 +34,8 @@ Remain unknown: Sol's present location, safety, and wishes about renewed contact
 
 The current delivery envelope carries route label NM-14 and requests a receipt. The request is not a permission to transmit Kit's reaction or the private rehearsal. No receipt is sent automatically.
 
+The C01 account is not an initial receiver file. Present it only after its named speaker accepts the current private conversation. The technical records remain available if it is declined; later invited listeners do not automatically acquire the account.
+
 Full source-equivalent text is in the script. Store and show the observation before its interpretation. A recording, delivery receipt, or familiar voice never silently supplies another fact. Technical consultation and personal testimony are independently reopenable; declining testimony cannot suppress already available source files.
 
 ## Acquisition, comparison, and eligibility

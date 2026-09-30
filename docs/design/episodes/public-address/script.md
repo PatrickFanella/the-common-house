@@ -48,12 +48,6 @@ Current news rundown and logger event, already held by Bex; shown to the player 
 
 > Rundown description: the copied segment has the same file identifier as the private recording. Logger description: it played on the district news channel. Bex: I dragged the wrong line. Then I did not check it.
 
-### PA-C01
-
-Present-day private radio conversation with Nessa, player and Nessa only; explicit invitation required.
-
-> Nessa: Tell them you played something you had promised to keep private. Do not tell them what it was. I do not need an apology with a trailer.
-
 Keep the first two sources independently visible in the comparison reader. Their shared origin or matching field is only the specific support stated in the contract, not universal authentication. The third source may be offered privately; closing its conversation does not acquire it.
 
 ## PA-S02: compare, then ask
@@ -72,6 +66,14 @@ Acknowledgment records PA-E01. It does not authorize any subsequent sharing. The
 ## PA-S03: the question behind the evidence
 
 INTERACT + DIRECTED. Private present-day conversation at a quiet table or on a clearly identified private radio channel. Optional personal depth is offered, never a key for unlocking the factual files. Ask "Would you like to talk about it?" before the exchange; "Not now" closes and leaves the lead.
+
+This account is offered only in this explicitly opened conversation. The listed source audience applies to the account itself. Declining or closing before acknowledgment leaves it unacquired; do not show its text in the initial receiver, notebook, recap, or a skipped conversation. Any additional invited listener joins the later present-day exchange only, unless the speaker explicitly chooses to repeat the account.
+
+### PA-C01
+
+Present-day private radio conversation with Nessa, player and Nessa only; explicit invitation required.
+
+> Nessa: Tell them you played something you had promised to keep private. Do not tell them what it was. I do not need an apology with a trailer.
 
 | Line | Speaker | Text |
 |---|---|---|

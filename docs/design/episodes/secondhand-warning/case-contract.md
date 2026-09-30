@@ -32,6 +32,8 @@ Remain unknown: The complete age of the displaced recording and its route to the
 | SW-T02 | Present-day South Relay radio check; Mara explicitly agrees to share it with the player and Ivo. | A current attributed observation, distinct from the old message. |
 | SW-C01 | Present-day house conversation with Ivo, player only. | An investigative method, not independent proof of a safe restart. |
 
+The C01 account is not an initial receiver file. Present it only after its named speaker accepts the current private conversation. The technical records remain available if it is declined; later invited listeners do not automatically acquire the account.
+
 Full source-equivalent text is in the script. Store and show the observation before its interpretation. A recording, delivery receipt, or familiar voice never silently supplies another fact. Technical consultation and personal testimony are independently reopenable; declining testimony cannot suppress already available source files.
 
 ## Acquisition, comparison, and eligibility

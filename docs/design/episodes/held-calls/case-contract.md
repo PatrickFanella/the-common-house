@@ -34,6 +34,8 @@ Remain unknown: Tess's present fate, the outcomes of most callers, and the preci
 
 The modern outer delivery envelope carries route label NM-14, matching the displayed wrappers in RR-T01 and SB-D01. The original operator-session fields remain separate. Min can explain the wrapper locally without the player having completed those earlier cases.
 
+The C01 account is not an initial receiver file. Present it only after its named speaker accepts the current private conversation. The technical records remain available if it is declined; later invited listeners do not automatically acquire the account.
+
 Full source-equivalent text is in the script. Store and show the observation before its interpretation. A recording, delivery receipt, or familiar voice never silently supplies another fact. Technical consultation and personal testimony are independently reopenable; declining testimony cannot suppress already available source files.
 
 ## Acquisition, comparison, and eligibility

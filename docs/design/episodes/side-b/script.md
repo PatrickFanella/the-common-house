@@ -52,12 +52,6 @@ Stored production-channel file notice with the same take identifier as the rehea
 
 > Sol, file notice: Side B, instrumental only. Credit Kit and Sol. Description: attached audio has no speech and ends with four counted clicks.
 
-### SB-C01
-
-Present-day kitchen conversation with Kit, player only.
-
-> Kit: We did not finish being angry. That is not the same as not finishing a song.
-
 Keep the first two sources independently visible in the comparison reader. Their shared origin or matching field is only the specific support stated in the contract, not universal authentication. The third source may be offered privately; closing its conversation does not acquire it.
 
 ## SB-S02: compare, then ask
@@ -76,6 +70,14 @@ Acknowledgment records SB-E01. It does not authorize any subsequent sharing. The
 ## SB-S03: the question behind the evidence
 
 INTERACT + DIRECTED. Private present-day conversation at a quiet table or on a clearly identified private radio channel. Optional personal depth is offered, never a key for unlocking the factual files. Ask "Would you like to talk about it?" before the exchange; "Not now" closes and leaves the lead.
+
+This account is offered only in this explicitly opened conversation. The listed source audience applies to the account itself. Declining or closing before acknowledgment leaves it unacquired; do not show its text in the initial receiver, notebook, recap, or a skipped conversation. Any additional invited listener joins the later present-day exchange only, unless the speaker explicitly chooses to repeat the account.
+
+### SB-C01
+
+Present-day kitchen conversation with Kit, player only.
+
+> Kit: We did not finish being angry. That is not the same as not finishing a song.
 
 | Line | Speaker | Text |
 |---|---|---|

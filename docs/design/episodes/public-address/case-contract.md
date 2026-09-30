@@ -32,6 +32,8 @@ Remain unknown: How many people kept copies and whether every listener heard the
 | PA-D01 | Current news rundown and logger event, already held by Bex; shown to the player with her permission. | Links the copied source to the public playback. |
 | PA-C01 | Present-day private radio conversation with Nessa, player and Nessa only; explicit invitation required. | Authorizes a correction about the act, without permission to repeat the recording or its subject. |
 
+The C01 account is not an initial receiver file. Present it only after its named speaker accepts the current private conversation. The technical records remain available if it is declined; later invited listeners do not automatically acquire the account.
+
 Full source-equivalent text is in the script. Store and show the observation before its interpretation. A recording, delivery receipt, or familiar voice never silently supplies another fact. Technical consultation and personal testimony are independently reopenable; declining testimony cannot suppress already available source files.
 
 ## Acquisition, comparison, and eligibility

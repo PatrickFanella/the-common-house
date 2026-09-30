@@ -32,6 +32,8 @@ Remain unknown: Whether the correlation generalizes, how underground sections ca
 | LS-D01 | Present-day crew survey sent as an encoded diagram with readable description. | Shows observed continuity and known limits. |
 | LS-C01 | Private present-day radio account from Sable, player only. | Her experienced displacement and emotional claim; does not independently establish the wire rule. |
 
+The C01 account is not an initial receiver file. Present it only after its named speaker accepts the current private conversation. The technical records remain available if it is declined; later invited listeners do not automatically acquire the account.
+
 Full source-equivalent text is in the script. Store and show the observation before its interpretation. A recording, delivery receipt, or familiar voice never silently supplies another fact. Technical consultation and personal testimony are independently reopenable; declining testimony cannot suppress already available source files.
 
 ## Acquisition, comparison, and eligibility

@@ -15,6 +15,7 @@ The files are text-first treatments. They do not contain final shot lists, compl
 The manual contract pass checked both closing acts against original signal coverage, factual supports, audiences, current permission, deferral, and later acknowledgment. It corrected:
 
 - A duplicate cast label. The new news presenter is Bex, distinct from Case 01's caller Ada.
+- Optional personal-account placement. C01 accounts are offered only in their accepted conversations, never exposed in the initial receiver or notebook when declined.
 - Additional listeners in personal conversations. Jo or Ren joins only by explicit invitation; the private variant remains available.
 - An anticipatory finale clue. CC-T02 is generated after the approved contact test, never acquired before the choice that creates it. A failed or postponed test does not manufacture the success transcript.
 - Transport clues lacking observable text. NM-14 is now written in specific modern wrappers and the diagnostic manifest, separate from original authorship and dates.

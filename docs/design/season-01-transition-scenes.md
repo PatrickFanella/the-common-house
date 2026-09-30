@@ -108,7 +108,7 @@ Between Episodes 5 and 6. Only after SB-O01 may a listener mention the new broad
 | ST-L053 | Ivo | I think we are on different boards. |
 | ST-L054 | Sable | Everyone is. Start again from the corner. |
 
-Only after SB-O01, offer ST-L055, Sable: "Your new opening reached us. Tell Kit the cough sounded expensive." The cough is Kit's intentionally recorded public performance, never Jo's private voice. The crew report is a separate lead; chess is not a navigation cipher.
+Only after SB-O01, offer ST-L055, Sable: "Your new opening reached us. Tell Kit we heard the credit line." This refers only to the credited public program, never its private rehearsal. The crew report is a separate lead; chess is not a navigation cipher.
 
 ## ST-S07: reception history
 
