@@ -37,7 +37,7 @@ Eight numbered episodes plus a separate finale are ten writing units including t
 
 [The Road Is Clear](case-01-the-road-is-clear.md) remains the working POC baseline. Its case ID does not automatically make it Season 1 Episode 1. [Motion detected](episodes/motion-detected/README.md) has a developed human premise, selected return reveal, and draft package. It is now Episode 1 in this working season. Its MD IDs, basement couch and bags, boundary guilt, and unknown later fate are unchanged. Case 01 remains an independent POC and is not assigned a season slot. The new presenter Bex is distinct from its caller Ada.
 
-The intro currently ends with readiness to settle in and later learn the radio shift. The between-episode scenes now draft an explicit connector to Motion detected. Runtime connection still requires full intro integration and an isolated MD opening; the currently playable intro does not start Episode 1.
+The intro currently ends with readiness to settle in and later learn the radio shift. The between-episode scenes now draft an explicit connector to Motion detected. Runtime connection still requires full intro integration and an isolated MD opening; the playable intro can now complete, but does not start Episode 1.
 
 ## Season-level writing obligations
 

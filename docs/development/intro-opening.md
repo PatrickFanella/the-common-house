@@ -6,7 +6,7 @@ Open `Assets/CommonHouse/Scenes/IntroOpening.unity` in Unity 6000.4.10f1 and ent
 
 ## Play the opening
 
-Use W/A/S/D to move, mouse or arrows to look, and E while focusing a nearby target. The six targets are the entrance notice, Ren at the threshold, Ivo's reception ledger, a repeatable return warning, the service-area map, and food/bedding at the welcome table. Range and walls affect focus through the existing inspection ray. Walking past a target acquires nothing.
+Use W/A/S/D to move, mouse or arrows to look, and E while focusing a nearby target. The ten targets are the entrance notice, Ren at the threshold, Ivo's reception ledger, a repeatable return warning, the service-area map, food/bedding at the welcome table, radio programs, the recorded office greeting, the orientation summary, and Ren's offer for tomorrow. Range and walls affect focus through the existing inspection ray. Walking past a target acquires nothing.
 
 The panel uses Up/Down and Enter to choose actions, or mouse buttons through the same controller method. Choosing an expression presents its response without committing it. Choose **Acknowledge and return** to record the presented text. **Close for now**, or Escape, returns to movement and discards unacknowledged selections. Reopening retains acknowledged progress. **I need a minute** keeps the arrival exchange available; other acknowledged arrival responses let Ren offer the return conversation next.
 
@@ -14,7 +14,7 @@ Reception permits **Leave it blank for now**. **My name** leaves the address und
 
 **Pause** blocks option selection and acknowledgment. **Read transcript** keeps the current readable text available without applying learning or choosing skipped options. Resume before acknowledging. PgUp/PgDn, Home/End, and -/= use the shared scroll/text-size controls. Conversations pause movement through the existing modal owner and do not aim, move, or teleport the camera. Closing a panel releases that owner; another panel cannot acquire intro content behind it.
 
-This slice implements IN-S00, IN-S01, IN-S02, IN-S03, and IN-S05. It stops before the radio programs, recorded greeting, closing exchange, full intro completion, persistence, and Episode 1 connector. No CaseSession or save controller is attached. Progress lasts for the current Play session only.
+The IN-4a extension in [issue #101](https://git.subcult.tv/PatrickFanella/the-common-house/issues/101) adds IN-S04, IN-S06, and IN-S07. All eight authored scenes are reachable. After reviewing the warning, network, shelter, and greeting, choose either final response and explicitly acknowledge to complete the intro. Trying to finish early shows the missing items and keeps the exchange open. The orientation summary is a complete accessible fallback for skipped questions. Persistence and the Episode 1 connector remain separate work. No CaseSession or save controller is attached. Progress lasts for the current Play session only.
 
 ## Generation and checks
 
@@ -24,10 +24,10 @@ The explicit Editor menu **Common House → Generate Arrival Opening** generates
 python3 scripts/run_editor_method.py CommonHouse.Editor.IntroOpeningSceneGenerator.GenerateAndExport
 python3 scripts/run_unity_tests.py --platform playmode --filter CommonHouse.Tests.IntroOpeningTests
 python3 scripts/run_unity_tests.py --platform playmode --filter CommonHouse.Tests.OpeningSceneTests
-python3 scripts/capture_panels.py --intro --scale 1.5
+python3 scripts/capture_panels.py --intro --scale 1.5 --timeout 360
 ```
 
-The first command does not copy generated sources back by itself. Do not use the runner's broad `--copy-back` for this narrow task. Review and copy the exported scene, its metadata, and the build list only. The capture command runs a graphical Editor on the local display with disposable project/save state, validates seven screenshots and a receipt, and exits. Inspect the retained images before claiming visual evidence.
+The first command does not copy generated sources back by itself. Do not use the runner's broad `--copy-back` for this narrow task. Review and copy the exported scene, its metadata, and the build list only. The capture command runs a graphical Editor on the local display with disposable project/save state, validates sixteen screenshots and a receipt, and exits. Inspect the retained images before claiming visual evidence.
 
 The capture launcher's standard-library regression command is:
 
@@ -36,3 +36,7 @@ rtk proxy ~/.local/bin/t3-dev --profile the-common-house test --command 'python3
 ```
 
 Actual results and their limits are recorded in the [opening verification report](../verification/intro-opening.md). Automated input frames and scripted rendered captures are separate from human playtest evidence. This unit does not qualify a desktop build or hosted Unity worker.
+
+Radio programs identify the fictional exchange's audience: only Ivo's generic arrival statement reaches Orchard. No player name or speech is sent. Reopening after acknowledgment explicitly labels a local replay with no outgoing transmission. The office greeting remains fixed recorded playback, with unknown sender/date and no return connection. Completing the intro starts neither a shift nor a case.
+
+The [complete presentation verification](../verification/intro-presentation.md) records the current checks. Earlier opening evidence remains historical.

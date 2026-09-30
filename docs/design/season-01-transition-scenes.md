@@ -37,7 +37,7 @@ After full intro completion, the player can ask about the desk. This works after
 
 ST-Q01-A, "Go see what arrived," presents the MD receiver lead with Jo and Min listed as present. A separate case-start action begins the isolated MD opening, without adding a Case 01 call. ST-Q01-B, "Stay for breakfast," leaves the lead available and starts no case. Neither implies Jo shared a personal history.
 
-If intro orientation is incomplete, retain its missing leads. The current threshold/reception/welcome runtime cannot meet full completion, so this connector remains writing until IN-4 and an MD opening exist.
+If intro orientation is incomplete, retain its missing leads. IN-4a now supplies full completion in the current Play session. This connector remains writing until isolated intro persistence and an MD opening exist.
 
 ## ST-S02: second pair of ears
 

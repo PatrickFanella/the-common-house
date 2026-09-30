@@ -83,7 +83,7 @@ namespace CommonHouse.Tests
         [Test]
         public void SavedSceneContainsOnlyTheIsolatedOpeningAndReachableTargets()
         {
-            Assert.That(targets.Length, Is.EqualTo(6));
+            Assert.That(targets.Length, Is.EqualTo(10));
             Assert.That(Object.FindFirstObjectByType<CaseSession>(), Is.Null);
             Assert.That(opening.State.AcquiredSourceIds, Is.Empty);
             Assert.That(opening.State.IsComplete, Is.False);
@@ -95,10 +95,8 @@ namespace CommonHouse.Tests
                 Focus(target);
                 Assert.That(inspection.FocusedPrompt, Does.StartWith("[E] "));
             }
-            Assert.That(opening.OpenScene("IN-S04"), Is.False);
-            Assert.That(opening.OpenScene("IN-S06"), Is.False);
-            Assert.That(opening.OpenScene("IN-S07"), Is.False);
-            Assert.That(opening.OpenSource("IN-T05"), Is.False);
+            Assert.That(opening.OpenScene("unknown"), Is.False);
+            Assert.That(opening.OpenSource("unknown"), Is.False);
             Assert.That(modal.HasOwner, Is.False);
         }
 
@@ -272,6 +270,81 @@ namespace CommonHouse.Tests
             Act(IntroActionKind.Acknowledge, keyboard: false);
             Assert.That(opening.State.AcquiredSourceIds, Is.EqualTo(sources));
             Assert.That(opening.State.ReviewedLineIds, Is.EqualTo(lines));
+            Assert.That(opening.State.IsComplete, Is.False);
+        }
+
+        [TestCase("IN-Q03-A")]
+        [TestCase("IN-Q03-B")]
+        public void FullOrientationCompletesWithEitherShiftResponseWithoutStartingACase(string option)
+        {
+            foreach (var target in new[] { "Entrance notice", "Reception ledger", "Food and bedding", "Radio programs", "Office greeting" })
+            {
+                Open(target);
+                Act(IntroActionKind.Transcript);
+                Act(IntroActionKind.Acknowledge);
+            }
+            Open("Orientation summary");
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.State.MissingCoreAcknowledgments, Is.Empty);
+            Open("Tomorrow's shift");
+            Act(IntroActionKind.Option, option);
+            Assert.That(opening.State.IsComplete, Is.False);
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.State.IsComplete, Is.True);
+            Assert.That(opening.State.Expressions["IN-Q03"], Is.EqualTo(option));
+            Assert.That(opening.State.PreferredAddress, Is.Null);
+            Assert.That(Object.FindFirstObjectByType<CaseSession>(), Is.Null);
+            Assert.That(SceneManager.GetActiveScene().name, Is.EqualTo("IntroOpening"));
+            Assert.That(modal.HasOwner, Is.False);
+        }
+
+        [Test]
+        public void EarlyFinishIsReadableAndRecoverableWithoutInventingAcknowledgments()
+        {
+            Open("Tomorrow's shift");
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.IsOpen, Is.True);
+            Assert.That(opening.LastActionMessage, Does.Contain("warning").And.Contain("network").And.Contain("greeting"));
+            Assert.That(opening.State.ReviewedLineIds, Is.Empty);
+            Act(IntroActionKind.Option, "IN-Q03-B");
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.State.IsComplete, Is.False);
+            Assert.That(opening.State.Expressions, Is.Empty);
+            modal.HandleCancel();
+            Open("Orientation summary");
+            Act(IntroActionKind.Pause);
+            Act(IntroActionKind.Transcript);
+            Assert.That(opening.State.AcquiredSourceIds, Is.Empty);
+            Act(IntroActionKind.Resume);
+            Act(IntroActionKind.Acknowledge);
+            Open("Tomorrow's shift");
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.LastActionMessage, Does.Contain("Choose whether"));
+            Act(IntroActionKind.Option, "IN-Q03-B");
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.State.IsComplete, Is.True);
+        }
+
+        [Test]
+        public void RadioReplayIsLocalAndGreetingDoesNotAcquireItsAccountUntilAcknowledged()
+        {
+            Open("Radio programs");
+            Assert.That(opening.LastActionMessage, Does.Contain("No player name or speech"));
+            Assert.That(opening.State.ActiveReview.Sources.Single(s => s.Id == "IN-T04").Description, Does.Contain("microphone").And.Contain("No player speech"));
+            Act(IntroActionKind.Acknowledge);
+            var sources = opening.State.AcquiredSourceIds.ToArray();
+            Open("Radio programs");
+            Assert.That(opening.LastActionMessage, Does.Contain("Local replay").And.Contain("No outgoing"));
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.State.AcquiredSourceIds, Is.EqualTo(sources));
+            Open("Office greeting");
+            Assert.That(opening.State.GreetingReviewed, Is.False);
+            Assert.That(opening.State.ActiveReview.Sources.Single(s => s.Id == "IN-T05").Delivery, Is.EqualTo("recorded"));
+            modal.HandleCancel();
+            Assert.That(opening.State.GreetingReviewed, Is.False);
+            Open("Office greeting");
+            Act(IntroActionKind.Acknowledge);
+            Assert.That(opening.State.GreetingReviewed, Is.True);
             Assert.That(opening.State.IsComplete, Is.False);
         }
 

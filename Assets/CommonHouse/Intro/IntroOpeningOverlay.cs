@@ -12,6 +12,7 @@ namespace CommonHouse.Intro
         private IntroReview previousReview;
         private int previousSelection = -1;
         public const string Guidance = "[W/A/S/D] Move  [Mouse or arrows] Look  [E] Interact\nFood and bedding are available. Take your time; you can return to conversations.";
+        public const string CompletionGuidance = "You have a place here. The desk can wait until you are ready.";
         public const string PauseGuidance = "Paused\n[W/A/S/D] Move  [Mouse or arrows] Look  [E] Interact\n[Up/Down] Choose a panel action  [Enter] Select\n[PgUp/PgDn] Scroll  [-/=] Text size\n[Escape] Close a conversation or resume.";
         public bool IsPauseGuidanceVisible => opening != null && !opening.IsOpen && (GetComponent<ModalInputCoordinator>()?.IsPaused ?? false);
         public string VisiblePauseGuidanceText => IsPauseGuidanceVisible ? PauseGuidance : string.Empty;
@@ -42,6 +43,12 @@ namespace CommonHouse.Intro
                 var area = new Rect(20f, Screen.height - height - 20f, width, height);
                 CaseUi.DrawOpaquePanel(area);
                 GUI.Label(new Rect(area.x + 8f, area.y + 6f, area.width - 16f, area.height - 12f), Guidance, style);
+                if (opening.State.IsComplete)
+                {
+                    var complete = new Rect(20f, 20f, width, style.CalcHeight(new GUIContent(CompletionGuidance), width - 16f) + 12f);
+                    CaseUi.DrawOpaquePanel(complete);
+                    GUI.Label(new Rect(complete.x + 8f, complete.y + 6f, complete.width - 16f, complete.height - 12f), CompletionGuidance, style);
+                }
                 var inspection = GetComponent<InspectionController>();
                 if (inspection != null && !string.IsNullOrEmpty(inspection.FocusedPrompt))
                 {

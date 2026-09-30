@@ -14,7 +14,8 @@ namespace CommonHouse.Editor
     public static class IntroOpeningEvidence
     {
         private const string Key = "CommonHouse.IntroOpeningEvidence.Active";
-        private static readonly string[] captures = { "arrival-world.png", "arrival-choice.png", "return-warning.png", "warning-actions.png", "welcome.png", "welcome-actions.png", "arrival-pause.png" };
+        private static readonly string[] captures = { "arrival-world.png", "arrival-choice.png", "return-warning.png", "warning-actions.png", "welcome.png", "welcome-actions.png", "arrival-pause.png",
+            "radio-programs.png", "radio-actions.png", "office-greeting.png", "greeting-actions.png", "orientation.png", "orientation-actions.png", "closing-choice.png", "closing-actions.png", "arrival-complete.png" };
         private static int stage, frames;
         private static bool requested;
         [Serializable] private sealed class Settings { public float scale = 1f; }
@@ -69,13 +70,29 @@ namespace CommonHouse.Editor
                         opening.Activate(index);
                     }
                     else if (stage == 2) { opening.CloseFromModalInput(); Open("Return warning"); }
-                    else if (stage == 3 || stage == 5)
+                    else if (stage == 3 || stage == 5 || stage == 8 || stage == 10 || stage == 12 || stage == 14)
                     {
                         var overlay = opening.GetComponent<IntroOpeningOverlay>();
                         typeof(IntroOpeningOverlay).GetField("scroll", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(overlay, CaseUi.ApplyScrollKey(Vector2.zero, KeyCode.End));
                     }
                     else if (stage == 4) { opening.CloseFromModalInput(); Open("Food and bedding"); }
                     else if (stage == 6) { opening.CloseFromModalInput(); opening.GetComponent<ModalInputCoordinator>().HandleCancel(); }
+                    else if (stage == 7) { opening.GetComponent<ModalInputCoordinator>().HandleCancel(); Open("Radio programs"); }
+                    else if (stage == 9) { opening.CloseFromModalInput(); Open("Office greeting"); }
+                    else if (stage == 11) { opening.CloseFromModalInput(); Open("Orientation summary"); }
+                    else if (stage == 13)
+                    {
+                        var acknowledge = opening.Actions.Select((action, i) => new { action, i }).Single(item => item.action.Kind == IntroActionKind.Acknowledge).i;
+                        if (!opening.Activate(acknowledge)) throw new InvalidOperationException("Orientation acknowledgment failed.");
+                        Open("Tomorrow's shift");
+                        var choice = opening.Actions.Select((action, i) => new { action, i }).Single(item => item.action.OptionId == "IN-Q03-B").i;
+                        opening.Activate(choice);
+                    }
+                    else if (stage == 15)
+                    {
+                        var acknowledge = opening.Actions.Select((action, i) => new { action, i }).Single(item => item.action.Kind == IntroActionKind.Acknowledge).i;
+                        if (!opening.Activate(acknowledge) || !opening.State.IsComplete) throw new InvalidOperationException("Intro did not complete.");
+                    }
                     requested = true;
                     frames = 0;
                     return;

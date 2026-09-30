@@ -40,7 +40,7 @@ def main(argv=None):
         if args.guidance:
             required = ["welcome-controls.png", "pause-controls.png", "panel-evidence.txt"]
         if args.intro:
-            required = ["arrival-world.png", "arrival-choice.png", "return-warning.png", "warning-actions.png", "welcome.png", "welcome-actions.png", "arrival-pause.png", "intro-evidence.txt"]
+            required = ["arrival-world.png", "arrival-choice.png", "return-warning.png", "warning-actions.png", "welcome.png", "welcome-actions.png", "arrival-pause.png", "radio-programs.png", "radio-actions.png", "office-greeting.png", "greeting-actions.png", "orientation.png", "orientation-actions.png", "closing-choice.png", "closing-actions.png", "arrival-complete.png", "intro-evidence.txt"]
         for name in required:
             path = evidence / "test-data" / name
             if not path.is_file() or not path.stat().st_size:
