@@ -57,7 +57,7 @@ Release structure, case count, and final endings remain deferred. This creative 
 
 Present-day play stays at the radio outpost in an alternate future after societal collapse. The house occupies a converted telecommunications office. The wider world reaches it through arrivals, transmissions, objects, and records. Disrupted terrain isolates safe pockets, while following existing powerlines or underground networking is a later, partially reliable travel discovery. This world rule does not add player expeditions.
 
-Transmitted glimpses of other lives require an actual source such as a call, chat, camera, or monitor. Preserve its coverage and uncertainty; see [signal rules](radio-and-investigation-systems.md) and the [author truth](incident-and-network-author-truth.md). Infrequent flashbacks or memories may allow investigation of other places; routine external expeditions are outside the direction.
+Transmitted glimpses of other lives require an actual source such as a call, chat, camera, or monitor. Preserve its coverage and uncertainty; see [signal rules](radio-and-investigation-systems.md) and the [author truth](incident-and-network-author-truth.md). The owner expects a good number of flashbacks (D-40), which may allow investigation of other places; routine external expeditions are outside the direction.
 
 A proposed memory interaction lets the player revisit a limited scene, inspect a detail, then compare it with present-day evidence. Identify whose account the scene represents and its source. A remembered detail is not automatically an independently verified fact. Memory access, perspective, reliability, and whether the experience is supernatural remain open.
 

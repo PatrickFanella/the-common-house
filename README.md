@@ -2,13 +2,15 @@
 
 A first-person narrative investigation game concept about found family at a communal radio outpost in an alternate future after societal collapse.
 
-The player is a newcomer. Strange calls lead to authored cases involving the people who have offered them a home. The tone favors suspense, mystery, and creepiness. Present-day play remains at the outpost; investigable memories and flashbacks may reveal other places.
+The player is a newcomer. Strange calls lead to authored cases involving the people who have offered them a home. The tone favors suspense, mystery, and creepiness. Present-day play remains at the outpost. The owner expects a good number of flashbacks into other locations; their access and perspective remain open.
 
 ## Current state
 
 A converted-telecommunications-office home base with first-person movement, the three original Case 01 rooms, and provisional shared locations: an office concourse, reception commons, repair hackerspace, communal sleeping bay, and utility room. Its modern multi-storey exterior is a closed shell; upper-floor interiors remain unbuilt. The [home-base direction](docs/design/home-base.md) records the office reference and DedSec influence, and the [development guide](docs/development/office-complex.md) covers the original procedural asset kit.
 
 The [telecommunications environment study](docs/development/telecom-environment.md) adds connected cable trays, patch panels, a cross-connect cabinet, and three original printed graphics in the shared spaces. These remain presentation assets with no network simulation or new case interactions.
+
+A [modular city kit](docs/development/city-assets.md) prepares street surfaces, facade bays, and street furniture for future flashback locations. Its separate review scene is excluded from the playable build.
 
 The deterministic Case 01 model has local versioned saves and automated text-only rehearsals for all three narrative outcomes. Inspection, transmission review, source comparison, resident conversations, consequential send confirmation, and matching aftermath are wired into the scene. Runtime save/reload, keyboard action paths, and shared text scaling are implemented. The six existing case scene routes and a local Linux development build with an R2 player smoke are qualified. An owner has reported reaching refusal and using Save during exploratory play; Load and case understanding remain unverified in that report. The broader playtest evaluation remains open. Release structure is deferred until after the POC.
 

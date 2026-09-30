@@ -713,6 +713,97 @@
       "changes": "MPFB 2.0.17 export of tools/characters/recipes/test-resident-01.json with MakeHuman CC0 assets; built by scripts/characters.py in Blender 4.5.14."
     },
     {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/asphalt.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "6f95ccb0b40c284729c876826fcbf1c8d3712385f8ce1bce8230bb737d75a68a",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/brick.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "65d9f6ebc8094c2264802fd46961dfb8686733c28327b962beb21a8b1d64c318",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/concrete.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "88c297aa2187b4dc943e0660126d77e037fff00812f1e38b3c3a957be6124b33",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/glass.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "34644581ca3b1398f082352c1cfa2882b6b698a3def3409162fa25682f652717",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/lamp.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "9936e85d97fd52932ae65bb4f7319985b8e3db90aca226dc53f1ef15919b7cd4",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/marking.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "4c10ce0409890bad621601d9f700234818345bf9392d0223257269d7a26e140c",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/metal.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "a043ecaa887931d6311657d9cf80c750c69163be8b98d8b5d4770751a99c2d31",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/notices.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "4e7da25db8fbd005fc9a546654b11987f1f8ee179ac18a35b0efc311a5858e78",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/paint.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "9f35f1787a76a1b447ff47b83eb52b58340ff0af0f205cfb5c6c0e6d43267bdd",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/paving.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "9c540856573e5dd3b3a7b244d584535327d322a4e8151e3aabe76f41d735a680",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/shop-sign.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "79904360d276a81fd4110f0c9de8491721df56b92a9026c6d844e85a0d246971",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/stop-sign.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "4e0959ab3b3c2d166fb3cd903a1a35ded31adbacfc7c980bbe555abf59c7875b",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/CityKit/Textures/wood.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/CityAssetKit.cs",
+      "sha256": "c01186de350f9960ee8ab039dfb704128c9a60bb6f1457c2e1e286203f23470e",
+      "changes": "Original deterministic 64px city surface or generic sign for reusable flashback environment studies."
+    },
+    {
       "path": "Assets/CommonHouse/Art/Generated/binder_notebook_mask_1k.png",
       "kind": "generated",
       "generator": "Assets/Editor/OutpostProps.cs",

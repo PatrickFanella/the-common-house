@@ -308,3 +308,9 @@ office reference and DedSec influence while leaving character writing open.
 The [telecommunications environment guide](development/telecom-environment.md)
 covers connected presentation props, cable trays, patching equipment, and
 original printed graphics.
+
+## City assets
+
+The [city kit guide](development/city-assets.md) covers reusable prefabs, snap
+dimensions, the separate street review scene, and native checks for future
+flashback asset preparation.

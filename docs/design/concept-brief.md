@@ -45,7 +45,7 @@ The setting is an alternate future after societal collapse. Safe pockets vary fr
 
 Residents have uneven knowledge of strange transmissions. The player is a newcomer, conceived as a blank slate for self-insertion. The tone favors suspense, mystery, and creepiness over fright. Stories are authored cases; open source is a theme of the world, not an engine or licensing requirement.
 
-Present-day play remains at the outpost. Other locations are used infrequently for investigable flashbacks and memories. The nature and reliability of those experiences remain to be designed.
+Present-day play remains at the outpost. The owner expects a good number of flashbacks into other locations (D-40). The nature and reliability of those experiences remain to be designed.
 
 ## Design pillars
 
