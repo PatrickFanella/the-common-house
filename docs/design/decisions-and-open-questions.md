@@ -63,6 +63,8 @@ tags:
 
 | D-41 | Write an intro, eight numbered episodes, and a Season 1 finale that is not the game finale. | 2026-09-29: user selected Intro, episodes 1–8, and clarified “more like season 1”. | Follow the story roadmap; later plots, numbering of existing cases, and finale revelations remain open. This selects narrative structure, not publication or implementation. |
 
+| D-42 | Remove camera-dependent texture distortion and vertex wobble for now. | 2026-09-29: owner reported textures moving with the camera and requested "let's get rid of the filter at least for now". | Revises the unstable surface effects used for D-24. Keep the low-poly models and small textures; use ordinary perspective-correct mapping and unsnapped geometry in the shared shader. |
+
 ## Proposed working choices
 
 | ID | Proposal | Reason | Revisit when |
