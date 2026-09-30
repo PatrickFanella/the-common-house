@@ -29,6 +29,8 @@ Read the Concept Brief for the pitch, then the Game Design Document for the prop
 | [Narrative and World Bible](narrative-and-world-bible.md) | World assumptions, character functions, themes, and story structure |
 | [Incident and Network — Author Truth](incident-and-network-author-truth.md) | Private causal history, AI limits, disrupted geography, and open world rules; contains spoilers |
 | [Episodic Story and Case Writing](episodic-story-and-case-writing.md) | Emotional release, social investigation, source-bound signals, domestic traces, and a proposed case seed |
+| [Episode authoring system](episode-authoring-system.md) | Reusable workflow, script/contract/handoff templates, and review gates |
+| [Motion detected episode package](episodes/motion-detected/README.md) | First drafted future episode: playable script, evidence contract, and implementation handoff |
 | [Radio and Investigation Systems](radio-and-investigation-systems.md) | Evidence, transmissions, conversations, routing, and consequences |
 | [Art Audio and UX Direction](art-audio-and-ux-direction.md) | Visual and sound direction, interface, accessibility, and asset priorities |
 | [Style Board v0.1](style-board.md) | Procedurally generated room studies, materials, and palette for review |
