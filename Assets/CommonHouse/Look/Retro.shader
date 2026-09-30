@@ -1,7 +1,8 @@
 // PlayStation-style surface for HDRP (decision D-24). Unlit as far as HDRP knows: it
-// lights each vertex itself from globals set by RetroLighting, snaps vertices to a coarse screen
-// grid, interpolates texture coordinates without perspective correction, and samples textures
-// without filtering. Values are written as display colour; the retro volume turns off tonemapping.
+// lights each vertex itself from globals set by RetroLighting and samples small textures
+// without filtering. Geometry and UVs use ordinary perspective projection, with no screen-grid
+// snapping or camera-dependent texture distortion. Values are written as display colour;
+// the retro volume turns off tonemapping.
 Shader "CommonHouse/Retro"
 {
     Properties
@@ -39,7 +40,6 @@ Shader "CommonHouse/Retro"
     float4 _RetroAmbient;
     float4 _RetroFogColor;
     float4 _RetroFog;
-    float4 _RetroSnapResolution;
 
     struct Attributes
     {
@@ -52,20 +52,10 @@ Shader "CommonHouse/Retro"
     struct Varyings
     {
         float4 positionCS : SV_POSITION;
-        // Affine mapping: interpolate uv * w and w in screen space, divide per pixel.
-        noperspective float3 affineUV : TEXCOORD0;
+        float2 uv : TEXCOORD0;
         float4 light : TEXCOORD1; // rgb vertex light, a fog amount
         UNITY_VERTEX_OUTPUT_STEREO
     };
-
-    float4 Snap(float4 positionCS)
-    {
-        float2 grid = max(_RetroSnapResolution.xy, 1.0) * 0.5;
-        float2 ndc = positionCS.xy / positionCS.w;
-        ndc = round(ndc * grid) / grid;
-        positionCS.xy = ndc * positionCS.w;
-        return positionCS;
-    }
 
     Varyings Vert(Attributes input)
     {
@@ -75,7 +65,7 @@ Shader "CommonHouse/Retro"
         float3 positionRWS = TransformObjectToWorld(input.positionOS);
         float3 positionAWS = GetAbsolutePositionWS(positionRWS);
         float3 normalWS = normalize(TransformObjectToWorldNormal(input.normalOS));
-        float4 positionCS = Snap(TransformWorldToHClip(positionRWS));
+        float4 positionCS = TransformWorldToHClip(positionRWS);
 
         float2 uv = TRANSFORM_TEX(input.uv, _MainTex);
         if (_WorldUV > 0.5)
@@ -97,14 +87,14 @@ Shader "CommonHouse/Retro"
         float fog = saturate((length(positionRWS) - _RetroFog.x) / max(_RetroFog.y - _RetroFog.x, 0.001));
 
         output.positionCS = positionCS;
-        output.affineUV = float3(uv * positionCS.w, positionCS.w);
+        output.uv = uv;
         output.light = float4(light, fog);
         return output;
     }
 
     float4 Frag(Varyings input) : SV_Target
     {
-        float2 uv = input.affineUV.xy / input.affineUV.z;
+        float2 uv = input.uv;
         float4 texel = SAMPLE_TEXTURE2D(_MainTex, sampler_point_repeat, uv) * _Color;
         clip(texel.a - _Cutoff);
         float3 color = texel.rgb * input.light.rgb;
@@ -114,7 +104,7 @@ Shader "CommonHouse/Retro"
 
     float4 DepthFrag(Varyings input) : SV_Target
     {
-        float2 uv = input.affineUV.xy / input.affineUV.z;
+        float2 uv = input.uv;
         clip(SAMPLE_TEXTURE2D(_MainTex, sampler_point_repeat, uv).a * _Color.a - _Cutoff);
         return 0;
     }
