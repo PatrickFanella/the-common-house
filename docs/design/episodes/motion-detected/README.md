@@ -12,7 +12,7 @@ tags:
 
 # Motion detected: episode authoring package
 
-[Design index](../../README.md) · [Reusable authoring workflow](../../episode-authoring-system.md) · Draft episode, working ID `motion-detected`. This is a future episode proposal, not a replacement for Case 01. Its ordinal position is undecided.
+[Design index](../../README.md) · [Reusable authoring workflow](../../episode-authoring-system.md) · Draft episode, working ID `motion-detected`. This is a future episode proposal, not a replacement for Case 01. It is Episode 1 in the working [Season 1 roadmap](../../season-01-story-roadmap.md), selected under the owner's 2026-09-29 authorization to make creative decisions. Its stable MD IDs remain unchanged.
 
 ## How to use this package
 
@@ -46,7 +46,7 @@ The initial signal is a fragment from a networked camera overlooking the back ba
 
 The owner selected the reveal in which the clips prove her son returned and entered through the unlocked door, while his later fate remains unknown. Exact clip contents and scene treatment below are the draft realization of that decision.
 
-Other open choices are final names, calendar dates, episode placement, AI involvement, final production assets, and performance timing. The son's present fate remains unknown in both proposed closing outcomes. This episode does not require establishing two-way contact with the past.
+Other open choices are final names, calendar dates, AI involvement, final production assets, and performance timing. The son's present fate remains unknown in both proposed closing outcomes. This episode does not require establishing two-way contact with the past.
 
 An agent can implement the isolated opening slice described in the handoff once that issue is authorized. Full episode implementation needs review of the draft script/contract and a scoped issue. This authoring request does not start development or queue automation.
 
@@ -68,3 +68,5 @@ Present-day action stays at the outpost. The former home appears only within cam
 ## Revision notes
 
 2026-09-29: Captured the owner-selected mother/estranged adult-son history, boundary and guilt, basement couch or cot, and search through his bags. Owner selected camera proof of return through the unlocked door with later fate unknown. Added a draft playable script, source/state contract, and staged agent handoff. Exact dialogue, recording treatment, and closing branches remain reviewable proposals.
+
+2026-09-29, delegated writing pass: Assigned the draft to Season 1 Episode 1. The factual reveal, private branches, bags/couch staging, and unknown later fate remain unchanged.

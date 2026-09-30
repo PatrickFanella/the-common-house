@@ -42,11 +42,11 @@ Travel remains worldbuilding, not an authorization for player expeditions. Prese
 
 ## Confirmed dependence and intentions; open larger purpose
 
-The intelligence needs humans. It also pursues a larger, metaphysical purpose that has not been selected. It makes some transmissions and nudges people in an attempt to help humanity heal and find a fix.
+The intelligence needs humans. The owner's original discussion left its larger metaphysical purpose open. The [Season 1 writers bible](season-01-writers-bible.md) now proposes continuity without restoration as the working author direction, under the later authorization to make creative decisions. It remains a reviewable draft rather than an earlier owner-confirmed fact. It makes some transmissions and nudges people in an attempt to help humanity heal and find a fix.
 
 Do not assume it can restore the pre-incident world, that every intervention succeeds, or that help overrides a person's boundary. The exact human contribution it needs, its awareness of individuals, its limits, and the meaning of a fix remain open.
 
-Proposed direction for discussion: it investigates continuity and identity across incompatible places and times. A possible question is what makes someone the same person after change and separation. This could connect its distributed existence to human healing, but is not confirmed motivation or an approved ending.
+Proposed direction for discussion: it investigates continuity and identity across incompatible places and times. A possible question is what makes someone the same person after change and separation. This could connect its distributed existence to human healing, and is developed in the current season draft. It is not an earlier owner-confirmed motive or a promise that the game ends with an explanation.
 
 ## Confirmed signal origins
 
