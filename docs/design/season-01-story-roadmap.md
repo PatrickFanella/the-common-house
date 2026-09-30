@@ -12,7 +12,7 @@ tags:
 
 # Season 1 story roadmap
 
-[Design index](README.md) · [Authoring workflow](episode-authoring-system.md). Owner-selected writing structure: intro, Episodes 1–8, then a Season 1 finale. The finale is not the end of the game. This is story organization, not a release, production, or distribution commitment.
+[Design index](README.md) · [Writers bible](season-01-writers-bible.md) · [Between-episode scenes](season-01-transition-scenes.md) · [Authoring workflow](episode-authoring-system.md). Owner-selected writing structure: intro, Episodes 1–8, then a Season 1 finale. The finale is not the end of the game. This is story organization, not a release, production, or distribution commitment.
 
 ## Writing order and current status
 
@@ -21,23 +21,23 @@ Work through the units in order, using the shared package structure. Resolve eac
 | Unit | Current material | Status | Next writing outcome |
 |---|---|---|---|
 | Intro | [Arrival package](episodes/intro/README.md) | Drafted from the accepted intro direction; exact staging and dialogue remain reviewable | Review arrival, hospitality, radio culture, and first anomaly |
-| Episode 1 | No numbered story assigned | Open | Select its central person, emotional burden, signal, and household trace |
-| Episode 2 | No numbered story assigned | Open | Develop after Episode 1 |
-| Episode 3 | No numbered story assigned | Open | Develop after Episode 2 |
-| Episode 4 | No numbered story assigned | Open | Develop after Episode 3 |
-| Episode 5 | No numbered story assigned | Open | Develop after Episode 4 |
-| Episode 6 | No numbered story assigned | Open | Develop after Episode 5 |
-| Episode 7 | No numbered story assigned | Open | Develop after Episode 6 |
-| Episode 8 | No numbered story assigned | Open | Develop the final numbered episode and its aftermath before the finale |
-| Season 1 finale | No plot or ending selected | Open | Resolve the season's chosen conflict and leave the continuing story viable |
+| Episode 1 | [Motion detected](episodes/motion-detected/README.md) | Existing complete draft, assigned this slot under delegated creative authority | Jo learns her son returned; later fate unknown |
+| Episode 2 | [Secondhand warning](episodes/secondhand-warning/README.md) | New script, contract, and handoff | Mara replaces performed certainty with a request for checking |
+| Episode 3 | [Read receipt](episodes/read-receipt/README.md) | New script, contract, and handoff | Dev acknowledges shared work without erasing his own part |
+| Episode 4 | [Public address](episodes/public-address/README.md) | New script, contract, and handoff | Bex repairs an ordinary private-call leak within Nessa's scope |
+| Episode 5 | [Side B](episodes/side-b/README.md) | New script, contract, and handoff | Kit makes a new show after a partnership ends |
+| Episode 6 | [Line of sight](episodes/line-of-sight/README.md) | New script, contract, and handoff | Sable's loss counts despite arriving unharmed; partial wired-path evidence |
+| Episode 7 | [Held calls](episodes/held-calls/README.md) | New script, contract, and handoff | Ivo names an unequal choice without losing shelter |
+| Episode 8 | [Do not repeat](episodes/do-not-repeat/README.md) | New script, contract, and handoff | Min limits a responsive endpoint's access |
+| Season 1 finale | [Common channel](episodes/common-channel/README.md) | New script, contract, and handoff | The house coordinates a bounded test; process participation is optional |
 
 Eight numbered episodes plus a separate finale are ten writing units including the intro. No later-season count is selected.
 
 ## Existing material and numbering
 
-[The Road Is Clear](case-01-the-road-is-clear.md) remains the working POC baseline. Its case ID does not automatically make it Season 1 Episode 1. [Motion detected](episodes/motion-detected/README.md) has a developed human premise, selected return reveal, and draft package, but no season slot. Decide their placement when discussing Episode 1 or later slots; neither is silently replaced or discarded.
+[The Road Is Clear](case-01-the-road-is-clear.md) remains the working POC baseline. Its case ID does not automatically make it Season 1 Episode 1. [Motion detected](episodes/motion-detected/README.md) has a developed human premise, selected return reveal, and draft package. It is now Episode 1 in this working season. Its MD IDs, basement couch and bags, boundary guilt, and unknown later fate are unchanged. Case 01 remains an independent POC and is not assigned a season slot. The new presenter Bex is distinct from its caller Ada.
 
-The intro currently ends with readiness to settle in and later learn the radio shift. Its handoff to a specific case remains open. Draft the connector after selecting Episode 1.
+The intro currently ends with readiness to settle in and later learn the radio shift. The between-episode scenes now draft an explicit connector to Motion detected. Runtime connection still requires full intro integration and an isolated MD opening; the currently playable intro does not start Episode 1.
 
 ## Season-level writing obligations
 
@@ -45,7 +45,7 @@ Each numbered episode needs a human question, a source-bound signal, social inve
 
 Track global clues alongside household changes. The private incident account is authoritative, but discovery order remains open. A clue can deepen uncertainty without announcing the AI. Do not assign a reveal to every slot simply to fill the table.
 
-The season finale should address the conflict established by this season, acknowledge household changes, and alter the characters' situation enough to support continued stories. The original world and author truth must remain coherent afterward. Whether it reveals the AI, its motive, the incident's cause, or a practical connection method is unresolved. Do not promise a restored world, final supernatural explanation, or final game ending.
+The season finale should address the conflict established by this season, acknowledge household changes, and alter the characters' situation enough to support continued stories. The original world and author truth must remain coherent afterward. The working finale establishes a consent-based reporting practice and a shared ledger, with limited current endpoint evidence. The responsive system's identity and the secret quantum-computer origin remain concealed. Its metaphysical pursuit is specified privately as a reviewable working author direction in the writers bible. Do not promise a restored world, final supernatural explanation, or final game ending.
 
 ## Carry-forward ledger
 
@@ -60,4 +60,4 @@ Keep permissions, promises, and knowledge specific. A subsequent script must han
 
 ## Review sequence
 
-Review the intro package first. Then select Episode 1 and develop its brief, truth, script, contract, and handoff. Continue through Episode 8. Keep a short list of possible finale questions while writing, but select the finale's actual conflict and revelations from what the season earns. Implementation remains separately scoped through native issues.
+This working season was drafted under the owner's 2026-09-29 authorization to continue work and make creative decisions. New plots and metaphysical direction remain reviewable author drafts. Review the intro connector and Motion detected first, then each later script in both closing routes. The writers bible owns the full branch-aware ledger and causal limits. Writing scope is tracked in [issue #99](https://git.subcult.tv/PatrickFanella/the-common-house/issues/99). No runtime, final assets, automatic episode starts, or automation queue is created by these drafts.
