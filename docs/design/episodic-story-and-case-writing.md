@@ -73,10 +73,10 @@ Before drafting, answer:
 - What concrete trace remains in the home?
 - Does the case add a global-arc clue, and is that clue consistent with the private world rules?
 
-## Proposed seed: the porch camera
+## Worked draft: Motion detected
 
 A resident receives fragments from an old internet-connected porch camera. It shows the evening someone they loved was expected home. Motion alerts arrive out of order: an empty porch, the edge of a coat, a few words from outside the frame. The resident misses meals and shifts while waiting for evidence that the person arrived.
 
-An unknown participant may be finding and forwarding more fragments in an attempt to help. Whether that participant is the AI, whether the feed is stored or live across time, what happened that evening, and the resident's history are all proposals requiring a factual spine before drafting.
+The [Motion detected package](episodes/motion-detected/README.md) develops this seed into a mother and her estranged adult son, a boundary she regrets, and recorded fragments proving he returned through an unlocked basement door. His later fate remains unknown. The package owns the selected human history and draft script/contract. AI involvement remains open; the episode uses fixed recordings without a two-way past connection.
 
 One possible aftermath: the resident returns to the kitchen and asks to keep a radio there. They still want to listen sometimes, with company. This is an example of a trace, not a selected ending or new implementation task.
