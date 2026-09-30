@@ -37,6 +37,7 @@ namespace CommonHouse.Editor
                 if (idle == null && clip.name.Contains("idle")) idle = state;
             }
             machine.defaultState = idle ?? machine.states[0].state;
+            machine.defaultState.name = "ResidentIdle";
             AssetDatabase.SaveAssets();
             return controller;
         }
@@ -86,13 +87,14 @@ namespace CommonHouse.Editor
             var clip = settings[0];
             clip.name = name;
             clip.loopTime = Loops(name);
-            // Bake root motion into the pose, so residents stay where the scene puts them.
+            // Keep vertical posture in the pose, but extract horizontal root motion.
+            // With applyRootMotion disabled, baking XZ would make the mesh walk away from its object.
             clip.lockRootRotation = true;
             clip.lockRootHeightY = true;
-            clip.lockRootPositionXZ = true;
+            clip.lockRootPositionXZ = false;
             clip.keepOriginalOrientation = true;
             clip.keepOriginalPositionY = true;
-            clip.keepOriginalPositionXZ = true;
+            clip.keepOriginalPositionXZ = false;
             importer.clipAnimations = new[] { clip };
             importer.SaveAndReimport();
             return AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>().First(item => item.name == name);

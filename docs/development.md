@@ -288,6 +288,8 @@ materials; and the scene generator places them. See
 Residents are generated with MPFB2 from recipes in `tools/characters/recipes/`
 (decision D-23). See [characters](development/characters.md) for setup, building,
 and the review capture.
+[Resident animation](development/resident-animation.md) describes talking, sitting,
+and the short walking routines, with the focused scene test command.
 
 ## Style board
 
@@ -299,3 +301,20 @@ license:
 ```sh
 python3 scripts/capture_style_board.py
 ```
+
+## Converted-office home base
+
+The [office complex guide](development/office-complex.md) covers ground-floor
+locations, the reusable procedural kit, regeneration, and native checks.
+The [home-base design](design/home-base.md) records the owner-selected modern
+office reference and DedSec influence while leaving character writing open.
+
+The [telecommunications environment guide](development/telecom-environment.md)
+covers connected presentation props, cable trays, patching equipment, and
+original printed graphics.
+
+## City assets
+
+The [city kit guide](development/city-assets.md) covers reusable prefabs, snap
+dimensions, the separate street review scene, and native checks for future
+flashback asset preparation.

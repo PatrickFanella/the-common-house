@@ -54,7 +54,7 @@ Each space should contain evidence of current use. A repaired kettle, competing 
 
 ## Investigable memories
 
-The player does not leave the outpost in present-day reality. Other locations can appear infrequently as flashbacks or memories that can be investigated. Their access mechanism and ontological status are unresolved.
+The player does not leave the outpost in present-day reality. The owner now expects a good number of flashbacks (D-40); other locations can appear as flashbacks or memories that can be investigated. Their access mechanism and ontological status are unresolved.
 
 For each scene, specify its source, perspective, omissions, what the player can inspect, and what can be corroborated afterward. The player's blank slate does not require memories to belong to them; resident accounts and recordings are possible sources. Keep a remembered claim separate from an observed present-day fact.
 

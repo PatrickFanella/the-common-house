@@ -7,7 +7,7 @@ using UnityEngine.TestTools;
 
 namespace CommonHouse.Tests
 {
-    public class ResidentAnimationTests
+    public partial class ResidentAnimationTests
     {
         [UnityTest]
         public IEnumerator EachResidentPlaysItsOwnIdleOnAHumanoidRig()
