@@ -84,7 +84,7 @@ Each case needs a factual spine with a consistent timeline, at least two underst
 
 Confirmed structure: standalone episodic stories connect to a global arc, with The X-Files, Fringe, and Law and Order supplied as references. Cases leave domestic traces: changed meals, shifts, objects, boundaries, names, and responsibilities. See the [case-writing guide](episodic-story-and-case-writing.md).
 
-The intelligence needs humans and also pursues an unresolved metaphysical purpose. Its intent to help does not settle its ethics or make it the cause of every case. The final conflict, degree of explanation, and ending remain open. Episode count and release structure remain deferred.
+The intelligence needs humans and also pursues an unresolved metaphysical purpose. Its intent to help does not settle its ethics or make it the cause of every case. The final conflict, degree of explanation, and ending remain open. The owner selected a Season 1 writing structure with an intro, eight numbered episodes, and a season finale. The [roadmap](season-01-story-roadmap.md) owns that sequence. The finale is not the game ending; release structure and later-season count remain open/deferred.
 
 ## Lore delivery
 

@@ -10,6 +10,8 @@ A primitive three-room outpost with first-person movement, plus a deterministic 
 
 The [local build report](docs/verification/local-build.md) includes the retained player, launch command, artifact identity, and current limits.
 
+The arrival intro has a separate [authored content asset](docs/development/intro-content.md) and [in-memory state rehearsal](docs/development/intro-state.md). Its playable scene and persistence remain later work; it does not replace the Case 01 opening.
+
 See the [initial owner evaluation](docs/playtests/poc-evaluation.md) for the reported observations, unknowns, and next evaluation questions.
 
 ## Design documents

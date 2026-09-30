@@ -142,6 +142,10 @@ The private canonical remote is
 `https://git.subcult.tv/PatrickFanella/the-common-house.git`.
 The [implementation plan](implementation-plan.md) links the Gitea task backlog.
 
+## Arrival intro content
+
+The [intro content guide](development/intro-content.md) documents the isolated authored arrival asset and `IntroContentTests`. It loads separately from Case 01. The [intro state guide](development/intro-state.md) describes explicit acknowledgment, recovery, optional expression, and `IntroRehearsalTests`. Scene presentation and persistence remain later units.
+
 ## Case content
 
 The [Case 01 content guide](development/case-content.md) describes the authored

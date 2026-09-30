@@ -51,7 +51,7 @@ Each case resolves a local human question while leaving consequences in the hous
 
 Stories center on someone dealing with something and releasing emotion. Investigation is social: consulting a resident or sharing a source changes who knows what and can affect a relationship. Emotional aftermath should become visible in routines, objects, boundaries, and responsibilities. The [case-writing guide](episodic-story-and-case-writing.md) provides the authoring framework.
 
-Release structure, case count, and final endings remain deferred. This creative direction adds no cases or mechanics to the current POC backlog.
+The selected Season 1 writing structure is an intro, Episodes 1–8, and a separate season finale that leaves the game story open. The [roadmap](season-01-story-roadmap.md) tracks writing order; existing cases have no automatic numbered slot. Release/distribution structure, later-season count, and final game endings remain deferred. This creative direction adds no cases or mechanics to the current POC backlog.
 
 ## Place, memory, and suspense
 

@@ -46,7 +46,7 @@ The initial signal is a fragment from a networked camera overlooking the back ba
 
 The owner selected the reveal in which the clips prove her son returned and entered through the unlocked door, while his later fate remains unknown. Exact clip contents and scene treatment below are the draft realization of that decision.
 
-Other open choices are final names, calendar dates, episode placement, AI involvement, final production assets, and performance timing. The son's present fate remains unknown in both candidates. This episode does not require establishing two-way contact with the past.
+Other open choices are final names, calendar dates, episode placement, AI involvement, final production assets, and performance timing. The son's present fate remains unknown in both proposed closing outcomes. This episode does not require establishing two-way contact with the past.
 
 An agent can implement the isolated opening slice described in the handoff once that issue is authorized. Full episode implementation needs review of the draft script/contract and a scoped issue. This authoring request does not start development or queue automation.
 

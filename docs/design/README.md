@@ -30,6 +30,8 @@ Read the Concept Brief for the pitch, then the Game Design Document for the prop
 | [Incident and Network — Author Truth](incident-and-network-author-truth.md) | Private causal history, AI limits, disrupted geography, and open world rules; contains spoilers |
 | [Episodic Story and Case Writing](episodic-story-and-case-writing.md) | Emotional release, social investigation, source-bound signals, domestic traces, and a proposed case seed |
 | [Episode authoring system](episode-authoring-system.md) | Reusable workflow, script/contract/handoff templates, and review gates |
+| [Season 1 story roadmap](season-01-story-roadmap.md) | Intro, eight numbered episodes, and a season finale; writing order and open slots |
+| [Intro arrival package](episodes/intro/README.md) | Playable arrival, setting orientation, source/scene contract, and staged handoff |
 | [Motion detected episode package](episodes/motion-detected/README.md) | First drafted future episode: playable script, evidence contract, and implementation handoff |
 | [Radio and Investigation Systems](radio-and-investigation-systems.md) | Evidence, transmissions, conversations, routing, and consequences |
 | [Art Audio and UX Direction](art-audio-and-ux-direction.md) | Visual and sound direction, interface, accessibility, and asset priorities |

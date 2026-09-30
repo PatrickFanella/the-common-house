@@ -20,6 +20,10 @@ Use [episodic writing priorities](episodic-story-and-case-writing.md) and [world
 
 A scene cannot settle a world rule by accident. Consult the private incident account when it depends on signal origins, AI access, travel, time, or cross-time interaction. Resolve the needed rule or choose a smaller story that does not depend on it.
 
+## Season 1 writing order
+
+The owner selected intro → Episodes 1–8 → Season 1 finale. The finale leaves the game story open. The [season roadmap](season-01-story-roadmap.md) tracks the sequence, unassigned material, and carry-forward facts. Episode count is a writing structure; release and production plans remain deferred.
+
 ## One package per episode
 
 Create `docs/design/episodes/<slug>/README.md`, `script.md`, and `case-contract.md`, plus `docs/planning/<slug>-agent-handoff.md`. Use the templates below. Exact episode position and release format need not be decided to assign a slug.
