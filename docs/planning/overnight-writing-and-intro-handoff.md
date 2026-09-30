@@ -18,7 +18,7 @@ The owner authorized uninterrupted progress and creative decisions. This pass pr
 | [#100](https://git.subcult.tv/PatrickFanella/the-common-house/pulls/100) | `t3code/season-one-writing` | Assigns Motion detected to Episode 1 and drafts Episodes 2–8, finale, bridges, contracts, and handoffs |
 | [#102](https://git.subcult.tv/PatrickFanella/the-common-house/pulls/102) | `t3code/complete-intro-presentation` | Adds playable radio, greeting, summary, and explicit completion to the isolated arrival scene |
 
-The PRs form a stack in that order. They are pushed and linked to the T3 thread. They are not automatically merged. After merging a lower layer, retarget the next layer to main and check its diff before merging. Publication and local qualification do not mean main already contains these changes or hosted checks passed.
+The PRs were published in that order and linked to the T3 thread. During final verification, #98 merged on the host at 41d4529. The writing PR was then retargeted to main; the intro PR remains above it. This agent did not issue a merge command. After the writing layer merges, retarget the intro layer to main and check its diff before merging. Publication and local qualification do not mean main already contains these changes or hosted checks passed.
 
 The source commits are `7207dc8` for the renderer, `ee9fa74` plus `75086e5` for writing and its privacy review, and `b34b444` for intro presentation. The latest presentation branch also merges the final writing correction. This handoff is committed with that branch.
 
@@ -38,7 +38,7 @@ In the active worktree, open `Assets/CommonHouse/Scenes/IntroOpening.unity`. Use
 
 The final message is "You have a place here. The desk can wait until you are ready." Completion starts no episode and assigns no work obligation. Radio replay explicitly stays local. Progress lasts only for the current Play session; Save/Load and the MD runtime connector are not implemented.
 
-The updated branch lives at `/home/onnwee/.t3/worktrees/the-common-house/t3code-7e11d389`. The original checkout at `/home/onnwee/Work/Subcult/the-common-house` was safely pulled to main `c6d1f93` earlier and does not gain unmerged PR changes automatically. Open the worktree project to try the new intro before merge; after review/merge, pull main in the original checkout. No reset or forced checkout is required.
+The updated branch lives at `/home/onnwee/.t3/worktrees/the-common-house/t3code-7e11d389`. The original checkout at `/home/onnwee/Work/Subcult/the-common-house` was safely pulled to main `c6d1f93` earlier and does not gain unmerged PR changes automatically. Open the worktree project to try the new intro before merge; after review/merge, pull main in the original checkout. The renderer fix is now on main and can be pulled independently of the remaining writing and intro reviews. No reset or forced checkout is required.
 
 ## Verification actually completed
 
@@ -52,7 +52,7 @@ Exact private Unity receipt paths and the limits of each claim are in the verifi
 
 ## Tracking and preserved work
 
-Issues #97, #99, and #101 record the renderer, writing, and presentation evidence. Previously merged intro foundation tasks #92, #94, and #95 were reconciled with PR #96 and closed; their earlier unmerged notes remain historical. New PR-related issues stay open for review. No automation account is assigned and no execution queue labels were added.
+Issues #97, #99, and #101 record the renderer, writing, and presentation evidence. Previously merged intro foundation tasks #92, #94, and #95 were reconciled with PR #96 and closed; their earlier unmerged notes remain historical. Renderer issue #97 was also closed after its host merge was verified. Writing and presentation issues #99/#101 remain open for review. No automation account is assigned and no execution queue labels were added.
 
 The owner's modified GraphicsSettings, ProjectSettings, QualitySettings, ShaderGraphSettings, and VFXManager remain uncommitted, along with untracked HDRPProjectSettings and PackageManagerSettings. Skills were not edited. Case 01 content, state, scene, and saves were not changed. The old-checkout pull backup remains at `/home/onnwee/.local/state/common-house-pull-backups/20260930T034625Z`.
 
