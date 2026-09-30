@@ -49,7 +49,7 @@ namespace CommonHouse.Editor
             return Materials[id] = material;
         }
 
-        private static Texture2D Texture(string id, int width, int height, Func<int, int, Color> pixel)
+        internal static Texture2D Texture(string id, int width, int height, Func<int, int, Color> pixel)
         {
             Directory.CreateDirectory(Root + "/Textures");
             var path = Root + "/Textures/" + id + ".png";
@@ -68,6 +68,7 @@ namespace CommonHouse.Editor
             importer.filterMode = FilterMode.Point;
             importer.textureCompression = TextureImporterCompression.Uncompressed;
             importer.mipmapEnabled = false;
+            importer.npotScale = TextureImporterNPOTScale.None;
             importer.SaveAndReimport();
             return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
         }
@@ -197,6 +198,9 @@ namespace CommonHouse.Editor
             ['W']="10001100011000110101101011101110001", ['X']="10001100010101000100010101000110001",
             ['Y']="10001100010101000100001000010000100", ['Z']="11111000010001000100010001000011111",
         };
+
+        internal static bool LetterPixel(char letter, int x, int y)
+            => x >= 0 && x < 5 && y >= 0 && y < 7 && Glyphs.TryGetValue(letter, out var glyph) && glyph[y * 5 + x] == '1';
 
         public static void Sign(Transform parent, string id, string[] lines, Vector3 position, Vector2 size, Color accent, float yaw = 0f)
         {

@@ -304,3 +304,7 @@ The [office complex guide](development/office-complex.md) covers ground-floor
 locations, the reusable procedural kit, regeneration, and native checks.
 The [home-base design](design/home-base.md) records the owner-selected modern
 office reference and DedSec influence while leaving character writing open.
+
+The [telecommunications environment guide](development/telecom-environment.md)
+covers connected presentation props, cable trays, patching equipment, and
+original printed graphics.

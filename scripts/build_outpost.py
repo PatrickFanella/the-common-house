@@ -91,7 +91,7 @@ def office_texture_entries():
     return [{
         "path": path.relative_to(ROOT).as_posix(),
         "kind": "generated",
-        "generator": "Assets/Editor/OfficeAssetKit.cs",
+        "generator": "Assets/Editor/TelecomAssetKit.cs" if path.stem.startswith(("print-", "telecom-", "sign-telecom-")) else "Assets/Editor/OfficeAssetKit.cs",
         "sha256": sha256(path),
         "changes": "Original procedural office surface or bitmap graphic for the converted-office home base.",
     } for path in sorted((ROOT / "Assets/CommonHouse/Art/OfficeComplex/Textures").glob("*.png"))]

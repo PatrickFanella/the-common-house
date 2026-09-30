@@ -993,6 +993,27 @@
       "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
     },
     {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/print-keep-listening.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "5103164024a5fde130ed8b5af334fc89e4df61025bbbad569332f8a662c6ca72",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/print-patch-share.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "048c80861ebab5d9f75384d53f51aebda20b0597b9883433eac389906307f104",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/print-use-pass.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "c047beed672d68833a49ef4038ddc8becb50c1811c73f00bde3064fa30a09dcb",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
       "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/privacy-fabric.png",
       "kind": "generated",
       "generator": "Assets/Editor/OfficeAssetKit.cs",
@@ -1091,6 +1112,41 @@
       "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
     },
     {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-telecom-cross-connect.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "1de9f4c8b0b8e7c37901876408a00d0bcce9be1ef096c8f809c3149a0bb8dfd1",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-telecom-radio.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "d795b4b9dad5705f2182b7c2464239bfb8621eb0a7e0bf99282e9456ccfc4daa",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-telecom-repair.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "dc5c1b72a839e0ab5c4f6665f30ed5cfc351d301a33acfdaab9e075313c75e83",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-telecom-service.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "5dd599e29a5c76e1a70330820f3fcd6f42b7abae6fd610f07cb5856e34d3b8ef",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-telecom-trunk.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
+      "sha256": "6c7ae31d054fdf09d9b11aa574381fe42fb5934d2801b9645316719f57ac1781",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
       "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sign-upper-access.png",
       "kind": "generated",
       "generator": "Assets/Editor/OfficeAssetKit.cs",
@@ -1115,6 +1171,13 @@
       "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/sofa-patch.png",
       "kind": "generated",
       "generator": "Assets/Editor/OfficeAssetKit.cs",
+      "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
+      "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/telecom-steel.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/TelecomAssetKit.cs",
       "sha256": "ef543c8927d455f836d21e07a07fe6f9932832286a5269a958a464bf29fea90f",
       "changes": "Original procedural office surface or bitmap graphic for the converted-office home base."
     },

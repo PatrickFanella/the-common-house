@@ -37,6 +37,7 @@ namespace CommonHouse.Editor
             FurnishSleeping(sleeping);
             FurnishUtility(utility);
             FurnishConcourse(corridor);
+            TelecomEnvironment.Build(conversion);
             Exterior(root);
             AddLamp(conversion, "Office corridor light", new Vector3(0f, 2.65f, -6f), 900f, Bone, 18f);
             AddLamp(conversion, "Workshop task light", new Vector3(-9.5f, 2.4f, -12f), 1400f, new Color(0.68f, 0.91f, 0.90f), 9f);

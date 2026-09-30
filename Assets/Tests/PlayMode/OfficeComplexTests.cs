@@ -136,7 +136,7 @@ namespace CommonHouse.Tests
             Assert.That(player.transform.position.y, Is.InRange(-0.1f, 0.2f));
         }
 
-        private static void Capture(Camera camera, string name)
+        internal static void Capture(Camera camera, string name)
         {
             var directory = Environment.GetEnvironmentVariable("COMMON_HOUSE_TEST_DATA_PATH");
             Assert.That(directory, Is.Not.Null.And.Not.Empty);

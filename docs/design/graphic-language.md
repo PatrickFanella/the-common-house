@@ -62,3 +62,11 @@ Unity asset set. Any implementation should use original artwork and record
 its generation or approved source in the existing provenance manifest. This
 document adds no final assets, character histories, case content, mechanics,
 or queued implementation task.
+
+## Implemented environment study
+
+[Issue #89](https://git.subcult.tv/PatrickFanella/the-common-house/issues/89)
+applies this direction to three provisional original prints and telecommunications
+presentation props. See the [asset guide](../development/telecom-environment.md)
+for motifs, placements, generation, and checks. These prints do not assign a
+resident's taste or establish new story clues.
