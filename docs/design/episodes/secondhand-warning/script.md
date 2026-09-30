@@ -46,17 +46,19 @@ Present-day South Relay radio check; Mara explicitly agrees to share it with the
 
 > Mara, live: I can see the blanking plate where the bypass used to be. I can read the old tag. I cannot see behind the lower cover from here.
 
-### SW-C01
-
-Present-day house conversation with Ivo, player only.
-
-> Ivo: Two clips can both be true and still describe different machines. Ask what changed between them.
-
 Keep the first two sources independently visible in the comparison reader. Their shared origin or matching field is only the specific support stated in the contract, not universal authentication. The third source may be offered privately; closing its conversation does not acquire it.
 
 ## SW-S02: compare, then ask
 
 PLAY + INTERACT. The player chooses the two factual sources at the local reader, then opens a technical or resident conversation. Identify every participant. Deliver the following supported exchange only after the comparison; otherwise offer "We can check the records before guessing" and keep the sources available.
+
+This account is offered only in this explicitly opened conversation. The listed source audience applies to the account itself. Declining or closing before acknowledgment leaves it unacquired; do not show its text in the initial receiver, notebook, recap, or a skipped conversation. Any additional invited listener joins the later present-day exchange only, unless the speaker explicitly chooses to repeat the account.
+
+### SW-C01
+
+Present-day house conversation with Ivo, player only.
+
+> Ivo: Two clips can both be true and still describe different machines. Ask what changed between them.
 
 | Line | Speaker | Text |
 |---|---|---|

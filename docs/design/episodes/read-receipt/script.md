@@ -50,12 +50,6 @@ Stored mail-server delivery receipt and attached release note, from the same ori
 
 > Receipt description: the credit request was accepted into Dev's mailbox before the release note. Release note, Dev: Recovery routine and interface by Dev. The receipt contains no read event.
 
-### RR-C01
-
-Present-day private admission by Dev, player only.
-
-> Dev: I read it. The interface was mine. I kept rehearsing that sentence until it sounded like the answer to a different question.
-
 Keep the first two sources independently visible in the comparison reader. Their shared origin or matching field is only the specific support stated in the contract, not universal authentication. The third source may be offered privately; closing its conversation does not acquire it.
 
 ## RR-S02: compare, then ask
@@ -74,6 +68,14 @@ Acknowledgment records RR-E01. It does not authorize any subsequent sharing. The
 ## RR-S03: the question behind the evidence
 
 INTERACT + DIRECTED. Private present-day conversation at a quiet table or on a clearly identified private radio channel. Optional personal depth is offered, never a key for unlocking the factual files. Ask "Would you like to talk about it?" before the exchange; "Not now" closes and leaves the lead.
+
+This account is offered only in this explicitly opened conversation. The listed source audience applies to the account itself. Declining or closing before acknowledgment leaves it unacquired; do not show its text in the initial receiver, notebook, recap, or a skipped conversation. Any additional invited listener joins the later present-day exchange only, unless the speaker explicitly chooses to repeat the account.
+
+### RR-C01
+
+Present-day private admission by Dev, player only.
+
+> Dev: I read it. The interface was mine. I kept rehearsing that sentence until it sounded like the answer to a different question.
 
 | Line | Speaker | Text |
 |---|---|---|
