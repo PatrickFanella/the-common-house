@@ -1,0 +1,915 @@
+{
+  "version": 1,
+  "id": "intro",
+  "speakers": [
+    {
+      "id": "player",
+      "name": "You"
+    },
+    {
+      "id": "ren",
+      "name": "Ren"
+    },
+    {
+      "id": "ivo",
+      "name": "Ivo"
+    },
+    {
+      "id": "music-presenter",
+      "name": "Music presenter"
+    },
+    {
+      "id": "news-reader",
+      "name": "News reader"
+    },
+    {
+      "id": "repair-operator",
+      "name": "Remote repair operator"
+    },
+    {
+      "id": "second-repair-operator",
+      "name": "Second repair operator"
+    },
+    {
+      "id": "orchard-operator",
+      "name": "Orchard operator"
+    },
+    {
+      "id": "office-recording",
+      "name": "Recorded office greeting"
+    }
+  ],
+  "lines": [
+    {
+      "id": "IN-L001",
+      "speakerId": "ren",
+      "text": "There's someone by the steps."
+    },
+    {
+      "id": "IN-L002",
+      "speakerId": "ivo",
+      "text": "Someone from where?"
+    },
+    {
+      "id": "IN-L003",
+      "speakerId": "ren",
+      "text": "I don't know. Get the door."
+    },
+    {
+      "id": "IN-L010",
+      "speakerId": "ren",
+      "text": "Come up here. Are you hurt?"
+    },
+    {
+      "id": "IN-L011",
+      "speakerId": "ren",
+      "text": "Was there anyone with you?"
+    },
+    {
+      "id": "IN-L012",
+      "speakerId": "ren",
+      "text": "You can show us from the doorway. Come in first."
+    },
+    {
+      "id": "IN-L013",
+      "speakerId": "ren",
+      "text": "That happens. I can tell you what we know."
+    },
+    {
+      "id": "IN-L014",
+      "speakerId": "ren",
+      "text": "All right. You don't have to work it out standing there."
+    },
+    {
+      "id": "IN-L015",
+      "speakerId": "ren",
+      "text": "Yes. There's water inside."
+    },
+    {
+      "id": "IN-L020",
+      "speakerId": "player",
+      "text": "How do I get back?"
+    },
+    {
+      "id": "IN-L021",
+      "speakerId": "ren",
+      "text": "Can you show me where you came from?"
+    },
+    {
+      "id": "IN-L022",
+      "speakerId": "player",
+      "text": "I think so."
+    },
+    {
+      "id": "IN-L023",
+      "speakerId": "ren",
+      "text": "From here. Show me from here."
+    },
+    {
+      "id": "IN-L024",
+      "speakerId": "ren",
+      "text": "The paths change between places like this. Instruments don't give us a route we can trust."
+    },
+    {
+      "id": "IN-L025",
+      "speakerId": "ren",
+      "text": "You might get to that fence. You might turn around and find us behind you."
+    },
+    {
+      "id": "IN-L026",
+      "speakerId": "player",
+      "text": "And if I don't?"
+    },
+    {
+      "id": "IN-L027",
+      "speakerId": "ren",
+      "text": "That's why I'm asking you to stay where you can see the building."
+    },
+    {
+      "id": "IN-L028",
+      "speakerId": "ren",
+      "text": "You can be all right out there and still not find your way back."
+    },
+    {
+      "id": "IN-L029",
+      "speakerId": "player",
+      "text": "Has that happened to someone here?"
+    },
+    {
+      "id": "IN-L030",
+      "speakerId": "ren",
+      "text": "People have left. We haven't heard from all of them. That doesn't tell us where they are."
+    },
+    {
+      "id": "IN-L040",
+      "speakerId": "ivo",
+      "text": "What should I put down?"
+    },
+    {
+      "id": "IN-L041",
+      "speakerId": "player",
+      "text": "My name."
+    },
+    {
+      "id": "IN-L042",
+      "speakerId": "player",
+      "text": "Leave it blank for now."
+    },
+    {
+      "id": "IN-L043",
+      "speakerId": "ivo",
+      "text": "All right. We can fill it in later."
+    },
+    {
+      "id": "IN-L044",
+      "speakerId": "ren",
+      "text": "Do we still have the spare bedding?"
+    },
+    {
+      "id": "IN-L045",
+      "speakerId": "ivo",
+      "text": "Which spare bedding?"
+    },
+    {
+      "id": "IN-L046",
+      "speakerId": "ren",
+      "text": "The bedding we keep saying is spare."
+    },
+    {
+      "id": "IN-L047",
+      "speakerId": "player",
+      "text": "Does this happen often?"
+    },
+    {
+      "id": "IN-L048",
+      "speakerId": "ivo",
+      "text": "At first, every day. Sometimes several people. It's been a while now."
+    },
+    {
+      "id": "IN-L049",
+      "speakerId": "player",
+      "text": "How long since it happened?"
+    },
+    {
+      "id": "IN-L050",
+      "speakerId": "ivo",
+      "text": "A few months. We keep the dates here, but they don't always help with someone who's just arrived."
+    },
+    {
+      "id": "IN-L060",
+      "speakerId": "music-presenter",
+      "text": "This one's for the night shift at Orchard. Your request finally reached us."
+    },
+    {
+      "id": "IN-L061",
+      "speakerId": "news-reader",
+      "text": "South Relay reports that their upper tanks are working again. We haven't heard directly from the households downstream."
+    },
+    {
+      "id": "IN-L062",
+      "speakerId": "repair-operator",
+      "text": "I didn't say cut it. I said disconnect it."
+    },
+    {
+      "id": "IN-L063",
+      "speakerId": "second-repair-operator",
+      "text": "Well, it's disconnected."
+    },
+    {
+      "id": "IN-L064",
+      "speakerId": "orchard-operator",
+      "text": "Is Ren there? Tell them the recording was terrible. I'm sending it back."
+    },
+    {
+      "id": "IN-L065",
+      "speakerId": "ren",
+      "text": "They asked for something cheerful."
+    },
+    {
+      "id": "IN-L066",
+      "speakerId": "orchard-operator",
+      "text": "And who's new? I can hear you finding another chair."
+    },
+    {
+      "id": "IN-L067",
+      "speakerId": "ivo",
+      "text": "We've had an arrival. We'll check in later."
+    },
+    {
+      "id": "IN-L068",
+      "speakerId": "player",
+      "text": "Where are they?"
+    },
+    {
+      "id": "IN-L069",
+      "speakerId": "ivo",
+      "text": "They call their place Orchard."
+    },
+    {
+      "id": "IN-L070",
+      "speakerId": "player",
+      "text": "How far away?"
+    },
+    {
+      "id": "IN-L071",
+      "speakerId": "ivo",
+      "text": "We don't know."
+    },
+    {
+      "id": "IN-L072",
+      "speakerId": "ivo",
+      "text": "Some stations speak for whole districts. Some are one person in a house. Radio is how we reach each other."
+    },
+    {
+      "id": "IN-L080",
+      "speakerId": "ren",
+      "text": "That mug leaks. Take the other one."
+    },
+    {
+      "id": "IN-L081",
+      "speakerId": "ivo",
+      "text": "We can put the bedding in the archive for tonight."
+    },
+    {
+      "id": "IN-L082",
+      "speakerId": "ren",
+      "text": "There's room. We'll move the boxes."
+    },
+    {
+      "id": "IN-L083",
+      "speakerId": "ivo",
+      "text": "Let's check before we promise them a room."
+    },
+    {
+      "id": "IN-L084",
+      "speakerId": "ren",
+      "text": "Somewhere to sleep, then."
+    },
+    {
+      "id": "IN-L085",
+      "speakerId": "ren",
+      "text": "You don't have to decide anything tonight."
+    },
+    {
+      "id": "IN-L086",
+      "speakerId": "player",
+      "text": "Decide what?"
+    },
+    {
+      "id": "IN-L087",
+      "speakerId": "ren",
+      "text": "Whether you're staying."
+    },
+    {
+      "id": "IN-L088",
+      "speakerId": "ren",
+      "text": "We'll show you where things are."
+    },
+    {
+      "id": "IN-L089",
+      "speakerId": "ren",
+      "text": "I understand. We can talk about it tomorrow."
+    },
+    {
+      "id": "IN-L090",
+      "speakerId": "ren",
+      "text": "All right. The food will be here."
+    },
+    {
+      "id": "IN-L100",
+      "speakerId": "office-recording",
+      "text": "Thank you for calling. Our office is currently closed. Please call again during normal business hours."
+    },
+    {
+      "id": "IN-L101",
+      "speakerId": "office-recording",
+      "text": "This is the local service office."
+    },
+    {
+      "id": "IN-L102",
+      "speakerId": "ivo",
+      "text": "That was our greeting."
+    },
+    {
+      "id": "IN-L103",
+      "speakerId": "ren",
+      "text": "Do you know where it came from?"
+    },
+    {
+      "id": "IN-L104",
+      "speakerId": "ivo",
+      "text": "No sender I can identify. I'll keep it in the log."
+    },
+    {
+      "id": "IN-L105",
+      "speakerId": "ren",
+      "text": "Has it happened before?"
+    },
+    {
+      "id": "IN-L106",
+      "speakerId": "ivo",
+      "text": "I've heard that recording before. Coming through like this? No."
+    },
+    {
+      "id": "IN-L110",
+      "speakerId": "ren",
+      "text": "Eat first. Tomorrow I can show you the desk."
+    },
+    {
+      "id": "IN-L111",
+      "speakerId": "player",
+      "text": "I'd like that."
+    },
+    {
+      "id": "IN-L112",
+      "speakerId": "player",
+      "text": "I'll think about it."
+    },
+    {
+      "id": "IN-L113",
+      "speakerId": "ren",
+      "text": "All right. Get some rest."
+    }
+  ],
+  "sources": [
+    {
+      "id": "IN-C01",
+      "kind": "conversation",
+      "delivery": "account",
+      "description": "Ren describes changing paths, unreliable navigation, and people whose whereabouts remain unknown. This is a resident account, not a demonstrated route.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L024",
+        "IN-L025",
+        "IN-L027",
+        "IN-L028",
+        "IN-L030"
+      ]
+    },
+    {
+      "id": "IN-C02",
+      "kind": "conversation",
+      "delivery": "account",
+      "description": "Ivo reports that arrivals used to occur daily and that a few months have passed locally. The newcomer's experienced time is not fixed.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L048",
+        "IN-L050"
+      ]
+    },
+    {
+      "id": "IN-D01",
+      "kind": "document",
+      "delivery": "document",
+      "description": "An old telecommunications service-area map carries handwritten station names and question marks. Earlier distance measurements are crossed out; it gives no dependable travel coordinates.",
+      "recordedAt": null,
+      "lineIds": []
+    },
+    {
+      "id": "IN-C03",
+      "kind": "conversation",
+      "delivery": "account",
+      "description": "Ivo names Orchard, says its distance is unknown, and describes radio stations serving districts or single households.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L069",
+        "IN-L071",
+        "IN-L072"
+      ]
+    },
+    {
+      "id": "IN-C04",
+      "kind": "conversation",
+      "delivery": "account",
+      "description": "Ivo recognizes the former office greeting and says he cannot identify its sender or previous reception through this channel.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L102",
+        "IN-L104",
+        "IN-L106"
+      ]
+    },
+    {
+      "id": "IN-T01",
+      "kind": "transmission",
+      "delivery": "live",
+      "description": "A music presenter introduces a request for the Orchard night shift. No recognizable music or licensed track is required for the evidence.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L060"
+      ]
+    },
+    {
+      "id": "IN-T02",
+      "kind": "transmission",
+      "delivery": "live",
+      "description": "A news reader attributes a water-tank report to South Relay and explicitly lacks downstream corroboration.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L061"
+      ]
+    },
+    {
+      "id": "IN-T03",
+      "kind": "transmission",
+      "delivery": "live",
+      "description": "Two remote operators disagree about disconnecting rather than cutting a connection. Each voice has its own speaker label.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L062",
+        "IN-L063"
+      ]
+    },
+    {
+      "id": "IN-T04",
+      "kind": "transmission",
+      "delivery": "live",
+      "description": "Orchard speaks with Ren. A chair moves audibly nearby. The desk microphone is marked active; Ivo announces an arrival without a name or personal story. No player speech is sent.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L064",
+        "IN-L065",
+        "IN-L066",
+        "IN-L067"
+      ]
+    },
+    {
+      "id": "IN-T05",
+      "kind": "transmission",
+      "delivery": "recorded",
+      "description": "A fixed telephone greeting says the local service office is closed. It is stored playback, with no identifiable sender, verified date, or return connection.",
+      "recordedAt": null,
+      "lineIds": [
+        "IN-L100",
+        "IN-L101"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "id": "IN-Q01",
+      "options": [
+        {
+          "id": "IN-Q01-A",
+          "text": "I was following a path.",
+          "responseLineIds": [
+            "IN-L012"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q01-B",
+          "text": "I thought this was somewhere else.",
+          "responseLineIds": [
+            "IN-L013"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q01-C",
+          "text": "I don't know how I got here.",
+          "responseLineIds": [
+            "IN-L014"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q01-D",
+          "text": "Can I come inside?",
+          "responseLineIds": [
+            "IN-L015"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q01-E",
+          "text": "I need a minute.",
+          "responseLineIds": [
+            "IN-L014"
+          ],
+          "nextSceneId": "IN-S01"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q02",
+      "options": [
+        {
+          "id": "IN-Q02-A",
+          "text": "Thank you.",
+          "responseLineIds": [
+            "IN-L088"
+          ],
+          "nextSceneId": "IN-S06"
+        },
+        {
+          "id": "IN-Q02-B",
+          "text": "I still want to find a way back.",
+          "responseLineIds": [
+            "IN-L089"
+          ],
+          "nextSceneId": "IN-S06"
+        },
+        {
+          "id": "IN-Q02-C",
+          "text": "I'd rather be on my own for a bit.",
+          "responseLineIds": [
+            "IN-L090"
+          ],
+          "nextSceneId": "IN-S06"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q03",
+      "options": [
+        {
+          "id": "IN-Q03-A",
+          "text": "I'd like that.",
+          "responseLineIds": [
+            "IN-L113"
+          ],
+          "nextSceneId": "IN-S07"
+        },
+        {
+          "id": "IN-Q03-B",
+          "text": "I'll think about it.",
+          "responseLineIds": [
+            "IN-L113"
+          ],
+          "nextSceneId": "IN-S07"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q04",
+      "options": [
+        {
+          "id": "IN-Q04-A",
+          "text": "How do I get back?",
+          "responseLineIds": [
+            "IN-L021",
+            "IN-L023",
+            "IN-L024",
+            "IN-L025"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q04-B",
+          "text": "And if I don't?",
+          "responseLineIds": [
+            "IN-L027",
+            "IN-L028"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q04-C",
+          "text": "Has that happened to someone here?",
+          "responseLineIds": [
+            "IN-L030"
+          ],
+          "nextSceneId": "IN-S02"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q05",
+      "options": [
+        {
+          "id": "IN-Q05-A",
+          "text": "I think so.",
+          "responseLineIds": [
+            "IN-L023"
+          ],
+          "nextSceneId": "IN-S02"
+        },
+        {
+          "id": "IN-Q05-B",
+          "text": "I can't show you.",
+          "responseLineIds": [
+            "IN-L024"
+          ],
+          "nextSceneId": "IN-S02"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q06",
+      "options": [
+        {
+          "id": "IN-Q06-A",
+          "text": "My name.",
+          "responseLineIds": [
+            "IN-L043"
+          ],
+          "nextSceneId": "IN-S03"
+        },
+        {
+          "id": "IN-Q06-B",
+          "text": "Leave it blank for now.",
+          "responseLineIds": [
+            "IN-L043"
+          ],
+          "nextSceneId": "IN-S03"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q07",
+      "options": [
+        {
+          "id": "IN-Q07-A",
+          "text": "Does this happen often?",
+          "responseLineIds": [
+            "IN-L048"
+          ],
+          "nextSceneId": "IN-S03"
+        },
+        {
+          "id": "IN-Q07-B",
+          "text": "How long since it happened?",
+          "responseLineIds": [
+            "IN-L050"
+          ],
+          "nextSceneId": "IN-S03"
+        }
+      ]
+    },
+    {
+      "id": "IN-Q08",
+      "options": [
+        {
+          "id": "IN-Q08-A",
+          "text": "Where are they?",
+          "responseLineIds": [
+            "IN-L069"
+          ],
+          "nextSceneId": "IN-S04"
+        },
+        {
+          "id": "IN-Q08-B",
+          "text": "How far away?",
+          "responseLineIds": [
+            "IN-L071",
+            "IN-L072"
+          ],
+          "nextSceneId": "IN-S04"
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "IN-S00",
+      "title": "the lit entrance",
+      "description": "A lit entrance, worn telecommunications sign, planter, and upstairs laundry show that people live here. A short visible route reaches the door.",
+      "modes": [
+        "play"
+      ],
+      "lineIds": [
+        "IN-L001",
+        "IN-L002",
+        "IN-L003"
+      ],
+      "sourceIds": [],
+      "choiceIds": [],
+      "nextSceneId": "IN-S01"
+    },
+    {
+      "id": "IN-S01",
+      "title": "another arrival",
+      "description": "Ren waits by the entrance, with water to offer.",
+      "modes": [
+        "interact",
+        "directed",
+        "choice"
+      ],
+      "lineIds": [
+        "IN-L010",
+        "IN-L011",
+        "IN-L012",
+        "IN-L013",
+        "IN-L014",
+        "IN-L015"
+      ],
+      "sourceIds": [],
+      "choiceIds": [
+        "IN-Q01"
+      ],
+      "nextSceneId": "IN-S02"
+    },
+    {
+      "id": "IN-S02",
+      "title": "from here",
+      "description": "You are at the threshold. The old reception counter is visible inside.",
+      "modes": [
+        "interact",
+        "choice"
+      ],
+      "lineIds": [
+        "IN-L020",
+        "IN-L021",
+        "IN-L022",
+        "IN-L023",
+        "IN-L024",
+        "IN-L025",
+        "IN-L026",
+        "IN-L027",
+        "IN-L028",
+        "IN-L029",
+        "IN-L030"
+      ],
+      "sourceIds": [
+        "IN-C01"
+      ],
+      "choiceIds": [
+        "IN-Q04",
+        "IN-Q05"
+      ],
+      "nextSceneId": "IN-S03"
+    },
+    {
+      "id": "IN-S03",
+      "title": "reception",
+      "description": "An old customer counter holds an arrival ledger and spare bedding. A service-area map carries station names, question marks, and crossed-out distances.",
+      "modes": [
+        "play",
+        "interact",
+        "choice"
+      ],
+      "lineIds": [
+        "IN-L040",
+        "IN-L041",
+        "IN-L042",
+        "IN-L043",
+        "IN-L044",
+        "IN-L045",
+        "IN-L046",
+        "IN-L047",
+        "IN-L048",
+        "IN-L049",
+        "IN-L050"
+      ],
+      "sourceIds": [
+        "IN-C02",
+        "IN-D01"
+      ],
+      "choiceIds": [
+        "IN-Q06",
+        "IN-Q07"
+      ],
+      "nextSceneId": "IN-S04"
+    },
+    {
+      "id": "IN-S04",
+      "title": "people on the network",
+      "description": "At the radio desk, music, news, and a live check-in come through. The microphone is active during the check-in.",
+      "modes": [
+        "media",
+        "play",
+        "interact",
+        "choice"
+      ],
+      "lineIds": [
+        "IN-L060",
+        "IN-L061",
+        "IN-L062",
+        "IN-L063",
+        "IN-L064",
+        "IN-L065",
+        "IN-L066",
+        "IN-L067",
+        "IN-L068",
+        "IN-L069",
+        "IN-L070",
+        "IN-L071",
+        "IN-L072"
+      ],
+      "sourceIds": [
+        "IN-T01",
+        "IN-T02",
+        "IN-T03",
+        "IN-T04",
+        "IN-C03"
+      ],
+      "choiceIds": [
+        "IN-Q08"
+      ],
+      "nextSceneId": "IN-S05"
+    },
+    {
+      "id": "IN-S05",
+      "title": "a place for tonight",
+      "description": "A former meeting room now serves as a kitchen. A tablecloth covers the table; a projector bracket remains overhead. There is food and bedding for tonight.",
+      "modes": [
+        "play",
+        "directed",
+        "choice"
+      ],
+      "lineIds": [
+        "IN-L080",
+        "IN-L081",
+        "IN-L082",
+        "IN-L083",
+        "IN-L084",
+        "IN-L085",
+        "IN-L086",
+        "IN-L087",
+        "IN-L088",
+        "IN-L089",
+        "IN-L090"
+      ],
+      "sourceIds": [],
+      "choiceIds": [
+        "IN-Q02"
+      ],
+      "nextSceneId": "IN-S06"
+    },
+    {
+      "id": "IN-S06",
+      "title": "our office is closed",
+      "description": "The receiver log holds a recorded office-closed telephone greeting.",
+      "modes": [
+        "interact",
+        "media"
+      ],
+      "lineIds": [
+        "IN-L100",
+        "IN-L101",
+        "IN-L102",
+        "IN-L103",
+        "IN-L104",
+        "IN-L105",
+        "IN-L106"
+      ],
+      "sourceIds": [
+        "IN-T05",
+        "IN-C04"
+      ],
+      "choiceIds": [],
+      "nextSceneId": "IN-S07"
+    },
+    {
+      "id": "IN-S07",
+      "title": "tomorrow",
+      "description": "The house settles for the night. Ren offers to show you the desk tomorrow.",
+      "modes": [
+        "directed",
+        "choice"
+      ],
+      "lineIds": [
+        "IN-L110",
+        "IN-L111",
+        "IN-L112",
+        "IN-L113"
+      ],
+      "sourceIds": [],
+      "choiceIds": [
+        "IN-Q03"
+      ],
+      "nextSceneId": null
+    }
+  ]
+}

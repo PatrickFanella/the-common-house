@@ -1,0 +1,5 @@
+{
+  "name": "CommonHouse.Intro",
+  "rootNamespace": "CommonHouse.Intro",
+  "references": ["CommonHouse.Content", "CommonHouse.Domain", "CommonHouse.Interaction"]
+}

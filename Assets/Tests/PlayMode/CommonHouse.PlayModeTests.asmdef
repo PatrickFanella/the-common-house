@@ -17,6 +17,7 @@
     "CommonHouse.Opening",
     "CommonHouse.Aftermath",
     "CommonHouse.Hints",
-    "CommonHouse.Persistence"
+    "CommonHouse.Persistence",
+    "CommonHouse.Intro"
   ]
 }

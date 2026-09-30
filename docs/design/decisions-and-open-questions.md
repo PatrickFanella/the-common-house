@@ -61,6 +61,8 @@ tags:
 
 | D-40 | Expect a good number of flashbacks and build reusable city assets for their locations. | 2026-09-29: “I think we will be doing a good number of flashbacks. Can you create some city assets”. | Revises D-13's infrequent-flashback expectation. Build a provisional city kit and separate review scene; individual locations, sources, access rules, and stories remain open. Present-day play and Case 01 scope stay unchanged; see [city asset direction](city-assets.md). |
 
+| D-41 | Write an intro, eight numbered episodes, and a Season 1 finale that is not the game finale. | 2026-09-29: user selected Intro, episodes 1–8, and clarified “more like season 1”. | Follow the story roadmap; later plots, numbering of existing cases, and finale revelations remain open. This selects narrative structure, not publication or implementation. |
+
 ## Proposed working choices
 
 | ID | Proposal | Reason | Revisit when |
@@ -111,7 +113,7 @@ These are writing questions, not new implementation tasks. D-26–D-38 do not re
 
 ## Deferred choices
 
-Release structure, commercial platforms, full-game length, funding, price, publication, release date, professional voice production, and final title are deferred until after the POC. Unity is selected; version and tooling are not yet verified. Multiplayer, open-world structure, generated cases, and extensive equipment simulation are outside the first test.
+Release structure, commercial platforms, full-game length beyond the selected Season 1 structure, funding, price, publication, release date, professional voice production, and final title are deferred until after the POC. Unity is selected; version and tooling are not yet verified. Multiplayer, open-world structure, generated cases, and extensive equipment simulation are outside the first test.
 
 ## Change log
 
@@ -134,6 +136,8 @@ Release structure, commercial platforms, full-game length, funding, price, publi
 2026-09-29, animation: Recorded D-25. Mixamo is the first source that is not CC0; its raw files may not be redistributed.
 
 2026-09-29, writing room: Recorded D-26–D-38 for emotional traces, return as a theme, telecommunications refuge, disrupted geography, rare arrivals, radio culture, secret ASI origin and wired limits, partial infrastructure routes, personal signal attraction, source-bound media, episodic structure, and DedSec influence. Added the private incident account and case-writing guide; reconciled creative summaries. P-09–P-11 and W-01–W-07 preserve unresolved choices. No Case 01 implementation or release scope changed.
+
+2026-09-29, Season 1 writing sequence: Recorded D-41 and created the intro script package and Season 1 roadmap. The finale closes a season, not the whole game. Later episode stories and placement of existing cases remain open; release/distribution planning and implementation are unchanged.
 
 2026-09-29, home-base reconciliation: Preserved the writing-room decisions D-26–D-38 and recorded the parallel environment expansion as D-39. The modern-office reference and provisional ground-floor locations remain compatible with the telecommunications refuge in D-28.
 
