@@ -70,3 +70,9 @@ Present-day action stays at the outpost. The former home appears only within cam
 2026-09-29: Captured the owner-selected mother/estranged adult-son history, boundary and guilt, basement couch or cot, and search through his bags. Owner selected camera proof of return through the unlocked door with later fate unknown. Added a draft playable script, source/state contract, and staged agent handoff. Exact dialogue, recording treatment, and closing branches remain reviewable proposals.
 
 2026-09-29, delegated writing pass: Assigned the draft to Season 1 Episode 1. The factual reveal, private branches, bags/couch staging, and unknown later fate remain unchanged.
+
+## Source asset preparation
+
+The [exterior camera source set](../../../development/motion-detected-source-assets.md)
+provides provisional steps, door variants, repaired rail, leaf drain, and bin in a
+fixed-view review scene. It adds no actors, clips, private past scenes, or episode runtime.

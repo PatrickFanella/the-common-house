@@ -19,7 +19,7 @@ The owner requested asset creation on 2026-09-30. This first pass makes the smal
 | Writing unit | Existing assets to reuse | New kit assets | Deferred episode-specific work |
 |---|---|---|---|
 | Intro | Telecom-office reception, sleeping cots, lockers, radio desk, terminals, ordinary food/table setting | Station card, roster board, folding chair, saved meal | Compose a finished arrival room from the office kit; resident designs beyond the current test residents; ordinary radio programme audio |
-| 1, Motion detected | Receiver, archive equipment, shared table, sofa/cot as appropriate household furniture | Exterior camera, saved meal, spare folding chair, roster board | Source-bound exterior basement-door camera setting, son's camera silhouette and damaged sleeve, Jo and Min, camera packets and transcripts, Jo's bags account and permitted close staging |
+| 1, Motion detected | Receiver, archive equipment, shared table, sofa/cot as appropriate household furniture | Exterior camera, saved meal, spare folding chair, roster board; [basement source set](../development/motion-detected-source-assets.md) with steps, door variants, rail, drain and bin | Son's camera silhouette and damaged sleeve, Jo and Min, camera packets and transcripts, Jo's bags account and permitted close staging |
 | 2, Secondhand warning | Terminal, radio, repair bench, household notice area | Roster board, biscuit tin, station card | Maintenance-call presentation, Mara's radio performance, public reported/checked/unknown notice and private second-listener roster |
 | 3, Read receipt | Terminal, toolboard, shared bench | Label printer, open folder, roster board | AIM-style chat and mail readers, Dev, consent-aware tool credit card and manual insert |
 | 4, Public address | Radio desk, terminal, archive | Open/closed folder, contact ledger, restricted-input card | Bex's broadcast material, two-column private/public rundown, face-down unsent correction, authorized public wording |
@@ -43,7 +43,7 @@ The camera has a weather hood, lens, and mounting bracket. It supplies a plausib
 
 ## Next asset passes
 
-1. Make the Motion detected source setting: exterior steps, basement back door, repaired handrail, drain and bin. Set the camera's coverage before staging the son's return. His later fate remains unknown.
+1. Review the delivered Motion detected source setting and fixed camera coverage before staging the son's return. The source set has no actor or animated clips. His later fate remains unknown.
 2. Design Jo and Min through the existing resident pipeline, with distinct silhouettes and clothing. Keep addiction-related signs out of generic face or body stereotypes; the script establishes the relationship through actions and accounts.
 3. Build source readers and branch-aware trace displays from the script contracts. Use blank physical objects from this kit as their scene anchors, then test disclosure and refusal paths in each episode.
 4. Compose a shared broadcast desk using the existing receiver, terminal, and new controls. Add original music and ordinary radio material in a separate audio task with documented permissions.

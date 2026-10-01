@@ -324,3 +324,7 @@ flashback asset preparation.
 The [Season 1 asset inventory](design/season-01-asset-inventory.md) maps existing, new,
 and deferred assets to the scripts. The [reusable prop kit](development/season-one-assets.md)
 provides small broadcast, privacy, record, and shared-table objects in a separate review scene.
+
+The [Motion detected source set](development/motion-detected-source-assets.md) adds
+reusable exterior basement steps, door variants, a repaired rail, drain, and bin.
+Its fixed camera review remains separate from playable episodes.
