@@ -16,15 +16,15 @@ KIT = "Assets/CommonHouse/Art/SeasonOne"
 SCENE = "Assets/CommonHouse/Scenes/SeasonOneAssetReview.unity"
 
 
-def copy_export(export, root):
+def copy_export(export, root, *, kit=KIT, scene=SCENE, expected_prefabs=16):
     files = sorted(p for p in export.rglob("*") if p.is_file())
     if not files:
         raise ValueError("Editor returned no season assets")
     for path in files:
         relative = path.relative_to(export).as_posix()
-        if path.is_symlink() or not (relative.startswith(KIT + "/") or relative in {KIT + ".meta", SCENE, SCENE + ".meta"}):
+        if path.is_symlink() or not (relative.startswith(kit + "/") or relative in {kit + ".meta", scene, scene + ".meta"}):
             raise ValueError(f"Unexpected exported file: {relative}")
-    if not (export / SCENE).is_file() or len(list((export / KIT / "Prefabs").glob("*.prefab"))) != 16:
+    if not (export / scene).is_file() or len(list((export / kit / "Prefabs").glob("*.prefab"))) != expected_prefabs:
         raise ValueError("Incomplete season export")
     for path in files:
         target = root / path.relative_to(export)

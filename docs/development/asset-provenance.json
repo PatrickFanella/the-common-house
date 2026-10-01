@@ -979,6 +979,69 @@
       "changes": "HDRP mask map repacked from Assets/CommonHouse/Art/Sourced/PolyHaven/worn_tile_floor/worn_tile_floor_arm_2k.jpg (CC0-1.0, Poly Haven): metal to R, occlusion to G, 1 - roughness to A."
     },
     {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/bin.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "45b3365051093321b2df0e229584913586276f387b09d17b031c2e55129542b4",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/brick.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "c60a7374e9485b209a2d1a2730d33e1288a7aab017ad9a5d23f0a320bd7cff34",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/concrete.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "32df259c19bd1740192cd563ec0e87a1e3c2af908d60d006160349a1b6cdb352",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/door-paint.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "f128264a040ceeb31cc05fdef9ee0a624a2d363524a10ebf639130cd997a6457",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/leaf.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "a93c157d9319dea06b69c4fe4bb28743a98b28a16d1409ae2458df816e9b36b7",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/metal.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "4c1a5556436d00d7fb19b6201b775bba9f8a846af4102ffd8a7351eca97abe8d",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/repair.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "76f53e4fdd9010a374a74cb8d1760648aae8e478d2c13eb93f54450d6f6c8d4e",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/riser.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "ab30176b4d98dce1ee1b47b08a79ceb05554524e3dd529fb4a8f6dff78cb648f",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
+      "path": "Assets/CommonHouse/Art/MotionDetected/Textures/void.png",
+      "kind": "generated",
+      "generator": "Assets/Editor/MotionDetectedSourceSet.cs",
+      "sha256": "c81bc6354bb589808a46f7902d42c149d9624c8ef4743ddb300b9f1f027b3f93",
+      "changes": "Original deterministic 64px exterior-source material. No indoor or private account imagery."
+    },
+    {
       "path": "Assets/CommonHouse/Art/OfficeComplex/Textures/bedding.png",
       "kind": "generated",
       "generator": "Assets/Editor/OfficeAssetKit.cs",

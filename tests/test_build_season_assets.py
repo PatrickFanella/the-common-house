@@ -57,6 +57,20 @@ class NarrowExportTests(unittest.TestCase):
             copy_export(self.export, self.root)
         self.assertFalse((self.root / SCENE).exists())
 
+    def test_second_kit_has_its_own_allowlist_and_expected_count(self):
+        kit = "Assets/CommonHouse/Art/MotionDetected"
+        scene = "Assets/CommonHouse/Scenes/MotionDetectedSourceReview.unity"
+        for i in range(6):
+            path = self.export / kit / "Prefabs" / f"{i}.prefab"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("source prefab")
+        review = self.export / scene
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("source review")
+        self.assertEqual(copy_export(self.export, self.root, kit=kit, scene=scene, expected_prefabs=6), 7)
+        with self.assertRaisesRegex(ValueError, "Unexpected exported file"):
+            copy_export(self.export, self.root)
+
 
 if __name__ == "__main__":
     unittest.main()
