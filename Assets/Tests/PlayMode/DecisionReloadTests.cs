@@ -87,6 +87,21 @@ namespace CommonHouse.Tests
             if (!string.IsNullOrEmpty(root) && Directory.Exists(root)) Directory.Delete(root, true);
         }
 
+        [TestCase(KeyCode.L)]
+        [TestCase(KeyCode.F9)]
+        public void LoadKeyRestoresSavedStateAndIgnoresUnrelatedKeys(KeyCode key)
+        {
+            session.State.AcquireSource("test:call", "T01");
+            Assert.That(saves.Save(), Is.True);
+            session.ReplaceState(new CaseState(session.Content));
+            var before = session.State;
+            Assert.That(saves.HandleLoadKey(KeyCode.K), Is.False);
+            Assert.That(session.State, Is.SameAs(before));
+            Assert.That(saves.HandleLoadKey(key), Is.True);
+            Assert.That(session.State.AcquiredSourceIds, Is.EquivalentTo(new[] { "T01" }));
+            Assert.That(saves.LastStatus, Is.EqualTo("Loaded validated development save."));
+        }
+
         [Test]
         public void PreSendCheckpointRestoresDraftConsentEndpointAndDerivedViewsAfterCancellation()
         {

@@ -19,7 +19,8 @@ view and then returns movement focus. The notebook uses `N`, comparison uses
 `C` and `Tab`, route verification uses `V`, and a public send needs `A` to
 acknowledge its warning before a separate `Enter` confirmation. `D` defers a
 response and `R` resumes a saved draft. The development save controls are `F5`
-for save, `F8` for a checkpoint, and `F9` for load.
+for save, `F8` for a checkpoint, and `L` for load. `F9` remains an alternative, but some desktops reserve it
+for dictation; use `L` if the desktop consumes it.
 
 There are no timed choices, pitch-only clues, color-only decisions, or pointer
 requirements in this route. Essential audio information remains available in

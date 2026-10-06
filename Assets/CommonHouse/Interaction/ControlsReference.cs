@@ -7,7 +7,7 @@ namespace CommonHouse.Interaction
             "[WASD] Move  [Arrow keys] Look\n" +
             "[E] Use the focused object  [Enter] Read, ask, or confirm\n" +
             "[R] Review received transcripts  [N] Notebook  [H] Hint\n" +
-            "[F5] Save  [F8] Checkpoint  [F9] Load\n" +
+            "[F5] Save  [F8] Checkpoint  [L] Load\n" +
             "[PgUp/PgDn] Scroll  [-/=] Text size";
 
         public const string WelcomeText = "Controls\n" + SharedText + "\n[Escape] Pause or close the current panel.";

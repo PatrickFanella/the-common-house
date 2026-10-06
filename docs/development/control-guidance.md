@@ -9,7 +9,8 @@ visibility: private
 
 The opening welcome names the existing keyboard controls before the waiting
 call: movement and look, focused interaction, transcript review, notebook,
-hint, development save/load, scrolling, text size, and Escape. It contains no
+hint, development save/load, scrolling, text size, and Escape. Load is shown as
+`L`; `F9` remains supported for desktops that do not reserve it. It contains no
 case lead, route advice, recipient, or consent information.
 
 When no panel owns input, `Escape` pauses movement and opens the same controls
@@ -30,3 +31,6 @@ The focused scene test verifies the welcome and pause read models, modal Escape
 precedence, resume, HUD suppression, and unchanged case facts. Rendered
 800x600 text-scale evidence and desktop build verification are separate checks,
 recorded in the [verification report](../verification/control-guidance.md).
+
+The [Load-key follow-up](../verification/load-key-fallback.md) records the F9
+desktop conflict and L alternative.

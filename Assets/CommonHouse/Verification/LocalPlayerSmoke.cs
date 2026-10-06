@@ -94,7 +94,7 @@ namespace CommonHouse.Verification
             SendR2(send);
             if (!send.Confirm() || session.State.OutcomeId != "R2")
                 throw new InvalidOperationException("The initial R2 send did not complete.");
-            if (!saves.Load() || session.State.OutcomeId != null || session.State.DraftRoute != ResponseRoute.RefusalRelay)
+            if (!saves.HandleLoadKey(KeyCode.L) || session.State.OutcomeId != null || session.State.DraftRoute != ResponseRoute.RefusalRelay)
                 throw new InvalidOperationException("Pre-send reload did not restore the unresolved refusal draft.");
 
             Activate(inspection, Require<SendConfirmationWorldTarget>());
@@ -107,7 +107,7 @@ namespace CommonHouse.Verification
             if (!aftermath.Acknowledge() || session.State.Phase != CasePhase.AftermathCompleted)
                 throw new InvalidOperationException("The refusal aftermath did not complete.");
             if (!saves.Save()) throw new InvalidOperationException("Post-send save failed.");
-            if (!saves.Load() || session.State.OutcomeId != "R2" || session.State.Phase != CasePhase.AftermathCompleted)
+            if (!saves.HandleLoadKey(KeyCode.L) || session.State.OutcomeId != "R2" || session.State.Phase != CasePhase.AftermathCompleted)
                 throw new InvalidOperationException("Post-send reload did not restore R2 aftermath.");
             var outgoing = session.State.Disclosures.Count(disclosure => disclosure.EventId == "radio-send:R2");
             if (outgoing != 1) throw new InvalidOperationException("Expected exactly one outgoing R2 disclosure, found " + outgoing + ".");

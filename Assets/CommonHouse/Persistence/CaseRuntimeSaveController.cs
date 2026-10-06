@@ -47,7 +47,8 @@ namespace CommonHouse.Persistence
             if (Application.isBatchMode || string.Equals(Environment.GetEnvironmentVariable("COMMON_HOUSE_ENV"), "test", StringComparison.Ordinal)) return;
             if (Input.GetKeyDown(KeyCode.F5)) Save();
             if (Input.GetKeyDown(KeyCode.F8)) SaveCheckpoint();
-            if (Input.GetKeyDown(KeyCode.F9)) Load();
+            if (Input.GetKeyDown(KeyCode.L)) HandleLoadKey(KeyCode.L);
+            else if (Input.GetKeyDown(KeyCode.F9)) HandleLoadKey(KeyCode.F9);
         }
 
         private void OnGUI()
@@ -56,7 +57,7 @@ namespace CommonHouse.Persistence
             CaseUi.HandleKeyboardScale();
             var wrapped = CaseUi.WrappedLabel();
             var width = Mathf.Max(120f, Mathf.Min(Screen.width - 24f, 500f));
-            var controls = "[F5] Save  [F8] Pre-send checkpoint  [F9] Load  [-/=] Text size";
+            var controls = "[F5] Save  [F8] Pre-send checkpoint  [L] Load  [-/=] Text size";
             var height = 20f + wrapped.CalcHeight(new GUIContent("Development save"), width - 24f)
                 + wrapped.CalcHeight(new GUIContent(controls), width - 24f)
                 + wrapped.CalcHeight(new GUIContent(lastStatus), width - 24f);
@@ -116,6 +117,12 @@ namespace CommonHouse.Persistence
             if (!Save()) return false;
             lastStatus = "Pre-send checkpoint written.";
             return true;
+        }
+
+        /// <summary>Shared native/test dispatch; L avoids desktop F9 dictation bindings.</summary>
+        public bool HandleLoadKey(KeyCode key)
+        {
+            return (key == KeyCode.L || key == KeyCode.F9) && Load();
         }
 
         public bool Load()

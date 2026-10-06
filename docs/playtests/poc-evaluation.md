@@ -31,6 +31,20 @@ No route failure was reported. This does not establish that no failure occurred.
 Automated route/build results remain separate evidence and do not fill missing
 human observations.
 
+## Follow-up after controls guidance
+
+After delivery of the controls-guidance build, the owner reported: "it makes
+sense how it works" and "the load wasn't working, but I think it's because the
+key is taken by something else". The executable and save root for this attempt
+were not independently confirmed. This adds a positive self-report of general
+understanding and a failed manual Load attempt; it does not establish recipient
+prediction, inference reconstruction, or successful restoration.
+
+Live desktop inspection confirmed unmodified F9 is consumed by push-to-talk
+dictation, while the game used F9 for Load. This confirms a binding conflict,
+not the complete cause of every observed load failure. [Issue #50](https://git.subcult.tv/PatrickFanella/the-common-house/issues/50)
+adds L as a game-side alternative without changing desktop settings or saves.
+
 ## Comparison with the proposed qualitative triggers
 
 The [POC plan](../design/proof-of-concept-plan.md) proposes a five-person round.
