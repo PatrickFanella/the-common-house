@@ -1,0 +1,40 @@
+name: "CI"
+"on":
+  pull_request: {}
+  push:
+    branches:
+      - "main"
+permissions:
+  contents: "read"
+jobs:
+  verify:
+    name: "Portable quality"
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 20
+    steps:
+      -
+        uses: "actions/checkout@v6"
+      -
+        uses: "actions/setup-python@v6"
+        with:
+          python-version: "3.13"
+        env:
+          AGENT_TOOLSDIRECTORY: "${{ runner.temp }}/python-tools-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.job }}"
+          RUNNER_TOOL_CACHE: "${{ runner.temp }}/python-tools-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.job }}"
+      -
+        name: "Run existing Python regressions"
+        shell: "bash"
+        run: "python3 -m unittest discover -s tests"
+      -
+        name: "Validate documentation"
+        shell: "bash"
+        run: "python3 scripts/check_docs.py"
+      -
+        name: "Validate binary policy and provenance metadata"
+        shell: "bash"
+        run: |-
+          python3 scripts/check_binary_sizes.py
+          python3 scripts/check_provenance.py
+    env:
+      GIT_LFS_SKIP_SMUDGE: "1"
+      PYTHONOPTIMIZE: "0"
