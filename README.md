@@ -66,8 +66,18 @@ and the Unity setup requirements.
 
 ## Implementation tracking
 
-The private [Gitea repository](https://git.subcult.tv/PatrickFanella/the-common-house)
-owns the source and [issue backlog](https://git.subcult.tv/PatrickFanella/the-common-house/issues).
+The private [Gitea repository](https://git.subcult.tv/subculture-collective/the-common-house)
+owns the source and [issue backlog](https://git.subcult.tv/subculture-collective/the-common-house/issues).
 The [implementation plan](docs/implementation-plan.md) sequences small agent tasks
 using the Open Pilot issue format. Case 01 is the working POC baseline; names
 and story details remain provisional. Issues are not automatically queued.
+
+## License
+
+Original contributions in this repository are licensed under the GNU General
+Public License, version 3 or (at your option) any later version
+(`GPL-3.0-or-later`). See [LICENSE](LICENSE).
+
+Third-party code, documentation, fonts, data, and other assets retain their own
+licenses, copyright notices, and attribution. This license does not replace
+those terms or grant rights to upstream material that its authors have not granted.
